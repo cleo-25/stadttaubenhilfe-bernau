@@ -1,11 +1,39 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const title = "Stadttaubenhilfe Bernau e.V.";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>{title}</title>
+  </head>
+
+  <body style="font-family: system-ui; margin:0; background:#F4F1EA; color:#1E1E1E;">
+    <main style="max-width:900px; margin:100px auto; padding:20px;">
+      
+      <h1 style="font-size:2.5rem; color:#1F3D34;">
+        Stadttaubenhilfe Bernau e.V.
+      </h1>
+
+      <p style="font-size:1.2rem; margin-top:20px;">
+        Wir betreuen das Taubenhaus im Fahrradparkhaus am S-Bahnhof Bernau,
+        kümmern uns um Fundtiere und leisten Aufklärungsarbeit rund um Stadttauben.
+      </p>
+
+      <p style="margin-top:30px;">
+        🕊 Hilfe für Fundtiere<br/>
+        🕊 Aufklärung statt Vorurteile<br/>
+        🕊 Verantwortungsvoller Tierschutz
+      </p>
+
+      <div style="margin-top:40px;">
+        <a href="#" 
+           style="padding:12px 20px; background:#1F3D34; color:white; text-decoration:none; border-radius:6px;">
+          Jetzt mithelfen
+        </a>
+      </div>
+
+    </main>
+  </body>
+</html>
