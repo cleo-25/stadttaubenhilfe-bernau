@@ -1,0 +1,84 @@
+---
+const nav = [
+  { label: "Start", href: "/" },
+  { label: "Taubenhaus", href: "/taubenhaus" },
+  { label: "Fundtiere", href: "/fundtiere" },
+  { label: "Wissen", href: "/wissen" },
+  { label: "Mitmachen", href: "/mitmachen" },
+  { label: "Spenden", href: "/spenden" },
+  { label: "Kontakt", href: "/kontakt" },
+];
+---
+
+<header class="header">
+  <div class="container inner">
+    <a class="logo" href="/">
+      <span class="mark">🕊️</span>
+      <span class="name">Stadttaubenhilfe Bernau</span>
+    </a>
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      {nav.map((item) => (
+        <a class="link" href={item.href}>{item.label}</a>
+      ))}
+    </nav>
+
+    <div class="cta">
+      <a class="btn" href="/spenden">Spenden</a>
+    </div>
+  </div>
+</header>
+
+<style>
+  .header{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: rgba(244,241,234,.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+  }
+  .inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height: 64px;
+    gap: 16px;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    text-decoration:none;
+    font-weight: 800;
+    color: var(--brand);
+    white-space: nowrap;
+  }
+  .mark{
+    width: 34px; height: 34px;
+    display:grid; place-items:center;
+    border-radius: 10px;
+    background: white;
+    border: 1px solid var(--border);
+  }
+  .nav{
+    display:flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .link{
+    text-decoration:none;
+    font-weight: 600;
+    color: rgba(0,0,0,.72);
+    padding: 8px 10px;
+    border-radius: 10px;
+  }
+  .link:hover{
+    background: rgba(255,255,255,.7);
+    border: 1px solid var(--border);
+  }
+  @media (max-width: 900px){
+    .nav{ display:none; }
+  }
+</style>

@@ -1,0 +1,64 @@
+<footer class="footer">
+  <div class="container grid">
+    <div>
+      <div class="title">Stadttaubenhilfe Bernau e.V.</div>
+      <p class="muted">
+        Betreuung des Taubenhauses im Fahrradparkhaus am S-Bahnhof Bernau,
+        Fundtierhilfe & Aufklärung.
+      </p>
+    </div>
+
+    <div>
+      <div class="title">Mitmachen</div>
+      <ul>
+        <li><a href="/mitmachen">Helfen vor Ort</a></li>
+        <li><a href="/fundtiere">Fundtier melden</a></li>
+        <li><a href="/wissen">Wissen & Vorurteile</a></li>
+      </ul>
+    </div>
+
+    <div>
+      <div class="title">Rechtliches</div>
+      <ul>
+        <li><a href="/impressum">Impressum</a></li>
+        <li><a href="/datenschutz">Datenschutz</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="bar">
+    <div class="container muted">
+      © {new Date().getFullYear()} Stadttaubenhilfe Bernau e.V.
+    </div>
+  </div>
+</footer>
+
+<style>
+  .footer{
+    margin-top: 60px;
+    border-top: 1px solid var(--border);
+    background: rgba(255,255,255,.55);
+  }
+  .grid{
+    display:grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 26px;
+    padding: 28px 20px;
+  }
+  .title{
+    font-weight: 800;
+    color: var(--brand);
+    margin-bottom: 8px;
+  }
+  ul{ list-style:none; padding:0; margin:0; }
+  li{ margin: 8px 0; }
+  a{ text-decoration:none; color: rgba(0,0,0,.72); font-weight: 600; }
+  a:hover{ text-decoration: underline; }
+  .bar{
+    border-top: 1px solid var(--border);
+    padding: 12px 0;
+  }
+  @media (max-width: 900px){
+    .grid{ grid-template-columns: 1fr; }
+  }
+</style>

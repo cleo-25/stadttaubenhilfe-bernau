@@ -1,0 +1,31 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header/Header.astro";
+import Footer from "../components/Footer/Footer.astro";
+
+const { title = "Stadttaubenhilfe Bernau e.V.", description = "" } = Astro.props;
+---
+
+<html lang="de">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+
+  <body>
+    <Header />
+    <main class="container" style="padding-top: 28px;">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
