@@ -14,6 +14,7 @@ interface Props {
   imageSrc?: string;
   imageAlt?: string;
   imagePosition?: string;
+  mobileImagePosition?: string;
 }
 
 const {
@@ -28,7 +29,8 @@ const {
   visualNote = "Ein freigegebenes Foto kann hier ergänzt werden.",
   imageSrc,
   imageAlt = visualLabel,
-  imagePosition = "center"
+  imagePosition = "center",
+  mobileImagePosition = imagePosition
 } = Astro.props;
 ---
 
@@ -51,14 +53,13 @@ const {
       <figure
         class="media-photo-frame"
         aria-label={visualLabel}
-        style={`background-image: url('${imageSrc}'); background-position: ${imagePosition};`}
+        style={`--image-position: ${imagePosition}; --image-position-mobile: ${mobileImagePosition}; background-image: url('${imageSrc}'); background-position: ${imagePosition};`}
       >
         <img
           src={imageSrc}
           alt={imageAlt}
           loading="eager"
           decoding="async"
-          style={`object-position: ${imagePosition};`}
         />
       </figure>
     ) : (

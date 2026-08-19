@@ -10,7 +10,8 @@
     "visualLabel": "Fundtier nach einem Fund",
     "imageSrc": "/images/projects/startbild-fundtiere.jpg",
     "imageAlt": "Taube nach einem Fund auf einer Hand",
-    "imagePosition": "center 42%"
+    "imagePosition": "center 38%",
+    "mobileImagePosition": "center 30%"
   },
   "alert": {
     "eyebrow": "Erster Schritt",

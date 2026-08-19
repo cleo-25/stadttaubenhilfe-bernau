@@ -10,7 +10,8 @@
     "visualLabel": "Taubenhaus im Fahrradparkhaus Bernau",
     "imageSrc": "/images/projects/startbild-taubenhaus.jpg",
     "imageAlt": "Betreuter Taubenhaus-Bereich im Fahrradparkhaus Bernau",
-    "imagePosition": "center 58%"
+    "imagePosition": "center 48%",
+    "mobileImagePosition": "center 34%"
   },
   "intro": {
     "eyebrow": "Was wir tun",

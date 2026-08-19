@@ -64,6 +64,7 @@ h1 { font-size: clamp(3rem, 5.6vw, 5.7rem); }
 .lead { color: var(--text); line-height: 1.48; }
 .media-photo-frame { min-height: 440px; border: 0; border-radius: 12px; box-shadow: none; }
 .media-photo-frame::after { display: none; }
+.media-photo-frame img { object-position: var(--image-position, center); }
 .button { border: 0; border-radius: 10px; box-shadow: none; }
 .button-primary { background: #f2675c; }
 .button-primary:hover { background: #dc584f; }
@@ -104,6 +105,8 @@ h1 { font-size: clamp(3rem, 5.6vw, 5.7rem); }
   .site-nav { background: #0d2942; border-top: 1px solid rgba(255,255,255,.2); box-shadow: none; }
   .site-nav a { padding: 13px 0; color: #fff; }
   .site-nav .site-nav-donate { padding: 13px 14px; }
+  .page-hero .media-photo-frame { min-height: min(102vw, 430px); }
+  .page-hero .media-photo-frame img { object-position: var(--image-position-mobile, var(--image-position, center)); }
 }
 
 @media (min-width: 901px) {

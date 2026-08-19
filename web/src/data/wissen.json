@@ -10,7 +10,8 @@
     "visualLabel": "Betreute Stadttauben",
     "imageSrc": "/images/tauben-paar.jpg",
     "imageAlt": "Zwei betreute Stadttauben aus der Vereinsarbeit",
-    "imagePosition": "center 48%"
+    "imagePosition": "center 42%",
+    "mobileImagePosition": "center 30%"
   },
   "snacks": [
     {
