@@ -1,12 +1,31 @@
 ---
+import LineIcon from "./LineIcon.astro";
+
+type IconName =
+  | "alert"
+  | "box"
+  | "phone"
+  | "heart"
+  | "book"
+  | "home"
+  | "feather"
+  | "care"
+  | "together"
+  | "camera"
+  | "hands"
+  | "euro"
+  | "mail"
+  | "location";
+
 interface Props {
   eyebrow?: string;
   title: string;
   href?: string;
   tone?: "default" | "accent" | "quiet" | "blue" | "green" | "violet";
+  icon?: IconName;
 }
 
-const { eyebrow, title, href, tone = "default" } = Astro.props;
+const { eyebrow, title, href, tone = "default", icon } = Astro.props;
 const Tag = href ? "a" : "article";
 const opensNewTab = href ? /^https?:\/\//.test(href) : false;
 ---
@@ -17,6 +36,7 @@ const opensNewTab = href ? /^https?:\/\//.test(href) : false;
   target={opensNewTab ? "_blank" : undefined}
   rel={opensNewTab ? "noopener noreferrer" : undefined}
 >
+  {icon && <LineIcon name={icon} />}
   {eyebrow && <span class="eyebrow">{eyebrow}</span>}
   <h3>{title}</h3>
   <div class="card-body">

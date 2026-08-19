@@ -2,12 +2,14 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import CtaBand from "../components/CtaBand.astro";
+import ContentBand from "../components/ContentBand.astro";
 import { galleryCategories, getGalleryItems } from "../data/gallery";
 ---
 
 <BaseLayout
   title="Galerie"
   description="Bilder aus Taubenhaus, Volieren, Pflegestellen und Vereinsarbeit der Stadttaubenhilfe Bernau."
+  theme="gallery"
 >
   <PageHero
     eyebrow="Bilder aus der Arbeit"
@@ -23,6 +25,21 @@ import { galleryCategories, getGalleryItems } from "../data/gallery";
     imagePosition="center 44%"
     mobileImagePosition="center 32%"
     mobileFrameRatio="4 / 3"
+  />
+
+  <ContentBand
+    tone="navy"
+    eyebrow="Einblicke statt Stockfotos"
+    title="Hinter jedem Bild steckt konkrete Hilfe."
+    text="Taubenhaus, Pflegestelle, Fundtier oder Infostand: Diese Bilder zeigen die Arbeit, die Tiere und Menschen in Bernau miteinander verbindet."
+    imageSrc="/images/gallery/menschen-hinter-der-hilfe.jpg"
+    imageAlt="Engagierte Menschen hinter der Stadttaubenhilfe Bernau"
+    imagePosition="center 42%"
+    features={[
+      { icon: "camera", title: "Dokumentiert", text: "Bilder machen die Arbeit hinter der Hilfe sichtbar." },
+      { icon: "care", title: "Versorgt", text: "Pflegestellen und Fundtiere brauchen Ruhe, Zeit und Erfahrung." },
+      { icon: "home", title: "Betreut", text: "Das Taubenhaus schafft einen festen, kontrollierten Ort." }
+    ]}
   />
 
   <section class="section section-tight">

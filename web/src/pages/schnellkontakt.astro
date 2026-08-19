@@ -35,10 +35,8 @@ import "../styles/global.css";
     display: grid;
     min-height: 100vh;
     place-items: center;
-    background:
-      radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.78), transparent 18rem),
-      linear-gradient(135deg, #f8fcff 0%, #dfefff 42%, #8cb2e1 100%);
-    color: #285b7d;
+    background: #8cb2e1;
+    color: #0d2942;
     font-family:
       ui-sans-serif,
       system-ui,
@@ -53,9 +51,9 @@ import "../styles/global.css";
     display: grid;
     width: min(100%, 560px);
     justify-items: center;
-    border: 1px solid rgba(93, 145, 168, 0.24);
-    border-radius: 18px;
-    background: rgba(255, 255, 255, 0.9);
+    border: 0;
+    border-radius: 0;
+    background: #0d2942;
     padding: clamp(28px, 6vw, 58px);
     text-align: center;
   }
@@ -68,13 +66,13 @@ import "../styles/global.css";
 
   .quick-contact p {
     margin: 20px 0 0;
-    color: #5d91a8;
+    color: #8cb2e1;
     font-weight: 900;
   }
 
   .quick-contact h1 {
     margin: 8px 0 24px;
-    color: #3f789f;
+    color: #fff;
     font-size: clamp(2.4rem, 8vw, 4.5rem);
     letter-spacing: -0.028em;
     line-height: 1;
@@ -82,9 +80,9 @@ import "../styles/global.css";
 
   .quick-contact a {
     width: 100%;
-    border-radius: 999px;
-    background: rgba(140, 178, 225, 0.26);
-    color: #1f4f70;
+    border-radius: 8px;
+    background: #fff;
+    color: #0d2942;
     font-size: clamp(1.08rem, 3vw, 1.35rem);
     font-weight: 900;
     padding: 14px 18px;
@@ -92,5 +90,10 @@ import "../styles/global.css";
 
   .quick-contact a + a {
     margin-top: 12px;
+  }
+
+  .quick-contact a:first-of-type {
+    background: #f2675c;
+    color: #fff;
   }
 </style>

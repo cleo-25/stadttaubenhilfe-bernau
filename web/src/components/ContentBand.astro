@@ -1,0 +1,81 @@
+---
+import LineIcon from "./LineIcon.astro";
+
+type IconName =
+  | "alert"
+  | "box"
+  | "phone"
+  | "heart"
+  | "book"
+  | "home"
+  | "feather"
+  | "care"
+  | "together"
+  | "camera"
+  | "hands"
+  | "euro"
+  | "mail"
+  | "location";
+
+interface Feature {
+  icon: IconName;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  tone?: "navy" | "blue" | "coral";
+  eyebrow?: string;
+  title: string;
+  text?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+  features: Feature[];
+}
+
+const {
+  tone = "navy",
+  eyebrow,
+  title,
+  text,
+  imageSrc,
+  imageAlt = "Einblick in die Arbeit der Stadttaubenhilfe Bernau",
+  imagePosition = "center",
+  features
+} = Astro.props;
+---
+
+<section class:list={["content-band", `content-band-${tone}`, imageSrc && "content-band-has-image"]}>
+  <div class="container content-band-grid">
+    <div class="content-band-copy">
+      {eyebrow && <span class="content-band-eyebrow">{eyebrow}</span>}
+      <h2>{title}</h2>
+      {text && <p>{text}</p>}
+
+      <div class="content-band-features">
+        {features.map((feature) => (
+          <article>
+            <LineIcon name={feature.icon} />
+            <div>
+              <h3>{feature.title}</h3>
+              <p>{feature.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+
+    {imageSrc && (
+      <figure class="content-band-image">
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          loading="lazy"
+          decoding="async"
+          style={`object-position: ${imagePosition};`}
+        />
+      </figure>
+    )}
+  </div>
+</section>

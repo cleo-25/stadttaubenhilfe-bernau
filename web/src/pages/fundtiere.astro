@@ -5,6 +5,7 @@ import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
 import InfoList from "../components/InfoList.astro";
 import Button from "../components/Button.astro";
+import ContentBand from "../components/ContentBand.astro";
 import fundtiereContent from "../data/fundtiere.json";
 
 const { hero, alert, checklistIntro, checklist } = fundtiereContent;
@@ -14,8 +15,24 @@ const { hero, alert, checklistIntro, checklist } = fundtiereContent;
   title="Taube gefunden"
   description="Schnellhilfe für gefundene Stadttauben in Bernau und Umgebung: Karton vorbereiten, nichts einflößen, Fundort und Foto senden."
   image={hero.imageSrc}
+  theme="emergency"
 >
   <PageHero {...hero} />
+
+  <ContentBand
+    tone="navy"
+    eyebrow="Erste Hilfe in drei Schritten"
+    title="Ruhig handeln. So hilfst du sofort."
+    text="Die ersten Minuten sind entscheidend, aber du musst nichts Medizinisches tun. Sichern, schützen und mit den wichtigsten Angaben melden reicht."
+    imageSrc="/images/gallery/pflegestelle-box-01.jpg"
+    imageAlt="Taube sitzt geschützt in einer Transportbox"
+    imagePosition="center 36%"
+    features={[
+      { icon: "box", title: "In einen Karton", text: "Luftlöcher, ein Handtuchnest und Ruhe schützen das Tier." },
+      { icon: "alert", title: "Nichts einflößen", text: "Kein Wasser in den Schnabel und kein Futter hineinstopfen." },
+      { icon: "phone", title: "Mit Foto melden", text: "Fundort, Uhrzeit und Telefonnummer helfen uns bei der Einschätzung." }
+    ]}
+  />
 
   <section class="section section-tight">
     <div class="container split">
@@ -41,42 +58,42 @@ const { hero, alert, checklistIntro, checklist } = fundtiereContent;
         title="Häufige Situationen"
         text="Wenn du zweifelst, melde dich. Viele Notfälle sehen am Anfang unscheinbar aus."
       />
-      <div class="grid grid-3">
-        <Card title="Jungtier am Boden" eyebrow="Noch nicht flugfähig" tone="blue">
+      <div class="grid grid-3 topic-grid emergency-situation-grid">
+        <Card title="Jungtier am Boden" eyebrow="Noch nicht flugfähig" tone="blue" icon="feather">
           <p>
             Jungtauben sehen oft unfertig aus: gelbe Flaumreste, kurzer Schwanz,
             unsicheres Laufen. Wenn sie am Boden sitzen und nicht richtig fliegen
             können, brauchen sie Hilfe. Bitte in einen Karton setzen und melden.
           </p>
         </Card>
-        <Card title="Blut, hängender Flügel, Humpeln" eyebrow="Notfall" tone="accent">
+        <Card title="Blut, hängender Flügel, Humpeln" eyebrow="Notfall" tone="accent" icon="alert">
           <p>
             Das ist ein Notfall. Bitte nicht warten. Taube in den Karton setzen,
             warm stellen und melden.
           </p>
         </Card>
-        <Card title="Schnüre an den Füßen" eyebrow="Abschnürung" tone="green">
+        <Card title="Schnüre an den Füßen" eyebrow="Abschnürung" tone="green" icon="care">
           <p>
             Viele Stadttauben haben Haare, Fäden oder Schnüre um die Zehen. Das
             kann die Füße abschnüren und Zehen absterben lassen. Bitte in den
             Karton setzen und melden.
           </p>
         </Card>
-        <Card title="Aufgeplustert und müde" eyebrow="Warnsignal" tone="violet">
+        <Card title="Aufgeplustert und müde" eyebrow="Warnsignal" tone="violet" icon="heart">
           <p>
             Eine Taube, die aufgeplustert sitzt, die Augen schließt oder kaum
             reagiert, ist oft krank oder stark geschwächt. Sie sollte nicht
             draußen bleiben.
           </p>
         </Card>
-        <Card title="Gegen Scheibe geflogen" eyebrow="Nach Aufprall" tone="blue">
+        <Card title="Gegen Scheibe geflogen" eyebrow="Nach Aufprall" tone="blue" icon="alert">
           <p>
             Auch wenn die Taube äußerlich unverletzt aussieht, kann sie nach
             einem Anflug Trauma, innere Verletzungen oder neurologische Probleme
             haben. Bitte in den Karton setzen und beobachten lassen.
           </p>
         </Card>
-        <Card title="Katze oder Hund hatte Kontakt" eyebrow="Schnell handeln" tone="accent">
+        <Card title="Katze oder Hund hatte Kontakt" eyebrow="Schnell handeln" tone="accent" icon="phone">
           <p>
             Auch kleine Wunden können gefährlich werden. Bitte in den Karton
             setzen und schnell melden.

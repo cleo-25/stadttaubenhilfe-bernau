@@ -4,6 +4,8 @@ import PageHero from "../components/PageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import MetricStrip from "../components/MetricStrip.astro";
 import CtaBand from "../components/CtaBand.astro";
+import ContentBand from "../components/ContentBand.astro";
+import LineIcon from "../components/LineIcon.astro";
 import projectsContent from "../data/projects.json";
 
 const { hero, intro, items } = projectsContent;
@@ -48,8 +50,24 @@ const references = [
   title="Projekte"
   description="Projekte der Stadttaubenhilfe Bernau: Taubenhaus im Fahrradparkhaus, Volieren, Notfälle, Beratung und Öffentlichkeitsarbeit."
   image={hero.imageSrc}
+  theme="projects"
 >
   <PageHero {...hero} />
+
+  <ContentBand
+    tone="navy"
+    eyebrow="Betreutes Stadttaubenmanagement"
+    title="Ein Ort, an dem Versorgung und Verantwortung zusammenkommen."
+    text="Das Taubenhaus im Fahrradparkhaus ist keine Kulisse. Es bündelt Versorgung, Nestkontrolle, Reinigung und schnelle Hilfe für Tiere, die auffallen."
+    imageSrc="/images/gallery/taubenhaus-fahrradparkhaus-01.jpg"
+    imageAlt="Blick in den betreuten Taubenhaus-Bereich im Fahrradparkhaus Bernau"
+    imagePosition="center 42%"
+    features={[
+      { icon: "home", title: "Fester Standort", text: "Futter, Wasser und Nistflächen liegen nicht mehr mitten auf den Fahrradständern." },
+      { icon: "care", title: "Eiertausch", text: "Eier werden gegen Attrappen ersetzt – zuverlässig und tierschutzgerecht." },
+      { icon: "hands", title: "Laufende Pflege", text: "Reinigung und Beobachtung machen Wirkung im Alltag sichtbar." }
+    ]}
+  />
 
   <section class="section section-tight">
     <div class="container">
@@ -57,6 +75,7 @@ const references = [
       <div class="project-toc">
         {items.map((item, index) => (
           <a class:list={["project-toc-card", `project-toc-card-${index % 5}`]} href={`#${item.id}`}>
+            <LineIcon name={index === 0 ? "home" : index === 1 ? "care" : index === 2 ? "alert" : index === 3 ? "hands" : "book"} />
             <span>{item.label}</span>
             <strong>{item.title}</strong>
           </a>

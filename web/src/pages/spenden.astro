@@ -4,6 +4,7 @@ import PageHero from "../components/PageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
 import Button from "../components/Button.astro";
+import ContentBand from "../components/ContentBand.astro";
 
 const donationAmounts = [
   {
@@ -27,6 +28,7 @@ const donationAmounts = [
 <BaseLayout
   title="Spenden"
   description="Stadttaubenhilfe Bernau braucht Unterstützung für Futter, tierärztliche Kosten, Reinigung, Ausstattung und das Taubenhaus im Fahrradparkhaus."
+  theme="donate"
 >
   <PageHero
     eyebrow="Unterstützen"
@@ -43,12 +45,20 @@ const donationAmounts = [
     mobileImagePosition="center 28%"
   />
 
-  <section class="campaign-banner campaign-banner-donate" aria-label="Spendenaufruf">
-    <div class="container campaign-banner-inner">
-      <strong>Aus Spenden werden Futter, Kartons, Fahrten und Termine bei Tierärzt:innen.</strong>
-      <span>Deine Spende wird Futter im Napf, eine saubere Box, ein Besuch bei Tierärzt:innen oder Material für den nächsten Einsatz.</span>
-    </div>
-  </section>
+  <ContentBand
+    tone="coral"
+    eyebrow="Direkte Wirkung in Bernau"
+    title="Deine Hilfe wird ganz praktisch."
+    text="Aus einer Spende werden Futter im Napf, eine saubere Box, eine Fahrt oder der nächste tierärztliche Termin. So bleibt Hilfe möglich, wenn sie gebraucht wird."
+    imageSrc="/images/gallery/taubenhaus-betreute-tauben-01.jpg"
+    imageAlt="Betreute Stadttauben im Taubenhaus"
+    imagePosition="center 44%"
+    features={[
+      { icon: "euro", title: "Versorgung", text: "Körnerfutter, Wasserstellen, Einstreu und Verbrauchsmaterial." },
+      { icon: "care", title: "Notfälle", text: "Medikamente, Transporte und Tierarztkosten bei akuter Hilfe." },
+      { icon: "home", title: "Taubenhaus", text: "Reinigung, Schutzkleidung und Pflege des betreuten Orts." }
+    ]}
+  />
 
   <section class="section section-tight">
     <div class="container">
@@ -56,14 +66,14 @@ const donationAmounts = [
         eyebrow="Wofür"
         title="Wofür werden Spenden gebraucht?"
       />
-      <div class="grid grid-3">
-        <Card title="Futter & Versorgung" tone="blue">
+      <div class="grid grid-3 topic-grid">
+        <Card title="Futter & Versorgung" tone="blue" icon="euro">
           <p>Geeignetes Taubenfutter, Wasserstellen, Einstreu und laufendes Verbrauchsmaterial.</p>
         </Card>
-        <Card title="Tierärzt:innen & Fundtiere" tone="green">
+        <Card title="Tierärzt:innen & Fundtiere" tone="green" icon="care">
           <p>Behandlungen, Medikamente, Pflegeplätze, Transport und akute Hilfe für verletzte Tiere.</p>
         </Card>
-        <Card title="Taubenhaus & Reinigung" tone="violet">
+        <Card title="Taubenhaus & Reinigung" tone="violet" icon="home">
           <p>Schutzkleidung, Schaber, Desinfektion, Reparaturen und Ausstattung für den betreuten Standort.</p>
         </Card>
       </div>

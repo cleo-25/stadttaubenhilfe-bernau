@@ -4,17 +4,20 @@ import Footer from "../components/Footer.astro";
 import settings from "../data/settings.json";
 import "../styles/global.css";
 import "../styles/blue-wing.css";
+import "../styles/content-system.css";
 
 interface Props {
   title: string;
   description: string;
   image?: string;
+  theme?: "emergency" | "knowledge" | "projects" | "participate" | "donate" | "contact" | "gallery" | "legal";
 }
 
 const {
   title,
   description,
-  image = "/images/projects/startbild-galerie.jpg"
+  image = "/images/projects/startbild-galerie.jpg",
+  theme = "knowledge"
 } = Astro.props;
 
 const siteUrl = Astro.site ?? new URL("https://www.stadttaubenhilfe-bernau.de");
@@ -64,7 +67,7 @@ const organizationSchema = {
     <meta name="theme-color" content="#8CB2E1" />
     <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
   </head>
-  <body>
+  <body data-page-theme={theme}>
     <Header />
     <main id="main-content">
       <slot />

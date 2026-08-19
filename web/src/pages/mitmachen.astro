@@ -4,11 +4,13 @@ import PageHero from "../components/PageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
 import CtaBand from "../components/CtaBand.astro";
+import ContentBand from "../components/ContentBand.astro";
 ---
 
 <BaseLayout
   title="Mitmachen"
   description="Ehrenamtlich bei Stadttaubenhilfe Bernau helfen: Taubenhaus, Notfälle, Fahrten, Material, Aufklärung und Spenden."
+  theme="participate"
 >
   <PageHero
     eyebrow="Ehrenamt"
@@ -24,6 +26,21 @@ import CtaBand from "../components/CtaBand.astro";
     imagePosition="center 42%"
     mobileImagePosition="center 34%"
     mobileFrameRatio="4 / 3"
+  />
+
+  <ContentBand
+    tone="navy"
+    eyebrow="Mitmachen, wie es zu dir passt"
+    title="Echte Hilfe besteht aus vielen kleinen Aufgaben."
+    text="Ob feste Stunde im Taubenhaus, Fahrt, Material oder ein Gespräch am Infostand: Verlässlichkeit macht den Unterschied – direkt hier in Bernau."
+    imageSrc="/images/gallery/vereinsarbeit-team-stand-01.jpg"
+    imageAlt="Vereinsmitglieder der Stadttaubenhilfe Bernau am Infostand"
+    imagePosition="center 42%"
+    features={[
+      { icon: "home", title: "Vor Ort", text: "Im Taubenhaus helfen, Wasser und Futter kontrollieren, reinigen." },
+      { icon: "phone", title: "Unterwegs", text: "Fundmeldungen begleiten, Fahrten übernehmen oder kurz erreichbar sein." },
+      { icon: "hands", title: "Im Hintergrund", text: "Material, Social Media und Infostände halten die Hilfe am Laufen." }
+    ]}
   />
 
   <section class="section section-tight" id="wer-wir-sind">
@@ -76,26 +93,26 @@ import CtaBand from "../components/CtaBand.astro";
         title="So kannst du helfen."
         text="Nicht jede Aufgabe findet direkt am Tier statt. Manche Menschen helfen mit Fahrten, manche mit Wäsche, Kartons, Social Media, Infoständen, Futterspenden oder handwerklichen Dingen."
       />
-      <div class="grid grid-3">
-        <Card title="Helfen am Taubenhaus" eyebrow="Vor Ort" tone="blue">
+      <div class="grid grid-3 topic-grid">
+        <Card title="Helfen am Taubenhaus" eyebrow="Vor Ort" tone="blue" icon="home">
           <p>
             Futter kontrollieren, Wasser wechseln, reinigen, Nester prüfen,
             Eier tauschen.
           </p>
         </Card>
-        <Card title="Fundtiere melden & begleiten" eyebrow="Umgebung" tone="green">
+        <Card title="Fundtiere melden & begleiten" eyebrow="Umgebung" tone="green" icon="phone">
           <p>
             Fundmeldungen weitergeben, Finder:innen erklären, was zu tun ist,
             Fahrten übernehmen oder beim Aufnehmen helfen.
           </p>
         </Card>
-        <Card title="Öffentlich erklären" eyebrow="Infostand" tone="violet">
+        <Card title="Öffentlich erklären" eyebrow="Infostand" tone="violet" icon="book">
           <p>
             Mit Menschen sprechen, Flyer auslegen, Fragen beantworten und
             erklären, warum Taubenhäuser und Eiertausch sinnvoll sind.
           </p>
         </Card>
-        <Card title="Praktisch unterstützen" eyebrow="Material" tone="accent">
+        <Card title="Praktisch unterstützen" eyebrow="Material" tone="accent" icon="box">
           <p>
             Handtücher waschen, Kartons sammeln, Transportboxen organisieren,
             Reinigungsmaterial oder geeignetes Taubenfutter spenden.
@@ -112,8 +129,8 @@ import CtaBand from "../components/CtaBand.astro";
         title="Auch Material hilft."
         text="Nicht jede Hilfe muss ein regelmäßiger Einsatz sein. Auch Sachspenden entlasten unsere Arbeit."
       />
-      <div class="grid grid-2">
-        <Card title="Materialbedarf" tone="green">
+      <div class="grid grid-2 topic-grid">
+        <Card title="Materialbedarf" tone="green" icon="box">
           <ul class="pill-list">
             <li>Taubenfutter und Sämereien</li>
             <li>Küchenrolle und Handtücher</li>
@@ -123,7 +140,7 @@ import CtaBand from "../components/CtaBand.astro";
             <li>Futter- und Wasserschalen</li>
           </ul>
         </Card>
-        <Card title="Zeit & Kontakte" tone="blue">
+        <Card title="Zeit & Kontakte" tone="blue" icon="hands">
           <ul class="pill-list">
             <li>Regelmäßige kurze Einsätze</li>
             <li>Fahrten in Bernau und Umgebung</li>

@@ -3,11 +3,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Button from "../components/Button.astro";
+import ContentBand from "../components/ContentBand.astro";
 ---
 
 <BaseLayout
   title="Kontakt"
   description="Kontakt zu Stadttaubenhilfe Bernau: Fundtier melden, Hilfe anbieten, Fragen stellen oder Unterstützung für das Taubenhaus besprechen."
+  theme="contact"
 >
   <PageHero
     eyebrow="Kontakt"
@@ -23,6 +25,21 @@ import Button from "../components/Button.astro";
     imagePosition="72% center"
     mobileImagePosition="64% 34%"
     mobileFrameRatio="4 / 3"
+  />
+
+  <ContentBand
+    tone="blue"
+    eyebrow="Gute Informationen helfen sofort"
+    title="Eine klare Meldung spart wertvolle Zeit."
+    text="Bei Fundtieren helfen uns Fundort, Foto, Zustand und eine Telefonnummer. Damit können wir ruhiger einschätzen und den nächsten sinnvollen Schritt sagen."
+    imageSrc="/images/gallery/pflegestelle-sicherung-01.jpg"
+    imageAlt="Eine Stadttaube wird für die sichere Unterbringung vorbereitet"
+    imagePosition="center 44%"
+    features={[
+      { icon: "location", title: "Fundort", text: "Bitte so genau wie möglich: Straße, Gebäude oder markanter Punkt." },
+      { icon: "camera", title: "Foto", text: "Ein Bild zeigt oft schneller, ob es ein akuter Notfall ist." },
+      { icon: "phone", title: "Erreichbar", text: "Eine Telefonnummer ermöglicht schnelle Rückfragen." }
+    ]}
   />
 
   <section class="section section-tight" id="kontaktformular">

@@ -3,6 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
+import ContentBand from "../components/ContentBand.astro";
+import LineIcon from "../components/LineIcon.astro";
 import wissenContent from "../data/wissen.json";
 
 const { hero, snacks } = wissenContent;
@@ -35,14 +37,30 @@ const pigeonTypes = [
   title="Wissen & Aufklärung"
   description="Fakten zu Stadttauben, Taubenhäusern, Hygiene und tierschutzgerechtem Eiermanagement in Bernau."
   image={hero.imageSrc}
+  theme="knowledge"
 >
   <PageHero {...hero} />
+
+  <ContentBand
+    tone="blue"
+    eyebrow="Stadttauben verstehen"
+    title="Die Stadt ist ihr Ersatzfelsen."
+    text="Wer den Ursprung und das Verhalten der Stadttauben kennt, kann Notfälle besser einordnen und Lösungen statt Vorurteile unterstützen."
+    imageSrc="/images/projects/startbild-wissen-taubenhaus.jpg"
+    imageAlt="Stadttauben am betreuten Standort in Bernau"
+    imagePosition="center 38%"
+    features={[
+      { icon: "home", title: "Nischen statt Bäume", text: "Mauern, Dächer und Parkhäuser ersetzen den natürlichen Felsraum." },
+      { icon: "book", title: "Haustier-Nachkommen", text: "Stadttauben stammen von gezüchteten Haus-, Brief- und Rassetauben ab." },
+      { icon: "care", title: "Betreuung wirkt", text: "Taubenhäuser verbinden Versorgung, Eiertausch und Reinigung an einem Ort." }
+    ]}
+  />
 
   <section class="section section-tight">
     <div class="container city-rock">
       <div>
         <span class="eyebrow">Verhalten verstehen</span>
-        <h2>Die Stadt ist ihr Ersatzfelsen.</h2>
+        <h2>Warum Gebäude für Stadttauben wie Felsen funktionieren.</h2>
       </div>
       <div class="city-rock-copy">
         <p>
@@ -67,9 +85,10 @@ const pigeonTypes = [
         title="Nicht jede Taube auf der Straße ist gleich."
         text="Wer die Unterschiede kennt, kann schneller einschätzen, welche Hilfe sinnvoll ist und welche Informationen beim Kontakt wichtig sind."
       />
-      <div class="grid grid-4">
-        {pigeonTypes.map((type) => (
+      <div class="grid grid-4 species-grid">
+        {pigeonTypes.map((type, index) => (
           <article class="soft-panel compact-panel" id={type.id}>
+            <LineIcon name={index === 0 ? "feather" : index === 1 ? "home" : index === 2 ? "book" : "care"} />
             <h2>{type.title}</h2>
             <p>{type.text}</p>
           </article>
@@ -199,9 +218,9 @@ const pigeonTypes = [
         eyebrow="Alltag"
         title="Was du sofort wissen solltest"
       />
-      <div class="grid grid-3">
+      <div class="grid grid-3 topic-grid">
         {snacks.map((snack) => (
-          <Card title={snack.title} href={snack.href} tone={snack.tone}>
+          <Card title={snack.title} href={snack.href} tone={snack.tone} icon={snack.title.includes("Boden") ? "alert" : snack.title.includes("fressen") ? "book" : "home"}>
             <p>{snack.text}</p>
           </Card>
         ))}
