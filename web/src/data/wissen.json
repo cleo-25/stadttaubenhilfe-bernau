@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "eyebrow": "Wissen",
+    "title": "Warum Stadttauben Hilfe brauchen",
+    "text": "Stadttauben sind keine Wildvögel, die freiwillig in der Stadt „leben wollen“. Sie sind Nachkommen von Haus-, Brief- und Zuchttauben. Ihre wilden Vorfahren waren Felsentauben. Darum suchen Stadttauben heute Gebäude, Brücken, Mauernischen, Dachkanten und Parkhäuser als Ersatz für Felsen.",
+    "primaryHref": "/fundtiere",
+    "primaryLabel": "Taube gefunden?",
+    "secondaryHref": "/projekte#taubenhaus",
+    "secondaryLabel": "Taubenhaus verstehen",
+    "visualLabel": "Betreute Stadttauben",
+    "imageSrc": "/images/tauben-paar.jpg",
+    "imageAlt": "Zwei betreute Stadttauben aus der Vereinsarbeit",
+    "imagePosition": "center 48%"
+  },
+  "snacks": [
+    {
+      "title": "Boden sitzende Tauben",
+      "href": "/fundtiere",
+      "tone": "blue",
+      "text": "Wenn eine Taube nicht wegfliegt, die Augen schließt oder aufgeplustert am Boden sitzt, ist sie oft krank, verletzt oder erschöpft. Bitte aufnehmen und melden."
+    },
+    {
+      "title": "Was Tauben fressen dürfen",
+      "tone": "green",
+      "text": "Geeignet sind Körner, Sämereien und Hülsenfrüchte. Brot füllt den Magen, versorgt die Taube aber schlecht."
+    },
+    {
+      "title": "Warum Vergrämung allein nicht hilft",
+      "tone": "violet",
+      "text": "Vergrämung verschiebt den Schwarm meist nur an die nächste Ecke. Ohne betreute Versorgung bleiben Hunger, Brutdruck und Verschmutzung bestehen."
+    }
+  ]
+}

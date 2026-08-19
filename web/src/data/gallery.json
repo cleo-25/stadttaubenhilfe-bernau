@@ -1,0 +1,183 @@
+{
+  "categories": [
+    {
+      "id": "vereinsarbeit",
+      "label": "Vereinsarbeit",
+      "title": "Vereinsarbeit",
+      "text": "Infostände, Gespräche, Vorbereitung und Menschen, die erklären, warum Taubenhilfe nötig ist.",
+      "image": "/images/projects/startbild-oeffentlichkeitsarbeit.jpg"
+    },
+    {
+      "id": "taubenhaus",
+      "label": "Taubenhaus",
+      "title": "Taubenhaus im Fahrradparkhaus",
+      "text": "Der betreute Standort im Fahrradparkhaus: Futter, Wasser, Nistbereiche, Reinigung und Eiertausch.",
+      "image": "/images/projects/startbild-taubenhaus.jpg"
+    },
+    {
+      "id": "volieren",
+      "label": "Volieren",
+      "title": "Volieren",
+      "text": "Plätze für Tauben, die nach Verletzung oder Behinderung nicht zurück an gefährliche Stadtstandorte können.",
+      "image": "/images/projects/startbild-voilieren.jpg"
+    },
+    {
+      "id": "pflegestellen",
+      "label": "Pflegestellen",
+      "title": "Pflegestellen & Fundtiere",
+      "text": "Gefundene Tauben brauchen oft zuerst Wärme, einen geschlossenen Karton und eine Einschätzung.",
+      "image": "/images/gallery/pflegestelle-taube-01.jpg"
+    }
+  ],
+  "items": [
+    {
+      "src": "/images/projects/startbild-oeffentlichkeitsarbeit.jpg",
+      "alt": "Ehrenamtliche mit Taube am Infostand",
+      "category": "vereinsarbeit",
+      "title": "Gespräche am Infostand",
+      "text": "Fragen beantworten, Vorurteile einordnen, konkrete Hilfe erklären.",
+      "size": "wide"
+    },
+    {
+      "src": "/images/gallery/menschen-hinter-der-hilfe.jpg",
+      "alt": "Menschen hinter der Stadttaubenhilfe Bernau",
+      "category": "vereinsarbeit",
+      "title": "Menschen hinter der Hilfe",
+      "text": "Vereinsarbeit bedeutet Zeit, Vorbereitung, Material und ansprechbare Personen.",
+      "size": "feature"
+    },
+    {
+      "src": "/images/gallery/vereinsarbeit-team-stand-01.jpg",
+      "alt": "Zwei Personen am Stand der Stadttaubenhilfe",
+      "category": "vereinsarbeit",
+      "title": "Stand vorbereiten",
+      "text": "Mit Fotos, Flyern und Beispielen wird schnell klar, warum Wegscheuchen das Problem nicht löst."
+    },
+    {
+      "src": "/images/gallery/vereinsarbeit-infostand-04.jpg",
+      "alt": "Vereinsstand mit Informationsmaterial",
+      "category": "vereinsarbeit",
+      "title": "Material am Infostand",
+      "text": "Flyer und Fotos helfen, Taubenhaus, Eiertausch und Hilfe für Fundtiere verständlich zu erklären.",
+      "size": "wide"
+    },
+    {
+      "src": "/images/projects/startbild-taubenhaus.jpg",
+      "alt": "Betreuter Bereich im Fahrradparkhaus Bernau mit Stadttauben",
+      "category": "taubenhaus",
+      "title": "Taubenhaus im Fahrradparkhaus",
+      "text": "Ein Teil des Treppenhauses wurde für die Tauben umgebaut. So bleiben die Tiere am Standort, aber nicht mehr auf den Fahrradständern.",
+      "size": "feature"
+    },
+    {
+      "src": "/images/projects/startbild-wissen-taubenhaus.jpg",
+      "alt": "Schwarm am Taubenhaus-Standort in Bernau",
+      "category": "taubenhaus",
+      "title": "Schwarm am Standort",
+      "text": "Wenn Tauben einen festen Ort annehmen, kann man Eier tauschen und den Bereich reinigen.",
+      "size": "wide"
+    },
+    {
+      "src": "/images/gallery/taubenhaus-betreute-tauben-01.jpg",
+      "alt": "Betreute Stadttauben im Taubenhaus",
+      "category": "taubenhaus",
+      "title": "Nestkontrolle",
+      "text": "Beim Kontrollgang wird geprüft, ob Eier getauscht werden müssen."
+    },
+    {
+      "src": "/images/projects/startbild-voilieren.jpg",
+      "alt": "Betreute Tauben in einer Voliere",
+      "category": "volieren",
+      "title": "Tauben nach Verletzung oder Krankheit",
+      "text": "Hier leben Tauben, die nach Verletzung, Krankheit oder Behinderung nicht zurück auf die Straße können.",
+      "size": "feature"
+    },
+    {
+      "src": "/images/gallery/volieren-aussen-01.jpg",
+      "alt": "Grüne Außenanlage mit Voliere",
+      "category": "volieren",
+      "title": "Außenbereich",
+      "text": "Tauben mit besonderem Bedarf brauchen Orte ohne Verkehr, Spikes, Netze und ständige Nahrungssuche.",
+      "size": "wide"
+    },
+    {
+      "src": "/images/gallery/volieren-betreuung-01.jpg",
+      "alt": "Person mit Futterschale an einer Voliere",
+      "category": "volieren",
+      "title": "Versorgung in der Voliere",
+      "text": "Beim Füttern fällt schnell auf, wenn eine Taube Hilfe braucht."
+    },
+    {
+      "src": "/images/gallery/volieren-tauben-01.jpg",
+      "alt": "Tauben sitzen an einer betreuten Voliere",
+      "category": "volieren",
+      "title": "Blick auf jedes Tier",
+      "text": "Wir achten darauf, ob eine Taube frisst, sich normal bewegt."
+    },
+    {
+      "src": "/images/gallery/volieren-tauben-02.jpg",
+      "alt": "Mehrere Tauben am Boden einer Voliere",
+      "category": "volieren",
+      "title": "Futterstelle",
+      "text": "Die Versorgung unserer Volieren benötigt viel Zeit, finanzielle Mittel und Engagement."
+    },
+    {
+      "src": "/images/gallery/volieren-tauben-03.jpg",
+      "alt": "Tauben sitzen an einer roten Voliere",
+      "category": "volieren",
+      "title": "Dauerhafte Unterbringung",
+      "text": "Manche Tiere können nach Krankheit oder Verletzung nicht mehr an einen Stadtstandort zurück."
+    },
+    {
+      "src": "/images/gallery/pflegestelle-tauben-01.jpg",
+      "alt": "Drei Tauben sitzen auf einer Decke in einer Pflegestelle",
+      "category": "pflegestellen",
+      "title": "Zeit für Einschätzung",
+      "text": "In der Pflegestelle wird geprüft, ob das Tier unverletzt ist, frisst, gesunden Kot absetzt oder weitere Behandlung braucht.",
+      "size": "feature"
+    },
+    {
+      "src": "/images/gallery/pflegestelle-taube-01.jpg",
+      "alt": "Helle Taube wird vorsichtig gehalten",
+      "category": "pflegestellen",
+      "title": "Fundtier in der Hand",
+      "text": "Viele Fundtiere müssen unseren vogelkundigen Tierärzt:innen vorgestellt werden.",
+      "size": "wide"
+    },
+    {
+      "src": "/images/gallery/pflegestelle-jungtier-01.jpg",
+      "alt": "Jungtier liegt warm auf einem Tuch",
+      "category": "pflegestellen",
+      "title": "Jungtier wärmen",
+      "text": "Jungtiere brauchen zuerst Wärme."
+    },
+    {
+      "src": "/images/gallery/pflegestelle-box-01.jpg",
+      "alt": "Taube sitzt geschützt in einer Transportbox",
+      "category": "pflegestellen",
+      "title": "Karton oder Box",
+      "text": "Eine geschlossene Box verhindert weitere Verletzungen nach dem Fund."
+    },
+    {
+      "src": "/images/gallery/pflegestelle-jungtier-03.jpg",
+      "alt": "Jungtier wird vorsichtig in den Händen gehalten",
+      "category": "pflegestellen",
+      "title": "Jungtierhilfe",
+      "text": "Küken aus einer Vergrämungsaktion in unseren sicheren Händen."
+    },
+    {
+      "src": "/images/gallery/pflegestelle-verletzung-01.jpg",
+      "alt": "Verletzte Taube wird nach einem Fund versorgt",
+      "category": "pflegestellen",
+      "title": "Verletzung versorgen",
+      "text": "Bei Blut, Schnur, Katzenkontakt oder hängendem Flügel zählt jede Stunde."
+    },
+    {
+      "src": "/images/gallery/pflegestelle-taube-05.jpg",
+      "alt": "Weiße Taube sitzt auf einem Arm in einer Pflegestelle",
+      "category": "pflegestellen",
+      "title": "Nach der Erstversorgung",
+      "text": "Pflegestellen engagieren sich mit viel Wissen und Einsatz für verletzte Tiere."
+    }
+  ]
+}

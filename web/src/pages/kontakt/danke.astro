@@ -1,0 +1,23 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+---
+
+<BaseLayout
+  title="Danke für deine Nachricht"
+  description="Danke für deine Nachricht an Stadttaubenhilfe Bernau."
+>
+  <PageHero
+    eyebrow="Kontakt"
+    title="Danke für deine Nachricht."
+    text="Wir melden uns, sobald es möglich ist. Bei Fundtieren bitte zusätzlich telefonisch oder über Social Media versuchen, wenn das Tier verletzt ist oder noch draußen sitzt."
+    primaryHref="/"
+    primaryLabel="Zur Startseite"
+    secondaryHref="/fundtiere"
+    secondaryLabel="Was sofort tun?"
+    visualLabel="Taubenhaus Bernau"
+    imageSrc="/images/taubenhaus-voliere.jpg"
+    imageAlt="Betreute Stadttauben an einem Taubenhaus"
+    imagePosition="center 48%"
+  />
+</BaseLayout>

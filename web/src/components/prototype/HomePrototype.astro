@@ -1,0 +1,1005 @@
+---
+const navGroups = [
+  {
+    label: "Unser Verein",
+    href: "/mitmachen",
+    items: [
+      ["Wer wir sind", "/mitmachen#wer-wir-sind"],
+      ["Vorstand und Satzung", "/mitmachen#vorstand"],
+      ["Visionen und Ziele", "/mitmachen#ziele"],
+      ["Mitgliedschaft beantragen", "/mitmachen#mitgliedschaft"]
+    ]
+  },
+  {
+    label: "Unsere Arbeit",
+    href: "/projekte",
+    items: [
+      ["Stadttaubenmanagement", "/projekte#taubenhaus"],
+      ["Tauben-Notfälle", "/projekte#notfaelle"],
+      ["Unsere Projekte", "/projekte"],
+      ["Handicapvolieren", "/projekte#volieren"],
+      ["Taubenhaus am Bahnhof Bernau", "/projekte#taubenhaus"],
+      ["Bernau in Zahlen", "/projekte#zahlen"],
+      ["Referenzen", "/projekte#referenzen"]
+    ]
+  },
+  {
+    label: "Taube gefunden?",
+    href: "/fundtiere",
+    items: [
+      ["Schnellkontakt", "/schnellkontakt"],
+      ["1. Hilfe Maßnahmen", "/fundtiere#checkliste"],
+      ["Die richtige Unterbringung", "/fundtiere#checkliste"],
+      ["Kontakt aufnehmen", "/kontakt"]
+    ]
+  },
+  {
+    label: "Taube gleich Taube?",
+    href: "/wissen",
+    items: [
+      ["Wildtaube", "/wissen#wildtaube"],
+      ["Stadttaube", "/wissen#stadttaube"],
+      ["Brieftaube", "/wissen#brieftaube"],
+      ["Rassetaube", "/wissen#rassetaube"]
+    ]
+  },
+  {
+    label: "Verein unterstützen",
+    href: "/mitmachen",
+    items: [
+      ["Mitgliedschaft", "/mitmachen#mitgliedschaft"],
+      ["Ehrenamtlich helfen", "/mitmachen#ehrenamt"],
+      ["Geldspenden", "/spenden"],
+      ["Sachspenden", "/spenden#sachspenden"],
+      ["Patenschaften", "/spenden#patenschaften"]
+    ]
+  }
+];
+
+const stats = [
+  { value: "700+", label: "Eier pro Jahr gegen Attrappen getauscht" },
+  { value: "170+", label: "Tauben am betreuten Standort" },
+  { value: "3x", label: "Nestkontrolle und Eiertausch pro Woche" },
+  { value: "4-5 h", label: "Reinigung pro Woche im Taubenhaus" }
+];
+
+const pigeonHouseFacts = [
+  "Taubenhaus im Fahrradparkhaus am Bahnhof Bernau",
+  "Futter, Wasser, Nistflächen und regelmäßige Reinigung",
+  "Eiertausch gegen Attrappen statt unkontrollierter Vermehrung",
+  "Abstimmung mit Stadt, Veterinäramt und Umweltamt"
+];
+---
+
+<a class="prototype-skip" href="#prototype-main">Zum Inhalt springen</a>
+
+<div class="prototype-home">
+  <header class="prototype-header">
+    <div class="prototype-shell prototype-nav">
+      <a class="prototype-brand" href="/" aria-label="Stadttaubenhilfe Bernau">
+        <img src="/images/logo-stadttaubenhilfe.png" alt="" />
+        <span>
+          <strong>Stadttaubenhilfe</strong>
+          <small>Bernau b. Berlin</small>
+        </span>
+      </a>
+
+      <nav class="prototype-desktop-nav" aria-label="Hauptnavigation">
+        {navGroups.map((group) => (
+          <details class="prototype-nav-group">
+            <summary>{group.label}</summary>
+            <div class="prototype-submenu">
+              {group.items.map(([label, href]) => <a href={href}>{label}</a>)}
+            </div>
+          </details>
+        ))}
+        <a href="/kontakt">Kontakt</a>
+      </nav>
+
+      <div class="prototype-header-actions">
+        <a class="prototype-donate-button" href="/spenden">Spenden</a>
+
+        <details class="prototype-menu-drawer">
+          <summary aria-label="Menü öffnen">
+            <span></span>
+            <span></span>
+            <span></span>
+          </summary>
+          <nav class="prototype-drawer-panel" aria-label="Mobile Navigation">
+            {navGroups.map((group) => (
+              <section>
+                <h2>{group.label}</h2>
+                <div>
+                  {group.items.map(([label, href]) => <a href={href}>{label}</a>)}
+                </div>
+              </section>
+            ))}
+            <section>
+              <h2>Direkt</h2>
+              <div>
+                <a href="/spenden">Spenden</a>
+                <a href="/kontakt">Kontakt</a>
+                <a href="/schnellkontakt">Schnellkontakt</a>
+              </div>
+            </section>
+          </nav>
+        </details>
+      </div>
+    </div>
+  </header>
+
+  <main id="prototype-main">
+    <section class="prototype-hero">
+      <div class="prototype-shell prototype-hero-grid">
+        <div class="prototype-hero-copy">
+          <img
+            class="prototype-hero-seal"
+            src="/images/logo-stadttaubenhilfe.png"
+            alt="Logo der Stadttaubenhilfe Bernau"
+          />
+          <h1>Hilfe für Stadttauben in Bernau und Barnim.</h1>
+          <blockquote>
+            <p>
+              “Die Größe und den moralischen Fortschritt einer Nation kann man daran messen,
+              wie sie ihre Tiere behandelt.”
+            </p>
+            <cite>Mahatma Gandhi</cite>
+          </blockquote>
+          <p class="prototype-intro">
+            Wir helfen verletzten, kranken und hungernden Stadttauben im Raum
+            Bernau/Barnim.
+          </p>
+          <div class="prototype-actions">
+            <a class="prototype-button prototype-button-primary" href="/schnellkontakt">Taube gefunden?</a>
+          </div>
+        </div>
+
+        <figure class="prototype-hero-photo">
+          <img
+            src="/images/tauben-paar.jpg"
+            alt="Zwei Stadttauben in einer Pflegestelle"
+            loading="eager"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </section>
+
+    <section class="prototype-section prototype-numbers" id="zahlen" aria-labelledby="zahlen-title">
+      <a class="prototype-shell prototype-numbers-card" href="/projekte#zahlen">
+        <div class="prototype-numbers-copy">
+          <p class="prototype-label">Stadttaubenhilfe in Zahlen</p>
+          <h2 id="zahlen-title">Was die Arbeit im Taubenhaus bewirkt.</h2>
+          <p>
+            Kontrolle, Reinigung und Eiertausch machen aus einem Konfliktort
+            einen betreuten Standort. Die Zahlen zeigen, wie viel Arbeit dahintersteckt.
+          </p>
+          <span class="prototype-text-link">Alle Zahlen ansehen</span>
+        </div>
+
+        <figure class="prototype-numbers-photo">
+          <img
+            src="/images/gallery/taubenhaus-betreute-tauben-01.jpg"
+            alt="Betreute Tauben im Taubenhaus"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>Betreute Tauben im Taubenhaus</figcaption>
+        </figure>
+
+        <div class="prototype-stat-panel" aria-label="Kennzahlen der Stadttaubenhilfe Bernau">
+          <article class="prototype-stat-feature">
+            <span>Eiertausch</span>
+            <strong>700+</strong>
+            <p>Eier pro Jahr werden im Taubenhaus gegen Attrappen getauscht.</p>
+            <div class="prototype-egg-line" aria-hidden="true">
+              <i></i><i></i><i></i><i></i><i></i><i></i>
+            </div>
+          </article>
+          <div class="prototype-stat-grid">
+            {stats.slice(1).map((stat) => (
+              <article class="prototype-stat">
+                <strong>{stat.value}</strong>
+                <span>{stat.label}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </a>
+    </section>
+
+    <section class="prototype-section prototype-pigeon-house" id="taubenhaus">
+      <div class="prototype-shell prototype-house-grid">
+        <div class="prototype-house-copy">
+          <p class="prototype-label">Taubenhaus im Fahrradparkhaus</p>
+          <h2>Ein fester Ort statt Verdrängung.</h2>
+          <p>
+            Im Fahrradparkhaus am Bahnhof Bernau betreuen wir einen festen Standort
+            mit Nistflächen, Futter, Wasser, Reinigung und Eiertausch. Dadurch
+            bleiben die Tiere an einem kontrollierten Ort und Hilfe wird planbar.
+          </p>
+          <ul class="prototype-facts">
+            {pigeonHouseFacts.map((fact) => <li>{fact}</li>)}
+          </ul>
+        </div>
+
+        <figure class="prototype-house-photo">
+          <img
+            src="/images/projects/startbild-taubenhaus.jpg"
+            alt="Fahrradparkhaus Bernau mit dem betreuten Taubenhaus"
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer class="prototype-footer">
+    <div class="prototype-shell prototype-footer-grid">
+      <div>
+        <img src="/images/logo-stadttaubenhilfe.png" alt="" />
+        <strong>Stadttaubenhilfe Bernau</strong>
+        <p>Taubenhaus, Eiertausch, Fundtiere und Aufklärung in Bernau bei Berlin.</p>
+      </div>
+      <nav aria-label="Footer-Navigation">
+        <a href="/projekte">Unsere Arbeit</a>
+        <a href="/schnellkontakt">Taube gefunden?</a>
+        <a href="/wissen">Wissen</a>
+        <a href="/mitmachen">Verein unterstützen</a>
+        <a href="/spenden">Spenden</a>
+        <a href="/kontakt">Kontakt</a>
+      </nav>
+      <div>
+        <strong>Kontakt</strong>
+        <p>kontakt@stadttaubenhilfe-bernau.de</p>
+        <p>Instagram: stadttaubenhilfe.bernau</p>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<style>
+  .prototype-home {
+    --brand: #8cb2e1;
+    --brand-soft: #e5f1ff;
+    --brand-quiet: #f4f9ff;
+    --logo: #5d91a8;
+    --logo-dark: #2f6f95;
+    --ink: #12324a;
+    --muted: #4f6f84;
+    --line: rgba(93, 145, 168, 0.28);
+    --surface: #ffffff;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding-top: 82px;
+    scroll-padding-top: 98px;
+    background:
+      radial-gradient(circle at 88% 8%, rgba(140, 178, 225, 0.55), transparent 34rem),
+      linear-gradient(180deg, #f8fcff 0%, #eef7ff 46%, #f7fbff 100%);
+    color: var(--ink);
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+  }
+
+  .prototype-home :where(h1, h2, h3, p) {
+    margin: 0;
+  }
+
+  .prototype-home :where(h1, h2, h3) {
+    color: var(--logo-dark);
+    font-weight: 900;
+    letter-spacing: -0.026em;
+    text-wrap: balance;
+  }
+
+  .prototype-home :where(p, li) {
+    text-wrap: pretty;
+  }
+
+  .prototype-skip {
+    position: fixed;
+    left: 16px;
+    top: 16px;
+    z-index: 100;
+    transform: translateY(-140%);
+    border-radius: 999px;
+    background: var(--ink);
+    color: white;
+    padding: 10px 14px;
+    font-weight: 850;
+  }
+
+  .prototype-skip:focus {
+    transform: translateY(0);
+  }
+
+  .prototype-shell {
+    width: min(calc(100% - 44px), 1320px);
+    margin-inline: auto;
+  }
+
+  .prototype-header {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 40;
+    border-bottom: 1px solid var(--line);
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(18px);
+  }
+
+  .prototype-nav {
+    display: grid;
+    min-height: 82px;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .prototype-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--logo-dark);
+  }
+
+  .prototype-brand img {
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    background: white;
+    object-fit: contain;
+  }
+
+  .prototype-brand strong,
+  .prototype-brand small {
+    display: block;
+    line-height: 1.04;
+  }
+
+  .prototype-brand strong {
+    font-size: 1.08rem;
+    font-weight: 900;
+  }
+
+  .prototype-brand small {
+    margin-top: 4px;
+    color: var(--logo);
+    font-weight: 800;
+  }
+
+  .prototype-desktop-nav {
+    display: flex;
+    min-width: 0;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .prototype-desktop-nav > a,
+  .prototype-nav-group summary {
+    display: inline-flex;
+    min-height: 38px;
+    align-items: center;
+    border-radius: 999px;
+    color: var(--ink);
+    cursor: pointer;
+    font-size: clamp(0.76rem, 0.82vw, 0.88rem);
+    font-weight: 820;
+    list-style: none;
+    padding: 8px 10px;
+    white-space: nowrap;
+  }
+
+  .prototype-nav-group {
+    position: relative;
+  }
+
+  .prototype-nav-group summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .prototype-nav-group summary::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin-left: 8px;
+    border-bottom: 2px solid currentColor;
+    border-right: 2px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+  }
+
+  .prototype-desktop-nav > a:hover,
+  .prototype-nav-group:hover summary,
+  .prototype-nav-group[open] summary {
+    background: rgba(140, 178, 225, 0.2);
+  }
+
+  .prototype-submenu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    display: grid;
+    min-width: 250px;
+    gap: 3px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 10px;
+    box-shadow: 0 14px 32px rgba(18, 50, 74, 0.1);
+  }
+
+  .prototype-submenu a {
+    border-radius: 10px;
+    color: var(--ink);
+    font-weight: 760;
+    padding: 9px 10px;
+  }
+
+  .prototype-submenu a:hover {
+    background: var(--brand-soft);
+  }
+
+  .prototype-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .prototype-donate-button,
+  .prototype-button,
+  .prototype-text-link {
+    display: inline-flex;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    font-weight: 880;
+    transition: transform 180ms ease, background-color 180ms ease;
+  }
+
+  .prototype-donate-button {
+    background: var(--brand);
+    color: #153b57;
+    padding: 12px 20px;
+  }
+
+  .prototype-button-primary {
+    background: var(--logo-dark);
+    color: white;
+    padding: 13px 20px;
+  }
+
+  .prototype-text-link {
+    width: fit-content;
+    margin-top: 24px;
+    background: rgba(140, 178, 225, 0.22);
+    color: var(--logo-dark);
+    padding: 10px 16px;
+  }
+
+  .prototype-donate-button:hover,
+  .prototype-button:hover,
+  .prototype-text-link:hover {
+    transform: translateY(-2px);
+  }
+
+  .prototype-menu-drawer {
+    display: none;
+    position: relative;
+  }
+
+  .prototype-menu-drawer > summary {
+    display: grid;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    gap: 5px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .prototype-menu-drawer > summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .prototype-menu-drawer > summary span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 999px;
+    background: var(--logo-dark);
+  }
+
+  .prototype-drawer-panel {
+    position: fixed;
+    top: 94px;
+    right: max(22px, calc((100vw - 1320px) / 2));
+    display: grid;
+    width: min(440px, calc(100vw - 28px));
+    max-height: calc(100vh - 120px);
+    gap: 18px;
+    overflow: auto;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.98);
+    padding: 22px;
+    box-shadow: 0 24px 54px rgba(18, 50, 74, 0.18);
+  }
+
+  .prototype-drawer-panel section {
+    display: grid;
+    gap: 8px;
+  }
+
+  .prototype-drawer-panel h2 {
+    font-size: 1.05rem;
+  }
+
+  .prototype-drawer-panel section div {
+    display: grid;
+    gap: 4px;
+  }
+
+  .prototype-drawer-panel a {
+    border-radius: 11px;
+    color: var(--ink);
+    font-weight: 800;
+    padding: 9px 10px;
+  }
+
+  .prototype-drawer-panel a:hover {
+    background: var(--brand-soft);
+  }
+
+  .prototype-label {
+    color: var(--logo);
+    font-weight: 880;
+  }
+
+  .prototype-hero {
+    border-bottom: 1px solid var(--line);
+    background:
+      radial-gradient(circle at 78% 18%, rgba(140, 178, 225, 0.45), transparent 26rem),
+      linear-gradient(115deg, #ffffff 0%, #f3f9ff 48%, rgba(140, 178, 225, 0.34) 100%);
+  }
+
+  .prototype-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(420px, 0.9fr);
+    align-items: center;
+    gap: clamp(40px, 6vw, 86px);
+    padding: clamp(50px, 6vw, 78px) 0;
+  }
+
+  .prototype-hero-seal {
+    width: clamp(92px, 9vw, 142px);
+    height: clamp(92px, 9vw, 142px);
+    margin-bottom: 22px;
+    border: 1px solid rgba(93, 145, 168, 0.24);
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 16px 34px rgba(47, 111, 149, 0.12);
+    object-fit: contain;
+    padding: 4px;
+  }
+
+  .prototype-hero h1 {
+    max-width: 13ch;
+    color: var(--logo-dark);
+    font-size: clamp(3rem, 4.75vw, 5rem);
+    line-height: 0.98;
+  }
+
+  .prototype-hero blockquote {
+    max-width: 52ch;
+    margin-top: 28px;
+    color: var(--ink);
+  }
+
+  .prototype-hero blockquote p {
+    font-family: "Bradley Hand", "Segoe Print", "Comic Sans MS", cursive;
+    font-size: clamp(1.1rem, 1.55vw, 1.55rem);
+    font-weight: 680;
+    line-height: 1.42;
+  }
+
+  .prototype-hero cite {
+    display: block;
+    margin-top: 10px;
+    color: var(--logo);
+    font-style: normal;
+    font-weight: 880;
+  }
+
+  .prototype-intro {
+    max-width: 48ch;
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: clamp(1.06rem, 1.28vw, 1.22rem);
+    font-weight: 720;
+    line-height: 1.55;
+  }
+
+  .prototype-actions {
+    display: flex;
+    margin-top: 28px;
+  }
+
+  .prototype-hero-photo {
+    position: relative;
+    overflow: hidden;
+    height: clamp(420px, 38vw, 550px);
+    margin: 0;
+    border-radius: 16px;
+    background: var(--brand-soft);
+  }
+
+  .prototype-hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 16%;
+  }
+
+  .prototype-hero-photo::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    height: 34%;
+    background: linear-gradient(180deg, rgba(244, 249, 255, 0), rgba(244, 249, 255, 0.86));
+  }
+
+  .prototype-section {
+    padding: clamp(58px, 7vw, 96px) 0;
+  }
+
+  .prototype-numbers {
+    background:
+      linear-gradient(180deg, #f7fbff 0%, #edf6ff 100%);
+  }
+
+  .prototype-numbers-card {
+    display: grid;
+    grid-template-columns: minmax(290px, 0.74fr) minmax(260px, 0.62fr) minmax(350px, 0.88fr);
+    gap: clamp(20px, 3vw, 42px);
+    align-items: center;
+    border: 1px solid rgba(93, 145, 168, 0.22);
+    border-radius: 18px;
+    background:
+      linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(230, 243, 255, 0.88));
+    color: inherit;
+    padding: clamp(20px, 3vw, 36px);
+  }
+
+  .prototype-numbers-card:hover .prototype-text-link {
+    transform: translateY(-2px);
+    background: rgba(140, 178, 225, 0.32);
+  }
+
+  .prototype-numbers-photo {
+    position: relative;
+    height: 430px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 16px;
+    background: var(--brand-soft);
+  }
+
+  .prototype-numbers-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .prototype-numbers-photo figcaption {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    border-radius: 12px;
+    background: rgba(18, 50, 74, 0.78);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 800;
+    padding: 10px 12px;
+  }
+
+  .prototype-numbers-copy h2,
+  .prototype-house-copy h2 {
+    margin-top: 8px;
+    color: var(--logo-dark);
+    font-size: clamp(2.05rem, 3.7vw, 4rem);
+    line-height: 1.03;
+  }
+
+  .prototype-numbers-copy p,
+  .prototype-house-copy > p {
+    margin-top: 18px;
+    color: var(--muted);
+    font-size: 1.06rem;
+    line-height: 1.65;
+  }
+
+  .prototype-stat-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .prototype-stat-panel {
+    display: grid;
+    gap: 12px;
+  }
+
+  .prototype-stat-feature {
+    overflow: hidden;
+    border-radius: 16px;
+    background:
+      radial-gradient(circle at 88% 20%, rgba(255, 255, 255, 0.34), transparent 9rem),
+      linear-gradient(135deg, #2f6f95, #8cb2e1);
+    color: white;
+    padding: clamp(22px, 3vw, 32px);
+  }
+
+  .prototype-stat-feature > span {
+    display: block;
+    color: rgba(255, 255, 255, 0.82);
+    font-weight: 900;
+  }
+
+  .prototype-stat-feature strong {
+    display: block;
+    margin-top: 8px;
+    font-size: clamp(4.2rem, 8vw, 7rem);
+    font-weight: 950;
+    letter-spacing: -0.04em;
+    line-height: 0.86;
+  }
+
+  .prototype-stat-feature p {
+    max-width: 24ch;
+    margin-top: 14px;
+    color: rgba(255, 255, 255, 0.92);
+    font-weight: 780;
+    line-height: 1.35;
+  }
+
+  .prototype-egg-line {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 7px;
+    margin-top: 24px;
+  }
+
+  .prototype-egg-line i {
+    display: block;
+    aspect-ratio: 0.72;
+    border-radius: 50% 50% 46% 46%;
+    background: rgba(255, 255, 255, 0.84);
+    transform: rotate(-10deg);
+  }
+
+  .prototype-egg-line i:nth-child(even) {
+    opacity: 0.55;
+    transform: rotate(9deg);
+  }
+
+  .prototype-stat {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+    gap: 14px;
+    border-radius: 13px;
+    background: rgba(255, 255, 255, 0.86);
+    padding: 14px 16px;
+  }
+
+  .prototype-stat strong {
+    display: block;
+    color: var(--logo-dark);
+    font-size: clamp(2.1rem, 3vw, 3rem);
+    font-weight: 900;
+    letter-spacing: -0.03em;
+    line-height: 0.9;
+  }
+
+  .prototype-stat span {
+    display: block;
+    color: var(--muted);
+    font-weight: 720;
+    line-height: 1.32;
+  }
+
+  .prototype-pigeon-house {
+    background: linear-gradient(135deg, rgba(140, 178, 225, 0.2), rgba(255, 255, 255, 0.9));
+  }
+
+  .prototype-house-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1fr);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+  }
+
+  .prototype-house-photo {
+    height: 480px;
+    margin: 0;
+    overflow: hidden;
+    border-radius: 16px;
+  }
+
+  .prototype-house-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+  }
+
+  .prototype-facts {
+    display: grid;
+    gap: 10px;
+    margin: 26px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .prototype-facts li {
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.72);
+    color: var(--ink);
+    font-weight: 720;
+    padding: 12px 14px;
+  }
+
+  .prototype-footer {
+    background: var(--logo-dark);
+    color: #f2f8fc;
+    padding: 38px 0;
+  }
+
+  .prototype-footer-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr 1fr;
+    gap: 28px;
+  }
+
+  .prototype-footer img {
+    width: 62px;
+    height: 62px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: white;
+    object-fit: contain;
+  }
+
+  .prototype-footer strong {
+    display: block;
+    color: white;
+  }
+
+  .prototype-footer p,
+  .prototype-footer a {
+    color: #e5f2f8;
+  }
+
+  .prototype-footer nav {
+    display: grid;
+    gap: 8px;
+  }
+
+  @media (max-width: 1180px) {
+    .prototype-nav {
+      grid-template-columns: auto auto;
+    }
+
+    .prototype-desktop-nav {
+      display: none;
+    }
+
+    .prototype-menu-drawer {
+      display: block;
+    }
+
+    .prototype-hero-grid,
+    .prototype-numbers-card,
+    .prototype-house-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prototype-hero-photo {
+      height: 500px;
+    }
+
+    .prototype-numbers-photo,
+    .prototype-house-photo {
+      height: 390px;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .prototype-home {
+      padding-top: 74px;
+      scroll-padding-top: 88px;
+    }
+
+    .prototype-shell {
+      width: min(calc(100% - 28px), 560px);
+    }
+
+    .prototype-nav {
+      min-height: 74px;
+    }
+
+    .prototype-brand img {
+      width: 56px;
+      height: 56px;
+    }
+
+    .prototype-brand strong {
+      font-size: 1.02rem;
+    }
+
+    .prototype-donate-button {
+      display: none;
+    }
+
+    .prototype-drawer-panel {
+      top: 84px;
+      right: 14px;
+    }
+
+    .prototype-hero-grid {
+      gap: 28px;
+      padding: 34px 0 44px;
+    }
+
+    .prototype-hero h1 {
+      max-width: 11ch;
+      font-size: clamp(2.55rem, 11.4vw, 3.75rem);
+    }
+
+    .prototype-hero-photo {
+      height: 360px;
+    }
+
+    .prototype-stat-grid,
+    .prototype-footer-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .prototype-stat {
+      grid-template-columns: 1fr;
+    }
+
+    .prototype-numbers-photo,
+    .prototype-house-photo {
+      height: 300px;
+    }
+
+    .prototype-section {
+      padding: 48px 0;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .prototype-home *,
+    .prototype-home *::before,
+    .prototype-home *::after {
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+      animation-duration: 0.01ms !important;
+    }
+  }
+</style>

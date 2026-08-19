@@ -1,0 +1,74 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import settings from "../data/settings.json";
+import "../styles/global.css";
+import "../styles/blue-wing.css";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const {
+  title,
+  description,
+  image = "/images/projects/startbild-galerie.jpg"
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL("https://www.stadttaubenhilfe-bernau.de");
+const canonical = new URL(Astro.url.pathname, siteUrl);
+const fullTitle = title.includes("Stadttaubenhilfe Bernau")
+  ? title
+  : `${title} | Stadttaubenhilfe Bernau`;
+const absoluteImage = new URL(image, siteUrl);
+const brand = settings.brand;
+const contact = settings.contact;
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: brand.fullName,
+  url: siteUrl.toString(),
+  email: contact.email,
+  telephone: contact.phone,
+  logo: new URL(brand.logo, siteUrl).toString(),
+  sameAs: [
+    contact.facebookUrl,
+    contact.instagramUrl
+  ]
+};
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="canonical" href={canonical.toString()} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Stadttaubenhilfe Bernau" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical.toString()} />
+    <meta property="og:image" content={absoluteImage.toString()} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="theme-color" content="#8CB2E1" />
+    <script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
+  </head>
+  <body>
+    <Header />
+    <main id="main-content">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,42 @@
+{
+  "hero": {
+    "eyebrow": "Schnellhilfe",
+    "title": "Taube gefunden?",
+    "text": "Wenn eine Taube nicht wegfliegt, aufgeplustert sitzt, die Augen schließt, blutet, einen Flügel hängen lässt oder sich anfassen lässt, braucht sie wahrscheinlich Hilfe. Bitte setz sie in einen Karton mit Luftlöchern. Aus einem Handtuch oder Küchenpapier ein Nest zusammenrollen. Kein Wasser in den Schnabel geben. Kein Futter hineinstopfen. Dann melde dich mit Foto, Fundort und Telefonnummer.",
+    "primaryHref": "/kontakt",
+    "primaryLabel": "Fundtier melden",
+    "secondaryHref": "#checkliste",
+    "secondaryLabel": "Was sofort tun?",
+    "visualLabel": "Fundtier nach einem Fund",
+    "imageSrc": "/images/projects/startbild-fundtiere.jpg",
+    "imageAlt": "Taube nach einem Fund auf einer Hand",
+    "imagePosition": "center 42%"
+  },
+  "alert": {
+    "eyebrow": "Erster Schritt",
+    "title": "Erst sichern. Nichts einflößen. Dann melden.",
+    "text": "Viele Fundtauben sind verletzt, unterkühlt, erschöpft oder im Schock. Draußen werden sie schnell von Krähen, Katzen, Hunden oder Autos erwischt. Ein geschlossener Karton ist oft der wichtigste erste Schritt."
+  },
+  "checklistIntro": {
+    "title": "2-Minuten-Checkliste",
+    "text": "Diese Schritte helfen fast immer und vermeiden Fehler, die einem geschwächten Tier schaden können."
+  },
+  "checklist": [
+    {
+      "title": "Karton holen",
+      "text": "Nimm einen Karton mit Luftlöchern. Baue aus einem Handtuch, Schal oder einer Küchenrolle ein Handtuchnest."
+    },
+    {
+      "title": "Taube sichern",
+      "text": "Nähere dich langsam. Wenn nötig, wirf vorsichtig ein Tuch oder eine Jacke über die Taube und setz sie in den Karton. Danach den Karton schließen."
+    },
+    {
+      "title": "Nicht füttern, nichts einflößen",
+      "text": "Bitte kein Wasser in den Schnabel geben, da das Wasser in die Luftröhre gelangen kann. Auch Futter erst nach Rücksprache anbieten."
+    },
+    {
+      "title": "Melden",
+      "text": "Schick uns Fundort, Uhrzeit, Foto, Zustand und deine Telefonnummer. Schreib dazu, ob die Taube schon im Karton ist."
+    }
+  ]
+}

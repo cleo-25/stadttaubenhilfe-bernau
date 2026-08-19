@@ -1,0 +1,84 @@
+---
+import settings from "../data/settings.json";
+
+interface Props {
+  mainId?: string;
+}
+
+const { mainId = "main-content" } = Astro.props;
+
+const brand = settings.brand;
+const navItems = [
+  { label: "Unsere Hilfe", href: "/projekte" },
+  { label: "Taubenwissen", href: "/wissen" },
+  { label: "Über uns", href: "/mitmachen#wer-wir-sind" },
+  { label: "Aktuelles", href: "/kontakt" }
+];
+
+const currentPath = Astro.url.pathname.replace(/\/$/, "") || "/";
+const isActive = (href: string) => {
+  const cleanHref = href.split("#")[0] || "/";
+  return currentPath === cleanHref || (currentPath === "/taubenhaus" && cleanHref === "/projekte");
+};
+---
+
+<a class="skip-link" href={`#${mainId}`}>Zum Inhalt springen</a>
+<div class="emergency-strip">
+  <div class="container">
+    <strong><span aria-hidden="true">△</span> Taube in Not?</strong>
+    <span>Schnell handeln, Leben retten.</span>
+    <a href="/fundtiere">Erste Hilfe ansehen →</a>
+  </div>
+</div>
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="/" aria-label="Startseite Stadttaubenhilfe Bernau">
+      <span class="brand-mark" aria-hidden="true">
+        <img class="brand-logo" src="/images/logo-stadttaubenhilfe-restored-v2.png" alt="" />
+      </span>
+      <span>
+        <strong>{brand.name}</strong>
+        <small>Bernau b. Berlin</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      type="button"
+      aria-label="Navigation öffnen"
+      aria-expanded="false"
+      data-menu-toggle
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" aria-label="Hauptnavigation" data-site-nav>
+      {navItems.map((item, index) => (
+        <a href={item.href} aria-current={isActive(item.href) ? "page" : undefined}>
+          {item.label}{index < 3 && <span class="nav-chevron" aria-hidden="true">⌄</span>}
+        </a>
+      ))}
+      <a class="site-nav-donate" href="/spenden" aria-current={isActive("/spenden") ? "page" : undefined}>Jetzt helfen <span aria-hidden="true">♥</span></a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector("[data-menu-toggle]");
+  const nav = document.querySelector("[data-site-nav]");
+
+  toggle?.addEventListener("click", () => {
+    const isOpen = toggle.getAttribute("aria-expanded") === "true";
+    toggle.setAttribute("aria-expanded", String(!isOpen));
+    nav?.classList.toggle("is-open", !isOpen);
+  });
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      toggle?.setAttribute("aria-expanded", "false");
+      nav.classList.remove("is-open");
+    });
+  });
+</script>

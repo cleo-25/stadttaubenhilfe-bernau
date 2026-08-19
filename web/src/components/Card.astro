@@ -1,0 +1,25 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  href?: string;
+  tone?: "default" | "accent" | "quiet" | "blue" | "green" | "violet";
+}
+
+const { eyebrow, title, href, tone = "default" } = Astro.props;
+const Tag = href ? "a" : "article";
+const opensNewTab = href ? /^https?:\/\//.test(href) : false;
+---
+
+<Tag
+  class:list={["card", `card-${tone}`, href && "card-link"]}
+  href={href}
+  target={opensNewTab ? "_blank" : undefined}
+  rel={opensNewTab ? "noopener noreferrer" : undefined}
+>
+  {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+  <h3>{title}</h3>
+  <div class="card-body">
+    <slot />
+  </div>
+</Tag>

@@ -1,0 +1,90 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import CtaBand from "../components/CtaBand.astro";
+---
+
+<BaseLayout
+  title="Impressum"
+  description="Impressum der Stadttaubenhilfe Bernau e.V. mit Kontaktangaben und rechtlichen Hinweisen."
+>
+  <PageHero
+    eyebrow="Rechtliches"
+    title="Impressum"
+    text="Die wichtigsten Angaben zur Stadttaubenhilfe Bernau e.V. und zur Verantwortlichkeit dieser Website."
+    primaryHref="/kontakt"
+    primaryLabel="Kontakt aufnehmen"
+    visualLabel="Stadttaubenhilfe Bernau"
+    imageSrc="/images/projects/startbild-galerie.jpg"
+    imageAlt="Taubenschwarm am Taubenhaus in Bernau"
+    imagePosition="center 50%"
+  />
+
+  <section class="section section-tight legal-page">
+    <div class="container legal-grid">
+      <article class="soft-panel legal-main">
+        <span class="eyebrow">Anbieterkennzeichnung</span>
+        <h2>Angaben nach § 5 DDG</h2>
+
+        <dl class="legal-list">
+          <div>
+            <dt>Name</dt>
+            <dd>Stadttaubenhilfe Bernau e.V.</dd>
+          </div>
+          <div>
+            <dt>Sitz</dt>
+            <dd>Bernau bei Berlin</dd>
+          </div>
+          <div>
+            <dt>Ladungsfähige Anschrift</dt>
+            <dd>Wird nach finaler Vereinsfreigabe ergänzt. Es wird keine private Anschrift ohne Freigabe veröffentlicht.</dd>
+          </div>
+          <div>
+            <dt>Vertretungsberechtigt</dt>
+            <dd>Vorstand gemäß § 26 BGB. Namen und Registerdaten werden nach finaler Freigabe ergänzt.</dd>
+          </div>
+          <div>
+            <dt>Kontakt</dt>
+            <dd>
+              <a href="tel:+491626435114">+49 162 6435114</a><br />
+              <a href="mailto:kontakt@stadttaubenhilfe-bernau.de">kontakt@stadttaubenhilfe-bernau.de</a>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="legal-note">
+          <strong>Wichtig:</strong>
+          Dieses Impressum ist redaktionell vorbereitet, ersetzt aber keine rechtliche Prüfung.
+          Für die finale Veröffentlichung sollten ladungsfähige Anschrift, Registergericht,
+          Registernummer und vertretungsberechtigte Personen ergänzt werden.
+        </div>
+      </article>
+
+      <aside class="soft-panel legal-aside">
+        <span class="eyebrow">Redaktion</span>
+        <h2>Inhalte dieser Website</h2>
+        <p>
+          Verantwortlich für die Inhalte ist die Stadttaubenhilfe Bernau e.V.,
+          soweit keine anderen Quellen genannt sind.
+        </p>
+
+        <h3>Externe Links</h3>
+        <p>
+          Links zu Facebook, Instagram oder anderen externen Seiten öffnen in einem
+          neuen Tab. Für Inhalte externer Seiten sind deren Betreiber verantwortlich.
+        </p>
+
+        <h3>Stand</h3>
+        <p>Juni 2026</p>
+      </aside>
+    </div>
+  </section>
+
+  <CtaBand
+    eyebrow="Kontakt"
+    title="Du brauchst eine schnelle Auskunft?"
+    text="Schreib uns am besten mit kurzem Betreff. Bei Fundtieren bitte Fundort, Uhrzeit, Zustand und eine Rückrufmöglichkeit nennen."
+    href="/kontakt"
+    label="Zur Kontaktseite"
+  />
+</BaseLayout>

@@ -1,0 +1,407 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+publish_mode: editorial_workflow
+site_url: https://www.stadttaubenhilfe-bernau.de
+display_url: https://www.stadttaubenhilfe-bernau.de
+logo_url: /images/logo-stadttaubenhilfe.png
+
+media_folder: web/public/images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: einstellungen
+    label: Einstellungen
+    files:
+      - name: global
+        label: Globale Website-Einstellungen
+        file: web/src/data/settings.json
+        format: json
+        fields:
+          - label: Marke
+            name: brand
+            widget: object
+            fields:
+              - { label: Name, name: name, widget: string }
+              - { label: Zusatz, name: suffix, widget: string }
+              - { label: Voller Name, name: fullName, widget: string }
+              - { label: Beschreibung, name: description, widget: text }
+              - { label: Logo, name: logo, widget: image }
+          - label: Kontakt
+            name: contact
+            widget: object
+            fields:
+              - { label: E-Mail, name: email, widget: string }
+              - { label: Telefon, name: phone, widget: string }
+              - { label: Instagram Anzeigename, name: instagramLabel, widget: string }
+              - { label: Instagram URL, name: instagramUrl, widget: string }
+              - { label: Facebook URL, name: facebookUrl, widget: string }
+          - label: Hauptnavigation
+            name: navigation
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Link, name: href, widget: string }
+              - label: Unterpunkte
+                name: items
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Link, name: href, widget: string }
+          - label: Footer-Link-Spalten
+            name: footerLinks
+            widget: list
+            summary: "Footer-Spalte"
+            fields:
+              - label: Links
+                name: links
+                widget: list
+                summary: "{{fields.label}}"
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Link, name: href, widget: string }
+          - { label: Footer-Abschlusszeile, name: footerBottom, widget: string }
+
+  - name: landingpages
+    label: Landingpages
+    files:
+      - name: home_entwurf
+        label: Neue Startseite / Entwurf
+        file: web/src/data/home-entwurf.json
+        format: json
+        fields:
+          - label: SEO
+            name: meta
+            widget: object
+            fields:
+              - { label: Browser-Titel, name: title, widget: string }
+              - { label: Meta-Beschreibung, name: description, widget: text }
+          - label: Entwurfs-Menü
+            name: navItems
+            widget: list
+            summary: "{{fields.label}}"
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Link, name: href, widget: string }
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Logo-Badge, name: badge, widget: string }
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Hauptüberschrift, name: title, widget: string }
+              - { label: Einleitung, name: text, widget: text }
+              - { label: Button 1 Text, name: primaryLabel, widget: string }
+              - { label: Button 1 Link, name: primaryHref, widget: string }
+              - { label: Button 2 Text, name: secondaryLabel, widget: string }
+              - { label: Button 2 Link, name: secondaryHref, widget: string }
+              - { label: Bild, name: image, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - { label: Bildkasten Titel, name: captionTitle, widget: string }
+              - { label: Bildkasten Text, name: captionText, widget: string }
+          - label: Proof-Band
+            name: proofItems
+            widget: list
+            summary: "{{fields.value}}"
+            fields:
+              - { label: Wert/Titel, name: value, widget: string }
+              - { label: Text, name: label, widget: string }
+          - label: Mission
+            name: mission
+            widget: object
+            fields:
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Bild, name: image, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - label: Absätze
+                name: paragraphs
+                widget: list
+                field: { label: Absatz, name: paragraph, widget: text }
+          - label: Unsere Arbeit
+            name: work
+            widget: object
+            fields:
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Punkte
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+                  - label: Icon
+                    name: icon
+                    widget: select
+                    options: [heart, home, message, shield, hand, leaf]
+          - label: Notfallbereich
+            name: emergency
+            widget: object
+            fields:
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Button Text, name: buttonLabel, widget: string }
+              - { label: Button Link, name: buttonHref, widget: string }
+              - { label: Hintergrundbild, name: backgroundImage, widget: image }
+              - label: Schritte
+                name: steps
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+          - label: Wirkung
+            name: impact
+            widget: object
+            fields:
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Bild, name: image, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - label: Große Kennzahl
+                name: lead
+                widget: object
+                fields:
+                  - { label: Wert, name: value, widget: string }
+                  - { label: Text, name: label, widget: string }
+              - label: Weitere Zahlen
+                name: stats
+                widget: list
+                summary: "{{fields.value}} {{fields.label}}"
+                fields:
+                  - { label: Wert, name: value, widget: string }
+                  - { label: Label, name: label, widget: string }
+                  - { label: Notiz, name: note, widget: string }
+          - label: Geschichten
+            name: stories
+            widget: object
+            fields:
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Karten
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Bild, name: image, widget: image }
+                  - { label: Bildbeschreibung, name: alt, widget: string }
+                  - { label: Link, name: href, widget: string, default: "/galerie" }
+                  - { label: Link-Text, name: linkLabel, widget: string, default: "Mehr ansehen" }
+          - label: Unterstützen
+            name: support
+            widget: object
+            fields:
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Bild, name: image, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - label: Kacheln
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+                  - { label: Link, name: href, widget: string }
+                  - { label: Link-Text, name: linkLabel, widget: string }
+          - label: Aktuelles
+            name: news
+            widget: object
+            fields:
+              - { label: Dachzeile, name: kicker, widget: string }
+              - { label: Überschrift, name: title, widget: string }
+              - label: Einträge
+                name: items
+                widget: list
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: Label, name: label, widget: string }
+                  - { label: Titel, name: title, widget: string }
+                  - { label: Text, name: text, widget: text }
+          - label: Footer im Entwurf
+            name: footer
+            widget: object
+            fields:
+              - { label: Beschreibung, name: description, widget: text }
+          - label: Mobiler Floating-Button
+            name: floatingCta
+            widget: object
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: Link, name: href, widget: string }
+
+  - name: seiten
+    label: Seiten
+    files:
+      - name: projekte
+        label: Projekte
+        file: web/src/data/projects.json
+        format: json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Dachzeile, name: eyebrow, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Primaerer Button-Link, name: primaryHref, widget: string }
+              - { label: Primaerer Button-Text, name: primaryLabel, widget: string }
+              - { label: Zweiter Button-Link, name: secondaryHref, widget: string }
+              - { label: Zweiter Button-Text, name: secondaryLabel, widget: string }
+              - { label: Bildlabel, name: visualLabel, widget: string }
+              - { label: Bild, name: imageSrc, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - { label: Bildposition, name: imagePosition, widget: string, default: "center" }
+          - label: Einleitung
+            name: intro
+            widget: object
+            fields:
+              - { label: Dachzeile, name: eyebrow, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - label: Projektbereiche
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: ID, name: id, widget: string, hint: "Nur Kleinbuchstaben, keine Leerzeichen. Wird fuer Ankerlinks genutzt." }
+              - { label: Label, name: label, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Kurztext, name: summary, widget: text }
+              - { label: Bild, name: image, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - { label: Bildposition, name: imagePosition, widget: string, default: "center" }
+              - label: Fakten
+                name: facts
+                widget: list
+                fields:
+                  - { label: Wert, name: value, widget: string }
+                  - { label: Beschreibung, name: label, widget: string }
+              - label: Punkte
+                name: points
+                widget: list
+                field: { label: Punkt, name: point, widget: string }
+
+      - name: fundtiere
+        label: Fundtiere
+        file: web/src/data/fundtiere.json
+        format: json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Dachzeile, name: eyebrow, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Primaerer Button-Link, name: primaryHref, widget: string }
+              - { label: Primaerer Button-Text, name: primaryLabel, widget: string }
+              - { label: Zweiter Button-Link, name: secondaryHref, widget: string }
+              - { label: Zweiter Button-Text, name: secondaryLabel, widget: string }
+              - { label: Bildlabel, name: visualLabel, widget: string }
+              - { label: Bild, name: imageSrc, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - { label: Bildposition, name: imagePosition, widget: string, default: "center" }
+          - label: Schnellhilfe-Box
+            name: alert
+            widget: object
+            fields:
+              - { label: Dachzeile, name: eyebrow, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - label: Checklisten-Einleitung
+            name: checklistIntro
+            widget: object
+            fields:
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+          - label: Checkliste
+            name: checklist
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+
+      - name: wissen
+        label: Wissen
+        file: web/src/data/wissen.json
+        format: json
+        fields:
+          - label: Hero
+            name: hero
+            widget: object
+            fields:
+              - { label: Dachzeile, name: eyebrow, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Primaerer Button-Link, name: primaryHref, widget: string }
+              - { label: Primaerer Button-Text, name: primaryLabel, widget: string }
+              - { label: Zweiter Button-Link, name: secondaryHref, widget: string }
+              - { label: Zweiter Button-Text, name: secondaryLabel, widget: string }
+              - { label: Bildlabel, name: visualLabel, widget: string }
+              - { label: Bild, name: imageSrc, widget: image }
+              - { label: Bildbeschreibung, name: imageAlt, widget: string }
+              - { label: Bildposition, name: imagePosition, widget: string, default: "center" }
+          - label: Wissens-Snacks
+            name: snacks
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Titel, name: title, widget: string }
+              - { label: Link, name: href, widget: string, required: false }
+              - label: Farbton
+                name: tone
+                widget: select
+                options: [blue, green, violet, accent, quiet, default]
+              - { label: Text, name: text, widget: text }
+
+      - name: galerie
+        label: Galerie
+        file: web/src/data/gallery.json
+        format: json
+        fields:
+          - label: Kategorien
+            name: categories
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - label: ID
+                name: id
+                widget: select
+                options: [vereinsarbeit, taubenhaus, volieren, pflegestellen]
+              - { label: Label, name: label, widget: string }
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - { label: Bild, name: image, widget: image }
+          - label: Bilder
+            name: items
+            widget: list
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Bild, name: src, widget: image }
+              - { label: Bildbeschreibung, name: alt, widget: string }
+              - label: Kategorie
+                name: category
+                widget: select
+                options: [vereinsarbeit, taubenhaus, volieren, pflegestellen]
+              - { label: Titel, name: title, widget: string }
+              - { label: Text, name: text, widget: text }
+              - label: Groesse
+                name: size
+                widget: select
+                required: false
+                options: [default, wide, tall, feature]

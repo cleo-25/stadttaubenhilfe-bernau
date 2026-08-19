@@ -1,0 +1,96 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex,nofollow" />
+    <title>Schnellkontakt | Stadttaubenhilfe Bernau</title>
+    <meta
+      name="description"
+      content="Schnellkontakt zur Stadttaubenhilfe Bernau mit Telefonnummer und E-Mail-Adresse."
+    />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main class="quick-contact">
+      <section>
+        <img src="/images/logo-stadttaubenhilfe.png" alt="Logo der Stadttaubenhilfe Bernau" />
+        <p>Stadttaubenhilfe Bernau b. Berlin</p>
+        <h1>Schnellkontakt</h1>
+        <a href="tel:+491626435114">+49 162 6435114</a>
+        <a href="mailto:kontakt@stadttaubenhilfe-bernau.de">
+          kontakt@stadttaubenhilfe-bernau.de
+        </a>
+      </section>
+    </main>
+  </body>
+</html>
+
+<style>
+  .quick-contact {
+    display: grid;
+    min-height: 100vh;
+    place-items: center;
+    background:
+      radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.78), transparent 18rem),
+      linear-gradient(135deg, #f8fcff 0%, #dfefff 42%, #8cb2e1 100%);
+    color: #285b7d;
+    font-family:
+      ui-sans-serif,
+      system-ui,
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      sans-serif;
+    padding: 24px;
+  }
+
+  .quick-contact section {
+    display: grid;
+    width: min(100%, 560px);
+    justify-items: center;
+    border: 1px solid rgba(93, 145, 168, 0.24);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.9);
+    padding: clamp(28px, 6vw, 58px);
+    text-align: center;
+  }
+
+  .quick-contact img {
+    width: clamp(130px, 25vw, 190px);
+    aspect-ratio: 1;
+    object-fit: contain;
+  }
+
+  .quick-contact p {
+    margin: 20px 0 0;
+    color: #5d91a8;
+    font-weight: 900;
+  }
+
+  .quick-contact h1 {
+    margin: 8px 0 24px;
+    color: #3f789f;
+    font-size: clamp(2.4rem, 8vw, 4.5rem);
+    letter-spacing: -0.028em;
+    line-height: 1;
+  }
+
+  .quick-contact a {
+    width: 100%;
+    border-radius: 999px;
+    background: rgba(140, 178, 225, 0.26);
+    color: #1f4f70;
+    font-size: clamp(1.08rem, 3vw, 1.35rem);
+    font-weight: 900;
+    padding: 14px 18px;
+  }
+
+  .quick-contact a + a {
+    margin-top: 12px;
+  }
+</style>

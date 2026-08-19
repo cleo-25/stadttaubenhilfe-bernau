@@ -1,0 +1,113 @@
+{
+  "brand": {
+    "name": "Stadttaubenhilfe",
+    "suffix": "Bernau",
+    "fullName": "Stadttaubenhilfe Bernau b. Berlin",
+    "description": "Taubenhaus, Eiertausch, Notfallversorgung und Aufklärung in Bernau bei Berlin.",
+    "logo": "/images/logo-stadttaubenhilfe.png"
+  },
+  "contact": {
+    "email": "kontakt@stadttaubenhilfe-bernau.de",
+    "phone": "+49 162 6435114",
+    "instagramLabel": "stadttaubenhilfe.bernau",
+    "instagramUrl": "https://www.instagram.com/stadttaubenhilfe.bernau/",
+    "facebookUrl": "https://www.facebook.com/people/Stadttaubenhilfe-Bernau-b-Berlin/100064906808060/?locale=de_DE"
+  },
+  "navigation": [
+    {
+      "label": "Unser Verein",
+      "href": "/verein",
+      "items": [
+        { "label": "Wer wir sind", "href": "/verein/wer-wir-sind" },
+        { "label": "Vorstand und Satzung", "href": "/verein/vorstand-und-satzung" },
+        { "label": "Unsere Visionen und Ziele", "href": "/verein/visionen-und-ziele" },
+        { "label": "Mitgliedschaft beantragen", "href": "/verein/mitgliedschaft-beantragen" }
+      ]
+    },
+    {
+      "label": "Unsere Arbeit",
+      "href": "/arbeit",
+      "items": [
+        { "label": "Stadttaubenmanagement", "href": "/arbeit/stadttaubenmanagement" },
+        { "label": "Tauben-Notfälle", "href": "/arbeit/tauben-notfaelle" },
+        { "label": "Unsere Projekte", "href": "/arbeit/projekte" },
+        { "label": "Handicapvolieren", "href": "/arbeit/handicapvolieren" },
+        { "label": "Taubenhaus am Bahnhof Bernau", "href": "/arbeit/taubenhaus-am-bahnhof-bernau" },
+        { "label": "Stadttaubenhilfe Bernau in Zahlen", "href": "/arbeit/stadttaubenhilfe-bernau-in-zahlen" },
+        { "label": "Referenzen", "href": "/arbeit/referenzen" }
+      ]
+    },
+    {
+      "label": "Stadttaubenmanagement",
+      "href": "/stadttaubenmanagement",
+      "items": []
+    },
+    {
+      "label": "Taube gefunden?",
+      "href": "/taube-gefunden",
+      "items": [
+        { "label": "1. Hilfe Maßnahmen", "href": "/taube-gefunden/erste-hilfe-massnahmen" },
+        { "label": "Die richtige Unterbringung", "href": "/taube-gefunden/richtige-unterbringung" },
+        { "label": "Zu welchem Tierarzt", "href": "/taube-gefunden/tierarzt" }
+      ]
+    },
+    {
+      "label": "Taube gleich Taube?",
+      "href": "/taube-gleich-taube",
+      "items": [
+        { "label": "Wildtaube", "href": "/taube-gleich-taube/wildtaube" },
+        { "label": "Stadttaube", "href": "/taube-gleich-taube/stadttaube" },
+        { "label": "Brieftaube", "href": "/taube-gleich-taube/brieftaube" },
+        { "label": "Rassetaube", "href": "/taube-gleich-taube/rassetaube" }
+      ]
+    },
+    {
+      "label": "Verein unterstützen",
+      "href": "/verein-unterstuetzen",
+      "items": [
+        { "label": "Mitgliedschaft", "href": "/verein-unterstuetzen/mitgliedschaft" },
+        { "label": "Ehrenamtlich helfen", "href": "/verein-unterstuetzen/ehrenamtlich-helfen" },
+        { "label": "Geldspenden", "href": "/verein-unterstuetzen/geldspenden" },
+        { "label": "Sachspenden", "href": "/verein-unterstuetzen/sachspenden" },
+        { "label": "Patenschaften", "href": "/verein-unterstuetzen/patenschaften" }
+      ]
+    },
+    {
+      "label": "Spenden",
+      "href": "/spenden",
+      "items": []
+    },
+    {
+      "label": "Kontakt",
+      "href": "/kontakt",
+      "items": []
+    }
+  ],
+  "footerLinks": [
+    {
+      "links": [
+        { "href": "/", "label": "Home" },
+        { "href": "/projekte", "label": "Projekte" },
+        { "href": "/mitmachen", "label": "Mitmachen" },
+        { "href": "/fundtiere", "label": "Fundtier melden" }
+      ]
+    },
+    {
+      "links": [
+        { "href": "/wissen", "label": "Wissen" },
+        { "href": "/galerie", "label": "Galerie" },
+        { "href": "/spenden", "label": "Spenden" },
+        { "href": "/kontakt", "label": "Kontakt" }
+      ]
+    },
+    {
+      "links": [
+        { "href": "https://www.facebook.com/people/Stadttaubenhilfe-Bernau-b-Berlin/100064906808060/?locale=de_DE", "label": "Facebook" },
+        { "href": "https://www.instagram.com/stadttaubenhilfe.bernau/", "label": "Instagram" },
+        { "href": "/impressum", "label": "Impressum" },
+        { "href": "/datenschutz", "label": "Datenschutz" }
+      ]
+    }
+  ],
+  "footerBottom": "Futter, Wasser, Nistplätze, Reinigung und Hilfe bei Fundtieren."
+}

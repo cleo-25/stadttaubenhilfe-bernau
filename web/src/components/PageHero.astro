@@ -1,0 +1,73 @@
+---
+import Button from "./Button.astro";
+
+interface Props {
+  eyebrow?: string;
+  title: string;
+  text: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+  secondaryHref?: string;
+  secondaryLabel?: string;
+  visualLabel?: string;
+  visualNote?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  text,
+  primaryHref,
+  primaryLabel,
+  secondaryHref,
+  secondaryLabel,
+  visualLabel = "Foto aus der Vereinsarbeit",
+  visualNote = "Ein freigegebenes Foto kann hier ergänzt werden.",
+  imageSrc,
+  imageAlt = visualLabel,
+  imagePosition = "center"
+} = Astro.props;
+---
+
+<section class="page-hero">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+      <h1>{title}</h1>
+      <p class="lead">{text}</p>
+      {(primaryHref || secondaryHref) && (
+        <div class="hero-actions">
+          {primaryHref && primaryLabel && <Button href={primaryHref}>{primaryLabel}</Button>}
+          {secondaryHref && secondaryLabel && (
+            <Button href={secondaryHref} variant="secondary">{secondaryLabel}</Button>
+          )}
+        </div>
+      )}
+    </div>
+    {imageSrc ? (
+      <figure
+        class="media-photo-frame"
+        aria-label={visualLabel}
+        style={`background-image: url('${imageSrc}'); background-position: ${imagePosition};`}
+      >
+        <img
+          src={imageSrc}
+          alt={imageAlt}
+          loading="eager"
+          decoding="async"
+          style={`object-position: ${imagePosition};`}
+        />
+      </figure>
+    ) : (
+      <div class="media-placeholder" aria-label={visualLabel}>
+        <div class="placeholder-frame">
+          <span>{visualLabel}</span>
+          <small>{visualNote}</small>
+        </div>
+      </div>
+    )}
+  </div>
+</section>

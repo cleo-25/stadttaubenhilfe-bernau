@@ -1,0 +1,143 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import CtaBand from "../components/CtaBand.astro";
+---
+
+<BaseLayout
+  title="Mitmachen"
+  description="Ehrenamtlich bei Stadttaubenhilfe Bernau helfen: Taubenhaus, Notfälle, Fahrten, Material, Aufklärung und Spenden."
+>
+  <PageHero
+    eyebrow="Ehrenamt"
+    title="Mitmachen"
+    text="Du musst kein:e Taubenexpert:in sein. Wir brauchen Menschen, die verlässlich kleine Aufgaben übernehmen: im Taubenhaus helfen, Fundtiere fahren, Material besorgen, Beiträge teilen oder bei Infoständen unterstützen."
+    primaryHref="/kontakt"
+    primaryLabel="Ich möchte mithelfen"
+    secondaryHref="/spenden"
+    secondaryLabel="Spendenmöglichkeit anfragen"
+    visualLabel="Infostand der Stadttaubenhilfe Bernau"
+    imageSrc="/images/infostand-verein.jpg"
+    imageAlt="Infostand der Stadttaubenhilfe Bernau mit Vereinsmaterial"
+    imagePosition="center 46%"
+  />
+
+  <section class="section section-tight" id="wer-wir-sind">
+    <div class="container split">
+      <SectionHeader
+        eyebrow="Unser Verein"
+        title="Ehrenamtlich, lokal und nah an den Tieren."
+        text="Die Stadttaubenhilfe Bernau arbeitet für weniger Leid, weniger Konflikte und bessere Aufklärung im Umgang mit Stadttauben. Wir betreuen den Standort im Fahrradparkhaus, kümmern uns um Notfälle und sprechen mit Menschen, die mit Stadttauben zu tun haben."
+      />
+      <div class="grid grid-2">
+        <article class="soft-panel" id="vorstand">
+          <h2>Vorstand und Satzung</h2>
+          <p>
+            Informationen zu Vorstand, Satzung und Vereinsstruktur werden hier
+            ergänzt. Bis dahin beantworten wir Fragen dazu direkt per Kontaktformular.
+          </p>
+        </article>
+        <article class="soft-panel" id="ziele">
+          <h2>Unsere Visionen und Ziele</h2>
+          <p>
+            Wir wollen, dass Bernau Stadttauben nicht verdrängt, sondern betreut:
+            mit Taubenhaus, Eiertausch, Reinigung, Beratung und medizinischer Hilfe
+            für verletzte Tiere.
+          </p>
+        </article>
+        <article class="soft-panel" id="mitgliedschaft">
+          <h2>Mitgliedschaft beantragen</h2>
+          <p>
+            Wer den Verein langfristig stärken möchte, kann Mitglied werden.
+            Schreib uns kurz, dann schicken wir dir die aktuellen Informationen
+            zur Mitgliedschaft.
+          </p>
+        </article>
+        <article class="soft-panel">
+          <h2>Wobei Hilfe gebraucht wird</h2>
+          <p>
+            Verlässliche kleine Aufgaben sind oft wertvoller als große Zusagen:
+            eine Fahrt, ein Infostand, Material, Reinigung oder eine feste Stunde
+            im Monat.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="ehrenamt">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Du musst nicht alles können"
+        title="So kannst du helfen."
+        text="Nicht jede Aufgabe findet direkt am Tier statt. Manche Menschen helfen mit Fahrten, manche mit Wäsche, Kartons, Social Media, Infoständen, Futterspenden oder handwerklichen Dingen."
+      />
+      <div class="grid grid-3">
+        <Card title="Helfen am Taubenhaus" eyebrow="Vor Ort" tone="blue">
+          <p>
+            Futter kontrollieren, Wasser wechseln, reinigen, Nester prüfen,
+            Eier tauschen.
+          </p>
+        </Card>
+        <Card title="Fundtiere melden & begleiten" eyebrow="Umgebung" tone="green">
+          <p>
+            Fundmeldungen weitergeben, Finder:innen erklären, was zu tun ist,
+            Fahrten übernehmen oder beim Aufnehmen helfen.
+          </p>
+        </Card>
+        <Card title="Öffentlich erklären" eyebrow="Infostand" tone="violet">
+          <p>
+            Mit Menschen sprechen, Flyer auslegen, Fragen beantworten und
+            erklären, warum Taubenhäuser und Eiertausch sinnvoll sind.
+          </p>
+        </Card>
+        <Card title="Praktisch unterstützen" eyebrow="Material" tone="accent">
+          <p>
+            Handtücher waschen, Kartons sammeln, Transportboxen organisieren,
+            Reinigungsmaterial oder geeignetes Taubenfutter spenden.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sachspenden">
+    <div class="container split">
+      <SectionHeader
+        eyebrow="Was uns hilft"
+        title="Auch Material hilft."
+        text="Nicht jede Hilfe muss ein regelmäßiger Einsatz sein. Auch Sachspenden entlasten unsere Arbeit."
+      />
+      <div class="grid grid-2">
+        <Card title="Materialbedarf" tone="green">
+          <ul class="pill-list">
+            <li>Taubenfutter und Sämereien</li>
+            <li>Küchenrolle und Handtücher</li>
+            <li>Kartons und Transportboxen</li>
+            <li>Einmalhandschuhe</li>
+            <li>Reinigungsmaterial</li>
+            <li>Futter- und Wasserschalen</li>
+          </ul>
+        </Card>
+        <Card title="Zeit & Kontakte" tone="blue">
+          <ul class="pill-list">
+            <li>Regelmäßige kurze Einsätze</li>
+            <li>Fahrten in Bernau und Umgebung</li>
+            <li>Kontakt zu Tierärzt:innen und Praxen</li>
+            <li>Hilfe bei Social Media</li>
+          </ul>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <CtaBand
+    eyebrow="Kontakt"
+    title="Schreib uns, was für dich realistisch ist."
+    text="Einmalig, monatlich oder regelmäßig: Auch eine feste Stunde im Monat hilft mehr als ein großes Versprechen."
+    href="/kontakt"
+    label="Kontakt aufnehmen"
+  />
+</BaseLayout>

@@ -1,0 +1,211 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import wissenContent from "../data/wissen.json";
+
+const { hero, snacks } = wissenContent;
+
+const pigeonTypes = [
+  {
+    id: "wildtaube",
+    title: "Wildtaube",
+    text: "Ringeltauben, Türkentauben und andere Wildtauben sind Wildvögel. Sie werden anders eingeschätzt als Stadttauben und brauchen je nach Situation andere Hilfe."
+  },
+  {
+    id: "stadttaube",
+    title: "Stadttaube",
+    text: "Stadttauben sind Nachkommen gezüchteter Haus- und Brieftauben. Sie sind ortstreu, brüten an Gebäuden und sind in der Stadt auf menschliche Lösungen angewiesen."
+  },
+  {
+    id: "brieftaube",
+    title: "Brieftaube",
+    text: "Brieftauben sind oft beringt. Wenn sie erschöpft gefunden werden, braucht es Ruhe, Wasserangebot und eine Einschätzung, ob Halter:innen ermittelt werden können."
+  },
+  {
+    id: "rassetaube",
+    title: "Rassetaube",
+    text: "Rassetauben sind gezüchtete Tauben mit besonderen Merkmalen. Viele kommen draußen schlecht zurecht und brauchen häufig eine gesicherte Unterbringung."
+  }
+];
+---
+
+<BaseLayout
+  title="Wissen & Aufklärung"
+  description="Fakten zu Stadttauben, Taubenhäusern, Hygiene und tierschutzgerechtem Eiermanagement in Bernau."
+  image={hero.imageSrc}
+>
+  <PageHero {...hero} />
+
+  <section class="section section-tight">
+    <div class="container city-rock">
+      <div>
+        <span class="eyebrow">Verhalten verstehen</span>
+        <h2>Die Stadt ist ihr Ersatzfelsen.</h2>
+      </div>
+      <div class="city-rock-copy">
+        <p>
+          Felsentauben brüten nicht in Bäumen, sondern an Felsen, in Nischen und
+          Höhlen. Stadttauben zeigen dieses Verhalten noch heute. Für sie sind
+          Häuserwände, Balkone, Brücken, Parkhäuser und Dachböden die Orte, die
+          einem Felsen am nächsten kommen.
+        </p>
+        <p>
+          Das erklärt, warum sie nicht einfach „in den Wald“ ziehen. Dort finden
+          sie weder passende Brutplätze noch die Strukturen, an die ihr Verhalten
+          angepasst ist.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Taube gleich Taube?"
+        title="Nicht jede Taube auf der Straße ist gleich."
+        text="Wer die Unterschiede kennt, kann schneller einschätzen, welche Hilfe sinnvoll ist und welche Informationen beim Kontakt wichtig sind."
+      />
+      <div class="grid grid-4">
+        {pigeonTypes.map((type) => (
+          <article class="soft-panel compact-panel" id={type.id}>
+            <h2>{type.title}</h2>
+            <p>{type.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Mythen vs Fakten"
+        title="Aus Vorurteilen werden schlechte Entscheidungen."
+      />
+      <div class="fact-grid">
+        <article class="fact-card">
+          <div class="myth">
+            <span>Mythos</span>
+            <strong>„Ratten der Lüfte“</strong>
+          </div>
+          <div class="fact">
+            <span>Fakt</span>
+            <strong>Stadttauben sind verwilderte Haustiere.</strong>
+            <p>Der Mensch hat ihre Vorfahren gezüchtet, genutzt und verbreitet. Heute werden sie oft abgewertet, obwohl ihr Leben in der Stadt menschengemacht ist.</p>
+          </div>
+        </article>
+        <article class="fact-card">
+          <div class="myth">
+            <span>Mythos</span>
+            <strong>„Wenn man sie vertreibt, ist das Problem gelöst.“</strong>
+          </div>
+          <div class="fact">
+            <span>Fakt</span>
+            <strong>Vergrämung verschiebt den Schwarm meist nur an die nächste Ecke.</strong>
+            <p>Ohne betreute Versorgung bleiben Hunger, Brutdruck und Verschmutzung bestehen. Ein Taubenhaus setzt bei Futter, Nistplätzen, Eiertausch und Reinigung an.</p>
+          </div>
+        </article>
+        <article class="fact-card">
+          <div class="myth">
+            <span>Mythos</span>
+            <strong>„Tauben sind besonders gefährlich.“</strong>
+          </div>
+          <div class="fact">
+            <span>Fakt</span>
+            <strong>Wie bei anderen Tieren gilt: Hände waschen und Flächen reinigen.</strong>
+            <p>Panik hilft nicht. Respektvolle Hygiene reicht im Alltag.</p>
+          </div>
+        </article>
+        <article class="fact-card">
+          <div class="myth">
+            <span>Mythos</span>
+            <strong>„Nicht füttern reicht.“</strong>
+          </div>
+          <div class="fact">
+            <span>Fakt</span>
+            <strong>Hunger ist keine tierschutzgerechte Lösung.</strong>
+            <p>Tauben brüten weiter, suchen Müll und Essensreste und werden krank. Sinnvoller ist kontrollierte Versorgung an betreuten Standorten mit Eiertausch.</p>
+          </div>
+        </article>
+        <article class="fact-card">
+          <div class="myth">
+            <span>Mythos</span>
+            <strong>„Tauben brüten nur, wenn es ihnen gut geht.“</strong>
+          </div>
+          <div class="fact">
+            <span>Fakt</span>
+            <strong>Stadttauben brüten auch unter schlechten Bedingungen.</strong>
+            <p>Deshalb ist Eiertausch wichtig: Eier werden gegen Attrappen ersetzt, bevor Küken entstehen und später verhungern oder krank aufwachsen.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container knowledge-band">
+      <div>
+        <span class="eyebrow">Versorgung</span>
+        <h2>Brot hilft nicht. Taubenhäuser schon.</h2>
+      </div>
+      <div class="knowledge-columns">
+        <article>
+          <h3>Warum Taubenhäuser helfen</h3>
+          <p>
+            Ein Taubenhaus bündelt den Schwarm an einem festen Ort. Dort gibt es
+            Futter, Wasser, Nistplätze, Reinigung und Eiertausch. So wird die
+            Population begrenzt und Kot kann dort entfernt werden, wo er anfällt.
+          </p>
+        </article>
+        <article>
+          <h3>Warum Eiertausch Tierschutz ist</h3>
+          <p>
+            Die Eier werden gegen Attrappen ersetzt. Die Tauben brüten weiter,
+            aber es schlüpfen keine Küken. Das verhindert Nachwuchs, ohne Tiere
+            zu töten.
+          </p>
+        </article>
+        <article>
+          <h3>Warum Brot nicht hilft</h3>
+          <p>
+            Brot füllt den Magen, versorgt die Taube aber schlecht. Geeigneter
+            sind Körner, Sämereien und Hülsenfrüchte.
+          </p>
+        </article>
+        <article>
+          <h3>Warum Tauben oft an Bahnhöfen sind</h3>
+          <p>
+            Bahnhöfe, Parkhäuser und Brücken bieten Vorsprünge, Nischen, Wärme
+            und Schutz vor Regen. Für Stadttauben sind das Ersatzfelsen.
+          </p>
+        </article>
+        <article>
+          <h3>Warum verletzte Tauben oft still sitzen</h3>
+          <p>
+            Tauben zeigen Schwäche spät. Wenn eine Taube am Boden sitzt, die Augen
+            schließt oder nicht wegfliegt, ist sie oft schon länger krank, verletzt
+            oder erschöpft.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Alltag"
+        title="Was du sofort wissen solltest"
+      />
+      <div class="grid grid-3">
+        {snacks.map((snack) => (
+          <Card title={snack.title} href={snack.href} tone={snack.tone}>
+            <p>{snack.text}</p>
+          </Card>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

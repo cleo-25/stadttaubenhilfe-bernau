@@ -1,0 +1,73 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import CtaBand from "../components/CtaBand.astro";
+import { galleryCategories, getGalleryItems } from "../data/gallery";
+---
+
+<BaseLayout
+  title="Galerie"
+  description="Bilder aus Taubenhaus, Volieren, Pflegestellen und Vereinsarbeit der Stadttaubenhilfe Bernau."
+>
+  <PageHero
+    eyebrow="Bilder aus der Arbeit"
+    title="Galerie"
+    text="Hier zeigen wir Taubenhaus, Volieren, Pflegestellen, Fundtiere und Infostände. Die Bilder zeigen nicht nur Tiere, sondern die Arbeit dahinter: füttern, reinigen, in Kartons setzen, versorgen, erklären."
+    primaryHref="/mitmachen"
+    primaryLabel="Mitmachen"
+    secondaryHref="/kontakt"
+    secondaryLabel="Foto oder Hinweis schicken"
+    visualLabel="Taubenhaus im Fahrradparkhaus Bernau"
+    imageSrc="/images/projects/startbild-galerie.jpg"
+    imageAlt="Taubenhaus im Fahrradparkhaus Bernau als Galerie-Startbild"
+    imagePosition="center 50%"
+  />
+
+  <section class="section section-tight">
+    <div class="container">
+      <div class="gallery-category-grid">
+        {galleryCategories.map((category) => (
+          <a class="gallery-category-card" href={`#${category.id}`}>
+            <img src={category.image} alt="" loading="lazy" decoding="async" />
+            <span>{category.label}</span>
+            <h2>{category.title}</h2>
+            <p>{category.text}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  {galleryCategories.map((category) => (
+    <section class="section section-tight gallery-section" id={category.id}>
+      <div class="container">
+        <div class="gallery-section-heading">
+          <span class="eyebrow">{category.label}</span>
+          <h2>{category.title}</h2>
+          <p>{category.text}</p>
+        </div>
+
+        <div class="gallery-grid">
+          {getGalleryItems(category.id).map((item) => (
+            <figure class:list={["gallery-card", item.size && `gallery-card-${item.size}`]}>
+              <img src={item.src} alt={item.alt} loading="lazy" decoding="async" />
+              <figcaption>
+                <small>{category.label}</small>
+                <strong>{item.title}</strong>
+                <span>{item.text}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <CtaBand
+    eyebrow="Fotos"
+    title="Du hast ein Foto oder einen Hinweis?"
+    text="Wenn du eine Taube in Not gesehen hast oder Fotos aus einem Einsatz teilen möchtest, schreib uns. Bei Fundtieren bitte immer zuerst in einen Karton setzen und den genauen Ort nennen."
+    href="/kontakt"
+    label="Kontakt aufnehmen"
+  />
+</BaseLayout>

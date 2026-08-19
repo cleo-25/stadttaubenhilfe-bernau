@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "title": "Designentwurf | Stadttaubenhilfe Bernau",
+    "description": "Alternativer Landingpage-Entwurf für die Stadttaubenhilfe Bernau."
+  },
+  "navItems": [
+    { "label": "Ansatz", "href": "#mission" },
+    { "label": "Arbeit", "href": "#arbeit" },
+    { "label": "Gefunden?", "href": "#notfall" },
+    { "label": "Wirkung", "href": "#wirkung" },
+    { "label": "Helfen", "href": "#unterstuetzen" }
+  ],
+  "hero": {
+    "badge": "Stadttaubenhilfe Bernau b. Berlin",
+    "kicker": "Für eine Stadt, die Verantwortung übernimmt",
+    "title": "Wir helfen Stadttauben. Wir helfen Bernau.",
+    "text": "Wir betreuen das Taubenhaus im Fahrradparkhaus, sichern verletzte Tiere und zeigen, wie Stadttaubenmanagement ohne Verdrängung funktioniert.",
+    "primaryLabel": "Taube gefunden?",
+    "primaryHref": "#notfall",
+    "secondaryLabel": "Jetzt helfen",
+    "secondaryHref": "#unterstuetzen",
+    "image": "/images/tauben-paar.jpg",
+    "imageAlt": "Zwei betreute Stadttauben aus der Vereinsarbeit",
+    "captionTitle": "Keine Symbolbilder.",
+    "captionText": "Echte Tiere aus der Vereinsarbeit."
+  },
+  "proofItems": [
+    { "value": "Taubenhaus", "label": "im Fahrradparkhaus Bernau" },
+    { "value": "Notfälle", "label": "sichern, versorgen, vermitteln" },
+    { "value": "Aufklärung", "label": "für Stadt, Menschen und Tiere" }
+  ],
+  "mission": {
+    "kicker": "Unsere Mission",
+    "title": "Wir ersetzen Verdrängung durch Verantwortung.",
+    "image": "/images/gallery/vereinsarbeit-infostand-01.jpg",
+    "imageAlt": "Ehrenamtliche der Stadttaubenhilfe Bernau am Infostand",
+    "paragraphs": [
+      "Stadttauben sind Nachkommen gezüchteter Haus- und Brieftauben. Sie suchen Gebäude, Brücken und Parkhäuser als Ersatz für Felsen und brüten auch dann weiter, wenn die Bedingungen schlecht sind.",
+      "Unsere Haltung ist konkret: betreute Orte statt Wegjagen, Eiertausch statt unkontrollierter Vermehrung, sachliche Aufklärung statt Vorurteile. So entsteht weniger Leid und weniger Konflikt im Stadtraum."
+    ]
+  },
+  "work": {
+    "kicker": "Unsere Arbeit",
+    "title": "Praktische Hilfe, professionell organisiert.",
+    "text": "Die Arbeit reicht vom einzelnen Fundtier bis zur Beratung bei Gebäuden. Jede Aufgabe folgt demselben Ziel: weniger Leid, mehr Struktur, klare Verantwortung.",
+    "items": [
+      {
+        "title": "Versorgung & Pflege",
+        "text": "Wir sichern, versorgen und begleiten verletzte oder geschwächte Stadttauben aus Bernau und Umgebung.",
+        "icon": "heart"
+      },
+      {
+        "title": "Taubenschläge",
+        "text": "Betreute Standorte bündeln Schwärme, ermöglichen Reinigung und begrenzen Nachwuchs durch Eiertausch.",
+        "icon": "home"
+      },
+      {
+        "title": "Aufklärung",
+        "text": "Wir erklären sachlich, warum Stadttauben keine Wildvögel sind und welche Lösungen wirklich helfen.",
+        "icon": "message"
+      },
+      {
+        "title": "Beratung",
+        "text": "Bei Gebäuden, Sanierung und Konfliktorten beraten wir tierschutzgerecht und praktisch umsetzbar.",
+        "icon": "shield"
+      },
+      {
+        "title": "Vermittlung",
+        "text": "Nach der Erstversorgung organisieren wir passende Unterbringung, Pflegestellen oder weitere Hilfe.",
+        "icon": "hand"
+      },
+      {
+        "title": "Prävention",
+        "text": "Gute Strukturen verhindern Leid, bevor es entsteht: durch Betreuung, Wissen und feste Abläufe.",
+        "icon": "leaf"
+      }
+    ]
+  },
+  "emergency": {
+    "kicker": "Taube gefunden?",
+    "title": "Schnelle Hilfe, wenn es darauf ankommt.",
+    "text": "Wenn eine Taube nicht wegfliegt, aufgeplustert sitzt, verletzt wirkt oder von Schnüren betroffen ist, braucht sie wahrscheinlich Hilfe.",
+    "buttonLabel": "Schnellkontakt öffnen",
+    "buttonHref": "/schnellkontakt",
+    "backgroundImage": "/images/projects/startbild-fundtiere.jpg",
+    "steps": [
+      {
+        "title": "Sichern",
+        "text": "Setze die Taube vorsichtig in einen Karton mit Luftlöchern und einem Handtuchnest."
+      },
+      {
+        "title": "Nichts einflößen",
+        "text": "Bitte kein Wasser oder Futter in den Schnabel geben. Das kann in die Luftröhre gelangen."
+      },
+      {
+        "title": "Kontakt aufnehmen",
+        "text": "Melde Fundort, Uhrzeit, Zustand und möglichst Fotos. So können wir schneller einschätzen."
+      }
+    ]
+  },
+  "impact": {
+    "kicker": "Wirkung",
+    "title": "Wirkung, die man im Alltag sehen kann.",
+    "text": "Kennzahlen ersetzen keine Geschichte. Sie zeigen aber, wie regelmäßig diese Arbeit passiert und welche Struktur hinter dem Taubenhaus steht.",
+    "image": "/images/projects/startbild-galerie.jpg",
+    "imageAlt": "Tauben über dem Fahrradparkhaus Bernau",
+    "lead": {
+      "value": "700+",
+      "label": "Eier pro Jahr werden gegen Attrappen getauscht."
+    },
+    "stats": [
+      { "value": "170+", "label": "Tauben", "note": "am betreuten Standort" },
+      { "value": "3x", "label": "Nestkontrolle", "note": "und Eiertausch pro Woche" },
+      { "value": "4-5 h", "label": "Reinigung", "note": "jede Woche im Taubenhaus" }
+    ]
+  },
+  "stories": {
+    "kicker": "Geschichten",
+    "title": "Echte Einblicke, keine Symbolbilder.",
+    "text": "Die Fotos zeigen, wo die Arbeit stattfindet: im Taubenhaus, in Pflegestellen, bei Ehrenamtlichen und an Orten in Bernau.",
+    "items": [
+      {
+        "title": "Ein fester Ort statt Verdrängung",
+        "text": "Das Taubenhaus im Fahrradparkhaus macht Betreuung planbar: Futter, Wasser, Nistplätze, Reinigung und Eiertausch.",
+        "image": "/images/projects/startbild-wissen-taubenhaus.jpg",
+        "alt": "Tauben im betreuten Taubenhaus im Fahrradparkhaus Bernau",
+        "href": "/galerie",
+        "linkLabel": "Mehr ansehen"
+      },
+      {
+        "title": "Hilfe beginnt mit einem Karton",
+        "text": "Viele Fundtiere brauchen zuerst Ruhe, Wärme und eine schnelle Einschätzung. Danach entscheiden wir die nächsten Schritte.",
+        "image": "/images/gallery/pflegestelle-taube-04.jpg",
+        "alt": "Eine gesicherte Stadttaube in menschlichen Händen",
+        "href": "/galerie",
+        "linkLabel": "Mehr ansehen"
+      },
+      {
+        "title": "Menschen machen den Unterschied",
+        "text": "Ehrenamtliche halten die Arbeit sichtbar: am Infostand, bei Fahrten, in Pflegestellen und im direkten Kontakt.",
+        "image": "/images/gallery/menschen-hinter-der-hilfe.jpg",
+        "alt": "Ehrenamtliche der Stadttaubenhilfe Bernau",
+        "href": "/galerie",
+        "linkLabel": "Mehr ansehen"
+      }
+    ]
+  },
+  "support": {
+    "kicker": "Unterstützen",
+    "title": "Deine Hilfe wird zu konkreter Versorgung.",
+    "text": "Spenden, Mitgliedschaft, Ehrenamt oder Patenschaft: Jede Form von Unterstützung stabilisiert die laufende Arbeit.",
+    "image": "/images/gallery/vereinsarbeit-team-stand-01.jpg",
+    "imageAlt": "Infostand der Stadttaubenhilfe Bernau",
+    "items": [
+      {
+        "title": "Spenden",
+        "text": "Futter, Reinigungsmaterial, Transportboxen und tierärztliche Kosten werden jede Woche gebraucht.",
+        "href": "/kontakt",
+        "linkLabel": "Anfragen"
+      },
+      {
+        "title": "Mitglied werden",
+        "text": "Eine Mitgliedschaft stärkt den Verein langfristig und macht die Arbeit planbarer.",
+        "href": "/kontakt",
+        "linkLabel": "Anfragen"
+      },
+      {
+        "title": "Ehrenamt",
+        "text": "Eine Fahrt, eine Stunde im Taubenhaus oder Hilfe am Infostand kann konkret entlasten.",
+        "href": "/kontakt",
+        "linkLabel": "Anfragen"
+      },
+      {
+        "title": "Patenschaft",
+        "text": "Regelmäßige Unterstützung hilft bei laufender Versorgung, Volieren und Pflegestellen.",
+        "href": "/kontakt",
+        "linkLabel": "Anfragen"
+      }
+    ]
+  },
+  "news": {
+    "kicker": "Aktuelles",
+    "title": "Neuigkeiten und Themen.",
+    "items": [
+      {
+        "label": "Demnächst",
+        "title": "Taubenhaus im Fahrradparkhaus Bernau",
+        "text": "Platz für Projektupdates, kurze Berichte und Wissensartikel."
+      },
+      {
+        "label": "Demnächst",
+        "title": "Was tun bei Fundtieren?",
+        "text": "Platz für Projektupdates, kurze Berichte und Wissensartikel."
+      },
+      {
+        "label": "Demnächst",
+        "title": "Warum Eiertausch wirkt",
+        "text": "Platz für Projektupdates, kurze Berichte und Wissensartikel."
+      }
+    ]
+  },
+  "footer": {
+    "description": "Taubenhaus, Eiertausch, Fundtiere und Aufklärung in Bernau bei Berlin."
+  },
+  "floatingCta": {
+    "label": "Melden",
+    "href": "#notfall"
+  }
+}

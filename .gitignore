@@ -1,0 +1,14 @@
+# Local tooling and operating-system files
+.DS_Store
+.codex/
+.impeccable/
+tmp/
+cms-server/
+
+# Generated Astro and Node.js artifacts
+web/node_modules/
+web/dist/
+web/.astro/
+
+# Historic manual-deployment packages
+web/*.zip

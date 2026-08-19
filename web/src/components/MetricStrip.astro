@@ -1,0 +1,21 @@
+---
+interface Item {
+  value: string;
+  label: string;
+}
+
+interface Props {
+  items: Item[];
+}
+
+const { items } = Astro.props;
+---
+
+<div class="metric-strip">
+  {items.map((item) => (
+    <article>
+      <strong>{item.value}</strong>
+      <span>{item.label}</span>
+    </article>
+  ))}
+</div>

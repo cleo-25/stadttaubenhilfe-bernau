@@ -1,0 +1,43 @@
+---
+import settings from "../data/settings.json";
+
+const linkGroups = settings.footerLinks;
+const brand = settings.brand;
+
+const isExternalLink = (href: string) => /^https?:\/\//.test(href);
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="/" aria-label="Startseite Stadttaubenhilfe Bernau">
+        <span class="brand-mark" aria-hidden="true">
+          <img class="brand-logo" src={brand.logo} alt="" />
+        </span>
+        <span>
+          <strong>{brand.name}</strong>
+          <small>{brand.suffix}</small>
+        </span>
+      </a>
+      <p>{brand.description}</p>
+    </div>
+
+    {linkGroups.map((group) => (
+      <nav class="footer-links" aria-label="Footer Links">
+        {group.links.map((link) => (
+          <a
+            href={link.href}
+            target={isExternalLink(link.href) ? "_blank" : undefined}
+            rel={isExternalLink(link.href) ? "noopener noreferrer" : undefined}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+    ))}
+  </div>
+  <div class="container footer-bottom">
+    <span>© {new Date().getFullYear()} {brand.name} Bernau</span>
+    <span>{settings.footerBottom}</span>
+  </div>
+</footer>

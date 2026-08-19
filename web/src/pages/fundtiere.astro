@@ -1,0 +1,121 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import InfoList from "../components/InfoList.astro";
+import Button from "../components/Button.astro";
+import fundtiereContent from "../data/fundtiere.json";
+
+const { hero, alert, checklistIntro, checklist } = fundtiereContent;
+---
+
+<BaseLayout
+  title="Taube gefunden"
+  description="Schnellhilfe für gefundene Stadttauben in Bernau und Umgebung: Karton vorbereiten, nichts einflößen, Fundort und Foto senden."
+  image={hero.imageSrc}
+>
+  <PageHero {...hero} />
+
+  <section class="section section-tight">
+    <div class="container split">
+      <div class="alert-card">
+        <span class="eyebrow">{alert.eyebrow}</span>
+        <h2>{alert.title}</h2>
+        <p>{alert.text}</p>
+        <div class="button-row">
+          <Button href="/kontakt">Jetzt Kontakt aufnehmen</Button>
+        </div>
+      </div>
+      <div id="checkliste">
+        <SectionHeader title={checklistIntro.title} text={checklistIntro.text} />
+        <InfoList items={checklist} />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Einschätzung"
+        title="Häufige Situationen"
+        text="Wenn du zweifelst, melde dich. Viele Notfälle sehen am Anfang unscheinbar aus."
+      />
+      <div class="grid grid-3">
+        <Card title="Jungtier am Boden" eyebrow="Noch nicht flugfähig" tone="blue">
+          <p>
+            Jungtauben sehen oft unfertig aus: gelbe Flaumreste, kurzer Schwanz,
+            unsicheres Laufen. Wenn sie am Boden sitzen und nicht richtig fliegen
+            können, brauchen sie Hilfe. Bitte in einen Karton setzen und melden.
+          </p>
+        </Card>
+        <Card title="Blut, hängender Flügel, Humpeln" eyebrow="Notfall" tone="accent">
+          <p>
+            Das ist ein Notfall. Bitte nicht warten. Taube in den Karton setzen,
+            warm stellen und melden.
+          </p>
+        </Card>
+        <Card title="Schnüre an den Füßen" eyebrow="Abschnürung" tone="green">
+          <p>
+            Viele Stadttauben haben Haare, Fäden oder Schnüre um die Zehen. Das
+            kann die Füße abschnüren und Zehen absterben lassen. Bitte in den
+            Karton setzen und melden.
+          </p>
+        </Card>
+        <Card title="Aufgeplustert und müde" eyebrow="Warnsignal" tone="violet">
+          <p>
+            Eine Taube, die aufgeplustert sitzt, die Augen schließt oder kaum
+            reagiert, ist oft krank oder stark geschwächt. Sie sollte nicht
+            draußen bleiben.
+          </p>
+        </Card>
+        <Card title="Gegen Scheibe geflogen" eyebrow="Nach Aufprall" tone="blue">
+          <p>
+            Auch wenn die Taube äußerlich unverletzt aussieht, kann sie nach
+            einem Anflug Trauma, innere Verletzungen oder neurologische Probleme
+            haben. Bitte in den Karton setzen und beobachten lassen.
+          </p>
+        </Card>
+        <Card title="Katze oder Hund hatte Kontakt" eyebrow="Schnell handeln" tone="accent">
+          <p>
+            Auch kleine Wunden können gefährlich werden. Bitte in den Karton
+            setzen und schnell melden.
+          </p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container split">
+      <div class="soft-panel">
+        <span class="eyebrow">Bitte nicht</span>
+        <h2>Diese Fehler können einem Fundtier schaden.</h2>
+        <ul class="check-list">
+          <li>Nicht baden.</li>
+          <li>Nicht zwangsfüttern.</li>
+          <li>Kein Wasser in den Schnabel geben.</li>
+          <li>Keine Medikamente ohne Rücksprache.</li>
+          <li>Nicht wieder raussetzen.</li>
+        </ul>
+      </div>
+
+      <div class="soft-panel fund-template">
+        <span class="eyebrow">Vorlage</span>
+        <h2>So kannst du eine Fundmeldung schreiben.</h2>
+        <p>
+          Ich habe eine Taube gefunden.<br />
+          Fundort: ...<br />
+          Uhrzeit: ...<br />
+          Ist sie im Karton? Ja/Nein<br />
+          Was fällt auf? Blut / hängender Flügel / Schnur / aufgeplustert /
+          Jungtier / Scheibenanflug / anderes: ...<br />
+          Foto vorhanden: Ja/Nein<br />
+          Telefonnummer für Rückfragen: ...
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <a class="button button-primary mobile-sticky-cta" href="/kontakt">Fundtier melden</a>
+</BaseLayout>

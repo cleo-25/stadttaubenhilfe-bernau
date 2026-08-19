@@ -1,0 +1,179 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Button from "../components/Button.astro";
+---
+
+<BaseLayout
+  title="Kontakt"
+  description="Kontakt zu Stadttaubenhilfe Bernau: Fundtier melden, Hilfe anbieten, Fragen stellen oder Unterstützung für das Taubenhaus besprechen."
+>
+  <PageHero
+    eyebrow="Kontakt"
+    title="Schreib uns"
+    text="Bei Fundtieren brauchen wir schnell die wichtigsten Angaben: genauer Fundort, Uhrzeit, Zustand, Foto und Telefonnummer. Bei allen anderen Fragen reicht eine kurze Nachricht."
+    primaryHref="#kontaktformular"
+    primaryLabel="Nachricht schreiben"
+    secondaryHref="/fundtiere"
+    secondaryLabel="Was sofort tun?"
+    visualLabel="Fundtier nach einem Fund"
+    imageSrc="/images/fundtier-hell.jpg"
+    imageAlt="Helle Taube nach einem Fund auf einer Hand"
+    imagePosition="72% center"
+  />
+
+  <section class="section section-tight" id="kontaktformular">
+    <div class="container contact-grid">
+      <div>
+        <SectionHeader
+          eyebrow="Nachricht"
+          title="Kontaktformular"
+          text="Wenn es um ein Fundtier geht, schreib bitte direkt dazu, wo die Taube ist, ob sie schon im Karton sitzt und wie wir dich erreichen."
+        />
+
+        <div class="soft-panel contact-help-panel">
+          <h2>Bei Fundtier bitte angeben:</h2>
+          <ul class="check-list">
+            <li>genaue Fundstelle</li>
+            <li>Uhrzeit des Funds</li>
+            <li>sitzt die Taube noch draußen oder ist sie im Karton?</li>
+            <li>sichtbare Verletzungen, Schnüre, Blut, hängender Flügel, aufgeplustertes Sitzen</li>
+            <li>Kontakt mit Katze oder Hund</li>
+            <li>Foto, falls vorhanden</li>
+            <li>Telefonnummer für Rückfragen</li>
+          </ul>
+          <p class="panel-note">
+            Fotos helfen sehr. Schreib kurz dazu, dass du Fotos hast. Wir sagen dir, wie du sie schicken kannst.
+          </p>
+        </div>
+
+        <form
+          class="soft-panel"
+          name="kontakt"
+          method="POST"
+          action="mailto:kontakt@stadttaubenhilfe-bernau.de"
+          enctype="text/plain"
+          data-email-form
+          data-email-to="kontakt@stadttaubenhilfe-bernau.de"
+        >
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Dein Name</label>
+              <input id="name" name="name" autocomplete="name" required />
+            </div>
+            <div class="form-field">
+              <label for="email">Deine E-Mail-Adresse</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="form-field">
+              <label for="telefon">Telefon</label>
+              <input id="telefon" name="telefon" type="tel" autocomplete="tel" />
+            </div>
+            <div class="form-field">
+              <label for="thema">Thema</label>
+              <select id="thema" name="thema" required>
+                <option value="">Bitte wählen</option>
+                <option>Fundtier</option>
+                <option>Mitmachen</option>
+                <option>Spenden</option>
+                <option>Taubenhaus</option>
+                <option>Allgemeine Frage</option>
+              </select>
+            </div>
+            <div class="form-field">
+              <label for="fundort">Fundort</label>
+              <input id="fundort" name="fundort" autocomplete="street-address" />
+            </div>
+            <div class="form-field">
+              <label for="uhrzeit">Uhrzeit</label>
+              <input id="uhrzeit" name="uhrzeit" placeholder="z. B. heute 14:30 Uhr" />
+            </div>
+            <div class="form-field form-field-full">
+              <label for="nachricht">Worum geht es?</label>
+              <textarea id="nachricht" name="nachricht" required></textarea>
+              <p class="field-help">
+                Bei Fundtieren bitte Zustand, Verhalten, genaue Stelle und Telefonnummer angeben.
+              </p>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button class="button button-primary" type="submit">Nachricht senden</button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="soft-panel">
+        <span class="eyebrow">Schnellkontakt</span>
+        <h2>Direkte Wege</h2>
+        <p class="contact-note">
+          Wenn eine Taube akut verletzt ist oder nicht wegfliegt, bitte nicht erst
+          lange abwarten. In einen Karton setzen, Foto machen, melden.
+        </p>
+        <ul class="contact-list">
+          <li>
+            <strong>Telefon</strong>
+            <a href="tel:+491626435114">+49 162 6435114</a>
+          </li>
+          <li>
+            <strong>E-Mail</strong>
+            <a href="mailto:kontakt@stadttaubenhilfe-bernau.de">kontakt@stadttaubenhilfe-bernau.de</a>
+          </li>
+          <li>
+            <strong>Facebook</strong>
+            <a
+              href="https://www.facebook.com/people/Stadttaubenhilfe-Bernau-b-Berlin/100064906808060/?locale=de_DE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Stadttaubenhilfe Bernau b. Berlin
+            </a>
+          </li>
+          <li>
+            <strong>Instagram</strong>
+            <a
+              href="https://www.instagram.com/stadttaubenhilfe.bernau/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @stadttaubenhilfe.bernau
+            </a>
+          </li>
+        </ul>
+        <div class="button-row">
+          <Button href="/fundtiere" variant="secondary">Was sofort tun?</Button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <script>
+    const emailForm = document.querySelector("[data-email-form]");
+
+    emailForm?.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const form = event.currentTarget;
+      if (!(form instanceof HTMLFormElement)) return;
+
+      const data = new FormData(form);
+      const topic = String(data.get("thema") || "Kontakt");
+      const lines = [
+        `Name: ${data.get("name") || ""}`,
+        `E-Mail: ${data.get("email") || ""}`,
+        `Telefon: ${data.get("telefon") || ""}`,
+        `Thema: ${topic}`,
+        `Fundort: ${data.get("fundort") || ""}`,
+        `Uhrzeit: ${data.get("uhrzeit") || ""}`,
+        "",
+        "Nachricht:",
+        String(data.get("nachricht") || ""),
+      ];
+
+      const to = form.dataset.emailTo || "kontakt@stadttaubenhilfe-bernau.de";
+      const subject = encodeURIComponent(`Stadttaubenhilfe Bernau: ${topic}`);
+      const body = encodeURIComponent(lines.join("\n"));
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  </script>
+</BaseLayout>

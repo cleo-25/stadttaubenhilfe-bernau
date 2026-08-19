@@ -1,0 +1,138 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import Button from "../components/Button.astro";
+
+const donationAmounts = [
+  {
+    amount: "10 €",
+    title: "Körnerfutter",
+    text: "hilft bei Futter und laufender Versorgung."
+  },
+  {
+    amount: "25 €",
+    title: "Verbrauchsmaterial",
+    text: "hilft bei Handschuhen, Küchenrolle, Einstreu und Reinigungsmaterial."
+  },
+  {
+    amount: "50 €",
+    title: "Akute Notfälle",
+    text: "hilft bei tierärztlichen Kosten, Medikamenten oder einem akuten Fundtier."
+  }
+];
+---
+
+<BaseLayout
+  title="Spenden"
+  description="Stadttaubenhilfe Bernau braucht Unterstützung für Futter, tierärztliche Kosten, Reinigung, Ausstattung und das Taubenhaus im Fahrradparkhaus."
+>
+  <PageHero
+    eyebrow="Unterstützen"
+    title="Spenden für Futter, Pflege und tierärztliche Kosten"
+    text="Unsere Arbeit kostet jede Woche Geld: Futter, Einstreu, Handschuhe, Reinigungsmaterial, Transportboxen, Medikamente und Besuche bei Tierärzt:innen. Spenden helfen direkt im Taubenhaus und bei Fundtieren in Bernau und Umgebung."
+    primaryHref="/kontakt"
+    primaryLabel="Spendenmöglichkeit anfragen"
+    secondaryHref="/mitmachen"
+    secondaryLabel="Ehrenamtlich helfen"
+    visualLabel="Zwei betreute Stadttauben"
+    imageSrc="/images/gallery/pflegestelle-paar-02.jpg"
+    imageAlt="Zwei betreute Stadttauben aus einer Pflegestelle"
+    imagePosition="center 42%"
+  />
+
+  <section class="campaign-banner campaign-banner-donate" aria-label="Spendenaufruf">
+    <div class="container campaign-banner-inner">
+      <strong>Aus Spenden werden Futter, Kartons, Fahrten und Termine bei Tierärzt:innen.</strong>
+      <span>Deine Spende wird Futter im Napf, eine saubere Box, ein Besuch bei Tierärzt:innen oder Material für den nächsten Einsatz.</span>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader
+        eyebrow="Wofür"
+        title="Wofür werden Spenden gebraucht?"
+      />
+      <div class="grid grid-3">
+        <Card title="Futter & Versorgung" tone="blue">
+          <p>Geeignetes Taubenfutter, Wasserstellen, Einstreu und laufendes Verbrauchsmaterial.</p>
+        </Card>
+        <Card title="Tierärzt:innen & Fundtiere" tone="green">
+          <p>Behandlungen, Medikamente, Pflegeplätze, Transport und akute Hilfe für verletzte Tiere.</p>
+        </Card>
+        <Card title="Taubenhaus & Reinigung" tone="violet">
+          <p>Schutzkleidung, Schaber, Desinfektion, Reparaturen und Ausstattung für den betreuten Standort.</p>
+        </Card>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container donation-amounts">
+      <div>
+        <span class="eyebrow">Direkte Wirkung</span>
+        <h2>Schon kleine Beträge werden zu praktischer Hilfe.</h2>
+      </div>
+      <div class="donation-grid">
+        {donationAmounts.map((item) => (
+          <article class="donation-card">
+            <strong>{item.amount}</strong>
+            <h3>{item.title}</h3>
+            <p>{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="sachspenden">
+    <div class="container split donation-story">
+      <SectionHeader
+        eyebrow="Aktuell"
+        title="Der Spendenweg wird gerade eingerichtet."
+        text="Bankverbindung, PayPal oder Formular werden ergänzt. Bis dahin schreib uns mit dem Stichwort Spende. Wir schicken dir den aktuellen Weg und klären auch, welche Sachspenden gerade gebraucht werden."
+      />
+      <div class="support-visual-panel">
+        <div class="support-visual-strip" aria-hidden="true">
+          <img src="/images/gallery/pflegestelle-verletzung-01.jpg" alt="" loading="lazy" decoding="async" />
+          <img src="/images/gallery/pflegestelle-box-01.jpg" alt="" loading="lazy" decoding="async" />
+          <img src="/images/gallery/taubenhaus-betreute-tauben-01.jpg" alt="" loading="lazy" decoding="async" />
+        </div>
+      </div>
+      <div class="soft-panel donation-contact-panel">
+        <h2>Du möchtest jetzt helfen?</h2>
+        <p>
+          Auch Sachspenden können helfen: Handtücher, Küchenrolle, Einmalhandschuhe,
+          Kartons, Transportboxen, Reinigungsmaterial oder geeignetes Taubenfutter.
+          Bitte frag vorher kurz nach, was gerade gebraucht wird.
+        </p>
+        <div class="button-row">
+          <Button href="/kontakt">Kontakt wegen Spende aufnehmen</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="patenschaften">
+    <div class="container split">
+      <SectionHeader
+        eyebrow="Patenschaften"
+        title="Regelmäßige Unterstützung gibt Planungssicherheit."
+        text="Patenschaften werden später als eigener Spendenweg ergänzt. Schon jetzt kannst du uns schreiben, wenn du die laufende Versorgung im Taubenhaus, Volieren oder Pflegestellen regelmäßig unterstützen möchtest."
+      />
+      <div class="soft-panel">
+        <h2>Was eine Patenschaft leisten kann</h2>
+        <ul class="check-list">
+          <li>Futter und Material für einen festen Zeitraum mitfinanzieren.</li>
+          <li>Tierärztliche Kosten für Notfälle planbarer machen.</li>
+          <li>Volieren und Pflegestellen langfristig entlasten.</li>
+        </ul>
+        <div class="button-row">
+          <Button href="/kontakt">Patenschaft anfragen</Button>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
