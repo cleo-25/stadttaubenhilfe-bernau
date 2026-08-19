@@ -12,6 +12,12 @@ const links = [
   { eyebrow: "Transparenz", title: "Vorstand und Satzung", text: "Vereinsstruktur, Satzung und die Menschen, die Verantwortung übernehmen.", href: "/verein/vorstand-und-satzung", icon: "book" as const },
   { eyebrow: "Mitglied werden", title: "Den Verein stärken", text: "Mitgliedschaft gibt unserer Arbeit eine dauerhaft verlässliche Basis.", href: "/verein/mitgliedschaft-beantragen", icon: "heart" as const }
 ];
+
+const board = [
+  { role: "Vereinsvorsitzende", name: "Susanne Hegewald-Gedicke" },
+  { role: "Stellvertretende Vorsitzende", name: "Xenia Laws" },
+  { role: "Schatzmeister", name: "Paul Bratfisch" }
+];
 ---
 
 <BaseLayout title="Unser Verein" description="Stadttaubenhilfe Bernau: ehrenamtlich, lokal und nah an den Tieren." image="/images/gallery/vereinsarbeit-team-stand-01.jpg" theme="participate">
@@ -22,6 +28,45 @@ const links = [
     { icon: "home", title: "Bernau", text: "Ein fester Ort und konkrete Verantwortung vor Ort." },
     { icon: "book", title: "Aufklärung", text: "Wissen schaffen und Konflikte fair einordnen." }
   ]} />
+
+  <section id="vorstand" class="section section-tight team-section">
+    <div class="container">
+      <SectionHeader eyebrow="Vorstand" title="Verantwortung hat bei uns Namen." text="Der Vorstand vertritt die Stadttaubenhilfe Bernau und sorgt dafür, dass die praktische Hilfe vor Ort verlässlich organisiert wird." />
+      <div class="team-board" aria-label="Vorstand der Stadttaubenhilfe Bernau">
+        {board.map((member) => (
+          <article>
+            <span>{member.role}</span>
+            <h3>{member.name}</h3>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="section section-tight member-section">
+    <div class="container member-layout">
+      <figure class="member-image">
+        <img src="/images/gallery/vereinsarbeit-team-stand-01.jpg" alt="Mitglieder der Stadttaubenhilfe Bernau am Infostand" loading="lazy" decoding="async" />
+      </figure>
+      <div class="member-copy">
+        <p class="eyebrow">Unser Team</p>
+        <h2>Menschen, die Hilfe möglich machen.</h2>
+        <p>Hinter der Stadttaubenhilfe stehen Menschen mit unterschiedlichen Aufgaben: Versorgung, Fahrten, Pflege, Organisation und Aufklärung. Hier stellen wir nach und nach die Mitglieder vor, die das Team prägen.</p>
+        <div class="member-slots" aria-label="Bereich für künftige Mitgliedervorstellungen">
+          <article>
+            <span aria-hidden="true">01</span>
+            <strong>Mitglied vorstellen</strong>
+            <p>Foto, Name und kurze Vorstellung können im CMS ergänzt werden.</p>
+          </article>
+          <article>
+            <span aria-hidden="true">02</span>
+            <strong>Mitglied vorstellen</strong>
+            <p>Ein Platz für die Menschen, die unsere tägliche Arbeit mittragen.</p>
+          </article>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section class="section section-tight">
     <div class="container">
@@ -34,3 +79,42 @@ const links = [
 
   <CtaBand eyebrow="Gemeinsam für Bernau" title="Du möchtest den Verein kennenlernen?" text="Schreib uns direkt – bei Mitgliedschaft, Ehrenamt, Kooperationen oder einer konkreten Frage." href="/kontakt" label="Kontakt aufnehmen" />
 </BaseLayout>
+
+<style>
+  .team-section { background: #eaf3fc; }
+
+  .team-board {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    border: 1px solid #c9dced;
+    background: #fff;
+  }
+
+  .team-board article { min-width: 0; padding: clamp(24px, 3vw, 38px); }
+  .team-board article + article { border-left: 1px solid #c9dced; }
+  .team-board span { display: block; margin-bottom: 18px; color: #32638d; font-size: .82rem; font-weight: 700; text-transform: uppercase; }
+  .team-board h3 { margin: 0; color: #123757; font-size: clamp(1.25rem, 2vw, 1.8rem); line-height: 1.05; }
+
+  .member-section { background: #fff; }
+  .member-layout { display: grid; grid-template-columns: minmax(280px, .88fr) minmax(0, 1.12fr); gap: clamp(30px, 6vw, 82px); align-items: center; }
+  .member-image { min-height: 420px; margin: 0; overflow: hidden; background: #0d2942; }
+  .member-image img { width: 100%; height: 100%; min-height: inherit; object-fit: cover; object-position: center 42%; }
+  .member-copy { max-width: 620px; }
+  .member-copy h2 { margin: 0; color: #123757; font-size: clamp(2.15rem, 4vw, 4rem); line-height: .98; letter-spacing: -.035em; }
+  .member-copy > p:not(.eyebrow) { margin: 22px 0 0; color: #123757; font-size: 1.08rem; line-height: 1.55; }
+  .member-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 32px; border: 1px solid #c9dced; }
+  .member-slots article { padding: 22px; background: #eaf3fc; }
+  .member-slots article + article { border-left: 1px solid #c9dced; background: #fff; }
+  .member-slots span { display: block; margin-bottom: 18px; color: #5590d1; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.05rem; font-weight: 700; }
+  .member-slots strong { display: block; color: #123757; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.05rem; line-height: 1.1; }
+  .member-slots p { margin: 8px 0 0; color: #315673; font-size: .92rem; line-height: 1.45; }
+
+  @media (max-width: 800px) {
+    .team-board { grid-template-columns: 1fr; }
+    .team-board article + article { border-top: 1px solid #c9dced; border-left: 0; }
+    .member-layout { grid-template-columns: 1fr; gap: 30px; }
+    .member-image { min-height: 0; aspect-ratio: 4 / 3; }
+    .member-slots { grid-template-columns: 1fr; }
+    .member-slots article + article { border-top: 1px solid #c9dced; border-left: 0; }
+  }
+</style>

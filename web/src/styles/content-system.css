@@ -33,6 +33,9 @@ body[data-page-theme] main > .section:nth-of-type(odd) {
   background: var(--page-soft);
 }
 
+/* Anchored content should never disappear underneath the persistent header. */
+main [id] { scroll-margin-top: 92px; }
+
 /* Content hubs should feel like the compact, editorial homepage, not like a
    stack of disconnected CMS blocks. */
 body[data-page-theme] .section { padding-block: clamp(46px, 5vw, 76px); }
@@ -393,6 +396,12 @@ body[data-page-theme="participate"] .volunteer-note {
 }
 body[data-page-theme="participate"] .volunteer-note h2 { margin: 0; }
 body[data-page-theme="participate"] .volunteer-note p { margin: 0; font-size: 1.08rem; }
+
+/* The reference design uses one cool Bernau-blue system. Older utility tones
+   are mapped back into it so no isolated green or violet cards leak into an
+   otherwise coherent page. */
+body[data-page-theme] .card-green { background: var(--page-pale); }
+body[data-page-theme] .card-violet { background: var(--page-white); }
 
 body[data-page-theme="contact"] .contact-help-panel { border: 0; border-radius: 0; background: var(--page-coral-pale); }
 body[data-page-theme="contact"] .contact-grid > aside { border: 0; border-radius: 0; background: var(--page-band); }

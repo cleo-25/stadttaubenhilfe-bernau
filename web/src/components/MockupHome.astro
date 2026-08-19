@@ -56,6 +56,10 @@ const { brand, emergency, nav, hero, belief, impact, story, helpWays, donation, 
     .home .way .line-icon { width: 42px; height: 42px; }
   }
 </style>
+<style is:global>
+  /* Keep the same navigation available after the homepage hero has scrolled. */
+  .home .site-header { position: sticky !important; top: 0; z-index: 40; }
+</style>
 <style>
   .mobile-nav { display: none; }
 

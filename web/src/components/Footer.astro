@@ -1,13 +1,15 @@
 ---
 import settings from "../data/settings.json";
+import SocialIcon from "./SocialIcon.astro";
 
 const linkGroups = settings.footerLinks;
 const brand = settings.brand;
 
 const isExternalLink = (href: string) => /^https?:\/\//.test(href);
+const socialName = (href: string) => href.includes("instagram.com") ? "instagram" : href.includes("facebook.com") ? "facebook" : undefined;
 ---
 
-<footer class="site-footer">
+<footer id="seitenende" class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
       <a class="brand" href="/" aria-label="Startseite Stadttaubenhilfe Bernau">
@@ -26,10 +28,12 @@ const isExternalLink = (href: string) => /^https?:\/\//.test(href);
       <nav class="footer-links" aria-label="Footer Links">
         {group.links.map((link) => (
           <a
+            class:list={[socialName(link.href) && "footer-social-link"]}
             href={link.href}
             target={isExternalLink(link.href) ? "_blank" : undefined}
             rel={isExternalLink(link.href) ? "noopener noreferrer" : undefined}
           >
+            {socialName(link.href) && <SocialIcon name={socialName(link.href)!} />}
             {link.label}
           </a>
         ))}
@@ -41,3 +45,21 @@ const isExternalLink = (href: string) => /^https?:\/\//.test(href);
     <span>{settings.footerBottom}</span>
   </div>
 </footer>
+
+<style>
+  .footer-social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+  }
+
+  .footer-social-link svg {
+    width: 19px;
+    height: 19px;
+    flex: 0 0 19px;
+    color: #8cb2e1;
+  }
+
+  .footer-social-link:hover svg,
+  .footer-social-link:focus-visible svg { color: #f2675c; }
+</style>

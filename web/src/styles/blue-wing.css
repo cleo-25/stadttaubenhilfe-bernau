@@ -14,7 +14,7 @@
   --blue: #8cb2e1;
   --blue-dark: #183a5a;
   --blue-soft: #eaf3fc;
-  --success: #397b68;
+  --success: #5590d1;
   --shadow: 0 8px 18px rgba(13, 41, 66, 0.1);
   --shadow-soft: 0 4px 8px rgba(13, 41, 66, 0.08);
   --radius: 12px;
@@ -78,8 +78,8 @@ h1 { font-size: clamp(3rem, 5.6vw, 5.7rem); }
 .card::before { display: none; }
 .card-accent { background: #ffe2df; }
 .card-blue { background: var(--accent-soft); }
-.card-green { background: #e6f1ed; }
-.card-violet { background: #f1f3f7; }
+.card-green { background: #eaf3fc; }
+.card-violet { background: #fff; }
 .alert-card { background: #ffe2df; border-color: #f2675c; }
 .soft-panel { background: var(--accent-soft); border-color: var(--line); }
 

@@ -1,5 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="SB">
-  <rect width="64" height="64" rx="16" fill="#FFF1E8"/>
-  <rect x="4" y="4" width="56" height="56" rx="14" fill="none" stroke="#E9B99C" stroke-width="2"/>
-  <text x="32" y="39" text-anchor="middle" fill="#9F461E" font-family="Arial, sans-serif" font-size="20" font-weight="800">SB</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-label="Stadttaubenhilfe Bernau">
+  <defs>
+    <clipPath id="round-logo"><circle cx="32" cy="32" r="29" /></clipPath>
+  </defs>
+  <circle cx="32" cy="32" r="31" fill="#ffffff" />
+  <image href="/images/logo-stadttaubenhilfe-restored-v2.png" x="3" y="3" width="58" height="58" preserveAspectRatio="xMidYMid meet" clip-path="url(#round-logo)" />
+  <circle cx="32" cy="32" r="29" fill="none" stroke="#0d2942" stroke-opacity=".22" stroke-width="1.25" />
 </svg>
