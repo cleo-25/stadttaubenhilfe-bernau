@@ -11,7 +11,8 @@
     "imageSrc": "/images/projects/startbild-fundtiere.jpg",
     "imageAlt": "Taube nach einem Fund auf einer Hand",
     "imagePosition": "center 38%",
-    "mobileImagePosition": "center 30%"
+    "mobileImagePosition": "center 30%",
+    "mobileFrameRatio": "4 / 3"
   },
   "alert": {
     "eyebrow": "Erster Schritt",

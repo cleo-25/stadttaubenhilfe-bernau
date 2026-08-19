@@ -106,6 +106,10 @@ h1 { font-size: clamp(3rem, 5.6vw, 5.7rem); }
   .site-nav a { padding: 13px 0; color: #fff; }
   .site-nav .site-nav-donate { padding: 13px 14px; }
   .page-hero .media-photo-frame { min-height: min(102vw, 430px); }
+  .page-hero .media-photo-frame.mobile-frame-ratio {
+    min-height: 0;
+    aspect-ratio: var(--mobile-frame-ratio);
+  }
   .page-hero .media-photo-frame img { object-position: var(--image-position-mobile, var(--image-position, center)); }
 }
 

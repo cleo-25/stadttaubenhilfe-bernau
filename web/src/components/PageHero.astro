@@ -15,6 +15,7 @@ interface Props {
   imageAlt?: string;
   imagePosition?: string;
   mobileImagePosition?: string;
+  mobileFrameRatio?: string;
 }
 
 const {
@@ -30,7 +31,8 @@ const {
   imageSrc,
   imageAlt = visualLabel,
   imagePosition = "center",
-  mobileImagePosition = imagePosition
+  mobileImagePosition = imagePosition,
+  mobileFrameRatio
 } = Astro.props;
 ---
 
@@ -51,9 +53,9 @@ const {
     </div>
     {imageSrc ? (
       <figure
-        class="media-photo-frame"
+        class:list={["media-photo-frame", mobileFrameRatio && "mobile-frame-ratio"]}
         aria-label={visualLabel}
-        style={`--image-position: ${imagePosition}; --image-position-mobile: ${mobileImagePosition}; background-image: url('${imageSrc}'); background-position: ${imagePosition};`}
+        style={`--image-position: ${imagePosition}; --image-position-mobile: ${mobileImagePosition};${mobileFrameRatio ? ` --mobile-frame-ratio: ${mobileFrameRatio};` : ""} background-image: url('${imageSrc}'); background-position: ${imagePosition};`}
       >
         <img
           src={imageSrc}
