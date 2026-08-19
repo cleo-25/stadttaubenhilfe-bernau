@@ -20,6 +20,7 @@ const { hero, alert, checklistIntro, checklist } = fundtiereContent;
   <PageHero {...hero} />
 
   <ContentBand
+    id="erste-hilfe"
     tone="navy"
     eyebrow="Erste Hilfe in drei Schritten"
     title="Ruhig handeln. So hilfst du sofort."
@@ -44,7 +45,7 @@ const { hero, alert, checklistIntro, checklist } = fundtiereContent;
           <Button href="/kontakt">Jetzt Kontakt aufnehmen</Button>
         </div>
       </div>
-      <div id="checkliste">
+      <div id="karton">
         <SectionHeader title={checklistIntro.title} text={checklistIntro.text} />
         <InfoList items={checklist} />
       </div>
@@ -105,7 +106,7 @@ const { hero, alert, checklistIntro, checklist } = fundtiereContent;
 
   <section class="section section-tight">
     <div class="container split">
-      <div class="soft-panel">
+      <div class="soft-panel" id="nichts-einfloessen">
         <span class="eyebrow">Bitte nicht</span>
         <h2>Diese Fehler können einem Fundtier schaden.</h2>
         <ul class="check-list">

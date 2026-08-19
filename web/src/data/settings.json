@@ -19,36 +19,49 @@
       "href": "/verein",
       "items": [
         { "label": "Wer wir sind", "href": "/verein/wer-wir-sind" },
+        { "label": "Ehrenamt in Bernau", "href": "/mitmachen#ehrenamt" },
         { "label": "Vorstand und Satzung", "href": "/verein/vorstand-und-satzung" },
-        { "label": "Unsere Visionen und Ziele", "href": "/verein/visionen-und-ziele" },
-        { "label": "Mitgliedschaft beantragen", "href": "/verein/mitgliedschaft-beantragen" }
+        { "label": "Mitglied werden", "href": "/verein/mitgliedschaft-beantragen" }
       ]
     },
     {
-      "label": "Unsere Arbeit",
-      "href": "/arbeit",
+      "label": "Was wir tun",
+      "href": "/projekte",
       "items": [
-        { "label": "Stadttaubenmanagement", "href": "/arbeit/stadttaubenmanagement" },
-        { "label": "Tauben-Notfälle", "href": "/arbeit/tauben-notfaelle" },
-        { "label": "Unsere Projekte", "href": "/arbeit/projekte" },
-        { "label": "Handicapvolieren", "href": "/arbeit/handicapvolieren" },
-        { "label": "Taubenhaus am Bahnhof Bernau", "href": "/arbeit/taubenhaus-am-bahnhof-bernau" },
-        { "label": "Stadttaubenhilfe Bernau in Zahlen", "href": "/arbeit/stadttaubenhilfe-bernau-in-zahlen" },
-        { "label": "Referenzen", "href": "/arbeit/referenzen" }
+        { "label": "Taubenhaus im Fahrradparkhaus", "href": "/projekte/taubenhaus" },
+        { "label": "Fundtiere & Notfälle", "href": "/projekte/notfaelle" },
+        { "label": "Volieren", "href": "/projekte/volieren" },
+        { "label": "Beratung bei Gebäuden", "href": "/projekte/beratung" }
       ]
     },
     {
       "label": "Stadttaubenmanagement",
       "href": "/stadttaubenmanagement",
-      "items": []
+      "items": [
+        { "label": "Taubenhaus", "href": "/projekte/taubenhaus" },
+        { "label": "Eiertausch", "href": "/projekte/taubenhaus#eiertausch" },
+        { "label": "Reinigung", "href": "/projekte/taubenhaus#reinigung" },
+        { "label": "Zusammenarbeit mit Behörden", "href": "/projekte/taubenhaus#zusammenarbeit" }
+      ]
     },
     {
       "label": "Taube gefunden?",
-      "href": "/taube-gefunden",
+      "href": "/fundtiere",
       "items": [
-        { "label": "1. Hilfe Maßnahmen", "href": "/taube-gefunden/erste-hilfe-massnahmen" },
-        { "label": "Die richtige Unterbringung", "href": "/taube-gefunden/richtige-unterbringung" },
-        { "label": "Zu welchem Tierarzt", "href": "/taube-gefunden/tierarzt" }
+        { "label": "Erste Hilfe", "href": "/fundtiere#erste-hilfe" },
+        { "label": "Karton vorbereiten", "href": "/fundtiere#karton" },
+        { "label": "Nichts einflößen", "href": "/fundtiere#nichts-einfloessen" },
+        { "label": "Fundort & Foto senden", "href": "/kontakt#kontaktformular" }
+      ]
+    },
+    {
+      "label": "Stadttauben – die vergessenen Haustiere",
+      "href": "/wissen",
+      "items": [
+        { "label": "Herkunft von der Felsentaube", "href": "/wissen/ersatzfelsen" },
+        { "label": "Haus- & Brieftauben", "href": "/wissen#arten" },
+        { "label": "Warum Städte Ersatzfelsen sind", "href": "/wissen/ersatzfelsen" },
+        { "label": "Warum Vergrämung nicht reicht", "href": "/wissen/mythen" }
       ]
     },
     {
@@ -62,25 +75,24 @@
       ]
     },
     {
-      "label": "Verein unterstützen",
-      "href": "/verein-unterstuetzen",
+      "label": "Du willst uns helfen?",
+      "href": "/mitmachen",
       "items": [
-        { "label": "Mitgliedschaft", "href": "/verein-unterstuetzen/mitgliedschaft" },
-        { "label": "Ehrenamtlich helfen", "href": "/verein-unterstuetzen/ehrenamtlich-helfen" },
-        { "label": "Geldspenden", "href": "/verein-unterstuetzen/geldspenden" },
-        { "label": "Sachspenden", "href": "/verein-unterstuetzen/sachspenden" },
-        { "label": "Patenschaften", "href": "/verein-unterstuetzen/patenschaften" }
+        { "label": "Ehrenamtlich mithelfen", "href": "/mitmachen#ehrenamt" },
+        { "label": "Futter oder Material spenden", "href": "/spenden#sachspenden" },
+        { "label": "Fahrten übernehmen", "href": "/mitmachen#ehrenamt" },
+        { "label": "Mitglied werden", "href": "/verein/mitgliedschaft-beantragen" }
       ]
-    },
-    {
-      "label": "Spenden",
-      "href": "/spenden",
-      "items": []
     },
     {
       "label": "Kontakt",
       "href": "/kontakt",
-      "items": []
+      "items": [
+        { "label": "Fundtier melden", "href": "/kontakt#kontaktformular" },
+        { "label": "Frage stellen", "href": "/kontakt#kontaktformular" },
+        { "label": "Fotos senden", "href": "/kontakt#kontaktformular" },
+        { "label": "Spendenweg anfragen", "href": "/spenden" }
+      ]
     }
   ],
   "footerLinks": [

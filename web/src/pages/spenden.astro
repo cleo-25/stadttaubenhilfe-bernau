@@ -3,8 +3,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
-import Button from "../components/Button.astro";
 import ContentBand from "../components/ContentBand.astro";
+import CtaBand from "../components/CtaBand.astro";
 
 const donationAmounts = [
   {
@@ -98,52 +98,22 @@ const donationAmounts = [
     </div>
   </section>
 
-  <section class="section" id="sachspenden">
-    <div class="container split donation-story">
-      <SectionHeader
-        eyebrow="Aktuell"
-        title="Der Spendenweg wird gerade eingerichtet."
-        text="Bankverbindung, PayPal oder Formular werden ergänzt. Bis dahin schreib uns mit dem Stichwort Spende. Wir schicken dir den aktuellen Weg und klären auch, welche Sachspenden gerade gebraucht werden."
-      />
-      <div class="support-visual-panel">
-        <div class="support-visual-strip" aria-hidden="true">
-          <img src="/images/gallery/pflegestelle-verletzung-01.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="/images/gallery/pflegestelle-box-01.jpg" alt="" loading="lazy" decoding="async" />
-          <img src="/images/gallery/taubenhaus-betreute-tauben-01.jpg" alt="" loading="lazy" decoding="async" />
-        </div>
+  <section class="section section-tight" id="sachspenden">
+    <div class="container donation-note">
+      <div>
+        <span class="eyebrow">Geld, Material oder regelmäßige Hilfe</span>
+        <h2>Der Spendenweg wird gerade eingerichtet.</h2>
       </div>
-      <div class="soft-panel donation-contact-panel">
-        <h2>Du möchtest jetzt helfen?</h2>
-        <p>
-          Auch Sachspenden können helfen: Handtücher, Küchenrolle, Einmalhandschuhe,
-          Kartons, Transportboxen, Reinigungsmaterial oder geeignetes Taubenfutter.
-          Bitte frag vorher kurz nach, was gerade gebraucht wird.
-        </p>
-        <div class="button-row">
-          <Button href="/kontakt">Kontakt wegen Spende aufnehmen</Button>
-        </div>
-      </div>
+      <p>Bankverbindung, PayPal oder Formular werden ergänzt. Bis dahin schreib uns mit dem Stichwort Spende. Auch Handtücher, Küchenrolle, Einmalhandschuhe, Kartons, Transportboxen, Reinigungsmaterial oder geeignetes Taubenfutter können helfen – bitte vorher kurz nachfragen.</p>
+      <a class="button button-primary" href="/kontakt">Spendenweg anfragen</a>
     </div>
   </section>
 
-  <section class="section section-tight" id="patenschaften">
-    <div class="container split">
-      <SectionHeader
-        eyebrow="Patenschaften"
-        title="Regelmäßige Unterstützung gibt Planungssicherheit."
-        text="Patenschaften werden später als eigener Spendenweg ergänzt. Schon jetzt kannst du uns schreiben, wenn du die laufende Versorgung im Taubenhaus, Volieren oder Pflegestellen regelmäßig unterstützen möchtest."
-      />
-      <div class="soft-panel">
-        <h2>Was eine Patenschaft leisten kann</h2>
-        <ul class="check-list">
-          <li>Futter und Material für einen festen Zeitraum mitfinanzieren.</li>
-          <li>Tierärztliche Kosten für Notfälle planbarer machen.</li>
-          <li>Volieren und Pflegestellen langfristig entlasten.</li>
-        </ul>
-        <div class="button-row">
-          <Button href="/kontakt">Patenschaft anfragen</Button>
-        </div>
-      </div>
-    </div>
-  </section>
+  <CtaBand
+    eyebrow="Regelmäßig unterstützen"
+    title="Planbare Hilfe gibt Sicherheit."
+    text="Wenn du Futter, Material, Volieren oder tierärztliche Notfälle langfristig mittragen möchtest, freuen wir uns über deine Nachricht."
+    href="/kontakt"
+    label="Patenschaft anfragen"
+  />
 </BaseLayout>

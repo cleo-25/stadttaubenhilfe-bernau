@@ -30,7 +30,8 @@ type NavigationPage = {
 };
 
 export function getStaticPaths() {
-  return (navigationPages as NavigationPage[]).map((page) => ({
+  const staticHubPages = new Set(["verein", "stadttaubenmanagement", "taube-gleich-taube"]);
+  return (navigationPages as NavigationPage[]).filter((page) => !staticHubPages.has(page.slug)).map((page) => ({
     params: { slug: page.slug },
     props: { page }
   }));
@@ -72,12 +73,12 @@ const sections = page.sections?.length
   ? page.sections
   : [
       {
-        title: "Inhalt folgt",
-        text: "Diese Seite ist als Vorlage angelegt. Texte, Bilder und Detailinhalte können später über das CMS gepflegt und nach dem finalen Design sauber eingetragen werden."
+        title: "Was wir hier anbieten",
+        text: "Die wichtigsten Informationen sind hier gebündelt. Bei einem konkreten Anliegen helfen wir persönlich weiter."
       },
       {
-        title: "Design-Vorlage",
-        text: "Layout, Navigation, Hero-Bild und Kartenstruktur sind vorbereitet. So bleibt die neue Seitenarchitektur stabil, während die Inhalte Schritt für Schritt wachsen."
+        title: "Direkt in Bernau",
+        text: "Unsere Arbeit verbindet praktische Hilfe für Tiere mit verständlicher Beratung für Menschen vor Ort."
       }
     ];
 ---
@@ -89,7 +90,7 @@ const sections = page.sections?.length
     text={page.text}
     primaryHref="/kontakt"
     primaryLabel="Kontakt aufnehmen"
-    secondaryHref="/cms-preview/"
+    secondaryHref="/"
     secondaryLabel="Zur Startseite"
     visualLabel={page.title}
     imageSrc={page.image}
@@ -100,11 +101,8 @@ const sections = page.sections?.length
   <ContentBand
     tone={pageTheme === "emergency" ? "coral" : pageTheme === "knowledge" ? "blue" : "navy"}
     eyebrow={page.eyebrow}
-    title="Einfach erklärt. Gut vorbereitet."
-    text={page.text}
-    imageSrc={page.image}
-    imageAlt={page.imageAlt}
-    imagePosition="center"
+    title="Orientierung, die weiterhilft."
+    text="Wir bündeln Wissen, praktische Schritte und die passenden Kontakte – klar strukturiert und direkt auf die Situation bezogen."
     features={bandFeatures}
   />
 
@@ -113,13 +111,13 @@ const sections = page.sections?.length
       <div class="container">
         <SectionHeader
           eyebrow="Unterseiten"
-          title="Alle Inhalte als eigene Seiten vorbereitet."
-          text="Jeder Menü-Unterpunkt hat jetzt eine eigene URL und kann später separat über das CMS mit Inhalt, Bildern und SEO-Texten gepflegt werden."
+          title="Weitere Themen auf einen Blick."
+          text="Wähle den Bereich, der zu deiner Frage passt."
         />
         <div class="template-page-grid topic-grid">
           {childPages.map((child, index) => (
             <Card href={child.href} title={child.label} tone="blue" icon={index % 4 === 0 ? "home" : index % 4 === 1 ? "book" : index % 4 === 2 ? "care" : "hands"}>
-              <p>Vorlage öffnen und später mit finalem Inhalt befüllen.</p>
+              <p>Direkt zum Thema →</p>
             </Card>
           ))}
         </div>
@@ -130,9 +128,9 @@ const sections = page.sections?.length
   <section class="section section-tight">
     <div class="container template-page-content">
       <SectionHeader
-        eyebrow="Vorlage"
-        title="Bereit für Inhalt und Feinschliff."
-        text="Diese Seite ist bewusst schlicht angelegt: genügend Struktur für Navigation, CMS und spätere Inhalte, ohne das finale Design jetzt festzunageln."
+        eyebrow="Das Wichtigste"
+        title="Klar erklärt, direkt anwendbar."
+        text="Die wichtigsten Punkte zu diesem Thema – kompakt zusammengefasst."
       />
       <div class="grid grid-2 topic-grid">
         {sections.map((section, index) => (
@@ -145,9 +143,9 @@ const sections = page.sections?.length
   </section>
 
   <CtaBand
-    eyebrow="Nächster Schritt"
-    title="Inhalte können später im CMS gepflegt werden."
-    text="Die Seitenstruktur ist jetzt vorbereitet. Sobald das finale Design steht, können Texte, Bilder und Seitendetails gezielt ergänzt werden."
+    eyebrow="Noch Fragen?"
+    title="Wir helfen persönlich weiter."
+    text="Wenn du etwas nicht findest oder eine konkrete Situation hast, schreib uns direkt."
     href="/kontakt"
     label="Kontakt aufnehmen"
   />

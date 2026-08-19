@@ -24,6 +24,7 @@ interface Feature {
 }
 
 interface Props {
+  id?: string;
   tone?: "navy" | "blue" | "coral";
   eyebrow?: string;
   title: string;
@@ -35,6 +36,7 @@ interface Props {
 }
 
 const {
+  id,
   tone = "navy",
   eyebrow,
   title,
@@ -46,7 +48,7 @@ const {
 } = Astro.props;
 ---
 
-<section class:list={["content-band", `content-band-${tone}`, imageSrc && "content-band-has-image"]}>
+<section id={id} class:list={["content-band", `content-band-${tone}`, imageSrc && "content-band-has-image"]}>
   <div class="container content-band-grid">
     <div class="content-band-copy">
       {eyebrow && <span class="content-band-eyebrow">{eyebrow}</span>}

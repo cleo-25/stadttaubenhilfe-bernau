@@ -33,6 +33,11 @@ body[data-page-theme] main > .section:nth-of-type(odd) {
   background: var(--page-soft);
 }
 
+/* Content hubs should feel like the compact, editorial homepage, not like a
+   stack of disconnected CMS blocks. */
+body[data-page-theme] .section { padding-block: clamp(46px, 5vw, 76px); }
+body[data-page-theme] .section.section-tight { padding-block: clamp(38px, 4vw, 62px); }
+
 body[data-page-theme] .section-header h2,
 body[data-page-theme] .section h2 {
   color: var(--page-ink);
@@ -216,6 +221,14 @@ body[data-page-theme] .topic-grid .card .line-icon {
 body[data-page-theme] .topic-grid .card:nth-child(4n + 4) .line-icon { color: var(--page-blue); }
 body[data-page-theme] .topic-grid .card h3 { margin: 0; color: var(--page-ink); font-size: clamp(1.35rem, 2.2vw, 1.9rem); }
 body[data-page-theme] .topic-grid .card .card-body { margin-top: 12px; color: var(--page-ink); line-height: 1.55; }
+body[data-page-theme] .card-more {
+  display: inline-block;
+  margin-top: 18px;
+  color: inherit;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: .88rem;
+  font-weight: 700;
+}
 
 body[data-page-theme] .soft-panel,
 body[data-page-theme] .card,
@@ -295,6 +308,13 @@ body[data-page-theme="projects"] .project-toc-card .line-icon {
   stroke-width: 1.55;
 }
 body[data-page-theme="projects"] .project-toc-card:nth-child(3n) .line-icon { color: var(--page-blue); }
+body[data-page-theme="projects"] .project-toc-card small {
+  margin-top: 10px;
+  color: inherit;
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-size: .78rem;
+  font-weight: 700;
+}
 body[data-page-theme="projects"] .flagship-project { background: var(--page-band); color: #fff; padding: clamp(34px, 6vw, 76px); }
 body[data-page-theme="projects"] .flagship-project h2,
 body[data-page-theme="projects"] .flagship-project h3,
@@ -302,6 +322,24 @@ body[data-page-theme="projects"] .flagship-project p,
 body[data-page-theme="projects"] .flagship-project .eyebrow,
 body[data-page-theme="projects"] .flagship-project li { color: #fff; }
 body[data-page-theme="projects"] .flagship-list { border: 1px solid rgba(255,255,255,.34); border-radius: 0; background: transparent; }
+body[data-page-theme="projects"] .flagship-project .metric-strip { align-self: stretch; }
+body[data-page-theme="projects"] .flagship-project .metric-strip article { background: rgba(255,255,255,.10); border-color: rgba(255,255,255,.22); }
+body[data-page-theme="projects"] .flagship-project .metric-strip strong,
+body[data-page-theme="projects"] .flagship-project .metric-strip span { color: #fff; }
+body[data-page-theme] .text-link { display: inline-block; margin-top: 18px; font-family: "Bricolage Grotesque", sans-serif; font-weight: 700; }
+body[data-page-theme] .text-link-light { color: #fff; text-decoration-color: #8cb2e1; text-underline-offset: 4px; }
+body[data-page-theme] .project-detail-points { margin: 0; padding: clamp(24px, 3vw, 34px); border: 0; background: var(--page-pale); }
+body[data-page-theme] .project-detail-points li { padding-block: 12px; font-size: 1.03rem; }
+body[data-page-theme] .management-details {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  background: var(--page-band);
+}
+body[data-page-theme] .management-details article { min-width: 0; padding: clamp(24px, 3vw, 40px); }
+body[data-page-theme] .management-details article + article { border-left: 1px solid rgba(255,255,255,.25); }
+body[data-page-theme] .management-details h2,
+body[data-page-theme] .management-details p,
+body[data-page-theme] .management-details .eyebrow { color: #fff; }
 body[data-page-theme="projects"] .project-panel { border: 0; border-radius: 0; background: var(--page-pale); box-shadow: none; }
 body[data-page-theme="projects"] .project-panel:nth-child(even) { background: var(--page-white); }
 body[data-page-theme="projects"] .project-panel:nth-child(3n) { background: var(--page-band); }
@@ -326,6 +364,17 @@ body[data-page-theme="donate"] .donation-card:nth-child(3) h3,
 body[data-page-theme="donate"] .donation-card:nth-child(3) p { color: #fff; }
 body[data-page-theme="donate"] .donation-card::before { display: none; }
 body[data-page-theme="donate"] .support-visual-strip img { border-radius: 0; }
+body[data-page-theme="donate"] .donation-note {
+  display: grid;
+  grid-template-columns: minmax(220px, .8fr) minmax(0, 1.2fr) auto;
+  gap: clamp(22px, 4vw, 52px);
+  align-items: center;
+  background: var(--page-pale);
+  padding: clamp(28px, 4vw, 48px);
+}
+body[data-page-theme="donate"] .donation-note h2,
+body[data-page-theme="donate"] .donation-note p { margin: 0; }
+body[data-page-theme="donate"] .donation-note p { font-size: 1.05rem; }
 
 body[data-page-theme="participate"] .pill-list li { border: 0; border-radius: 0; background: var(--page-white); }
 body[data-page-theme="participate"] #wer-wir-sind .soft-panel:nth-child(1) { background: var(--page-blue); }
@@ -334,6 +383,16 @@ body[data-page-theme="participate"] #wer-wir-sind .soft-panel:nth-child(3) { bac
 body[data-page-theme="participate"] #wer-wir-sind .soft-panel:nth-child(4) { background: var(--page-band); }
 body[data-page-theme="participate"] #wer-wir-sind .soft-panel:nth-child(4) h2,
 body[data-page-theme="participate"] #wer-wir-sind .soft-panel:nth-child(4) p { color: #fff; }
+body[data-page-theme="participate"] .volunteer-note {
+  display: grid;
+  grid-template-columns: minmax(220px, .75fr) minmax(0, 1.25fr) auto;
+  gap: clamp(22px, 4vw, 52px);
+  align-items: center;
+  background: var(--page-pale);
+  padding: clamp(28px, 4vw, 48px);
+}
+body[data-page-theme="participate"] .volunteer-note h2 { margin: 0; }
+body[data-page-theme="participate"] .volunteer-note p { margin: 0; font-size: 1.08rem; }
 
 body[data-page-theme="contact"] .contact-help-panel { border: 0; border-radius: 0; background: var(--page-coral-pale); }
 body[data-page-theme="contact"] .contact-grid > aside { border: 0; border-radius: 0; background: var(--page-band); }
@@ -374,4 +433,8 @@ body[data-page-theme="legal"] .legal-note { border: 0; border-radius: 0; backgro
   body[data-page-theme="knowledge"] .city-rock,
   body[data-page-theme="knowledge"] .knowledge-band { padding: 28px 24px; }
   body[data-page-theme="projects"] .project-panel { padding: 20px; }
+  body[data-page-theme] .management-details,
+  body[data-page-theme="participate"] .volunteer-note,
+  body[data-page-theme="donate"] .donation-note { grid-template-columns: 1fr; }
+  body[data-page-theme] .management-details article + article { border-top: 1px solid rgba(255,255,255,.25); border-left: 0; }
 }

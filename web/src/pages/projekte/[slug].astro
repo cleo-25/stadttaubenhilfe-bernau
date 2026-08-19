@@ -1,0 +1,99 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import MetricStrip from "../../components/MetricStrip.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import ContentBand from "../../components/ContentBand.astro";
+import projectsContent from "../../data/projects.json";
+
+type Project = (typeof projectsContent.items)[number];
+
+export function getStaticPaths() {
+  return projectsContent.items.map((item) => ({ params: { slug: item.id }, props: { project: item } }));
+}
+
+const { project } = Astro.props as { project: Project };
+const featureIcons = ["home", "care", "hands"] as const;
+const features = project.points.slice(0, 3).map((text, index) => ({
+  icon: featureIcons[index],
+  title: ["Fester Ablauf", "Sorgfältig betreut", "Gemeinsam vor Ort"][index],
+  text
+}));
+---
+
+<BaseLayout title={project.title} description={project.summary} image={project.image} theme="projects">
+  <PageHero
+    eyebrow={project.label}
+    title={project.title}
+    text={project.summary}
+    primaryHref={project.id === "notfaelle" ? "/fundtiere" : "/kontakt"}
+    primaryLabel={project.id === "notfaelle" ? "Taube gefunden?" : "Kontakt aufnehmen"}
+    secondaryHref="/projekte"
+    secondaryLabel="Zur Übersicht"
+    visualLabel={project.title}
+    imageSrc={project.image}
+    imageAlt={project.imageAlt}
+    imagePosition={project.imagePosition ?? "center"}
+    mobileImagePosition={project.imagePosition ?? "center"}
+  />
+
+  <ContentBand
+    tone="navy"
+    eyebrow="Was dazugehört"
+    title="Praktisch, kontinuierlich und lokal."
+    text="Jeder Bereich hat eigene Aufgaben – gemeinsam sorgen sie dafür, dass Hilfe im Alltag wirklich ankommt."
+    features={features}
+  />
+
+  <section class="section section-tight">
+    <div class="container split project-detail-list">
+      <SectionHeader
+        eyebrow="Im Überblick"
+        title="Darauf kommt es an."
+        text="Diese Punkte machen die Arbeit transparent und zeigen, wie Hilfe in Bernau konkret aussieht."
+      />
+      <ul class="check-list project-detail-points">
+        {project.points.map((point) => <li>{point}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  {project.facts.length > 0 && (
+    <section class="section section-tight">
+      <div class="container">
+        <MetricStrip items={project.facts} />
+      </div>
+    </section>
+  )}
+
+  {project.id === "taubenhaus" && (
+    <section class="section section-tight">
+      <div class="container management-details">
+        <article id="eiertausch">
+          <span class="eyebrow">Eiertausch</span>
+          <h2>Nachwuchs begrenzen, ohne Tiere zu töten.</h2>
+          <p>Eier werden gegen Attrappen ersetzt. Die Tauben brüten weiter, aber es schlüpfen keine Küken.</p>
+        </article>
+        <article id="reinigung">
+          <span class="eyebrow">Reinigung</span>
+          <h2>Sauberkeit gehört zur Betreuung.</h2>
+          <p>Der Bereich wird regelmäßig gereinigt und kontrolliert – das entlastet Tiere, Standort und Umgebung.</p>
+        </article>
+        <article id="zusammenarbeit">
+          <span class="eyebrow">Zusammenarbeit</span>
+          <h2>Eine lokale Lösung braucht Partner:innen.</h2>
+          <p>Stadt, Veterinäramt, Umweltamt und Ehrenamt stimmen sich für den Standort eng miteinander ab.</p>
+        </article>
+      </div>
+    </section>
+  )}
+
+  <CtaBand
+    eyebrow="Nächster Schritt"
+    title="Du möchtest diesen Bereich unterstützen?"
+    text="Zeit, Material oder eine Spende helfen direkt dabei, dass diese Arbeit weiterlaufen kann."
+    href="/mitmachen"
+    label="Mitmachen"
+  />
+</BaseLayout>

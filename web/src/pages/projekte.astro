@@ -10,45 +10,19 @@ import projectsContent from "../data/projects.json";
 
 const { hero, intro, items } = projectsContent;
 
-const flagshipFacts = [
-  "entstanden aus einem echten Problem im Fahrradparkhaus",
-  "Treppenhausbereich mit Nistflächen statt Tauben auf Fahrradständern",
-  "regelmäßige Reinigung und Kontrolle",
-  "über 700 Eier pro Jahr gegen Attrappen getauscht",
-  "enge Zusammenarbeit mit Stadt und Behörden",
-  "Vorzeigeprojekt für Barnim und Brandenburg",
-  "Beratung für andere Kommunen"
-];
-
 const projectNumbers = [
-  {
-    value: "700+",
-    label: "Eier pro Jahr gegen Attrappen getauscht"
-  },
-  {
-    value: "170+",
-    label: "Tauben am betreuten Standort"
-  },
-  {
-    value: "3x",
-    label: "Nestkontrolle und Eiertausch pro Woche"
-  },
-  {
-    value: "4-5 h",
-    label: "Reinigung pro Woche im Taubenhaus"
-  }
+  { value: "700+", label: "Eier pro Jahr gegen Attrappen getauscht" },
+  { value: "170+", label: "Tauben am betreuten Standort" },
+  { value: "3×", label: "Nestkontrolle und Eiertausch pro Woche" },
+  { value: "4–5 h", label: "Reinigung pro Woche im Taubenhaus" }
 ];
 
-const references = [
-  "Austausch mit Stadt, Veterinäramt, Umweltamt und weiteren Stellen.",
-  "Beratung bei Gebäuden, Sanierung, Abriss und Dachbodenfunden.",
-  "Das Taubenhaus im Fahrradparkhaus wird von anderen Kommunen als Praxisbeispiel wahrgenommen."
-];
+const projectIcons = ["home", "care", "alert", "hands", "book"] as const;
 ---
 
 <BaseLayout
-  title="Projekte"
-  description="Projekte der Stadttaubenhilfe Bernau: Taubenhaus im Fahrradparkhaus, Volieren, Notfälle, Beratung und Öffentlichkeitsarbeit."
+  title="Was wir tun"
+  description="Taubenhaus, Notfallhilfe, Volieren, Beratung und Aufklärung der Stadttaubenhilfe Bernau."
   image={hero.imageSrc}
   theme="projects"
 >
@@ -56,31 +30,36 @@ const references = [
 
   <ContentBand
     tone="navy"
-    eyebrow="Betreutes Stadttaubenmanagement"
-    title="Ein Ort, an dem Versorgung und Verantwortung zusammenkommen."
-    text="Das Taubenhaus im Fahrradparkhaus ist keine Kulisse. Es bündelt Versorgung, Nestkontrolle, Reinigung und schnelle Hilfe für Tiere, die auffallen."
+    eyebrow="Unser Einsatz in Bernau"
+    title="Versorgung, Betreuung, Aufklärung und Miteinander."
+    text="Wir arbeiten nicht mit einer einzelnen Maßnahme. Erst feste Orte, tägliche Pflege, Eiertausch, Notfallhilfe und gute Gespräche machen Stadttaubenhilfe wirksam."
     imageSrc="/images/gallery/taubenhaus-fahrradparkhaus-01.jpg"
     imageAlt="Blick in den betreuten Taubenhaus-Bereich im Fahrradparkhaus Bernau"
     imagePosition="center 42%"
     features={[
-      { icon: "home", title: "Fester Standort", text: "Futter, Wasser und Nistflächen liegen nicht mehr mitten auf den Fahrradständern." },
-      { icon: "care", title: "Eiertausch", text: "Eier werden gegen Attrappen ersetzt – zuverlässig und tierschutzgerecht." },
-      { icon: "hands", title: "Laufende Pflege", text: "Reinigung und Beobachtung machen Wirkung im Alltag sichtbar." }
+      { icon: "home", title: "Versorgung", text: "Futter, Wasser und Nistplätze am festen Standort." },
+      { icon: "care", title: "Betreuung", text: "Eiertausch, Reinigung und Blick auf jedes Tier." },
+      { icon: "book", title: "Aufklärung", text: "Wissen, das Vorurteile durch Lösungen ersetzt." }
     ]}
   />
 
-  <section class="section section-tight">
+  <section class="section section-tight" aria-labelledby="projekte-ueberblick">
     <div class="container">
-      <SectionHeader eyebrow={intro.eyebrow} title={intro.title} text={intro.text} />
-      <div class="project-toc">
+      <SectionHeader
+        eyebrow={intro.eyebrow}
+        title={intro.title}
+        text="Wähle ein Thema und lies weiter – die Übersicht bleibt bewusst kurz, die Details haben ihre eigene Seite."
+      />
+      <nav class="project-toc" id="projekte-ueberblick" aria-label="Bereiche unserer Arbeit">
         {items.map((item, index) => (
-          <a class:list={["project-toc-card", `project-toc-card-${index % 5}`]} href={`#${item.id}`}>
-            <LineIcon name={index === 0 ? "home" : index === 1 ? "care" : index === 2 ? "alert" : index === 3 ? "hands" : "book"} />
+          <a class:list={["project-toc-card", `project-toc-card-${index % 5}`]} href={`/projekte/${item.id}`}>
+            <LineIcon name={projectIcons[index]} />
             <span>{item.label}</span>
             <strong>{item.title}</strong>
+            <small>Mehr erfahren →</small>
           </a>
         ))}
-      </div>
+      </nav>
     </div>
   </section>
 
@@ -88,98 +67,17 @@ const references = [
     <div class="container flagship-project">
       <div>
         <span class="eyebrow">Vorzeigeprojekt in Barnim und Brandenburg</span>
-        <h2>Vom dreckigen Fahrradparkhaus zum betreuten Taubenhaus.</h2>
+        <h2>Vom Fahrradparkhaus zum betreuten Taubenhaus.</h2>
         <div class="flagship-copy">
           <p>
-            Die Tauben waren nicht erst ein Problem, als wir kamen. Sie nutzten
-            die offenen Bereiche des neuen Fahrradparkhauses als Sitz- und Brutplätze.
-            Besonders die Fahrradständer wurden stark verschmutzt.
+            Im Fahrradparkhaus entsteht aus einem konkreten Konflikt ein betreuter Ort:
+            mit Nistflächen, Futter, Wasser, Reinigung und Eiertausch. So bleiben die
+            Tauben nicht auf Fahrradständern und die Fläche wird für alle besser nutzbar.
           </p>
-          <p>
-            Statt die Tiere immer wieder zu verscheuchen, wurde ein Teil des
-            Treppenhauses zum Taubenhaus umgebaut. Dort haben die Tauben heute
-            Nistflächen, Futter, Wasser und einen festen Ort. Wir reinigen,
-            kontrollieren Nester und tauschen Eier gegen Attrappen.
-          </p>
-          <p>
-            Der Bereich ist für die Öffentlichkeit geschlossen. Das ist nicht für
-            alle sofort verständlich, hat aber einen klaren Grund: Nur wenn die
-            Tauben einen abgetrennten, betreuten Bereich haben, bleiben sie vom
-            restlichen Fahrradparkhaus besser weg. Seitdem ist es dort deutlich
-            sauberer.
-          </p>
-          <p>
-            Das Projekt wird ehrenamtlich getragen und eng mit Stadt, Veterinäramt,
-            Umweltamt und weiteren Behörden abgestimmt. Inzwischen schauen sich
-            auch andere Städte die Lösung in Bernau an, um eigene Stadttaubenprojekte
-            aufzubauen oder zu verbessern.
-          </p>
+          <a class="text-link text-link-light" href="/projekte/taubenhaus">Das Taubenhaus kennenlernen →</a>
         </div>
       </div>
-      <aside class="flagship-list">
-        <h3>Was daran wichtig ist</h3>
-        <ul class="check-list">
-          {flagshipFacts.map((fact) => <li>{fact}</li>)}
-        </ul>
-      </aside>
-    </div>
-  </section>
-
-  <section class="section section-tight" id="zahlen">
-    <div class="container split">
-      <SectionHeader
-        eyebrow="Stadttaubenhilfe Bernau in Zahlen"
-        title="Regelmäßige Arbeit, sichtbare Wirkung."
-        text="Die Zahlen zeigen nicht alles, aber sie machen sichtbar, wie viel laufende Pflege, Kontrolle und Abstimmung hinter einem betreuten Standort steckt."
-      />
       <MetricStrip items={projectNumbers} />
-    </div>
-  </section>
-
-  <section class="section section-tight">
-    <div class="container project-stack">
-      {items.map((item, index) => (
-        <article class:list={["project-panel", index % 2 === 1 && "project-panel-reverse"]} id={item.id}>
-          <div class="project-copy">
-            <span class="eyebrow">{item.label}</span>
-            <h2>{item.title}</h2>
-            <p class="project-summary">{item.summary}</p>
-
-            <ul class="check-list">
-              {item.points.map((point) => (
-                <li>{point}</li>
-              ))}
-            </ul>
-
-            {item.facts?.length > 0 && <MetricStrip items={item.facts} />}
-          </div>
-
-          <figure class="project-image-card">
-            <img
-              src={item.image}
-              alt={item.imageAlt}
-              loading={index === 0 ? "eager" : "lazy"}
-              decoding="async"
-              style={`object-position: ${item.imagePosition ?? "center"};`}
-            />
-          </figure>
-        </article>
-      ))}
-    </div>
-  </section>
-
-  <section class="section section-tight" id="referenzen">
-    <div class="container split">
-      <SectionHeader
-        eyebrow="Referenzen & Austausch"
-        title="Bernau kann zeigen, wie betreutes Stadttaubenmanagement praktisch aussieht."
-        text="Das Taubenhaus im Fahrradparkhaus ist aus einem konkreten lokalen Problem entstanden. Genau deshalb ist es für andere Städte, Eigentümer:innen und Verwaltungen interessant: Es zeigt, was möglich wird, wenn Verdrängung durch Betreuung ersetzt wird."
-      />
-      <div class="soft-panel">
-        <ul class="check-list">
-          {references.map((item) => <li>{item}</li>)}
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -187,7 +85,7 @@ const references = [
     eyebrow="Unterstützung"
     title="Diese Arbeit braucht Unterstützung."
     text="Futter, Reinigung, Fahrten, tierärztliche Kosten und Zeit fallen jede Woche an. Wer helfen möchte, kann spenden, Material geben oder einzelne Aufgaben übernehmen."
-    href="/kontakt"
-    label="Ich möchte helfen"
+    href="/mitmachen"
+    label="So kannst du helfen"
   />
 </BaseLayout>

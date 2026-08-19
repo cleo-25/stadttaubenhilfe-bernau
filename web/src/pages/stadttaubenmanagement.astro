@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentBand from "../components/ContentBand.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const areas = [
+  { eyebrow: "Taubenhaus", title: "Ein fester, betreuter Ort", text: "Futter, Wasser, Nistplätze und tägliche Beobachtung bündeln den Schwarm dort, wo er gut betreut werden kann.", href: "/projekte/taubenhaus", icon: "home" as const },
+  { eyebrow: "Eiertausch", title: "Nachwuchs tiergerecht begrenzen", text: "Eier werden gegen Attrappen ersetzt, bevor Küken entstehen und später leiden müssen.", href: "/projekte/taubenhaus#eiertausch", icon: "care" as const },
+  { eyebrow: "Reinigung", title: "Sauberkeit gehört dazu", text: "Der betreute Bereich wird regelmäßig gereinigt und kontrolliert – für Tiere, Standort und Umfeld.", href: "/projekte/taubenhaus#reinigung", icon: "hands" as const },
+  { eyebrow: "Zusammenarbeit", title: "Lokal gemeinsam lösen", text: "Ehrenamt, Stadt und Fachstellen stimmen sich für eine nachhaltige Lösung ab.", href: "/projekte/taubenhaus#zusammenarbeit", icon: "together" as const }
+];
+---
+
+<BaseLayout title="Stadttaubenmanagement" description="Betreutes Stadttaubenmanagement in Bernau: Taubenhaus, Eiertausch, Reinigung und Zusammenarbeit." image="/images/projects/startbild-taubenhaus.jpg" theme="projects">
+  <PageHero eyebrow="Stadttaubenmanagement" title="Betreuen statt verdrängen." text="Ein Taubenhaus bündelt Versorgung, Eiertausch, Reinigung und Beobachtung. Das ist wirksamer und tierschutzgerechter als Verdrängung." primaryHref="/projekte/taubenhaus" primaryLabel="Taubenhaus ansehen" secondaryHref="/kontakt" secondaryLabel="Kontakt" visualLabel="Taubenhaus im Fahrradparkhaus Bernau" imageSrc="/images/projects/startbild-taubenhaus.jpg" imageAlt="Betreuter Taubenhaus-Bereich im Fahrradparkhaus Bernau" imagePosition="center 48%" mobileImagePosition="center 34%" />
+
+  <ContentBand tone="navy" eyebrow="Eine Lösung mit System" title="Futter, Wasser, Nistplätze, Reinigung und Eiertausch." text="Ein betreuter Standort macht sichtbar, welche Tiere Hilfe brauchen, begrenzt Nachwuchs und reduziert Konflikte im Stadtraum." imageSrc="/images/gallery/taubenhaus-fahrradparkhaus-01.jpg" imageAlt="Taubenhausbereich im Fahrradparkhaus" imagePosition="center 42%" features={[
+    { icon: "home", title: "Fester Standort", text: "Der Schwarm findet Versorgung an einem klaren Ort." },
+    { icon: "care", title: "Eiertausch", text: "Nachwuchs wird tiergerecht begrenzt." },
+    { icon: "hands", title: "Kontrolle", text: "Reinigung und Beobachtung passieren kontinuierlich." }
+  ]} />
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader eyebrow="Die vier Bausteine" title="So funktioniert die Betreuung in der Praxis." text="Jeder Baustein hat ein eigenes Ziel. Zusammen entsteht eine nachhaltige Lösung für Tauben und Stadt." />
+      <nav class="grid grid-4 topic-grid" aria-label="Bausteine des Stadttaubenmanagements">
+        {areas.map((area) => <Card href={area.href} eyebrow={area.eyebrow} title={area.title} icon={area.icon} tone="blue"><p>{area.text}</p><span class="card-more">Mehr erfahren →</span></Card>)}
+      </nav>
+    </div>
+  </section>
+
+  <CtaBand eyebrow="Austausch" title="Du möchtest diese Lösung besser verstehen?" text="Wir erklären gern, wie betreutes Stadttaubenmanagement in Bernau funktioniert – auch bei Fragen zu Gebäuden oder Standorten." href="/kontakt" label="Kontakt aufnehmen" />
+</BaseLayout>

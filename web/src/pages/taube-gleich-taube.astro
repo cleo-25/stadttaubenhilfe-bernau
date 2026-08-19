@@ -1,0 +1,33 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const types = [
+  { id: "wildtaube", title: "Wildtaube", text: "Ringeltauben, Türkentauben und andere Wildtauben sind Wildvögel. Sie brauchen je nach Situation eine andere Einschätzung.", icon: "feather" as const },
+  { id: "stadttaube", title: "Stadttaube", text: "Stadttauben sind Nachkommen gezüchteter Haus- und Brieftauben. Sie sind ortstreu und auf menschliche Lösungen angewiesen.", icon: "home" as const },
+  { id: "brieftaube", title: "Brieftaube", text: "Brieftauben sind oft beringt. Erschöpfte Tiere brauchen Ruhe, Wasserangebot und eine Einschätzung zum weiteren Vorgehen.", icon: "book" as const },
+  { id: "rassetaube", title: "Rassetaube", text: "Rassetauben sind gezüchtet und kommen draußen oft schlecht zurecht. Häufig brauchen sie eine gesicherte Unterbringung.", icon: "care" as const }
+];
+---
+
+<BaseLayout title="Taube gleich Taube?" description="Stadt-, Wild-, Brief- und Rassetauben unterscheiden und richtig einschätzen." image="/images/projects/startbild-wissen-taubenhaus.jpg" theme="knowledge">
+  <PageHero eyebrow="Taubenwissen" title="Taube gleich Taube?" text="Nicht jede Taube auf der Straße braucht dieselbe Hilfe. Diese einfache Einordnung hilft dir, den nächsten Schritt besser einzuschätzen." primaryHref="/fundtiere" primaryLabel="Taube gefunden?" secondaryHref="/wissen" secondaryLabel="Mehr wissen" visualLabel="Zwei betreute Tauben" imageSrc="/images/projects/startbild-wissen-taubenhaus.jpg" imageAlt="Zwei Tauben auf einem Handtuch" imagePosition="center 42%" mobileImagePosition="center 46%" />
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader eyebrow="Schnell einordnen" title="Vier Gruppen, vier Situationen." text="Bei Unsicherheit gilt: Foto machen, Tier sichern und lieber einmal zu früh als zu spät melden." />
+      <div class="grid grid-4 topic-grid">
+        {types.map((type) => (
+          <article id={type.id}>
+            <Card title={type.title} icon={type.icon} tone="blue"><p>{type.text}</p></Card>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <CtaBand eyebrow="Unsicher?" title="Bei einem Fundtier helfen wir bei der Einschätzung." text="Sichere die Taube in einem Karton und schick uns Fundort, Foto und eine Rückrufnummer." href="/fundtiere" label="Erste Hilfe ansehen" />
+</BaseLayout>

@@ -1,0 +1,36 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentBand from "../components/ContentBand.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const links = [
+  { eyebrow: "Unser Verein", title: "Wer wir sind", text: "Ehrenamtlich, lokal und nah an den Tieren – für weniger Leid und bessere Lösungen in Bernau.", href: "/verein/wer-wir-sind", icon: "together" as const },
+  { eyebrow: "Ehrenamt", title: "Ehrenamt in Bernau", text: "Eine feste Stunde, eine Fahrt oder eine Aufgabe im Hintergrund kann viel bewirken.", href: "/mitmachen#ehrenamt", icon: "hands" as const },
+  { eyebrow: "Transparenz", title: "Vorstand und Satzung", text: "Vereinsstruktur, Satzung und die Menschen, die Verantwortung übernehmen.", href: "/verein/vorstand-und-satzung", icon: "book" as const },
+  { eyebrow: "Mitglied werden", title: "Den Verein stärken", text: "Mitgliedschaft gibt unserer Arbeit eine dauerhaft verlässliche Basis.", href: "/verein/mitgliedschaft-beantragen", icon: "heart" as const }
+];
+---
+
+<BaseLayout title="Unser Verein" description="Stadttaubenhilfe Bernau: ehrenamtlich, lokal und nah an den Tieren." image="/images/gallery/vereinsarbeit-team-stand-01.jpg" theme="participate">
+  <PageHero eyebrow="Unser Verein" title="Ehrenamtlich, lokal und nah an den Tieren." text="Die Stadttaubenhilfe Bernau arbeitet für weniger Leid, weniger Konflikte und bessere Aufklärung im Umgang mit Stadttauben." primaryHref="/mitmachen" primaryLabel="Mitmachen" secondaryHref="/kontakt" secondaryLabel="Kontakt" visualLabel="Vereinsarbeit der Stadttaubenhilfe Bernau" imageSrc="/images/gallery/vereinsarbeit-team-stand-01.jpg" imageAlt="Vereinsmitglieder der Stadttaubenhilfe Bernau am Infostand" imagePosition="center 42%" mobileImagePosition="center 40%" />
+
+  <ContentBand tone="navy" eyebrow="Unser Antrieb" title="Wir kümmern uns, wo Verantwortung gebraucht wird." text="Wir betreuen den Standort im Fahrradparkhaus, helfen Fundtieren und erklären, warum Stadttauben nicht verdrängt, sondern betreut werden sollten." features={[
+    { icon: "care", title: "Tierschutz", text: "Praktische Hilfe für verletzte und geschwächte Tiere." },
+    { icon: "home", title: "Bernau", text: "Ein fester Ort und konkrete Verantwortung vor Ort." },
+    { icon: "book", title: "Aufklärung", text: "Wissen schaffen und Konflikte fair einordnen." }
+  ]} />
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader eyebrow="Vier Wege zum Verein" title="Alles Wichtige, direkt erreichbar." text="Die Übersicht hält den Einstieg kurz; jedes Thema ist als eigener Bereich erreichbar." />
+      <nav class="grid grid-4 topic-grid" aria-label="Informationen zum Verein">
+        {links.map((link) => <Card href={link.href} eyebrow={link.eyebrow} title={link.title} icon={link.icon} tone="blue"><p>{link.text}</p><span class="card-more">Mehr erfahren →</span></Card>)}
+      </nav>
+    </div>
+  </section>
+
+  <CtaBand eyebrow="Gemeinsam für Bernau" title="Du möchtest den Verein kennenlernen?" text="Schreib uns direkt – bei Mitgliedschaft, Ehrenamt, Kooperationen oder einer konkreten Frage." href="/kontakt" label="Kontakt aufnehmen" />
+</BaseLayout>

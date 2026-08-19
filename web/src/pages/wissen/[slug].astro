@@ -1,0 +1,54 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import ContentBand from "../../components/ContentBand.astro";
+import SectionHeader from "../../components/SectionHeader.astro";
+import CtaBand from "../../components/CtaBand.astro";
+import { knowledgeTopics, type KnowledgeTopic } from "../../data/wissen-topics";
+
+export function getStaticPaths() {
+  return Object.entries(knowledgeTopics).map(([slug, topic]) => ({ params: { slug }, props: { topic } }));
+}
+
+const { topic } = Astro.props as { topic: KnowledgeTopic };
+---
+
+<BaseLayout title={topic.title} description={topic.text} image={topic.image} theme="knowledge">
+  <PageHero
+    eyebrow={topic.eyebrow}
+    title={topic.title}
+    text={topic.text}
+    primaryHref="/fundtiere"
+    primaryLabel="Taube gefunden?"
+    secondaryHref="/wissen"
+    secondaryLabel="Zur Übersicht"
+    visualLabel={topic.title}
+    imageSrc={topic.image}
+    imageAlt={topic.imageAlt}
+    imagePosition="center 42%"
+    mobileImagePosition="center 42%"
+  />
+
+  <ContentBand
+    tone="navy"
+    eyebrow="Kurz gesagt"
+    title="Aufklärung, die im Alltag weiterhilft."
+    text="Wir wollen Zusammenhänge verständlich machen – für Menschen, die Stadttauben helfen möchten, und für alle, die einen Konflikt vor Ort lösen wollen."
+    features={[
+      { icon: "book", title: "Einordnen", text: "Fakten statt Vorurteile." },
+      { icon: "home", title: "Lokal handeln", text: "Die Stadt braucht passende Orte." },
+      { icon: "care", title: "Tierschutz ernst nehmen", text: "Praktische Hilfe bleibt entscheidend." }
+    ]}
+  />
+
+  <section class="section section-tight">
+    <div class="container split">
+      <SectionHeader eyebrow="Das Wichtigste" title="Diese Punkte zählen." text="Klar, nachvollziehbar und ohne unnötigen Fachjargon." />
+      <ul class="check-list project-detail-points">
+        {topic.points.map((point) => <li>{point}</li>)}
+      </ul>
+    </div>
+  </section>
+
+  <CtaBand eyebrow="Nächste Frage" title="Mehr über Stadttauben wissen?" text="In der Übersicht findest du weitere Themen – oder du meldest dich, wenn es um ein konkretes Tier geht." href="/wissen" label="Wissen ansehen" />
+</BaseLayout>
