@@ -18,10 +18,13 @@ const board = [
   { role: "Stellvertretende Vorsitzende", name: "Xenia Laws" },
   { role: "Schatzmeister", name: "Paul Bratfisch" }
 ];
+
+const heroImage = "/images/gallery/volieren-tauben-01.jpg";
+const teamImage = "/images/gallery/volieren-tauben-03.jpg";
 ---
 
-<BaseLayout title="Unser Verein" description="Stadttaubenhilfe Bernau: ehrenamtlich, lokal und nah an den Tieren." image="/images/gallery/vereinsarbeit-team-stand-01.jpg" theme="participate">
-  <PageHero eyebrow="Unser Verein" title="Ehrenamtlich, lokal und nah an den Tieren." text="Die Stadttaubenhilfe Bernau arbeitet für weniger Leid, weniger Konflikte und bessere Aufklärung im Umgang mit Stadttauben." primaryHref="/mitmachen" primaryLabel="Mitmachen" secondaryHref="/kontakt" secondaryLabel="Kontakt" visualLabel="Vereinsarbeit der Stadttaubenhilfe Bernau" imageSrc="/images/gallery/vereinsarbeit-team-stand-01.jpg" imageAlt="Vereinsmitglieder der Stadttaubenhilfe Bernau am Infostand" imagePosition="center 42%" mobileImagePosition="center 40%" />
+<BaseLayout title="Unser Verein" description="Stadttaubenhilfe Bernau: ehrenamtlich, lokal und nah an den Tieren." image={heroImage} theme="participate">
+  <PageHero eyebrow="Unser Verein" title="Ehrenamtlich, lokal und nah an den Tieren." text="Die Stadttaubenhilfe Bernau arbeitet für weniger Leid, weniger Konflikte und bessere Aufklärung im Umgang mit Stadttauben." primaryHref="/mitmachen" primaryLabel="Mitmachen" secondaryHref="/kontakt" secondaryLabel="Kontakt" visualLabel="Betreute Stadttauben der Stadttaubenhilfe Bernau" imageSrc={heroImage} imageAlt="Betreute Stadttauben in einer Voliere" imagePosition="center 48%" mobileImagePosition="center 48%" />
 
   <ContentBand tone="navy" eyebrow="Unser Antrieb" title="Wir kümmern uns, wo Verantwortung gebraucht wird." text="Wir betreuen den Standort im Fahrradparkhaus, helfen Fundtieren und erklären, warum Stadttauben nicht verdrängt, sondern betreut werden sollten." features={[
     { icon: "care", title: "Tierschutz", text: "Praktische Hilfe für verletzte und geschwächte Tiere." },
@@ -46,12 +49,12 @@ const board = [
   <section id="team" class="section section-tight member-section">
     <div class="container member-layout">
       <figure class="member-image">
-        <img src="/images/gallery/vereinsarbeit-team-stand-01.jpg" alt="Mitglieder der Stadttaubenhilfe Bernau am Infostand" loading="lazy" decoding="async" />
+        <img src={teamImage} alt="Betreute Stadttauben vor einem Taubenhaus" loading="lazy" decoding="async" />
       </figure>
       <div class="member-copy">
         <p class="eyebrow">Unser Team</p>
-        <h2>Menschen, die Hilfe möglich machen.</h2>
-        <p>Hinter der Stadttaubenhilfe stehen Menschen mit unterschiedlichen Aufgaben: Versorgung, Fahrten, Pflege, Organisation und Aufklärung. Hier stellen wir nach und nach die Mitglieder vor, die das Team prägen.</p>
+        <h2>Gemeinsam für die Tiere.</h2>
+        <p>Hinter der Stadttaubenhilfe stehen Menschen mit unterschiedlichen Aufgaben: Versorgung, Fahrten, Pflege, Organisation und Aufklärung. Fotos, Namen und kurze Vorstellungen ergänzen wir hier, sobald sie von den Mitgliedern freigegeben sind.</p>
         <div class="member-slots" aria-label="Bereich für künftige Mitgliedervorstellungen">
           <article>
             <span aria-hidden="true">01</span>
