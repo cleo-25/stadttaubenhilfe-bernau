@@ -39,6 +39,14 @@
       "size": "wide"
     },
     {
+      "src": "/images/gallery/vereinsarbeit-mensch-tauben-02.jpg",
+      "alt": "Ehrenamtliche mit zwei betreuten Tauben im Garten",
+      "category": "vereinsarbeit",
+      "title": "Nah am Tier",
+      "text": "Pflege bedeutet ruhiges Halten, Beobachten und Verantwortung für jedes einzelne Tier.",
+      "size": "tall"
+    },
+    {
       "src": "/images/gallery/taubenhaus-kontrolle-01.jpg",
       "alt": "Ehrenamtliche beim Kontrollgang im Taubenhaus",
       "category": "vereinsarbeit",
@@ -62,6 +70,14 @@
       "size": "wide"
     },
     {
+      "src": "/images/gallery/vereinsarbeit-sicherung-02.jpg",
+      "alt": "Ehrenamtliche sichert eine Taube bei einem Einsatz in einem Gebäude",
+      "category": "vereinsarbeit",
+      "title": "Sichern vor Ort",
+      "text": "Auch bei Einsätzen in Gebäuden zählt ein ruhiger, sicherer Ablauf für Mensch und Tier.",
+      "size": "tall"
+    },
+    {
       "src": "/images/projects/startbild-taubenhaus.jpg",
       "alt": "Betreuter Bereich im Fahrradparkhaus Bernau mit Stadttauben",
       "category": "taubenhaus",
@@ -76,6 +92,21 @@
       "title": "Schwarm am Standort",
       "text": "Wenn Tauben einen festen Ort annehmen, kann man Eier tauschen und den Bereich reinigen.",
       "size": "wide"
+    },
+    {
+      "src": "/images/gallery/taubenhaus-futterzeit-02.jpg",
+      "alt": "Mehrere Stadttauben fressen an einer betreuten Futterstelle",
+      "category": "taubenhaus",
+      "title": "Futterzeit am festen Ort",
+      "text": "Regelmäßige Versorgung macht den Standort berechenbar – und zeigt früh, wenn ein Tier Hilfe braucht."
+    },
+    {
+      "src": "/images/gallery/taubenhaus-innenraum-02.jpg",
+      "alt": "Innenansicht des betreuten Taubenhauses mit Sitzplätzen für Stadttauben",
+      "category": "taubenhaus",
+      "title": "Ein Ort zum Ankommen",
+      "text": "Im Taubenhaus finden die Tiere Futter, Wasser, Nistbereiche und geschützte Sitzplätze.",
+      "size": "tall"
     },
     {
       "src": "/images/gallery/taubenhaus-betreute-tauben-01.jpg",
@@ -145,6 +176,14 @@
       "size": "wide"
     },
     {
+      "src": "/images/gallery/pflegestelle-weisse-taube-02.jpg",
+      "alt": "Weiße Taube wird bei einer Pflegestelle sicher in einer Hand gehalten",
+      "category": "pflegestellen",
+      "title": "Sicher gehalten",
+      "text": "Ein ruhiger Griff und ein geschützter Platz helfen Fundtieren nach der Erstversorgung.",
+      "size": "tall"
+    },
+    {
       "src": "/images/gallery/pflegestelle-jungtier-01.jpg",
       "alt": "Jungtier liegt warm auf einem Tuch",
       "category": "pflegestellen",
@@ -164,6 +203,14 @@
       "category": "pflegestellen",
       "title": "Jungtierhilfe",
       "text": "Küken aus einer Vergrämungsaktion in unseren sicheren Händen."
+    },
+    {
+      "src": "/images/gallery/pflegestelle-jungtier-haende-02.jpg",
+      "alt": "Junge Taube wird behutsam in beiden Händen gehalten",
+      "category": "pflegestellen",
+      "title": "Wärme und Ruhe",
+      "text": "Bei Jungtieren sind Schutz, Wärme und eine schnelle Einschätzung besonders wichtig.",
+      "size": "tall"
     },
     {
       "src": "/images/gallery/pflegestelle-verletzung-01.jpg",
