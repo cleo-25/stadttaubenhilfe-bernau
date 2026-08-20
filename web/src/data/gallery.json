@@ -5,7 +5,7 @@
       "label": "Vereinsarbeit",
       "title": "Vereinsarbeit",
       "text": "Infostände, Gespräche, Vorbereitung und Menschen, die erklären, warum Taubenhilfe nötig ist.",
-      "image": "/images/projects/startbild-oeffentlichkeitsarbeit.jpg"
+      "image": "/images/gallery/taubenhaus-kontrolle-01.jpg"
     },
     {
       "id": "taubenhaus",
@@ -31,34 +31,34 @@
   ],
   "items": [
     {
-      "src": "/images/projects/startbild-oeffentlichkeitsarbeit.jpg",
-      "alt": "Ehrenamtliche mit Taube am Infostand",
+      "src": "/images/gallery/volieren-betreuung-02.jpg",
+      "alt": "Eine Person hält bei der Betreuung vorsichtig eine Taube",
       "category": "vereinsarbeit",
-      "title": "Gespräche am Infostand",
-      "text": "Fragen beantworten, Vorurteile einordnen, konkrete Hilfe erklären.",
+      "title": "Zeit für jedes Tier",
+      "text": "Betreuung heißt hinschauen, ruhig bleiben und Hilfe verlässlich organisieren.",
       "size": "wide"
     },
     {
-      "src": "/images/gallery/menschen-hinter-der-hilfe.jpg",
-      "alt": "Menschen hinter der Stadttaubenhilfe Bernau",
+      "src": "/images/gallery/taubenhaus-kontrolle-01.jpg",
+      "alt": "Ehrenamtliche beim Kontrollgang im Taubenhaus",
       "category": "vereinsarbeit",
-      "title": "Menschen hinter der Hilfe",
+      "title": "Gemeinsam kontrollieren",
       "text": "Vereinsarbeit bedeutet Zeit, Vorbereitung, Material und ansprechbare Personen.",
       "size": "feature"
     },
     {
-      "src": "/images/gallery/vereinsarbeit-team-stand-01.jpg",
-      "alt": "Zwei Personen am Stand der Stadttaubenhilfe",
+      "src": "/images/gallery/pflegestelle-taube-05.jpg",
+      "alt": "Helle Taube wird sicher in einer Pflegestelle gehalten",
       "category": "vereinsarbeit",
-      "title": "Stand vorbereiten",
-      "text": "Mit Fotos, Flyern und Beispielen wird schnell klar, warum Wegscheuchen das Problem nicht löst."
+      "title": "Sicher versorgen",
+      "text": "Auch abseits des Standorts braucht Hilfe ruhige Hände, Material und Zeit."
     },
     {
-      "src": "/images/gallery/vereinsarbeit-infostand-04.jpg",
-      "alt": "Vereinsstand mit Informationsmaterial",
+      "src": "/images/gallery/pflegestelle-jungtier-03.jpg",
+      "alt": "Junge Tauben werden bei der Pflege vorsichtig in Händen gehalten",
       "category": "vereinsarbeit",
-      "title": "Material am Infostand",
-      "text": "Flyer und Fotos helfen, Taubenhaus, Eiertausch und Hilfe für Fundtiere verständlich zu erklären.",
+      "title": "Hilfe beginnt im Kleinen",
+      "text": "Pflege, Vorbereitung und Rückmeldung verbinden Menschen und Tiere.",
       "size": "wide"
     },
     {

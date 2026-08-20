@@ -3,8 +3,8 @@ export const knowledgeTopics = {
     eyebrow: "Herkunft & Verhalten",
     title: "Warum Stadttauben die Stadt brauchen.",
     text: "Stadttauben sind Nachkommen der Felsentaube und gezüchteter Haus- und Brieftauben. Gebäude ersetzen ihnen Felsen – deshalb brauchen sie in Städten verantwortungsvolle Lösungen.",
-    image: "/images/gallery/taubenhaus-fahrradparkhaus-01.jpg",
-    imageAlt: "Tauben im Umfeld des Fahrradparkhauses in Bernau",
+    image: "/images/projects/startbild-wissen-taubenhaus.jpg",
+    imageAlt: "Treppenaufgang und betreuter Bereich im Taubenhaus mit vielen Tauben",
     points: ["Felsentauben brüten in Nischen, Höhlen und an geschützten Vorsprüngen.", "Mauern, Dächer, Brücken und Parkhäuser bieten Stadttauben vergleichbare Strukturen.", "In Wäldern fehlen passende Brutplätze und die an die Stadt angepasste Versorgung.", "Betreute Taubenhäuser schaffen einen festen, sauberen Ort für Schwarm und Stadt."]
   },
   mythen: {

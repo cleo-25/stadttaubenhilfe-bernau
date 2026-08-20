@@ -5,8 +5,8 @@
     "eyebrow": "Stadttaubenhilfe Bernau",
     "description": "Vorlage für die Vereinsseite der Stadttaubenhilfe Bernau.",
     "text": "Diese Seite bündelt später alle Informationen zum Verein: wer wir sind, wie der Verein organisiert ist, wofür wir stehen und wie eine Mitgliedschaft beantragt werden kann.",
-    "image": "/images/gallery/vereinsarbeit-team-stand-01.jpg",
-    "imageAlt": "Ehrenamtliche der Stadttaubenhilfe Bernau am Infostand",
+    "image": "/images/gallery/taubenhaus-kontrolle-01.jpg",
+    "imageAlt": "Ehrenamtliche beim Kontrollgang im Taubenhaus",
     "children": [
       { "label": "Wer wir sind", "href": "/verein/wer-wir-sind" },
       { "label": "Vorstand und Satzung", "href": "/verein/vorstand-und-satzung" },
@@ -44,8 +44,8 @@
     "eyebrow": "Unser Verein",
     "description": "Vorlage für Ziele und Visionen der Stadttaubenhilfe Bernau.",
     "text": "Hier werden später Haltung, Ziele und langfristige Visionen des Vereins beschrieben: weniger Leid, betreute Standorte und sachliche Aufklärung.",
-    "image": "/images/gallery/taubenhaus-fahrradparkhaus-01.jpg",
-    "imageAlt": "Fahrradparkhaus Bernau als betreuter Standort"
+    "image": "/images/projects/startbild-wissen-taubenhaus.jpg",
+    "imageAlt": "Treppenaufgang und betreuter Bereich im Taubenhaus mit vielen Tauben"
   },
   {
     "slug": "verein/mitgliedschaft-beantragen",
