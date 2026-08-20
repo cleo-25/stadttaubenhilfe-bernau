@@ -4,6 +4,7 @@ import SocialIcon from "./SocialIcon.astro";
 
 const linkGroups = settings.footerLinks;
 const brand = settings.brand;
+const homeHref = "https://stadttaubenhilfe-bernau.de/";
 
 const isExternalLink = (href: string) => /^https?:\/\//.test(href);
 const socialName = (href: string) => href.includes("instagram.com") ? "instagram" : href.includes("facebook.com") ? "facebook" : undefined;
@@ -12,7 +13,7 @@ const socialName = (href: string) => href.includes("instagram.com") ? "instagram
 <footer id="seitenende" class="site-footer">
   <div class="container footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="/" aria-label="Startseite Stadttaubenhilfe Bernau">
+      <a class="brand" href={homeHref} aria-label="Startseite Stadttaubenhilfe Bernau">
         <span class="brand-mark" aria-hidden="true">
           <img class="brand-logo" src={brand.logo} alt="" />
         </span>

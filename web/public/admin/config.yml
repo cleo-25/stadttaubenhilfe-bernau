@@ -4,8 +4,8 @@ backend:
 
 local_backend: true
 publish_mode: editorial_workflow
-site_url: https://www.stadttaubenhilfe-bernau.de
-display_url: https://www.stadttaubenhilfe-bernau.de
+site_url: https://stadttaubenhilfe-bernau.de
+display_url: https://stadttaubenhilfe-bernau.de
 logo_url: /images/logo-stadttaubenhilfe.png
 
 media_folder: web/public/images/uploads

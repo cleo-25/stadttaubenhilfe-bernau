@@ -1,6 +1,6 @@
 import { defineConfig } from "astro/config";
 
 export default defineConfig({
-  site: "https://www.stadttaubenhilfe-bernau.de",
+  site: "https://stadttaubenhilfe-bernau.de",
   trailingSlash: "never"
 });

@@ -20,7 +20,7 @@ const {
   theme = "knowledge"
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL("https://www.stadttaubenhilfe-bernau.de");
+const siteUrl = Astro.site ?? new URL("https://stadttaubenhilfe-bernau.de");
 const canonical = new URL(Astro.url.pathname, siteUrl);
 const fullTitle = title.includes("Stadttaubenhilfe Bernau")
   ? title

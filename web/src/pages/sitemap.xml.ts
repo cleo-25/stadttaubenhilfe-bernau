@@ -14,7 +14,7 @@ const pages = [
 export const prerender = true;
 
 export function GET({ site }: { site?: URL }) {
-  const base = site ?? new URL("https://www.stadttaubenhilfe-bernau.de");
+  const base = site ?? new URL("https://stadttaubenhilfe-bernau.de");
   const urls = pages
     .map((page) => {
       const loc = new URL(`/${page}`, base).toString();

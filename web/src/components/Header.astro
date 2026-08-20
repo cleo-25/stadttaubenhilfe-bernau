@@ -8,6 +8,7 @@ interface Props {
 const { mainId = "main-content" } = Astro.props;
 
 const brand = settings.brand;
+const homeHref = "https://stadttaubenhilfe-bernau.de/";
 type NavLink = { label: string; href: string };
 type NavGroup = { label: string; href?: string; links?: NavLink[] };
 
@@ -58,7 +59,7 @@ const isGroupActive = (links: NavLink[] = []) => links.some((link) => isActive(l
 </div>
 <header class="site-header">
   <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Startseite Stadttaubenhilfe Bernau">
+    <a class="brand" href={homeHref} aria-label="Startseite Stadttaubenhilfe Bernau">
       <span class="brand-mark" aria-hidden="true">
         <img class="brand-logo" src="/images/logo-stadttaubenhilfe-restored-v2.png" alt="" />
       </span>

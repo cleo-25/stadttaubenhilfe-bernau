@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.stadttaubenhilfe-bernau.de/sitemap.xml
+Sitemap: https://stadttaubenhilfe-bernau.de/sitemap.xml
