@@ -2,6 +2,7 @@
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import settings from "../data/settings.json";
+import { legalEntity } from "../data/legal";
 import "../styles/global.css";
 import "../styles/blue-wing.css";
 import "../styles/content-system.css";
@@ -33,9 +34,17 @@ const organizationSchema = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: brand.fullName,
+  legalName: legalEntity.name,
   url: siteUrl.toString(),
   email: contact.email,
   telephone: contact.phone,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: legalEntity.street,
+    postalCode: legalEntity.postalCode,
+    addressLocality: legalEntity.locality,
+    addressCountry: "DE"
+  },
   logo: new URL(brand.logo, siteUrl).toString(),
   sameAs: [
     contact.facebookUrl,

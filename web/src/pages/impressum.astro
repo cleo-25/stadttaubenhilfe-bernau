@@ -2,17 +2,18 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import CtaBand from "../components/CtaBand.astro";
+import { legalEntity } from "../data/legal";
 ---
 
 <BaseLayout
   title="Impressum"
-  description="Impressum der Stadttaubenhilfe Bernau e.V. mit Kontaktangaben und rechtlichen Hinweisen."
+  description="Impressum der Stadttaubenhilfe Bernau b. Berlin e.V. mit Vereinsregister-, Kontakt- und Vorstandsangaben."
   theme="legal"
 >
   <PageHero
     eyebrow="Rechtliches"
     title="Impressum"
-    text="Die wichtigsten Angaben zur Stadttaubenhilfe Bernau e.V. und zur Verantwortlichkeit dieser Website."
+    text="Die wichtigsten Angaben zur Stadttaubenhilfe Bernau b. Berlin e.V. und zur Verantwortlichkeit dieser Website."
     primaryHref="/kontakt"
     primaryLabel="Kontakt aufnehmen"
     visualLabel="Stadttaubenhilfe Bernau"
@@ -32,19 +33,34 @@ import CtaBand from "../components/CtaBand.astro";
         <dl class="legal-list">
           <div>
             <dt>Name</dt>
-            <dd>Stadttaubenhilfe Bernau e.V.</dd>
+            <dd>{legalEntity.name}</dd>
           </div>
           <div>
             <dt>Sitz</dt>
-            <dd>Bernau bei Berlin</dd>
+            <dd>{legalEntity.locality}</dd>
           </div>
           <div>
             <dt>Ladungsfähige Anschrift</dt>
-            <dd>Wird nach finaler Vereinsfreigabe ergänzt. Es wird keine private Anschrift ohne Freigabe veröffentlicht.</dd>
+            <dd>
+              {legalEntity.street}<br />
+              {legalEntity.postalCode} {legalEntity.locality}
+            </dd>
           </div>
           <div>
-            <dt>Vertretungsberechtigt</dt>
-            <dd>Vorstand gemäß § 26 BGB. Namen und Registerdaten werden nach finaler Freigabe ergänzt.</dd>
+            <dt>Registereintrag</dt>
+            <dd>
+              Registergericht: {legalEntity.registryCourt}<br />
+              Registernummer: {legalEntity.registryNumber}
+            </dd>
+          </div>
+          <div>
+            <dt>Vorstand gemäß § 26 BGB</dt>
+            <dd>
+              {legalEntity.board.map((member) => (
+                <>{member.name} ({member.role})<br /></>
+              ))}
+              {legalEntity.representation}
+            </dd>
           </div>
           <div>
             <dt>Kontakt</dt>
@@ -55,19 +71,13 @@ import CtaBand from "../components/CtaBand.astro";
           </div>
         </dl>
 
-        <div class="legal-note">
-          <strong>Wichtig:</strong>
-          Dieses Impressum ist redaktionell vorbereitet, ersetzt aber keine rechtliche Prüfung.
-          Für die finale Veröffentlichung sollten ladungsfähige Anschrift, Registergericht,
-          Registernummer und vertretungsberechtigte Personen ergänzt werden.
-        </div>
       </article>
 
       <aside class="soft-panel legal-aside">
         <span class="eyebrow">Redaktion</span>
         <h2>Inhalte dieser Website</h2>
         <p>
-          Verantwortlich für die Inhalte ist die Stadttaubenhilfe Bernau e.V.,
+          Verantwortlich für die Inhalte ist {legalEntity.name},
           soweit keine anderen Quellen genannt sind.
         </p>
 
@@ -78,7 +88,7 @@ import CtaBand from "../components/CtaBand.astro";
         </p>
 
         <h3>Stand</h3>
-        <p>Juni 2026</p>
+        <p>21. August 2026</p>
       </aside>
     </div>
   </section>

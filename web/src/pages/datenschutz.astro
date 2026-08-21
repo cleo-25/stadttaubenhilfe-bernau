@@ -1,11 +1,12 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
+import { legalEntity } from "../data/legal";
 ---
 
 <BaseLayout
   title="Datenschutz"
-  description="Datenschutzhinweise der Stadttaubenhilfe Bernau e.V. für Website, Kontakt, Fundtiermeldungen und externe Links."
+  description="Datenschutzhinweise der Stadttaubenhilfe Bernau b. Berlin e.V. für Website, Kontakt, Fundtiermeldungen und externe Links."
   theme="legal"
 >
   <PageHero
@@ -27,29 +28,48 @@ import PageHero from "../components/PageHero.astro";
       <article class="soft-panel legal-main">
         <span class="eyebrow">Verantwortlich</span>
         <h2>Datenschutzhinweise</h2>
-        <p class="legal-meta">Stand: Juni 2026</p>
+        <p class="legal-meta">Stand: 21. August 2026</p>
 
         <h3>1. Verantwortliche Stelle</h3>
         <p>
-          Stadttaubenhilfe Bernau e.V., Bernau bei Berlin<br />
+          {legalEntity.name}<br />
+          {legalEntity.street}<br />
+          {legalEntity.postalCode} {legalEntity.locality}<br />
+          Registergericht: {legalEntity.registryCourt}, {legalEntity.registryNumber}<br />
+          Vertreten durch: {legalEntity.board.map((member) => `${member.name} (${member.role})`).join(", ")}. {legalEntity.representation}<br />
           E-Mail: <a href="mailto:kontakt@stadttaubenhilfe-bernau.de">kontakt@stadttaubenhilfe-bernau.de</a><br />
           Telefon: <a href="tel:+491626435114">+49 162 6435114</a>
         </p>
 
-        <h3>2. Besuch der Website</h3>
+        <h3>2. Hosting und Besuch der Website</h3>
         <p>
-          Die Website wird statisch ausgeliefert. Beim Aufruf werden technisch
+          Diese Website wird als statische Website über Netlify, Inc., 101 2nd Street,
+          San Francisco, CA 94105, USA bereitgestellt. Beim Aufruf werden technisch
           notwendige Zugriffsdaten verarbeitet, etwa IP-Adresse, Datum und Uhrzeit,
           abgerufene Datei, übertragene Datenmenge, Browserinformationen und
           Serverstatus. Diese Daten sind nötig, um die Website bereitzustellen,
           Störungen zu erkennen und den technischen Betrieb zu gewährleisten.
         </p>
         <p>
-          Wir setzen auf dieser Website derzeit keine Analyse-Tools, keine
-          Werbe-Cookies und keine eingebetteten Social-Media-Feeds ein.
+          Die Verarbeitung erfolgt zur Wahrung unseres berechtigten Interesses an
+          einer sicheren und funktionsfähigen Website (Art. 6 Abs. 1 lit. f DSGVO).
+          Soweit Daten außerhalb der EU/des EWR verarbeitet werden, erfolgen
+          Übermittlungen auf Grundlage der von Netlify eingesetzten geeigneten
+          Garantien, insbesondere Standardvertragsklauseln.
         </p>
 
-        <h3>3. Kontakt und Fundtiermeldungen</h3>
+        <h3>3. Schriftarten</h3>
+        <p>
+          Für die einheitliche Darstellung nutzt die Website die Schriftarten
+          Bricolage Grotesque und Source Sans 3 über Google Fonts. Beim Laden der
+          Schriftarten wird eine Verbindung zu Servern von Google hergestellt;
+          dabei kann insbesondere deine IP-Adresse verarbeitet werden. Die
+          Verarbeitung erfolgt auf Grundlage unseres berechtigten Interesses an
+          einer lesbaren, einheitlichen Darstellung der Website (Art. 6 Abs. 1
+          lit. f DSGVO).
+        </p>
+
+        <h3>4. Kontakt und Fundtiermeldungen</h3>
         <p>
           Wenn du uns kontaktierst, verarbeiten wir die Angaben, die du freiwillig
           übermittelst: zum Beispiel Name, E-Mail-Adresse, Telefonnummer, Fundort,
@@ -64,14 +84,14 @@ import PageHero from "../components/PageHero.astro";
           oder ein CMS-Workflow aktiviert wird, wird dieser Hinweis aktualisiert.
         </p>
 
-        <h3>4. Spenden, Ehrenamt und Zusammenarbeit</h3>
+        <h3>5. Spenden, Ehrenamt und Zusammenarbeit</h3>
         <p>
           Bei Spendenanfragen, ehrenamtlicher Mitarbeit oder Kooperationen verarbeiten
           wir die Daten, die für Rückmeldung, Abstimmung und Dokumentation nötig sind.
           Dazu können Name, Kontaktdaten, Anfrageinhalt und vereinbarte Aufgaben gehören.
         </p>
 
-        <h3>5. Fotos und sensible Inhalte</h3>
+        <h3>6. Fotos und sensible Inhalte</h3>
         <p>
           Fotos, die du uns sendest, nutzen wir zunächst nur zur Einschätzung des
           Falls. Eine Veröffentlichung von Fotos mit erkennbaren Personen erfolgt
@@ -79,21 +99,29 @@ import PageHero from "../components/PageHero.astro";
           Einsatzmotive werden nicht ohne sorgfältige Prüfung veröffentlicht.
         </p>
 
-        <h3>6. Externe Links</h3>
+        <h3>7. Externe Links</h3>
         <p>
           Die Website verlinkt auf externe Profile, etwa Facebook und Instagram.
           Beim Klick verlässt du unsere Website; dort gelten die Datenschutzregeln
           der jeweiligen Plattform. Externe Links öffnen in einem neuen Tab.
         </p>
 
-        <h3>7. Speicherdauer</h3>
+        <h3>8. Keine Analyse- oder Werbedienste</h3>
+        <p>
+          Wir setzen auf den öffentlichen Seiten derzeit keine Analyse-Tools,
+          keine Werbe-Cookies und keine eingebetteten Social-Media-Feeds ein.
+          Facebook und Instagram sind ausschließlich verlinkt und werden erst
+          beim Anklicken der jeweiligen Links aufgerufen.
+        </p>
+
+        <h3>9. Speicherdauer</h3>
         <p>
           Wir speichern personenbezogene Daten nur so lange, wie sie für die jeweilige
           Anfrage, Hilfeleistung, Zusammenarbeit oder gesetzliche Pflichten benötigt
           werden. Nicht mehr benötigte Daten werden gelöscht oder anonymisiert.
         </p>
 
-        <h3>8. Deine Rechte</h3>
+        <h3>10. Deine Rechte</h3>
         <p>
           Du kannst Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
           Datenübertragbarkeit und Widerspruch verlangen, soweit die gesetzlichen
@@ -124,11 +152,12 @@ import PageHero from "../components/PageHero.astro";
           </a>
         </p>
 
-        <div class="legal-note">
-          Diese Datenschutzhinweise sind nach bestem aktuellen Stand vorbereitet.
-          Vor dauerhaftem Betrieb mit CMS, Uploads, Newsletter, Spendentool oder
-          Tracking sollten sie erneut geprüft und ergänzt werden.
-        </div>
+        <h3>Bei neuen Diensten</h3>
+        <p>
+          Sobald wir beispielsweise ein Spendentool, Newsletter, Upload-Funktionen,
+          Tracking oder weitere CMS-Dienste einsetzen, ergänzen wir diese Hinweise
+          vor deren Nutzung.
+        </p>
       </aside>
     </div>
   </section>
