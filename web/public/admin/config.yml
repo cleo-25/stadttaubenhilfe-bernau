@@ -1,9 +1,7 @@
 backend:
-  name: git-gateway
-  branch: main
-
-local_backend: true
-publish_mode: editorial_workflow
+  name: github
+  repo: cleo-25/stadttaubenhilfe-bernau
+  branch: redesign-2026
 site_url: https://stadttaubenhilfe-bernau.de
 display_url: https://stadttaubenhilfe-bernau.de
 logo_url: /images/logo-stadttaubenhilfe.png
