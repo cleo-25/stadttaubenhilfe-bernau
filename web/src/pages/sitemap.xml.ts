@@ -3,6 +3,7 @@ const pages = [
   "projekte",
   "fundtiere",
   "wissen",
+  "materialien",
   "galerie",
   "mitmachen",
   "spenden",
