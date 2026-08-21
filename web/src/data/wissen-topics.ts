@@ -11,8 +11,8 @@ export const knowledgeTopics = {
     eyebrow: "Mythen & Fakten",
     title: "Vorurteile lösen kein Problem.",
     text: "Vergrämung verschiebt einen Schwarm meist nur. Mit Taubenhaus, Eiertausch, Reinigung und Aufklärung wird aus einem Konflikt eine praktische Lösung.",
-    image: "/images/projects/startbild-oeffentlichkeitsarbeit.jpg",
-    imageAlt: "Aufklärungsarbeit der Stadttaubenhilfe Bernau",
+    image: "/images/gallery/vereinsarbeit-sicherung-02.jpg",
+    imageAlt: "Ehrenamtliche prüft einen geschützten Taubenbereich in einem Gebäude",
     points: ["Stadttauben sind verwilderte Haustiere, keine Wildvögel.", "Nichtfüttern verhindert weder Brutdruck noch Krankheiten.", "Vergrämung verschiebt den Schwarm, statt den Konflikt zu lösen.", "Eiertausch verhindert Nachwuchs, ohne Tiere zu töten.", "Alltagshygiene mit Händewaschen und Reinigen reicht – Panik hilft nicht."]
   },
   versorgung: {
