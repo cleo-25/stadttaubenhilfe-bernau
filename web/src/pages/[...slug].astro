@@ -30,11 +30,9 @@ type NavigationPage = {
 };
 
 export function getStaticPaths() {
-  const staticHubPages = new Set(["verein", "stadttaubenmanagement", "taube-gleich-taube"]);
-  return (navigationPages as NavigationPage[]).filter((page) => !staticHubPages.has(page.slug)).map((page) => ({
-    params: { slug: page.slug },
-    props: { page }
-  }));
+  // The former template routes were intentionally retired. All maintained
+  // content now lives on the focused overview pages and project detail routes.
+  return [];
 }
 
 const { page } = Astro.props as { page: NavigationPage };

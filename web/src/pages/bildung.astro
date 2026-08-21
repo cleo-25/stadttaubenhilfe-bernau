@@ -1,0 +1,100 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentBand from "../components/ContentBand.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import Card from "../components/Card.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const topics = [
+  { title: "Vom Haustier zur Stadttaube", text: "Warum Stadttauben keine Wildtiere sind und weshalb die Stadt für sie zum Ersatzfelsen wurde.", icon: "feather" as const },
+  { title: "Was eine gute Lösung ausmacht", text: "Wie ein betreuter Standort mit Eiertausch, Versorgung und Reinigung Konflikte nachhaltig reduziert.", icon: "home" as const },
+  { title: "Hinsehen statt wegsehen", text: "Woran man ein Tier in Not erkennt und wie Erste Hilfe ohne Panik funktioniert.", icon: "alert" as const },
+  { title: "Miteinander in der Stadt", text: "Wie Menschen, Tiere, Gebäude und öffentlicher Raum fair zusammengedacht werden können.", icon: "together" as const }
+];
+
+const offers = [
+  { eyebrow: "Kita & Vorschule · 30–45 Minuten", title: "Eine kindgerechte Begegnung", text: "Was frisst eine Taube? Wo wohnt sie? Warum braucht sie Respekt? Mit Bildern, Federn, Beobachtungsaufgaben und einer einfachen Geschichte.", icon: "feather" as const },
+  { eyebrow: "Grundschule · 60–90 Minuten", title: "Taube oder nicht Taube?", text: "Herkunft, Körper, Verhalten, Stadtleben und erste Hilfe – mit Ideen, wie Bernau ein guter Ort für Menschen und Tiere sein kann.", icon: "book" as const },
+  { eyebrow: "Weiterführende Schule · 90 Minuten / Projekttag", title: "Stadt, Tiere, Verantwortung", text: "Stadttauben als Thema für Biologie, Ethik, Politik und Stadtentwicklung: Domestikation, Verantwortung und Populationsmanagement.", icon: "together" as const },
+  { eyebrow: "Organisationen & Verwaltung", title: "Lösungen gemeinsam planen", text: "Kurzvorträge oder Workshops zu Gebäuden, Standorten, Beschwerden und einer klaren, tierschutzgerechten Kommunikation.", icon: "hands" as const }
+];
+
+const visitSteps = [
+  "Kurzes Vorgespräch: Zielgruppe, Alter, Zeit und Anlass.",
+  "Passendes Format: 30 Minuten, Unterrichtsstunde, Projekttag oder Infoabend.",
+  "Anschauliches Material: Bilder, Federn, Eier-Attrappen, Fallbeispiele aus Bernau und ein Faktenblatt zum Mitnehmen.",
+  "Abschluss mit Handlung: Jede Gruppe nimmt eine konkrete Erkenntnis und eine kleine Idee für den Alltag mit."
+];
+---
+
+<BaseLayout title="Bildung & Aufklärung" description="Bildung und Aufklärung der Stadttaubenhilfe Bernau: Fakten, Gespräche und verantwortungsvolle Lösungen für Mensch und Tier." image="/images/projects/startbild-oeffentlichkeitsarbeit.jpg" theme="knowledge">
+  <PageHero
+    eyebrow="Bildung & Aufklärung"
+    title="Stadttauben verstehen. Verantwortung lernen."
+    text="Stadttauben begegnen Kindern und Erwachsenen jeden Tag. Trotzdem wissen viele Menschen kaum etwas über ihre Herkunft, ihr Leben in der Stadt und die Folgen von Vertreibung. Unsere Bildungsarbeit macht aus „Die sind doch überall“ ein genaueres Hinschauen – sachlich, altersgerecht und ohne erhobenen Zeigefinger."
+    primaryHref="#angebote"
+    primaryLabel="Bildungsangebote ansehen"
+    secondaryHref="/kontakt"
+    secondaryLabel="Anfrage stellen"
+    visualLabel="Infostand der Stadttaubenhilfe Bernau"
+    imageSrc="/images/projects/startbild-oeffentlichkeitsarbeit.jpg"
+    imageAlt="Menschen am Infostand der Stadttaubenhilfe Bernau"
+    imagePosition="center 46%"
+    mobileImagePosition="center 42%"
+  />
+
+  <ContentBand
+    tone="navy"
+    eyebrow="Was wir vermitteln"
+    title="Wissen macht konkrete Hilfe möglich."
+    text="Wir sprechen über Herkunft, Fundtiere, Taubenhäuser und darüber, wie ein respektvolles Miteinander in Bernau gelingen kann."
+    imageSrc="/images/infostand-verein.jpg"
+    imageAlt="Infostand mit Informationsmaterial der Stadttaubenhilfe Bernau"
+    imagePosition="center 44%"
+    features={[
+      { icon: "book", title: "Herkunft verstehen", text: "Warum Stadttauben Haustier-Nachkommen sind und in Städten leben." },
+      { icon: "home", title: "Lösungen erklären", text: "Warum Versorgung, Eiertausch und Reinigung zusammengehören." },
+      { icon: "alert", title: "Sicher helfen", text: "Wie Erste Hilfe ohne Hektik und ohne Risiko funktioniert." }
+    ]}
+  />
+
+  <section class="section section-tight">
+    <div class="container">
+      <SectionHeader eyebrow="Was wir vermitteln" title="Vier Fakten, die den Blick verändern." text="Konkrete Beispiele aus Bernau machen verständlich, warum Betreuung eine nachhaltige Lösung ist." />
+      <div class="grid grid-4 topic-grid">
+        {topics.map((topic) => <Card title={topic.title} icon={topic.icon} tone="blue"><p>{topic.text}</p></Card>)}
+      </div>
+    </div>
+  </section>
+
+  <section id="angebote" class="section section-tight education-offers">
+    <div class="container soft-panel">
+      <SectionHeader eyebrow="Bildungsangebote" title="Passend für Gruppe, Alter und Anlass." text="Ob kurzer Termin, Unterrichtsstunde, Projekttag oder Infoabend: Wir stimmen Format und Inhalte persönlich ab." />
+      <div class="grid grid-4 topic-grid">
+        {offers.map((offer) => <Card eyebrow={offer.eyebrow} title={offer.title} icon={offer.icon} tone="default"><p>{offer.text}</p></Card>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-tight">
+    <div class="container education-process">
+      <SectionHeader eyebrow="So läuft ein Besuch ab" title="Anschaulich, ruhig und mit einer konkreten Handlung." />
+      <ol>
+        {visitSteps.map((step, index) => <li><strong>{index + 1}</strong><span>{step}</span></li>)}
+      </ol>
+      <p class="education-note"><strong>Tierschutz-Hinweis:</strong> Keine kranken oder pflegebedürftigen Tauben werden in pädagogische Termine eingebunden. Bildung funktioniert mit Anschauungsmaterial, Bildern und Geschichten aus der Praxis – ohne Tiere zusätzlichem Stress auszusetzen.</p>
+    </div>
+  </section>
+
+  <CtaBand eyebrow="Anfrage" title="Du möchtest einen Infostand, Unterricht oder Austausch anfragen?" text="Schreib uns mit Anlass, Ort und ungefährer Gruppengröße. Wir melden uns mit den passenden Möglichkeiten zurück." href="/kontakt" label="Bildungsangebot anfragen" />
+</BaseLayout>
+
+<style>
+  .education-offers { background: #eaf3fc; }
+  .education-process { max-width: 960px; }
+  .education-process ol { display: grid; gap: 12px; margin: 32px 0; padding: 0; list-style: none; }
+  .education-process li { display: grid; grid-template-columns: 42px 1fr; gap: 16px; align-items: start; border: 1px solid #c9ddeb; border-radius: 12px; background: #fff; padding: 18px 20px; color: #12324a; }
+  .education-process li strong { display: grid; width: 30px; height: 30px; place-items: center; border-radius: 50%; background: #5d91a8; color: #fff; line-height: 1; }
+  .education-note { margin: 0; border-left: 4px solid #ef6b61; background: #fff5f2; padding: 18px 20px; color: #12324a; }
+</style>

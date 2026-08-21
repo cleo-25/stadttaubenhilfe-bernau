@@ -1,8 +1,8 @@
 {
   "hero": {
     "eyebrow": "Projekte",
-    "title": "Unsere Arbeit in Bernau",
-    "text": "Unsere Arbeit besteht aus mehreren Teilen: Taubenhaus, Eiertausch, Reinigung, Notfälle, Volieren, Beratung und Aufklärung. Alles gehört zusammen. Nur so werden weniger Tauben geboren, weniger Tiere leiden und weniger Konflikte im Stadtraum entstehen.",
+    "title": "Unsere Arbeit: ein System, das Leben schützt.",
+    "text": "Stadttaubenhilfe funktioniert nicht mit einer einzelnen Aktion. Versorgung, Eiertausch, Reinigung, Fundtierhilfe, Beratung und Aufklärung greifen ineinander. So entsteht eine Lösung, die für Tiere, Anwohner:innen und Stadt langfristig besser ist.",
     "primaryHref": "/fundtiere",
     "primaryLabel": "Taube gefunden?",
     "secondaryHref": "/kontakt",
@@ -15,30 +15,26 @@
   },
   "intro": {
     "eyebrow": "Was wir tun",
-    "title": "Tauben versorgen, Nachwuchs begrenzen, Notfälle aufnehmen.",
-    "text": "Stadttauben sind sehr ortstreu. Wenn sie an einem Standort Futter, Wasser und Nistplätze finden, bleiben sie eher dort. Das macht Betreuung möglich: Wir sehen, welche Tiere Hilfe brauchen, können Eier tauschen und den Bereich regelmäßig reinigen."
+    "title": "Versorgen, begrenzen, helfen, erklären.",
+    "text": "Unsere Arbeit greift ineinander: Ein betreuter Standort bündelt Versorgung, Eiertausch und Reinigung. Fundtierhilfe, Beratung und Bildung sorgen dafür, dass Hilfe über den einzelnen Moment hinaus wirkt."
   },
   "items": [
     {
       "id": "taubenhaus",
       "label": "Taubenhaus",
-      "title": "Taubenhaus im Fahrradparkhaus Bernau",
-      "summary": "Im Fahrradparkhaus betreuen wir den festen Standort für den Bernauer Stadttaubenschwarm. Die Tiere bekommen dort geeignetes Futter, Wasser und Nistplätze. Wir kontrollieren die Nester, tauschen Eier gegen Attrappen und reinigen den Bereich regelmäßig.",
+      "title": "Das Taubenhaus im Fahrradparkhaus: ein Ort, der Konflikte löst.",
+      "summary": "Im Fahrradparkhaus betreuen wir einen festen Stadttaubenschwarm. Anstatt die Tiere immer wieder zu vertreiben, geben wir ihnen einen klaren, kontrollierten Bereich mit geeignetem Futter, Wasser, Nistplätzen und regelmäßiger Betreuung.",
       "image": "/images/projects/startbild-taubenhaus.jpg",
       "imageAlt": "Betreute Stadttauben im Taubenhaus im Fahrradparkhaus Bernau",
       "imagePosition": "center 58%",
       "facts": [
         {
-          "value": "170+",
-          "label": "Tauben am Standort"
-        },
-        {
           "value": "700+",
-          "label": "Eier pro Jahr gegen Attrappen"
+          "label": "Eier gegen Attrappen getauscht · 2023"
         },
         {
-          "value": "täglich",
-          "label": "Futter und Wasser"
+          "value": "regelmäßig",
+          "label": "Futter, Wasser, Reinigung und Nestkontrolle"
         }
       ],
       "points": [
@@ -52,8 +48,8 @@
     {
       "id": "volieren",
       "label": "Volieren",
-      "title": "Volieren für Tauben, die einen besonderen Bedarf haben",
-      "summary": "Manche Tauben überleben draußen nicht mehr gut: nach Verletzungen, bei Behinderungen, nach schweren Erkrankungen oder im hohen Alter. In unseren Volieren bekommen sie einen Platz, an dem sie fressen, trinken, baden, sitzen und geschützt versorgt werden können.",
+      "title": "Schutz für Tauben, die nicht zurück auf die Straße können.",
+      "summary": "Nicht jede Taube kann nach einer Behandlung wieder an einen Stadtstandort zurück. Manche Tiere bleiben durch alte Verletzungen, Behinderungen oder schwere Erkrankungen dauerhaft eingeschränkt. In unseren Volieren finden sie Schutz, Futter, Wasser, Bademöglichkeiten, Sitzplätze und tägliche Beobachtung.",
       "image": "/images/projects/startbild-voilieren.jpg",
       "imageAlt": "Betreute Tauben in einer Voliere",
       "imagePosition": "center",
@@ -68,8 +64,8 @@
     {
       "id": "notfaelle",
       "label": "Notfälle",
-      "title": "Hilfe für verletzte und geschwächte Tauben",
-      "summary": "Wir versorgen verletzte, kranke, erschöpfte, verschnürte, angefahrene oder noch nicht flugfähige Stadttauben aus Bernau und Umgebung. Nach der ersten Einschätzung geht es um pflegerische Versorgung, tiermedizinische Abklärung und eine passende Unterbringung.",
+      "title": "Wenn eine Taube Hilfe braucht, zählt der nächste richtige Schritt.",
+      "summary": "Verletzte, kranke, erschöpfte oder verschnürte Tauben können sich nicht selbst helfen. Wir unterstützen beim Sichern, schätzen Fundmeldungen ein und organisieren – je nach Zustand – Pflege, tierärztliche Abklärung und eine passende Unterbringung.",
       "image": "/images/projects/startbild-notfaelle.jpg",
       "imageAlt": "Pflegeplatz mit Taube nach einem Fund",
       "imagePosition": "center 40%",
@@ -96,8 +92,8 @@
     {
       "id": "beratung",
       "label": "Gebäude",
-      "title": "Beratung bei Sanierung, Abriss und Dachböden",
-      "summary": "Tauben brüten oft dort, wo Menschen sie erst spät bemerken: auf Dachböden, hinter Netzen, in Mauernischen, unter Dächern oder an Gebäudekanten. Wenn saniert, verschlossen oder abgerissen wird, können Tiere eingeschlossen oder Nester zerstört werden. Wir beraten, wie vorher geprüft und tierschutzgerecht gehandelt werden kann.",
+      "title": "Vor dem Verschließen prüfen. Bevor es für Tiere zu spät ist.",
+      "summary": "Auf Dachböden, hinter Netzen, in Mauernischen und unter Dächern brüten Stadttauben oft unbemerkt. Bei Sanierungen, Abrissen oder Verschlüssen können Eier, Küken und erwachsene Tiere eingeschlossen werden. Frühzeitige Prüfung verhindert vermeidbares Leid und verzögerte Bauabläufe.",
       "image": "/images/projects/startbild-dachboden.jpg",
       "imageAlt": "Tierschutzgerechte Begleitung einer Rettungsaktion auf einem Dachboden",
       "imagePosition": "center 45%",
