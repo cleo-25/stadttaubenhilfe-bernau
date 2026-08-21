@@ -19,7 +19,7 @@
       "href": "/fundtiere",
       "items": [
         { "label": "Erste Hilfe", "href": "/fundtiere" },
-        { "label": "Fundtier melden", "href": "/kontakt#kontaktformular" },
+        { "label": "Fundtier melden", "href": "/kontakt#kontaktformular" }
       ]
     },
     {
