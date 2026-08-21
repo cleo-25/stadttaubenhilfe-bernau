@@ -44,7 +44,7 @@
   "story": {
     "overline": "Aus der Pflegestelle", "title": "Jede Taube hat ihre eigene Geschichte.",
     "text": "Fundtiere werden gesichert, versorgt und — wenn möglich — wieder in ein sicheres Leben begleitet. Die konkrete Fallgeschichte wird im CMS gepflegt.",
-    "image": "/images/tauben-paar.jpg", "imageAlt": "Zwei betreute Tauben in einer Pflegestelle",
+    "image": "/images/gallery/pflegestelle-paar-01.jpg", "imageAlt": "Zwei betreute Stadttauben in einer Pflegestelle",
     "linkLabel": "So hilfst du richtig →", "href": "/fundtiere"
   },
   "helpWays": {

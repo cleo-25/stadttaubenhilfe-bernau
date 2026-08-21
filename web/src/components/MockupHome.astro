@@ -16,7 +16,7 @@ const { brand, emergency, nav, hero, belief, impact, story, helpWays, donation, 
 
     <section class="impact"><div class="impact-copy"><h2>Unser Einsatz in Bernau</h2><p>Wir sind direkt in Bernau aktiv – mit Erfahrung, Herz und gesundem Menschenverstand.</p><small>Redaktionelles TODO &nbsp; Hier Wirkungsthemen ergänzen.</small></div><div class="impact-items">{([{name:'care',label:'Versorgung'},{name:'care2',label:'Betreuung'},{name:'info',label:'Aufklärung'},{name:'together',label:'Miteinander'}] as const).map((item) => <div><LineIcon name={item.name} /><h3>{item.label}</h3><small>Redaktionelles<br />TODO</small></div>)}</div></section>
 
-    <section class="story"><div><p>Eine von vielen Geschichten</p><h2>Gerettet. Versorgt.<br />Zurückgekehrt.</h2><span>{story.text}</span><a class="dark" href={story.href}>Mehr Geschichten</a></div><figure><img src={story.image} alt={story.imageAlt} loading="lazy" decoding="async" /><figcaption>Redaktionelles TODO<br />Bildunterschrift ergänzen</figcaption></figure></section>
+    <section class="story"><div><p>Eine von vielen Geschichten</p><h2>Gerettet. Versorgt.<br />Zurückgekehrt.</h2><span>{story.text}</span><a class="dark" href={story.href}>Mehr Geschichten</a></div><figure><img src={story.image} alt={story.imageAlt} loading="eager" decoding="async" /><figcaption>Pflegestelle · Bernau</figcaption></figure></section>
 
     <section class="ways"><div class="ways-title"><p>So kannst du helfen</p><h2>Drei Wege.<br />Ein Ziel.<br />Gemeinsam.</h2></div><div class="way-cards">{helpWays.items.map((item, index) => <a href={item.href} class:list={["way", `way-${index}`]}><LineIcon name={index === 0 ? 'alert' : index === 1 ? 'heart' : 'euro'} /><h3>{item.title}</h3><span>{item.text}</span><b>›</b></a>)}</div></section>
 
@@ -59,6 +59,11 @@ const { brand, emergency, nav, hero, belief, impact, story, helpWays, donation, 
 <style is:global>
   /* Keep the same navigation available after the homepage hero has scrolled. */
   .home .site-header { position: sticky !important; top: 0; z-index: 40; }
+  .home .story {
+    padding: clamp(52px, 5vw, 72px) max(24px, 6vw);
+  }
+  .home .story figure { height: clamp(290px, 27vw, 360px); }
+  .home .story figure img { object-position: center 44%; }
 </style>
 <style>
   .mobile-nav { display: none; }

@@ -224,6 +224,11 @@ body[data-page-theme] .topic-grid .card .line-icon {
 body[data-page-theme] .topic-grid .card:nth-child(4n + 4) .line-icon { color: var(--page-blue); }
 body[data-page-theme] .topic-grid .card h3 { margin: 0; color: var(--page-ink); font-size: clamp(1.35rem, 2.2vw, 1.9rem); }
 body[data-page-theme] .topic-grid .card .card-body { margin-top: 12px; color: var(--page-ink); line-height: 1.55; }
+/* Paragraphs explicitly receive the page ink. On a night-blue card they must
+   be reset directly instead of inheriting the dark page default. */
+body[data-page-theme] .topic-grid .card:nth-child(4n + 4) .card-body,
+body[data-page-theme] .topic-grid .card:nth-child(4n + 4) .card-body :is(p, li),
+body[data-page-theme] .topic-grid .card:nth-child(4n + 4) .card-more { color: #fff; }
 body[data-page-theme] .card-more {
   display: inline-block;
   margin-top: 18px;
@@ -404,14 +409,38 @@ body[data-page-theme] .card-green { background: var(--page-pale); }
 body[data-page-theme] .card-violet { background: var(--page-white); }
 
 body[data-page-theme="contact"] .contact-help-panel { border: 0; border-radius: 0; background: var(--page-coral-pale); }
-body[data-page-theme="contact"] .contact-grid > aside { border: 0; border-radius: 0; background: var(--page-band); }
+body[data-page-theme="contact"] .contact-grid > aside.soft-panel {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  border: 0;
+  border-radius: 0;
+  background: var(--page-band) !important;
+}
 body[data-page-theme="contact"] .contact-grid > aside h2,
 body[data-page-theme="contact"] .contact-grid > aside p,
 body[data-page-theme="contact"] .contact-grid > aside strong,
 body[data-page-theme="contact"] .contact-grid > aside a,
-body[data-page-theme="contact"] .contact-grid > aside .eyebrow { color: #fff; }
+body[data-page-theme="contact"] .contact-grid > aside .eyebrow { color: #fff !important; }
 body[data-page-theme="contact"] .contact-list li { border-color: rgba(255,255,255,.3); }
 body[data-page-theme="contact"] form.soft-panel { background: var(--page-pale); }
+body[data-page-theme="contact"] .contact-aside-image {
+  position: relative;
+  display: block;
+  min-height: 300px;
+  flex: 1 1 auto;
+  overflow: hidden;
+  margin: 34px -38px -38px;
+}
+body[data-page-theme="contact"] .contact-aside-image img {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
 
 body[data-page-theme="gallery"] .gallery-category-grid { gap: 0; }
 body[data-page-theme="gallery"] .gallery-category-card { min-height: 300px; border: 0; border-radius: 0; box-shadow: none; }
@@ -435,6 +464,12 @@ body[data-page-theme="legal"] .legal-note { border: 0; border-radius: 0; backgro
   .content-band-features h3 { margin-top: 2px; }
   body[data-page-theme] .topic-grid .card { min-height: 0; }
   body[data-page-theme] .topic-grid .card .line-icon { margin-bottom: 22px; }
+  body[data-page-theme="contact"] .contact-grid > aside { min-height: 0; }
+  body[data-page-theme="contact"] .contact-aside-image {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+    margin: 28px -24px -24px;
+  }
   body[data-page-theme="knowledge"] .species-grid .compact-panel { min-height: 0; }
   body[data-page-theme="knowledge"] .species-grid .line-icon { margin-bottom: 22px; }
   body[data-page-theme="projects"] .flagship-project,
