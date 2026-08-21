@@ -34,28 +34,25 @@ Neue CMS-Bilder werden in diesen Ordner gelegt:
 
 `public/images/uploads/`
 
-## Wichtig für Live-Bearbeitung
+## Live-Bearbeitung
 
-Auf einer reinen Hostinger-Static-Seite kann ein Browser keine Dateien auf dem
-Server speichern. Dafür braucht das CMS eine Verbindung zu GitHub und einen
-Auth-Dienst.
+Das CMS speichert Änderungen direkt im GitHub-Repository. Netlify erkennt den
+Commit und veröffentlicht die Seite automatisch. Der Zugang läuft über GitHub
+OAuth; Git Gateway wird nicht verwendet.
 
-Empfohlener Weg:
+1. `/admin/` aufrufen.
+2. Mit dem eigenen GitHub-Konto anmelden.
+3. Inhalte oder Bilder bearbeiten und auf `Veröffentlichen` klicken.
+4. Den kurzen Netlify-Deploy abwarten; die Änderung ist danach auf der Website
+   sichtbar.
 
-1. Code in ein GitHub-Repository legen.
-2. Netlify mit dem Repository verbinden.
-3. Netlify Identity aktivieren.
-4. Git Gateway aktivieren.
-5. Benutzer einladen.
-6. Änderungen im CMS speichern; Netlify baut die Website automatisch neu.
+Damit eine Person Inhalte veröffentlichen kann, benötigt sie ein GitHub-Konto
+und Schreibrechte für `cleo-25/stadttaubenhilfe-bernau`. Die Rechte werden in
+GitHub unter `Settings > Collaborators` vergeben. Neue CMS-Editor:innen
+brauchen keinen Netlify-Login.
 
-Wenn die Seite dauerhaft direkt auf dem Hostinger-VPS laufen soll, braucht es
-statt Git Gateway ein eigenes Backend oder einen GitHub-Webhook/Deploy-Flow.
-
-Kurz gesagt: Hostinger kann die fertige statische Website ausliefern. Das
-bequeme Bearbeiten im Browser funktioniert am saubersten mit GitHub + Netlify
-Identity/Git Gateway, weil Decap CMS die Änderungen dann als Git-Änderungen
-speichert.
+Die Website und das CMS werden über Netlify ausgeliefert. Hostinger stellt in
+dieser Konfiguration nur Domain, DNS und weitere Serverdienste bereit.
 
 ## Lokal testen
 
@@ -75,8 +72,7 @@ Dann die Website öffnen und `/admin/` aufrufen:
 
 Wenn der Astro-Server auf einem anderen Port läuft, entsprechend diesen Port
 verwenden. Der lokale Decap-Server erlaubt nur lokales Testen. Für echte
-Bearbeitung durch mehrere Personen braucht es den Live-Login über Netlify
-Identity/Git Gateway oder ein eigenes Backend.
+Bearbeitung durch mehrere Personen wird der Live-Login über GitHub verwendet.
 
 ## Was im CMS wo bearbeitet wird
 
@@ -88,10 +84,11 @@ Identity/Git Gateway oder ein eigenes Backend.
 - `Seiten > Wissen`: Wissensseite, Mythen/Fakten und Infoboxen.
 - `Seiten > Galerie`: Galerie-Kategorien und einzelne Galeriebilder.
 
-## Nach manuellen Änderungen deployen
+## Nach manuellen Code-Änderungen deployen
 
 ```bash
 npm run build
 ```
 
-Danach den Inhalt aus `dist/` auf den Webserver hochladen.
+Danach die Änderungen nach `redesign-2026` pushen. Netlify baut und
+veröffentlicht den Produktionsstand automatisch.
