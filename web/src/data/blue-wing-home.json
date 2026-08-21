@@ -1,6 +1,6 @@
 {
   "brand": { "name": "Stadttaubenhilfe", "location": "Bernau b. Berlin", "logo": "/images/logo-stadttaubenhilfe-restored-v2.png" },
-  "emergency": { "label": "Taube in Not?", "notice": "Notfallkontakt folgt im CMS.", "linkLabel": "Erste Hilfe ansehen →", "href": "/fundtiere" },
+  "emergency": { "label": "Taube in Not?", "notice": "Schnell handeln, Leben retten.", "linkLabel": "Erste Hilfe ansehen →", "href": "/fundtiere" },
   "nav": [
     { "label": "Unsere Hilfe", "href": "/projekte" },
     { "label": "Taubenwissen", "href": "/wissen" },
@@ -8,61 +8,57 @@
     { "label": "Mitmachen", "href": "/mitmachen#ehrenamt" }
   ],
   "hero": {
-    "overline": "Stadttaubenhilfe Bernau",
-    "title": "Bernau ist auch ihr Zuhause.",
-    "text": "Wir kümmern uns um Fundtiere, das Taubenhaus am Bahnhof und ein besseres Miteinander mit Stadttauben.",
+    "overline": "Stadttaubenhilfe Bernau e. V.",
+    "title": "Stadttauben sind keine Plage. Sie sind unsere Verantwortung.",
+    "text": "Stadttauben leben mitten in Bernau – an Bahnhöfen, unter Dächern, in Nischen und im Fahrradparkhaus. Sie sind Nachkommen gezüchteter Haus- und Brieftauben und auf menschliche Lösungen angewiesen. Wir helfen praktisch vor Ort: mit einem betreuten Taubenhaus, Eiertausch, Notfallhilfe und Aufklärung.",
     "image": "/images/projects/startbild-taubenhaus.jpg",
     "imageAlt": "Tauben über dem Fahrradparkhaus am Bahnhof Bernau, mit der Marienkirche im Hintergrund",
     "caption": "Bernau · Bahnhof · Taubenhaus",
-    "primary": { "label": "Notfall melden →", "href": "/fundtiere" },
-    "secondary": { "label": "Jetzt helfen →", "href": "/spenden" }
+    "primary": { "label": "Taube gefunden? Soforthilfe", "href": "/fundtiere" },
+    "secondary": { "label": "Unsere Arbeit in Bernau", "href": "/projekte" }
   },
-  "trustItems": ["Lokale Hilfe in Bernau", "Ehrenamtlich aktiv", "Direkte Versorgung"],
+  "trustItems": ["Ehrenamtlich in Bernau", "Betreuen statt vertreiben", "Für Mensch und Tier"],
   "belief": {
     "overline": "Stadttauben verstehen",
-    "title": "Keine Plage. Ein Leben, für das wir Verantwortung tragen.",
-    "text": "Stadttauben sind auf die Stadt angewiesen. Mit Betreuung, Eiertausch, Versorgung und Aufklärung schaffen wir eine nachhaltige Lösung — für die Tiere und für Bernau.",
+    "title": "Betreuen statt vertreiben.",
+    "text": "Vertreiben verschiebt Tauben nur von einem Ort zum nächsten. Ein betreuter Standort bündelt Futter, Wasser, Nistplätze, Reinigung und Eiertausch. So werden weniger Küken geboren, kranke Tiere früher erkannt und Konflikte im Stadtbild dauerhaft reduziert.",
     "linkLabel": "Mehr über Stadttauben →", "href": "/wissen"
   },
   "work": {
-    "overline": "Unsere Arbeit vor Ort", "title": "Hilfe, die man sehen kann.",
+    "overline": "Direkt vor unserer Haustür", "title": "Hilfe, die in Bernau ankommt.",
     "image": "/images/projects/startbild-taubenhaus.jpg", "imageAlt": "Das Fahrradparkhaus am Bahnhof Bernau mit fliegenden Tauben",
-    "heading": "Ein fester Ort statt Verdrängung.",
-    "text": "Im Fahrradparkhaus am Bahnhof Bernau betreuen wir einen festen Standort mit Nistplätzen, Futter, Wasser, Reinigung und Eiertausch.",
+    "heading": "Im Fahrradparkhaus wird Verantwortung konkret.",
+    "text": "Im Fahrradparkhaus betreuen wir einen festen Stadttaubenstandort. Dort versorgen wir den Schwarm, kontrollieren Nester, tauschen Eier gegen Attrappen und reinigen regelmäßig. Bei Fundtieren organisieren wir schnelle Ersthilfe, Pflege und – wenn nötig – tierärztliche Versorgung.",
     "items": ["Taubenhaus am Bahnhof Bernau", "Betreuung von Fundtieren", "Volieren und Handicapplätze"],
     "linkLabel": "Unsere Projekte →", "href": "/projekte"
   },
   "impact": {
     "overline": "Transparenz", "title": "Wirkung soll belegbar sein.",
     "text": "Konkrete Zahlen veröffentlichen wir mit Zeitraum und Quelle. Bis dahin zeigt die Website bewusst keine geschätzten Werte.",
-    "items": [
-      { "label": "01", "title": "Redaktionelles TODO", "text": "Kennzahl und Zeitraum ergänzen" },
-      { "label": "02", "title": "Redaktionelles TODO", "text": "Quelle zur Kennzahl ergänzen" },
-      { "label": "03", "title": "Redaktionelles TODO", "text": "Jahresstand bestätigen" }
-    ]
+    "items": []
   },
   "story": {
     "overline": "Aus der Pflegestelle", "title": "Jede Taube hat ihre eigene Geschichte.",
-    "text": "Fundtiere werden gesichert, versorgt und — wenn möglich — wieder in ein sicheres Leben begleitet. Die konkrete Fallgeschichte wird im CMS gepflegt.",
+    "text": "Fundtiere werden gesichert, versorgt und – wenn möglich – wieder in ein sicheres Leben begleitet. Hilfe beginnt mit einem Karton, Ruhe und einer schnellen Meldung.",
     "image": "/images/gallery/pflegestelle-paar-01.jpg", "imageAlt": "Zwei betreute Stadttauben in einer Pflegestelle",
     "linkLabel": "So hilfst du richtig →", "href": "/fundtiere"
   },
   "helpWays": {
-    "overline": "Dein nächster Schritt", "title": "Drei Wege, die wirklich helfen.",
+    "overline": "Deine Hilfe zählt", "title": "Nicht jede Hilfe beginnt mit einem Netz.",
     "items": [
-      { "label": "01", "title": "Notfall melden", "text": "Du hast eine verletzte oder hilfsbedürftige Taube gefunden?", "linkLabel": "Zum Notfallweg →", "href": "/fundtiere" },
-      { "label": "02", "title": "Spenden", "text": "Mit deiner Unterstützung wird Versorgung vor Ort möglich.", "linkLabel": "Spendenmöglichkeiten →", "href": "/spenden" },
-      { "label": "03", "title": "Zeit schenken", "text": "Werde Teil einer Hilfe, die direkt in Bernau ankommt.", "linkLabel": "Mitmachen →", "href": "/mitmachen#ehrenamt" }
+      { "label": "01", "title": "Taube gefunden?", "text": "Soforthilfe: sichern, Karton, melden.", "linkLabel": "Zum Notfallweg →", "href": "/fundtiere" },
+      { "label": "02", "title": "Zeit schenken", "text": "Mithelfen im Taubenhaus, bei Fahrten, Pflege oder Aufklärung.", "linkLabel": "Mitmachen →", "href": "/mitmachen#ehrenamt" },
+      { "label": "03", "title": "Spenden", "text": "Futter, Tierarztkosten, Reinigung und Material ermöglichen Hilfe.", "linkLabel": "Spendenmöglichkeit anfragen →", "href": "/spenden" }
     ]
   },
   "donation": {
     "overline": "Spenden", "title": "Deine Hilfe kommt in Bernau an.",
-    "text": "Die Bankverbindung und ein SEPA-QR-Code werden nach Kontoeröffnung im CMS ergänzt.",
-    "notice": "Redaktionelles TODO: Wirkungstext erst nach Prüfung ergänzen.", "linkLabel": "Zur Spendenseite →", "href": "/spenden"
+    "text": "Futter, Pflege und tierärztliche Hilfe werden durch Unterstützung aus Bernau möglich.",
+    "notice": "", "linkLabel": "Spendenmöglichkeit anfragen →", "href": "/spenden"
   },
   "footer": {
     "text": "Hilfe für Stadttauben in Bernau bei Berlin.",
-    "contactHeading": "Kontakt & Transparenz", "contactText": "Kontaktdaten folgen im CMS.", "contactLabel": "Kontaktseite →", "contactHref": "/kontakt",
+    "contactHeading": "Kontakt & Transparenz", "contactText": "Telefon, E-Mail und aktuelle Kontaktwege findest du auf unserer Kontaktseite.", "contactLabel": "Kontaktseite →", "contactHref": "/kontakt",
     "socialHeading": "Folge unserer Arbeit", "facebookLabel": "Facebook", "facebookUrl": "https://www.facebook.com/people/Stadttaubenhilfe-Bernau-b-Berlin/100064906808060/?locale=de_DE", "instagramLabel": "Instagram", "instagramUrl": "https://www.instagram.com/stadttaubenhilfe.bernau/"
   }
 }

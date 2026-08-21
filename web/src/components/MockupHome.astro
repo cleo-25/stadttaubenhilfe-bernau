@@ -9,21 +9,21 @@ const { brand, emergency, nav, hero, belief, impact, story, helpWays, donation, 
   <Header mainId="main" />
 
   <main id="main">
-    <section class="hero"><div class="hero-copy"><div><p>{hero.overline}</p><h1>Bernau ist<br />auch ihr<br /><em>Zuhause.</em></h1><p class="intro">Wir helfen Stadttauben in Bernau – mit Erster Hilfe, Betreuung und Information. Für ein respektvolles Miteinander.</p><div class="buttons"><a class="urgent" href={hero.primary.href}>△ &nbsp;{hero.primary.label}</a><a class="dark" href={hero.secondary.href}>♥ &nbsp;{hero.secondary.label}</a></div></div></div><figure><img src="/images/hero-bernau-pigeon-v1.png" alt="Stadttaube vor Bernauer Kirchturm" loading="eager" decoding="async" /></figure></section>
-    <div class="trust"><div class="wrap">♢ &nbsp; Ehrenamtlich. Sachkundig. Lokal in Bernau.</div></div>
+    <section class="hero"><div class="hero-copy"><div><p>{hero.overline}</p><h1>Stadttauben sind<br />keine Plage.<br /><em>Sie sind unsere<br />Verantwortung.</em></h1><p class="intro">{hero.text}</p><div class="buttons"><a class="urgent" href={hero.primary.href}>△ &nbsp;{hero.primary.label}</a><a class="dark" href={hero.secondary.href}>↗ &nbsp;{hero.secondary.label}</a></div></div></div><figure><img src="/images/hero-bernau-pigeon-v1.png" alt="Stadttaube vor Bernauer Kirchturm" loading="eager" decoding="async" /></figure></section>
+    <div class="trust"><div class="wrap">♢ &nbsp; Ehrenamtlich in Bernau · Betreuen statt vertreiben · Für Mensch und Tier</div></div>
 
-    <section class="belief"><div class="belief-item"><i>×</i><div><p>Missverständnis</p><h2>Stadttauben sind<br />Schädlinge.</h2><span>Tatsache: Sie sind Teil unserer Stadt – und auf unsere Hilfe angewiesen.</span></div></div><b>›</b><div class="belief-item"><i>✓</i><div><p>Unsere Lösung</p><h2>Wir helfen –<br />praktisch und lokal.</h2><span>Mit Wissen, Betreuung und Kooperation verbessern wir das Leben der Tauben und das Miteinander in Bernau.</span></div></div></section>
+    <section class="belief"><div class="belief-item"><i>×</i><div><p>Eine Stadt kann Verantwortung übernehmen</p><h2>Betreuen statt<br />vertreiben.</h2><span>Vertreiben verschiebt Tauben nur von einem Ort zum nächsten. Ein betreuter Standort schafft eine dauerhafte Lösung.</span></div></div><b>›</b><div class="belief-item"><i>✓</i><div><p>Unsere Lösung</p><h2>Hilfe, die<br />konkret wirkt.</h2><span>Taubenhaus, Eiertausch, Fundtierhilfe und Aufklärung reduzieren Leid und Konflikte nachhaltig.</span></div></div></section>
 
-    <section class="impact"><div class="impact-copy"><h2>Unser Einsatz in Bernau</h2><p>Wir sind direkt in Bernau aktiv – mit Erfahrung, Herz und gesundem Menschenverstand.</p><small>Redaktionelles TODO &nbsp; Hier Wirkungsthemen ergänzen.</small></div><div class="impact-items">{([{name:'care',label:'Versorgung'},{name:'care2',label:'Betreuung'},{name:'info',label:'Aufklärung'},{name:'together',label:'Miteinander'}] as const).map((item) => <div><LineIcon name={item.name} /><h3>{item.label}</h3><small>Redaktionelles<br />TODO</small></div>)}</div></section>
+    <section class="impact"><div class="impact-copy"><h2>Unsere Arbeit in Bernau</h2><p>Taubenhaus, Fundtierhilfe, Volieren, Beratung und Bildung: Hilfe, die dort ankommt, wo sie gebraucht wird.</p></div><div class="impact-items">{([{name:'care',label:'Versorgung',text:'Futter, Wasser und feste Nistplätze.'},{name:'care2',label:'Betreuung',text:'Eiertausch, Reinigung und Pflege.'},{name:'info',label:'Aufklärung',text:'Wissen, das Vorurteile ersetzt.'},{name:'together',label:'Miteinander',text:'Lokale Verantwortung für Mensch und Tier.'}] as const).map((item) => <div><LineIcon name={item.name} /><h3>{item.label}</h3><small>{item.text}</small></div>)}</div></section>
 
-    <section class="story"><div><p>Eine von vielen Geschichten</p><h2>Gerettet. Versorgt.<br />Zurückgekehrt.</h2><span>{story.text}</span><a class="dark" href={story.href}>Mehr Geschichten</a></div><figure><img src={story.image} alt={story.imageAlt} loading="eager" decoding="async" /><figcaption>Pflegestelle · Bernau</figcaption></figure></section>
+    <section class="story"><div><p>Hilfe, die ankommt</p><h2>Gesichert. Versorgt.<br />Begleitet.</h2><span>{story.text}</span><a class="dark" href={story.href}>Soforthilfe ansehen</a></div><figure><img src={story.image} alt={story.imageAlt} loading="eager" decoding="async" /><figcaption>Pflegestelle · Bernau</figcaption></figure></section>
 
-    <section class="ways"><div class="ways-title"><p>So kannst du helfen</p><h2>Drei Wege.<br />Ein Ziel.<br />Gemeinsam.</h2></div><div class="way-cards">{helpWays.items.map((item, index) => <a href={item.href} class:list={["way", `way-${index}`]}><LineIcon name={index === 0 ? 'alert' : index === 1 ? 'heart' : 'euro'} /><h3>{item.title}</h3><span>{item.text}</span><b>›</b></a>)}</div></section>
+    <section class="ways"><div class="ways-title"><p>{helpWays.overline}</p><h2>{helpWays.title}</h2></div><div class="way-cards">{helpWays.items.map((item, index) => <a href={item.href} class:list={["way", `way-${index}`]}><LineIcon name={index === 0 ? 'alert' : index === 1 ? 'heart' : 'euro'} /><h3>{item.title}</h3><span>{item.text}</span><b>›</b></a>)}</div></section>
 
-    <section class="donation"><i>♡</i><div><h2>Deine Unterstützung<br />kommt an.</h2><p>Jede Spende hilft – direkt hier in Bernau. Danke für dein Vertrauen.</p></div><div class="amounts"><button>10 €</button><button class="active">25 €</button><button>50 €</button><button>Anderer Betrag &nbsp; €</button><a href={donation.href}>Jetzt spenden &nbsp; ♥</a></div></section>
+    <section class="donation"><i>♡</i><div><h2>Unterstützung, die ankommt.</h2><p>{donation.text}</p></div><div class="amounts"><a href={donation.href}>Spendenmöglichkeit anfragen &nbsp; ♥</a></div></section>
   </main>
 
-  <footer><div class="footer wrap"><div class="foot-brand"><img src={brand.logo} alt="" /><b>{brand.name}<small>{brand.location}</small></b><p>Für Stadttauben.<br />Für Bernau.<br />Für ein besseres Miteinander.</p></div><nav><b>Wir helfen</b><a href="/projekte">Hilfe & Beratung</a><a href="/fundtiere">Notfall melden</a><a href="/mitmachen">Mitmachen</a><a href="/wissen">Aufklärung</a></nav><nav><b>Über uns</b><a href="/mitmachen">Unser Team</a><a href="/projekte">Unser Ansatz</a><a href="/kontakt">Aktuelles</a></nav><nav><b>Für Bernau</b><p>Wir sind ehrenamtlich und unabhängig. Spenden unterstützen uns direkt vor Ort.</p><a href={footer.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href={footer.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram ↗</a></nav></div></footer>
+  <footer><div class="footer wrap"><div class="foot-brand"><img src={brand.logo} alt="" /><b>{brand.name}<small>{brand.location}</small></b><p>Wir betreuen Stadttauben in Bernau mit Versorgung, Eiertausch, Fundtierhilfe und Aufklärung. Ehrenamtlich, sachkundig und direkt vor Ort.</p></div><nav><b>Wir helfen</b><a href="/fundtiere">Taube gefunden?</a><a href="/projekte">Unsere Arbeit</a><a href="/bildung">Bildung & Aufklärung</a><a href="/mitmachen">Mitmachen</a></nav><nav><b>Verein</b><a href="/verein">Unser Verein</a><a href="/verein#vorstand">Vorstand</a><a href="/galerie">Aktuelles</a><a href="/spenden">Spenden</a></nav><nav><b>Kontakt</b><a href="/kontakt">Kontakt aufnehmen</a><a href={footer.facebookUrl} target="_blank" rel="noopener noreferrer">Facebook ↗</a><a href={footer.instagramUrl} target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="/impressum">Impressum</a><a href="/datenschutz">Datenschutz</a></nav></div></footer>
 </div>
 
 <style is:global>
@@ -64,6 +64,35 @@ const { brand, emergency, nav, hero, belief, impact, story, helpWays, donation, 
   }
   .home .story figure { height: clamp(290px, 27vw, 360px); }
   .home .story figure img { object-position: center 44%; }
+</style>
+<style is:global>
+  .home .impact-items small {
+    display: block;
+    background: transparent;
+    color: #dceaff;
+    font-size: .78rem;
+    line-height: 1.42;
+    padding: 0;
+  }
+
+  .home .impact-items h3 { margin-bottom: 10px; }
+  .home .donation { grid-template-columns: 74px minmax(0, 1fr) auto; }
+  .home .amounts { display: block; }
+  .home .amounts a {
+    display: inline-flex;
+    min-height: 48px;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    background: var(--coral) !important;
+    color: #fff !important;
+  }
+
+  @media (max-width: 800px) {
+    .home .donation { grid-template-columns: 58px minmax(0, 1fr); }
+    .home .amounts { grid-column: 1 / -1; }
+    .home .amounts a { width: 100%; }
+  }
 </style>
 <style>
   .mobile-nav { display: none; }

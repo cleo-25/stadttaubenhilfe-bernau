@@ -1,5 +1,5 @@
 ---
-import "../styles/global.css";
+// Existing short links should lead into the current, accessible contact flow.
 ---
 
 <!doctype html>
@@ -8,96 +8,11 @@ import "../styles/global.css";
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="robots" content="noindex,nofollow" />
-    <title>Schnellkontakt | Stadttaubenhilfe Bernau</title>
-    <meta
-      name="description"
-      content="Schnellkontakt zur Stadttaubenhilfe Bernau mit Telefonnummer und E-Mail-Adresse."
-    />
-    <link rel="icon" href="/favicon.svg?v=20260821" type="image/svg+xml" />
-    <link rel="icon" href="/favicon-16.png?v=20260821" sizes="16x16" type="image/png" />
-    <link rel="icon" href="/favicon-32.png?v=20260821" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="/favicon-180.png?v=20260821" sizes="180x180" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <meta http-equiv="refresh" content="0; url=/kontakt#kontaktformular" />
+    <link rel="canonical" href="/kontakt" />
+    <title>Weiterleitung zum Kontakt | Stadttaubenhilfe Bernau</title>
   </head>
   <body>
-    <main class="quick-contact">
-      <section>
-        <img src="/images/logo-stadttaubenhilfe.png" alt="Logo der Stadttaubenhilfe Bernau" />
-        <p>Stadttaubenhilfe Bernau b. Berlin</p>
-        <h1>Schnellkontakt</h1>
-        <a href="tel:+491626435114">+49 162 6435114</a>
-        <a href="mailto:kontakt@stadttaubenhilfe-bernau.de">
-          kontakt@stadttaubenhilfe-bernau.de
-        </a>
-      </section>
-    </main>
+    <p><a href="/kontakt#kontaktformular">Zum Kontaktformular für Fundtiere</a></p>
   </body>
 </html>
-
-<style>
-  .quick-contact {
-    display: grid;
-    min-height: 100vh;
-    place-items: center;
-    background: #8cb2e1;
-    color: #0d2942;
-    font-family:
-      ui-sans-serif,
-      system-ui,
-      -apple-system,
-      BlinkMacSystemFont,
-      "Segoe UI",
-      sans-serif;
-    padding: 24px;
-  }
-
-  .quick-contact section {
-    display: grid;
-    width: min(100%, 560px);
-    justify-items: center;
-    border: 0;
-    border-radius: 0;
-    background: #0d2942;
-    padding: clamp(28px, 6vw, 58px);
-    text-align: center;
-  }
-
-  .quick-contact img {
-    width: clamp(130px, 25vw, 190px);
-    aspect-ratio: 1;
-    object-fit: contain;
-  }
-
-  .quick-contact p {
-    margin: 20px 0 0;
-    color: #8cb2e1;
-    font-weight: 900;
-  }
-
-  .quick-contact h1 {
-    margin: 8px 0 24px;
-    color: #fff;
-    font-size: clamp(2.4rem, 8vw, 4.5rem);
-    letter-spacing: -0.028em;
-    line-height: 1;
-  }
-
-  .quick-contact a {
-    width: 100%;
-    border-radius: 8px;
-    background: #fff;
-    color: #0d2942;
-    font-size: clamp(1.08rem, 3vw, 1.35rem);
-    font-weight: 900;
-    padding: 14px 18px;
-  }
-
-  .quick-contact a + a {
-    margin-top: 12px;
-  }
-
-  .quick-contact a:first-of-type {
-    background: #f2675c;
-    color: #fff;
-  }
-</style>

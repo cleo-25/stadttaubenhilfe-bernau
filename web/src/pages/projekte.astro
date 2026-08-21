@@ -10,14 +10,12 @@ import projectsContent from "../data/projects.json";
 
 const { hero, intro, items } = projectsContent;
 
-const projectNumbers = [
-  { value: "700+", label: "Eier pro Jahr gegen Attrappen getauscht" },
-  { value: "170+", label: "Tauben am betreuten Standort" },
-  { value: "3×", label: "Nestkontrolle und Eiertausch pro Woche" },
-  { value: "4–5 h", label: "Reinigung pro Woche im Taubenhaus" }
+const verifiedProjectFigure = [
+  { value: "700+", label: "Eier gegen Attrappen getauscht · 2023" }
 ];
 
 const projectIcons = ["home", "care", "alert", "hands", "book"] as const;
+const projectHref = (id: string) => id === "oeffentlichkeit" ? "/bildung" : `/projekte/${id}`;
 ---
 
 <BaseLayout
@@ -31,7 +29,7 @@ const projectIcons = ["home", "care", "alert", "hands", "book"] as const;
   <ContentBand
     tone="navy"
     eyebrow="Unser Einsatz in Bernau"
-    title="Versorgung, Betreuung, Aufklärung und Miteinander."
+    title="Versorgung, Eiertausch, Fundtierhilfe, Beratung und Aufklärung gehören zusammen."
     text="Wir arbeiten nicht mit einer einzelnen Maßnahme. Erst feste Orte, tägliche Pflege, Eiertausch, Notfallhilfe und gute Gespräche machen Stadttaubenhilfe wirksam."
     imageSrc="/images/projects/startbild-wissen-taubenhaus.jpg"
     imageAlt="Blick über den Treppenaufgang in das betreute Taubenhaus mit vielen Tauben"
@@ -52,7 +50,7 @@ const projectIcons = ["home", "care", "alert", "hands", "book"] as const;
       />
       <nav class="project-toc" id="projekte-ueberblick" aria-label="Bereiche unserer Arbeit">
         {items.map((item, index) => (
-          <a class:list={["project-toc-card", `project-toc-card-${index % 5}`]} href={`/projekte/${item.id}`}>
+          <a class:list={["project-toc-card", `project-toc-card-${index % 5}`]} href={projectHref(item.id)}>
             <LineIcon name={projectIcons[index]} />
             <span>{item.label}</span>
             <strong>{item.title}</strong>
@@ -66,26 +64,22 @@ const projectIcons = ["home", "care", "alert", "hands", "book"] as const;
   <section class="section section-tight">
     <div class="container flagship-project">
       <div>
-        <span class="eyebrow">Vorzeigeprojekt in Barnim und Brandenburg</span>
-        <h2>Vom Fahrradparkhaus zum betreuten Taubenhaus.</h2>
+        <span class="eyebrow">Bernau konkret</span>
+        <h2>Vom Konfliktort zur Lösung im Fahrradparkhaus.</h2>
         <div class="flagship-copy">
-          <p>
-            Im Fahrradparkhaus entsteht aus einem konkreten Konflikt ein betreuter Ort:
-            mit Nistflächen, Futter, Wasser, Reinigung und Eiertausch. So bleiben die
-            Tauben nicht auf Fahrradständern und die Fläche wird für alle besser nutzbar.
-          </p>
+          <p>Wo früher Tauben zwischen Fahrrädern und Durchgangsverkehr saßen, entsteht ein betreuter Ort. Futter, Wasser und Nistmöglichkeiten geben dem Schwarm einen festen Platz. Durch regelmäßige Nestkontrolle und Eiertausch wird Nachwuchs tierschutzgerecht begrenzt; Reinigung und Beobachtung verbessern die Situation für alle, die das Fahrradparkhaus nutzen.</p>
           <a class="text-link text-link-light" href="/projekte/taubenhaus">Das Taubenhaus kennenlernen →</a>
         </div>
       </div>
-      <MetricStrip items={projectNumbers} />
+      <MetricStrip items={verifiedProjectFigure} />
     </div>
   </section>
 
   <CtaBand
     eyebrow="Unterstützung"
     title="Diese Arbeit braucht Unterstützung."
-    text="Futter, Reinigung, Fahrten, tierärztliche Kosten und Zeit fallen jede Woche an. Wer helfen möchte, kann spenden, Material geben oder einzelne Aufgaben übernehmen."
-    href="/mitmachen"
-    label="So kannst du helfen"
+    text="Futter, Reinigung, Fahrten, tierärztliche Kosten und Zeit machen diese Arbeit möglich."
+    href="/spenden"
+    label="Spendenmöglichkeit anfragen"
   />
 </BaseLayout>

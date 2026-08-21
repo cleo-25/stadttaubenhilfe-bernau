@@ -15,7 +15,7 @@ const areas = [
 ---
 
 <BaseLayout title="Stadttaubenmanagement" description="Betreutes Stadttaubenmanagement in Bernau: Taubenhaus, Eiertausch, Reinigung und Zusammenarbeit." image="/images/projects/startbild-taubenhaus.jpg" theme="projects">
-  <PageHero eyebrow="Stadttaubenmanagement" title="Betreuen statt verdrängen." text="Ein Taubenhaus bündelt Versorgung, Eiertausch, Reinigung und Beobachtung. Das ist wirksamer und tierschutzgerechter als Verdrängung." primaryHref="/projekte/taubenhaus" primaryLabel="Taubenhaus ansehen" secondaryHref="/kontakt" secondaryLabel="Kontakt" visualLabel="Taubenhaus im Fahrradparkhaus Bernau" imageSrc="/images/projects/startbild-taubenhaus.jpg" imageAlt="Betreuter Taubenhaus-Bereich im Fahrradparkhaus Bernau" imagePosition="center 48%" mobileImagePosition="center 34%" />
+  <PageHero eyebrow="Stadttaubenmanagement" title="Betreuen statt vertreiben. Die Lösung mit System." text="Stadttaubenmanagement bedeutet: feste betreute Standorte, Versorgung, Eiertausch, Reinigung, Fundtierhilfe und Aufklärung. Ziel ist weniger Leid und weniger Konflikte – dauerhaft." primaryHref="/projekte/taubenhaus" primaryLabel="Taubenhaus ansehen" secondaryHref="/kontakt" secondaryLabel="Kontakt" visualLabel="Taubenhaus im Fahrradparkhaus Bernau" imageSrc="/images/projects/startbild-taubenhaus.jpg" imageAlt="Betreuter Taubenhaus-Bereich im Fahrradparkhaus Bernau" imagePosition="center 48%" mobileImagePosition="center 34%" />
 
   <ContentBand tone="navy" eyebrow="Eine Lösung mit System" title="Futter, Wasser, Nistplätze, Reinigung und Eiertausch." text="Ein betreuter Standort macht sichtbar, welche Tiere Hilfe brauchen, begrenzt Nachwuchs und reduziert Konflikte im Stadtraum." imageSrc="/images/projects/startbild-wissen-taubenhaus.jpg" imageAlt="Treppenaufgang und betreuter Bereich im Taubenhaus mit vielen Tauben" imagePosition="center 50%" features={[
     { icon: "home", title: "Fester Standort", text: "Der Schwarm findet Versorgung an einem klaren Ort." },
@@ -25,7 +25,7 @@ const areas = [
 
   <section class="section section-tight">
     <div class="container">
-      <SectionHeader eyebrow="Die vier Bausteine" title="So funktioniert die Betreuung in der Praxis." text="Jeder Baustein hat ein eigenes Ziel. Zusammen entsteht eine nachhaltige Lösung für Tauben und Stadt." />
+      <SectionHeader eyebrow="Die vier Bausteine" title="So funktioniert die Betreuung in der Praxis." text="Fester Standort, Versorgung, Eiertausch und Reinigung greifen dabei ineinander." />
       <nav class="grid grid-4 topic-grid" aria-label="Bausteine des Stadttaubenmanagements">
         {areas.map((area) => <Card href={area.href} eyebrow={area.eyebrow} title={area.title} icon={area.icon} tone="blue"><p>{area.text}</p><span class="card-more">Mehr erfahren →</span></Card>)}
       </nav>

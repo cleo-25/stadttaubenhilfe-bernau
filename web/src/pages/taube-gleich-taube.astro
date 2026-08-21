@@ -6,19 +6,19 @@ import Card from "../components/Card.astro";
 import CtaBand from "../components/CtaBand.astro";
 
 const types = [
-  { id: "wildtaube", title: "Wildtaube", text: "Ringeltauben, Türkentauben und andere Wildtauben sind Wildvögel. Sie brauchen je nach Situation eine andere Einschätzung.", icon: "feather" as const },
-  { id: "stadttaube", title: "Stadttaube", text: "Stadttauben sind Nachkommen gezüchteter Haus- und Brieftauben. Sie sind ortstreu und auf menschliche Lösungen angewiesen.", icon: "home" as const },
-  { id: "brieftaube", title: "Brieftaube", text: "Brieftauben sind oft beringt. Erschöpfte Tiere brauchen Ruhe, Wasserangebot und eine Einschätzung zum weiteren Vorgehen.", icon: "book" as const },
-  { id: "rassetaube", title: "Rassetaube", text: "Rassetauben sind gezüchtet und kommen draußen oft schlecht zurecht. Häufig brauchen sie eine gesicherte Unterbringung.", icon: "care" as const }
+  { id: "wildtaube", title: "Wildtaube", text: "Zum Beispiel Ringel- oder Türkentaube: Sie ist ein Wildvogel. Bei Verletzung oder offensichtlicher Schwäche braucht auch sie eine fachliche Einschätzung.", icon: "feather" as const },
+  { id: "stadttaube", title: "Stadttaube", text: "Verwilderter Nachkomme von Haustieren. Sie lebt ortstreu in der Stadt und braucht bei Schwäche, Verletzung oder Verschnürung Hilfe.", icon: "home" as const },
+  { id: "brieftaube", title: "Brieftaube", text: "Oft am Ring erkennbar. Sie kann erschöpft sein oder Hilfe brauchen. Nicht weiterschicken oder zurücksetzen, sondern ruhig sichern und melden.", icon: "book" as const },
+  { id: "rassetaube", title: "Rassetaube", text: "Deutlich gezüchtete Tiere – etwa mit Federhaube, besonderen Farben oder kurzem Schnabel – kommen draußen oft schlecht zurecht und brauchen meist Schutz.", icon: "care" as const }
 ];
 ---
 
 <BaseLayout title="Taube gleich Taube?" description="Stadt-, Wild-, Brief- und Rassetauben unterscheiden und richtig einschätzen." image="/images/projects/startbild-wissen-taubenhaus.jpg" theme="knowledge">
-  <PageHero eyebrow="Taubenwissen" title="Taube gleich Taube?" text="Nicht jede Taube auf der Straße braucht dieselbe Hilfe. Diese einfache Einordnung hilft dir, den nächsten Schritt besser einzuschätzen." primaryHref="/fundtiere" primaryLabel="Taube gefunden?" secondaryHref="/wissen" secondaryLabel="Mehr wissen" visualLabel="Zwei betreute Tauben" imageSrc="/images/projects/startbild-wissen-taubenhaus.jpg" imageAlt="Zwei Tauben auf einem Handtuch" imagePosition="center 42%" mobileImagePosition="center 46%" />
+  <PageHero eyebrow="Taubenwissen" title="Taube ist nicht gleich Taube." text="Ob Stadttaube, Wildtaube, Brieftaube oder Rassetaube: Das Aussehen und die Situation entscheiden darüber, welche Hilfe nötig ist. Wenn du unsicher bist, sichere das Tier in einem Karton und schick uns ein Foto." primaryHref="/fundtiere" primaryLabel="Taube gefunden?" secondaryHref="/wissen" secondaryLabel="Mehr wissen" visualLabel="Zwei betreute Tauben" imageSrc="/images/projects/startbild-wissen-taubenhaus.jpg" imageAlt="Zwei Tauben auf einem Handtuch" imagePosition="center 42%" mobileImagePosition="center 46%" />
 
   <section class="section section-tight">
     <div class="container">
-      <SectionHeader eyebrow="Schnell einordnen" title="Vier Gruppen, vier Situationen." text="Bei Unsicherheit gilt: Foto machen, Tier sichern und lieber einmal zu früh als zu spät melden." />
+      <SectionHeader eyebrow="Schnell einordnen" title="Vier Gruppen, vier Situationen." text="Ein Foto ist für die Einordnung hilfreicher als jede Vermutung. Bei Unsicherheit: Foto machen, Tier sichern und lieber einmal zu früh als zu spät melden." />
       <div class="grid grid-4 topic-grid">
         {types.map((type) => (
           <article id={type.id}>
@@ -29,5 +29,5 @@ const types = [
     </div>
   </section>
 
-  <CtaBand eyebrow="Unsicher?" title="Bei einem Fundtier helfen wir bei der Einschätzung." text="Sichere die Taube in einem Karton und schick uns Fundort, Foto und eine Rückrufnummer." href="/fundtiere" label="Erste Hilfe ansehen" />
+  <CtaBand eyebrow="Tipp" title="Bei Unsicherheit: sichern, Foto machen, melden." text="Sichere die Taube in einem Karton und schick uns Fundort, Foto und eine Rückrufnummer." href="/fundtiere" label="Erste Hilfe ansehen" />
 </BaseLayout>

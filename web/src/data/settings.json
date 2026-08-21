@@ -3,7 +3,7 @@
     "name": "Stadttaubenhilfe",
     "suffix": "Bernau",
     "fullName": "Stadttaubenhilfe Bernau b. Berlin",
-    "description": "Taubenhaus, Eiertausch, Notfallversorgung und Aufklärung in Bernau bei Berlin.",
+    "description": "Wir betreuen Stadttauben in Bernau mit Versorgung, Eiertausch, Fundtierhilfe und Aufklärung. Ehrenamtlich, sachkundig und direkt vor Ort.",
     "logo": "/images/logo-stadttaubenhilfe.png"
   },
   "contact": {
@@ -15,101 +15,77 @@
   },
   "navigation": [
     {
-      "label": "Unser Verein",
-      "href": "/verein",
-      "items": [
-        { "label": "Wer wir sind", "href": "/verein/wer-wir-sind" },
-        { "label": "Ehrenamt in Bernau", "href": "/mitmachen#ehrenamt" },
-        { "label": "Vorstand und Satzung", "href": "/verein/vorstand-und-satzung" },
-        { "label": "Mitglied werden", "href": "/verein/mitgliedschaft-beantragen" }
-      ]
-    },
-    {
-      "label": "Was wir tun",
-      "href": "/projekte",
-      "items": [
-        { "label": "Taubenhaus im Fahrradparkhaus", "href": "/projekte/taubenhaus" },
-        { "label": "Fundtiere & Notfälle", "href": "/projekte/notfaelle" },
-        { "label": "Volieren", "href": "/projekte/volieren" },
-        { "label": "Beratung bei Gebäuden", "href": "/projekte/beratung" }
-      ]
-    },
-    {
-      "label": "Stadttaubenmanagement",
-      "href": "/stadttaubenmanagement",
-      "items": [
-        { "label": "Taubenhaus", "href": "/projekte/taubenhaus" },
-        { "label": "Eiertausch", "href": "/projekte/taubenhaus#eiertausch" },
-        { "label": "Reinigung", "href": "/projekte/taubenhaus#reinigung" },
-        { "label": "Zusammenarbeit mit Behörden", "href": "/projekte/taubenhaus#zusammenarbeit" }
-      ]
-    },
-    {
       "label": "Taube gefunden?",
       "href": "/fundtiere",
       "items": [
-        { "label": "Erste Hilfe", "href": "/fundtiere#erste-hilfe" },
-        { "label": "Karton vorbereiten", "href": "/fundtiere#karton" },
-        { "label": "Nichts einflößen", "href": "/fundtiere#nichts-einfloessen" },
-        { "label": "Fundort & Foto senden", "href": "/kontakt#kontaktformular" }
+        { "label": "Erste Hilfe", "href": "/fundtiere" },
+        { "label": "Fundtier melden", "href": "/kontakt#kontaktformular" },
+        { "label": "Taube gleich Taube?", "href": "/taube-gleich-taube" }
       ]
     },
     {
-      "label": "Stadttauben – die vergessenen Haustiere",
+      "label": "Stadttauben verstehen",
       "href": "/wissen",
       "items": [
-        { "label": "Herkunft von der Felsentaube", "href": "/wissen/ersatzfelsen" },
-        { "label": "Haus- & Brieftauben", "href": "/wissen#arten" },
-        { "label": "Warum Städte Ersatzfelsen sind", "href": "/wissen/ersatzfelsen" },
-        { "label": "Warum Vergrämung nicht reicht", "href": "/wissen/mythen" }
+        { "label": "Warum Stadttauben unsere Hilfe brauchen", "href": "/wissen" },
+        { "label": "Taube gleich Taube?", "href": "/taube-gleich-taube" },
+        { "label": "Mythen & Fakten", "href": "/wissen/mythen" },
+        { "label": "Betreuen statt vertreiben", "href": "/stadttaubenmanagement" },
+        { "label": "Bildung & Downloads", "href": "/materialien" }
       ]
     },
     {
-      "label": "Taube gleich Taube?",
-      "href": "/taube-gleich-taube",
+      "label": "Unsere Arbeit",
+      "href": "/projekte",
       "items": [
-        { "label": "Wildtaube", "href": "/taube-gleich-taube/wildtaube" },
-        { "label": "Stadttaube", "href": "/taube-gleich-taube/stadttaube" },
-        { "label": "Brieftaube", "href": "/taube-gleich-taube/brieftaube" },
-        { "label": "Rassetaube", "href": "/taube-gleich-taube/rassetaube" }
+        { "label": "Taubenhaus im Fahrradparkhaus", "href": "/projekte/taubenhaus" },
+        { "label": "Fundtierhilfe & Pflege", "href": "/projekte/notfaelle" },
+        { "label": "Volieren", "href": "/projekte/volieren" },
+        { "label": "Beratung für Gebäude", "href": "/projekte/beratung" },
+        { "label": "Bildung & Aufklärung", "href": "/bildung" }
       ]
     },
     {
-      "label": "Du willst uns helfen?",
+      "label": "Verein",
+      "href": "/verein",
+      "items": [
+        { "label": "Wer wir sind", "href": "/verein" },
+        { "label": "Vorstand & Transparenz", "href": "/verein#vorstand" },
+        { "label": "Mitglied werden", "href": "/verein#mitglied-werden" }
+      ]
+    },
+    {
+      "label": "Mitmachen",
       "href": "/mitmachen",
       "items": [
         { "label": "Ehrenamtlich mithelfen", "href": "/mitmachen#ehrenamt" },
         { "label": "Futter oder Material spenden", "href": "/spenden#sachspenden" },
-        { "label": "Fahrten übernehmen", "href": "/mitmachen#ehrenamt" },
-        { "label": "Mitglied werden", "href": "/verein/mitgliedschaft-beantragen" }
+        { "label": "Mitglied werden", "href": "/verein#mitglied-werden" }
       ]
     },
     {
-      "label": "Kontakt",
-      "href": "/kontakt",
-      "items": [
-        { "label": "Fundtier melden", "href": "/kontakt#kontaktformular" },
-        { "label": "Frage stellen", "href": "/kontakt#kontaktformular" },
-        { "label": "Fotos senden", "href": "/kontakt#kontaktformular" },
-        { "label": "Spendenweg anfragen", "href": "/spenden" }
-      ]
+      "label": "Aktuelles",
+      "href": "/galerie",
+      "items": []
     }
   ],
   "footerLinks": [
     {
       "links": [
         { "href": "/", "label": "Home" },
-        { "href": "/projekte", "label": "Projekte" },
-        { "href": "/mitmachen", "label": "Mitmachen" },
-        { "href": "/fundtiere", "label": "Fundtier melden" }
+        { "href": "/fundtiere", "label": "Taube gefunden?" },
+        { "href": "/wissen", "label": "Stadttauben verstehen" },
+        { "href": "/projekte", "label": "Unsere Arbeit" },
+        { "href": "/bildung", "label": "Bildung & Aufklärung" },
+        { "href": "/materialien", "label": "Bildung & Downloads" }
       ]
     },
     {
       "links": [
-        { "href": "/wissen", "label": "Wissen" },
-        { "href": "/materialien", "label": "Bildung & Downloads" },
-        { "href": "/galerie", "label": "Galerie" },
+        { "href": "/verein", "label": "Verein" },
+        { "href": "/mitmachen", "label": "Mitmachen" },
         { "href": "/spenden", "label": "Spenden" },
+        { "href": "/galerie", "label": "Aktuelles" },
         { "href": "/kontakt", "label": "Kontakt" }
       ]
     },
@@ -122,5 +98,5 @@
       ]
     }
   ],
-  "footerBottom": "Futter, Wasser, Nistplätze, Reinigung und Hilfe bei Fundtieren."
+  "footerBottom": "Für Stadttauben. Für Bernau. Für ein besseres Miteinander."
 }

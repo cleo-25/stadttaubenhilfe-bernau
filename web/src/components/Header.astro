@@ -16,26 +16,40 @@ type NavGroup = { label: string; href?: string; links?: NavLink[] };
 // on the overview pages instead of turning the header into a site map.
 const navGroups: NavGroup[] = [
   {
-    label: "Hilfe & Beratung",
+    label: "Taube gefunden?",
     links: [
-      { label: "Taube gefunden?", href: "/fundtiere" },
-      { label: "Kontakt", href: "/kontakt" }
+      { label: "Erste Hilfe", href: "/fundtiere" },
+      { label: "Fundtier melden", href: "/kontakt#kontaktformular" },
+      { label: "Taube gleich Taube?", href: "/taube-gleich-taube" }
     ]
   },
   {
-    label: "Taubenwissen",
+    label: "Stadttauben verstehen",
     links: [
-      { label: "Stadttauben verstehen", href: "/wissen" },
+      { label: "Warum Stadttauben unsere Hilfe brauchen", href: "/wissen" },
       { label: "Taube gleich Taube?", href: "/taube-gleich-taube" },
-      { label: "Stadttaubenmanagement", href: "/stadttaubenmanagement" },
+      { label: "Mythen & Fakten", href: "/wissen/mythen" },
+      { label: "Betreuen statt vertreiben", href: "/stadttaubenmanagement" },
       { label: "Bildung & Downloads", href: "/materialien" }
     ]
   },
   {
-    label: "Über uns",
+    label: "Unsere Arbeit",
     links: [
-      { label: "Unser Verein", href: "/verein" },
-      { label: "Unsere Arbeit", href: "/projekte" }
+      { label: "Überblick", href: "/projekte" },
+      { label: "Taubenhaus im Fahrradparkhaus", href: "/projekte/taubenhaus" },
+      { label: "Fundtierhilfe & Pflege", href: "/projekte/notfaelle" },
+      { label: "Volieren", href: "/projekte/volieren" },
+      { label: "Beratung für Gebäude", href: "/projekte/beratung" },
+      { label: "Bildung & Aufklärung", href: "/bildung" }
+    ]
+  },
+  {
+    label: "Verein",
+    links: [
+      { label: "Wer wir sind", href: "/verein" },
+      { label: "Vorstand & Transparenz", href: "/verein#vorstand" },
+      { label: "Mitglied werden", href: "/verein#mitglied-werden" }
     ]
   },
   { label: "Mitmachen", href: "/mitmachen" },
@@ -95,7 +109,7 @@ const isGroupActive = (links: NavLink[] = []) => links.some((link) => isActive(l
       ) : (
         <a href={group.href} aria-current={isActive(group.href) ? "page" : undefined}>{group.label}</a>
       ))}
-      <a class="site-nav-donate" href="/spenden" aria-current={isActive("/spenden") ? "page" : undefined}>Jetzt helfen <span aria-hidden="true">♥</span></a>
+      <a class="site-nav-donate" href="/spenden" aria-current={isActive("/spenden") ? "page" : undefined}>Spendenmöglichkeit anfragen <span aria-hidden="true">♥</span></a>
     </nav>
   </div>
 </header>
@@ -216,7 +230,55 @@ const isGroupActive = (links: NavLink[] = []) => links.some((link) => isActive(l
     transform: none !important;
   }
 
-  @media (max-width: 1180px) {
+  /* The full label of the donation CTA needs a little more room than the
+     desktop navigation at narrower laptop widths. Switch to the same
+     touch-friendly menu before either line can start to crowd. */
+  @media (max-width: 1250px) {
+    .site-header .menu-toggle {
+      display: grid !important;
+      width: 46px;
+      height: 46px;
+      place-content: center;
+      gap: 5px;
+      border: 1px solid rgba(255,255,255,.42) !important;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: #fff !important;
+      box-shadow: none !important;
+    }
+    .site-header .menu-toggle span { width: 20px; height: 2px; background: #fff !important; }
+    .site-header .site-nav {
+      position: absolute !important;
+      top: 100%;
+      right: 16px;
+      left: 16px;
+      display: none !important;
+      width: auto !important;
+      margin: 0 !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      background: #0d2942 !important;
+      box-shadow: 0 8px 12px rgba(0,0,0,.22) !important;
+      padding: 0 !important;
+    }
+    .site-header .site-nav.is-open { display: grid !important; }
+    .site-header .site-nav > a {
+      width: 100% !important;
+      min-height: 52px !important;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      color: #fff !important;
+      font-weight: 700 !important;
+      padding: 0 18px !important;
+    }
+    .site-header .site-nav .site-nav-donate {
+      height: auto;
+      border-radius: 0 !important;
+      background: transparent !important;
+      color: #fff !important;
+      white-space: normal;
+    }
+    .site-header .site-nav .site-nav-donate span { margin-left: auto; color: #8cb2e1 !important; }
+
     .site-header .site-nav-group > summary {
       width: 100%;
       min-height: 52px;

@@ -8,31 +8,31 @@ import ContentBand from "../components/ContentBand.astro";
 
 const ways = [
   {
-    eyebrow: "Ehrenamt",
-    title: "Direkt im Taubenhaus helfen",
+    eyebrow: "Taubenhaus & Volieren",
+    title: "Vor Ort versorgen",
     text: "Futter und Wasser kontrollieren, reinigen, Nester prüfen und Eier tauschen – mit guter Einführung und im Team.",
     href: "#ehrenamt",
     icon: "home" as const
   },
   {
-    eyebrow: "Fundtiere",
-    title: "Fahrten und Notfälle begleiten",
+    eyebrow: "Fundtierhilfe",
+    title: "Sichern, telefonieren, fahren",
     text: "Fundmeldungen weitergeben, Menschen am Telefon helfen oder eine Fahrt zu einer Praxis übernehmen.",
     href: "#ehrenamt",
     icon: "phone" as const
   },
   {
-    eyebrow: "Material",
-    title: "Praktisch unterstützen",
+    eyebrow: "Aufklärung & Material",
+    title: "Wissen weitergeben",
     text: "Handtücher, Kartons, Transportboxen, Futter oder Reinigungsmaterial helfen direkt im Alltag.",
     href: "/spenden#sachspenden",
     icon: "box" as const
   },
   {
-    eyebrow: "Mitgliedschaft",
-    title: "Den Verein langfristig stärken",
+    eyebrow: "Verein stärken",
+    title: "Mitglied werden",
     text: "Mit einer Mitgliedschaft gibst du der Arbeit in Bernau eine verlässliche Basis.",
-    href: "/verein/mitgliedschaft-beantragen",
+    href: "/verein#mitglied-werden",
     icon: "heart" as const
   }
 ];
@@ -45,8 +45,8 @@ const ways = [
 >
   <PageHero
     eyebrow="Mitmachen"
-    title="Kleine Aufgaben. Große Wirkung."
-    text="Du musst kein:e Taubenexpert:in sein. Schon eine verlässliche Stunde, eine Fahrt, Material oder ein Gespräch am Infostand hilft direkt in Bernau."
+    title="Deine Zeit kann für Tauben ein sicherer Ort sein."
+    text="Du musst keine Taubenexpertin und kein Taubenexperte sein. Was zählt, ist eine Aufgabe, die zu deinem Alltag passt und auf die wir uns verlassen können. Wir zeigen dir alles in Ruhe."
     primaryHref="#ehrenamt"
     primaryLabel="Möglichkeiten ansehen"
     secondaryHref="/spenden"
@@ -78,8 +78,8 @@ const ways = [
     <div class="container">
       <SectionHeader
         eyebrow="So kannst du helfen"
-        title="Wähle einen Einstieg, nicht gleich alles."
-        text="Vier klare Wege statt einer langen Aufgabenliste. Wir besprechen den Einsatz persönlich und in deinem Tempo."
+        title="Eine Aufgabe, die zu deinem Alltag passt."
+        text="Im Taubenhaus, bei Fundtieren, für die Öffentlichkeit oder im Hintergrund: Wir besprechen den Einsatz persönlich und in deinem Tempo."
       />
       <div class="grid grid-4 topic-grid">
         {ways.map((way) => (
@@ -98,7 +98,7 @@ const ways = [
         <span class="eyebrow">Realistisch helfen</span>
         <h2>Eine feste Stunde im Monat zählt.</h2>
       </div>
-      <p>Nicht jede Aufgabe findet direkt am Tier statt. Manche Menschen helfen mit Fahrten, Wäsche, Kartons, Futter, Social Media oder Infoständen. Entscheidend ist, dass die Hilfe verlässlich bleibt.</p>
+      <p>Nicht jede Aufgabe findet direkt am Tier statt. Manche Menschen helfen mit Fahrten, Wäsche, Kartons, Futter, Social Media oder Infoständen. Einmalig, monatlich oder regelmäßig: Gemeinsam finden wir einen guten Einstieg.</p>
       <a class="button button-primary" href="/kontakt">Kontakt aufnehmen</a>
     </div>
   </section>

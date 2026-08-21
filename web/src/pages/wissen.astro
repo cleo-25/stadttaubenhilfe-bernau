@@ -9,6 +9,13 @@ import wissenContent from "../data/wissen.json";
 
 const { hero } = wissenContent;
 
+const facts = [
+  { title: "Sie ziehen nicht einfach in den Wald.", text: "Die Stadt bietet Felsersatz, vertraute Brutplätze und den Schwarm. Im Wald fehlen diese Strukturen.", icon: "home" as const },
+  { title: "Sie sind von Menschen abhängig gemacht worden.", text: "Über Jahrhunderte wurden Tauben gezüchtet, gehalten und ausgesetzt oder gingen verloren. Stadttauben tragen diese Geschichte bis heute.", icon: "feather" as const },
+  { title: "Verdrängung löst das Problem nicht.", text: "Werden Tiere an einem Ort vertrieben, suchen sie den nächsten Nistplatz. Ein betreuter Standort schafft dagegen eine dauerhafte, kontrollierbare Lösung.", icon: "alert" as const },
+  { title: "Betreuung hilft Menschen und Tieren.", text: "Futter, Wasser, Eiertausch, Reinigung und Beobachtung an einem festen Ort begrenzen Nachwuchs und reduzieren Verschmutzung sowie Konflikte.", icon: "care" as const }
+];
+
 const topics = [
   {
     eyebrow: "Herkunft",
@@ -27,7 +34,7 @@ const topics = [
   {
     eyebrow: "Vorurteile",
     title: "Mythen durch Fakten ersetzen.",
-    text: "Warum Vergrämung nicht reicht und betreute Taubenhäuser eine echte Lösung sind.",
+    text: "Warum Vergrämung nicht reicht und betreute Taubenhäuser eine nachhaltige Lösung sind.",
     href: "/wissen/mythen",
     icon: "book" as const
   },
@@ -53,26 +60,22 @@ const topics = [
     tone="blue"
     eyebrow="Stadttauben verstehen"
     title="Wissen schafft bessere Entscheidungen."
-    text="Stadttauben sind keine Wildvögel, die sich ihre Stadt ausgesucht haben. Wer ihre Herkunft und ihr Verhalten kennt, kann Hilfe und Konflikte besser einordnen."
+    text="Stadttauben sind Nachkommen von Haus- und Brieftauben. Wer ihre Herkunft und ihr Verhalten kennt, kann Hilfe und Konflikte besser einordnen."
     imageSrc="/images/projects/startbild-wissen-taubenhaus.jpg"
     imageAlt="Stadttauben am betreuten Standort in Bernau"
     imagePosition="center 38%"
     features={[
-      { icon: "home", title: "Ersatzfelsen", text: "Mauern, Dächer und Parkhäuser ersetzen den natürlichen Felsraum." },
-      { icon: "feather", title: "Haustier-Nachkommen", text: "Stadttauben stammen von gezüchteten Haus-, Brief- und Rassetauben ab." },
+      { icon: "home", title: "Keine Wildvögel", text: "Stadttauben sind Nachkommen domestizierter Tiere." },
+      { icon: "feather", title: "Ersatzfelsen", text: "Gebäude und Parkhäuser ersetzen den natürlichen Felsraum." },
       { icon: "care", title: "Betreuung wirkt", text: "Taubenhäuser verbinden Versorgung, Eiertausch und Reinigung." }
     ]}
   />
 
-  <section class="section section-tight">
-    <div class="container city-rock" id="herkunft">
-      <div>
-        <span class="eyebrow">Eine kurze Einordnung</span>
-        <h2>Die Stadt ist ihr Ersatzfelsen.</h2>
-      </div>
-      <div class="city-rock-copy">
-        <p>Felsentauben brüten in Nischen und Höhlen. Stadttauben zeigen dieses Verhalten noch heute: Häuserwände, Balkone, Brücken, Parkhäuser und Dachböden kommen einem Felsen am nächsten.</p>
-        <p>Das erklärt, warum sie nicht einfach „in den Wald“ ziehen – dort fehlen passende Brutplätze und die vertrauten Strukturen.</p>
+  <section class="section section-tight" id="herkunft">
+    <div class="container">
+      <SectionHeader eyebrow="Vier wichtige Fakten" title="Die Stadt ist ihr Ersatzfelsen." text="Stadttauben sind keine Wildvögel, die sich die Stadt ausgesucht haben. Ihre wilden Vorfahren brüteten an Felsen – deshalb suchen sie heute Mauernischen, Brücken, Dachböden und Parkhäuser auf." />
+      <div class="grid grid-4 topic-grid">
+        {facts.map((fact) => <Card title={fact.title} icon={fact.icon} tone="blue"><p>{fact.text}</p></Card>)}
       </div>
     </div>
   </section>
@@ -81,8 +84,8 @@ const topics = [
     <div class="container">
       <SectionHeader
         eyebrow="Themen im Überblick"
-        title="Wähle die Frage, die dich gerade beschäftigt."
-        text="Statt einer sehr langen Wissensseite führen die vier Themen direkt zu der Erklärung, die du brauchst."
+        title="Was du über Stadttauben wissen solltest."
+        text="Die vier Themen führen direkt zu der Einordnung, die du gerade brauchst."
       />
       <nav class="grid grid-4 topic-grid" id="wissen-themen" aria-label="Wissensthemen">
         {topics.map((topic) => (
@@ -98,7 +101,7 @@ const topics = [
   <CtaBand
     eyebrow="Bildung und Downloads"
     title="Material zum Lernen, Weitergeben und Handeln."
-    text="Faktenblatt, Notfallkarte, Arbeitsblätter und Informationen für Gebäude findest du gesammelt in unserem Download-Bereich."
+    text="Faktenblatt, Notfallkarte, Arbeitsblätter und Informationen für Gebäude findest du gesammelt im Download-Bereich."
     href="/materialien"
     label="Materialien ansehen"
   />

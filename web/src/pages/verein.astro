@@ -7,14 +7,14 @@ import Card from "../components/Card.astro";
 import CtaBand from "../components/CtaBand.astro";
 
 const links = [
-  { eyebrow: "Unser Verein", title: "Wer wir sind", text: "Ehrenamtlich, lokal und nah an den Tieren – für weniger Leid und bessere Lösungen in Bernau.", href: "/verein/wer-wir-sind", icon: "together" as const },
-  { eyebrow: "Ehrenamt", title: "Ehrenamt in Bernau", text: "Eine feste Stunde, eine Fahrt oder eine Aufgabe im Hintergrund kann viel bewirken.", href: "/mitmachen#ehrenamt", icon: "hands" as const },
-  { eyebrow: "Transparenz", title: "Vorstand und Satzung", text: "Vereinsstruktur, Satzung und die Menschen, die Verantwortung übernehmen.", href: "/verein/vorstand-und-satzung", icon: "book" as const },
-  { eyebrow: "Mitglied werden", title: "Den Verein stärken", text: "Mitgliedschaft gibt unserer Arbeit eine dauerhaft verlässliche Basis.", href: "/verein/mitgliedschaft-beantragen", icon: "heart" as const }
+  { eyebrow: "Unser Verein", title: "Wer wir sind", text: "Ehrenamtlich, lokal und nah an den Tieren – für weniger Leid und bessere Lösungen in Bernau.", href: "#verein", icon: "together" as const },
+  { eyebrow: "Vorstand", title: "Verantwortung & Transparenz", text: "Der Vorstand trägt Verantwortung dafür, dass die Vereinsarbeit verlässlich und im Sinne der Tiere organisiert wird.", href: "#vorstand", icon: "book" as const },
+  { eyebrow: "Mitglied werden", title: "Den Verein stärken", text: "Mitgliedschaft gibt unserer Arbeit eine dauerhaft verlässliche Basis.", href: "#mitglied-werden", icon: "heart" as const },
+  { eyebrow: "Ehrenamt", title: "Direkt mithelfen", text: "Eine feste Stunde, eine Fahrt oder eine Aufgabe im Hintergrund kann viel bewirken.", href: "/mitmachen#ehrenamt", icon: "hands" as const }
 ];
 
 const board = [
-  { role: "Vereinsvorsitzende", name: "Susanne Hegewald-Gedicke" },
+  { role: "Vorsitzende", name: "Susanne Hegewald-Gedicke" },
   { role: "Stellvertretende Vorsitzende", name: "Xenia Laws" },
   { role: "Schatzmeister", name: "Paul Bratfisch" }
 ];
@@ -24,17 +24,17 @@ const teamImage = "/images/gallery/vereinsarbeit-sicherung-02.jpg";
 ---
 
 <BaseLayout title="Unser Verein" description="Stadttaubenhilfe Bernau: ehrenamtlich, lokal und nah an den Tieren." image={heroImage} theme="participate">
-  <PageHero eyebrow="Unser Verein" title="Ehrenamtlich, lokal und nah an den Tieren." text="Die Stadttaubenhilfe Bernau arbeitet für weniger Leid, weniger Konflikte und bessere Aufklärung im Umgang mit Stadttauben." primaryHref="/mitmachen" primaryLabel="Mitmachen" secondaryHref="/kontakt" secondaryLabel="Kontakt" visualLabel="Ehrenamtliche mit betreuten Tauben" imageSrc={heroImage} imageAlt="Ehrenamtliche hält zwei betreute Tauben im Garten" imagePosition="center 42%" mobileImagePosition="center 38%" />
+  <PageHero eyebrow="Unser Verein" title="Wir übernehmen Verantwortung, wo andere wegsehen." text="Die Stadttaubenhilfe Bernau e. V. ist ein ehrenamtlicher Verein für praktischen, sachkundigen und lösungsorientierten Stadttaubenschutz in Bernau und Umgebung. Wir helfen einzelnen Tieren – und arbeiten zugleich daran, dass weniger Tiere überhaupt in Not geraten." primaryHref="/mitmachen" primaryLabel="Mitmachen" secondaryHref="#vorstand" secondaryLabel="Unser Vorstand" visualLabel="Ehrenamtliche mit betreuten Tauben" imageSrc={heroImage} imageAlt="Ehrenamtliche hält zwei betreute Tauben im Garten" imagePosition="center 42%" mobileImagePosition="center 38%" />
 
-  <ContentBand tone="navy" eyebrow="Unser Antrieb" title="Wir kümmern uns, wo Verantwortung gebraucht wird." text="Wir betreuen den Standort im Fahrradparkhaus, helfen Fundtieren und erklären, warum Stadttauben nicht verdrängt, sondern betreut werden sollten." features={[
-    { icon: "care", title: "Tierschutz", text: "Praktische Hilfe für verletzte und geschwächte Tiere." },
-    { icon: "home", title: "Bernau", text: "Ein fester Ort und konkrete Verantwortung vor Ort." },
-    { icon: "book", title: "Aufklärung", text: "Wissen schaffen und Konflikte fair einordnen." }
+  <ContentBand id="verein" tone="navy" eyebrow="Wofür wir da sind" title="Wir helfen einzelnen Tieren – und verändern die Bedingungen, die sie in Not bringen." text="Praktische Hilfe, betreute Standorte und Wissen gehören zusammen. So bleibt Stadttaubenschutz in Bernau nicht bei einzelnen Rettungen stehen." features={[
+    { icon: "care", title: "Tierschutz vor Ort", text: "Wir versorgen Fundtiere, betreuen den Standort und schaffen Schutz für Tiere mit besonderem Bedarf." },
+    { icon: "home", title: "Nachhaltige Lösungen", text: "Wir setzen auf betreute Standorte, Eiertausch, Reinigung und Kooperation statt auf endlose Verdrängung." },
+    { icon: "book", title: "Wissen teilen", text: "Wir erklären Zusammenhänge, beraten bei Konflikten und bringen Stadttauben als Stadtthema ins Gespräch." }
   ]} />
 
   <section id="vorstand" class="section section-tight team-section">
     <div class="container">
-      <SectionHeader eyebrow="Vorstand" title="Verantwortung hat bei uns Namen." text="Der Vorstand vertritt die Stadttaubenhilfe Bernau und sorgt dafür, dass die praktische Hilfe vor Ort verlässlich organisiert wird." />
+      <SectionHeader eyebrow="Vorstand" title="Verantwortung hat bei uns Namen." text="Der Vorstand trägt Verantwortung dafür, dass die Vereinsarbeit verlässlich, transparent und im Sinne der Tiere organisiert wird." />
       <div class="team-board" aria-label="Vorstand der Stadttaubenhilfe Bernau">
         {board.map((member) => (
           <article>
@@ -46,7 +46,7 @@ const teamImage = "/images/gallery/vereinsarbeit-sicherung-02.jpg";
     </div>
   </section>
 
-  <section id="team" class="section section-tight member-section">
+  <section id="mitglied-werden" class="section section-tight member-section">
     <div class="container member-layout">
       <figure class="member-image">
         <img src={teamImage} alt="Ehrenamtliche sichert eine Taube bei einem Einsatz in einem Gebäude" loading="lazy" decoding="async" />
@@ -54,19 +54,8 @@ const teamImage = "/images/gallery/vereinsarbeit-sicherung-02.jpg";
       <div class="member-copy">
         <p class="eyebrow">Unser Team</p>
         <h2>Gemeinsam für die Tiere.</h2>
-        <p>Hinter der Stadttaubenhilfe stehen Menschen mit unterschiedlichen Aufgaben: Versorgung, Fahrten, Pflege, Organisation und Aufklärung. Fotos, Namen und kurze Vorstellungen ergänzen wir hier, sobald sie von den Mitgliedern freigegeben sind.</p>
-        <div class="member-slots" aria-label="Bereich für künftige Mitgliedervorstellungen">
-          <article>
-            <span aria-hidden="true">01</span>
-            <strong>Mitglied vorstellen</strong>
-            <p>Foto, Name und kurze Vorstellung können im CMS ergänzt werden.</p>
-          </article>
-          <article>
-            <span aria-hidden="true">02</span>
-            <strong>Mitglied vorstellen</strong>
-            <p>Ein Platz für die Menschen, die unsere tägliche Arbeit mittragen.</p>
-          </article>
-        </div>
+        <p>Mit einer Mitgliedschaft machst du Hilfe planbar. Sie stärkt den Verein, gibt unserer Stimme Gewicht und hilft, Versorgung, Eiertausch, Notfallhilfe und Bildungsarbeit dauerhaft zu tragen.</p>
+        <a class="button button-primary" href="/kontakt">Mitgliedschaft anfragen</a>
       </div>
     </div>
   </section>
@@ -105,19 +94,12 @@ const teamImage = "/images/gallery/vereinsarbeit-sicherung-02.jpg";
   .member-copy { max-width: 620px; }
   .member-copy h2 { margin: 0; color: #123757; font-size: clamp(2.15rem, 4vw, 4rem); line-height: .98; letter-spacing: -.035em; }
   .member-copy > p:not(.eyebrow) { margin: 22px 0 0; color: #123757; font-size: 1.08rem; line-height: 1.55; }
-  .member-slots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin-top: 32px; border: 1px solid #c9dced; }
-  .member-slots article { padding: 22px; background: #eaf3fc; }
-  .member-slots article + article { border-left: 1px solid #c9dced; background: #fff; }
-  .member-slots span { display: block; margin-bottom: 18px; color: #5590d1; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.05rem; font-weight: 700; }
-  .member-slots strong { display: block; color: #123757; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.05rem; line-height: 1.1; }
-  .member-slots p { margin: 8px 0 0; color: #315673; font-size: .92rem; line-height: 1.45; }
+  .member-copy .button { margin-top: 28px; }
 
   @media (max-width: 800px) {
     .team-board { grid-template-columns: 1fr; }
     .team-board article + article { border-top: 1px solid #c9dced; border-left: 0; }
     .member-layout { grid-template-columns: 1fr; gap: 30px; }
     .member-image { min-height: 0; aspect-ratio: 4 / 3; }
-    .member-slots { grid-template-columns: 1fr; }
-    .member-slots article + article { border-top: 1px solid #c9dced; border-left: 0; }
   }
 </style>

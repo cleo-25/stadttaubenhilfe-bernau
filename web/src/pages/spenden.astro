@@ -5,24 +5,6 @@ import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
 import ContentBand from "../components/ContentBand.astro";
 import CtaBand from "../components/CtaBand.astro";
-
-const donationAmounts = [
-  {
-    amount: "10 €",
-    title: "Körnerfutter",
-    text: "hilft bei Futter und laufender Versorgung."
-  },
-  {
-    amount: "25 €",
-    title: "Verbrauchsmaterial",
-    text: "hilft bei Handschuhen, Küchenrolle, Einstreu und Reinigungsmaterial."
-  },
-  {
-    amount: "50 €",
-    title: "Akute Notfälle",
-    text: "hilft bei tierärztlichen Kosten, Medikamenten oder einem akuten Fundtier."
-  }
-];
 ---
 
 <BaseLayout
@@ -32,8 +14,8 @@ const donationAmounts = [
 >
   <PageHero
     eyebrow="Unterstützen"
-    title="Spenden für Futter, Pflege und tierärztliche Kosten"
-    text="Unsere Arbeit kostet jede Woche Geld: Futter, Einstreu, Handschuhe, Reinigungsmaterial, Transportboxen, Medikamente und Besuche bei Tierärzt:innen. Spenden helfen direkt im Taubenhaus und bei Fundtieren in Bernau und Umgebung."
+    title="Deine Spende wird zu konkreter Hilfe in Bernau."
+    text="Futter, Einstreu, Handschuhe, Transportboxen, Medikamente, Fahrten und tierärztliche Behandlungen fallen nicht irgendwann an – sondern jede Woche. Deine Unterstützung hilft genau dort, wo sie gebraucht wird: im Taubenhaus, in der Pflege und bei akuten Fundtieren."
     primaryHref="/kontakt"
     primaryLabel="Spendenmöglichkeit anfragen"
     secondaryHref="/mitmachen"
@@ -48,7 +30,7 @@ const donationAmounts = [
   <ContentBand
     tone="coral"
     eyebrow="Direkte Wirkung in Bernau"
-    title="Deine Hilfe wird ganz praktisch."
+    title="Deine Hilfe wird zu konkreter Versorgung."
     text="Aus einer Spende werden Futter im Napf, eine saubere Box, eine Fahrt oder der nächste tierärztliche Termin. So bleibt Hilfe möglich, wenn sie gebraucht wird."
     imageSrc="/images/gallery/taubenhaus-betreute-tauben-01.jpg"
     imageAlt="Betreute Stadttauben im Taubenhaus"
@@ -67,33 +49,15 @@ const donationAmounts = [
         title="Wofür werden Spenden gebraucht?"
       />
       <div class="grid grid-3 topic-grid">
-        <Card title="Futter & Versorgung" tone="blue" icon="euro">
-          <p>Geeignetes Taubenfutter, Wasserstellen, Einstreu und laufendes Verbrauchsmaterial.</p>
+        <Card title="10 € · Versorgung" tone="blue" icon="euro">
+          <p>Unterstützen Futter, Wasser, Einstreu und Verbrauchsmaterial am betreuten Standort.</p>
         </Card>
-        <Card title="Tierärzt:innen & Fundtiere" tone="green" icon="care">
-          <p>Behandlungen, Medikamente, Pflegeplätze, Transport und akute Hilfe für verletzte Tiere.</p>
+        <Card title="25 € · Pflege & Reinigung" tone="green" icon="care">
+          <p>Helfen bei Handschuhen, Küchenrolle, Desinfektion, Schutzmaterial und Transportboxen.</p>
         </Card>
-        <Card title="Taubenhaus & Reinigung" tone="violet" icon="home">
-          <p>Schutzkleidung, Schaber, Desinfektion, Reparaturen und Ausstattung für den betreuten Standort.</p>
+        <Card title="50 € · Akute Hilfe" tone="violet" icon="home">
+          <p>Beteiligen sich an Medikamenten, Fahrten oder tierärztlicher Versorgung eines Fundtiers.</p>
         </Card>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-tight">
-    <div class="container donation-amounts">
-      <div>
-        <span class="eyebrow">Direkte Wirkung</span>
-        <h2>Schon kleine Beträge werden zu praktischer Hilfe.</h2>
-      </div>
-      <div class="donation-grid">
-        {donationAmounts.map((item) => (
-          <article class="donation-card">
-            <strong>{item.amount}</strong>
-            <h3>{item.title}</h3>
-            <p>{item.text}</p>
-          </article>
-        ))}
       </div>
     </div>
   </section>
@@ -102,18 +66,18 @@ const donationAmounts = [
     <div class="container donation-note">
       <div>
         <span class="eyebrow">Geld, Material oder regelmäßige Hilfe</span>
-        <h2>Der Spendenweg wird gerade eingerichtet.</h2>
+        <h2>Spendenmöglichkeit anfragen.</h2>
       </div>
-      <p>Bankverbindung, PayPal oder Formular werden ergänzt. Bis dahin schreib uns mit dem Stichwort Spende. Auch Handtücher, Küchenrolle, Einmalhandschuhe, Kartons, Transportboxen, Reinigungsmaterial oder geeignetes Taubenfutter können helfen – bitte vorher kurz nachfragen.</p>
-      <a class="button button-primary" href="/kontakt">Spendenweg anfragen</a>
+      <p>Auch saubere Handtücher, Küchenrolle, Einmalhandschuhe, geeignete Kartons oder Transportboxen, Taubenfutter und Reinigungsmaterial können helfen. Bitte frag kurz an, damit Material wirklich passt und gelagert werden kann.</p>
+      <a class="button button-primary" href="/kontakt">Spendenmöglichkeit anfragen</a>
     </div>
   </section>
 
   <CtaBand
     eyebrow="Regelmäßig unterstützen"
-    title="Planbare Hilfe gibt Sicherheit."
-    text="Wenn du Futter, Material, Volieren oder tierärztliche Notfälle langfristig mittragen möchtest, freuen wir uns über deine Nachricht."
+    title="Wir arbeiten ehrenamtlich. Hilfe wirkt direkt vor Ort."
+    text="Spenden fließen in Versorgung, Pflege und Organisation der Stadttaubenhilfe in Bernau. Wenn du regelmäßig unterstützen möchtest, freuen wir uns über deine Nachricht."
     href="/kontakt"
-    label="Patenschaft anfragen"
+    label="Spendenmöglichkeit anfragen"
   />
 </BaseLayout>
