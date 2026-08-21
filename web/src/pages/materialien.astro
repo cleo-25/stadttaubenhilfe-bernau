@@ -1,0 +1,145 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import ContentBand from "../components/ContentBand.astro";
+import SectionHeader from "../components/SectionHeader.astro";
+import CtaBand from "../components/CtaBand.astro";
+
+const downloadGroups = [
+  {
+    eyebrow: "Wissen und Erste Hilfe",
+    title: "Für alle, die genauer hinsehen möchten.",
+    items: [
+      {
+        title: "Stadttauben in 5 Minuten",
+        text: "Das kompakte Faktenblatt zu Herkunft, Stadtleben, Eiertausch und einer Lösung, die wirkt.",
+        href: "/downloads/faktenblatt-stadttauben-in-5-minuten.pdf",
+        label: "Faktenblatt herunterladen"
+      },
+      {
+        title: "Taube gefunden?",
+        text: "Die Notfallkarte mit den drei wichtigsten Schritten: sichern, nichts einflößen, melden.",
+        href: "/downloads/notfallkarte-taube-gefunden.pdf",
+        label: "Notfallkarte herunterladen"
+      }
+    ]
+  },
+  {
+    eyebrow: "Bildungsarbeit",
+    title: "Material für Kita, Schule und Gruppen.",
+    items: [
+      {
+        title: "Unsere Taubennachbarin - Klassen 1 bis 4",
+        text: "Kindgerechte Aufgaben, Beobachtungsimpulse und Hinweise für Lehrkräfte oder Eltern.",
+        href: "/downloads/arbeitsblatt-klassen-1-bis-4.pdf",
+        label: "Arbeitsblatt herunterladen"
+      },
+      {
+        title: "Betreuen oder vertreiben? - Klassen 5 bis 8",
+        text: "Ein Arbeitsblatt zu Verantwortung, Stadtleben und nachhaltigem Stadttaubenmanagement.",
+        href: "/downloads/arbeitsblatt-klassen-5-bis-8.pdf",
+        label: "Arbeitsblatt herunterladen"
+      }
+    ]
+  },
+  {
+    eyebrow: "Für Gebäude und Verein",
+    title: "Praktische Informationen zum Weitergeben.",
+    items: [
+      {
+        title: "Stadttauben an Gebäuden",
+        text: "Informationen für Eigentümer:innen, Hausverwaltungen und Handwerk vor Sanierung, Verschluss oder Abriss.",
+        href: "/downloads/infoblatt-stadttauben-an-gebaeuden.pdf",
+        label: "Infoblatt herunterladen"
+      },
+      {
+        title: "Satzung",
+        text: "Die unterschriftsfreie Fassung der Satzung der Stadttaubenhilfe Bernau b. Berlin e.V.",
+        href: "/downloads/satzung-stadttaubenhilfe-bernau-ohne-unterschriften.pdf",
+        label: "Satzung herunterladen"
+      }
+    ]
+  }
+];
+---
+
+<BaseLayout
+  title="Bildung und Downloads"
+  description="Faktenblatt, Notfallkarte, Arbeitsblätter, Gebäudeinformation und Satzung der Stadttaubenhilfe Bernau b. Berlin e.V."
+  image="/images/projects/startbild-oeffentlichkeitsarbeit.jpg"
+  theme="knowledge"
+>
+  <PageHero
+    eyebrow="Bildung und Aufklärung"
+    title="Wissen, das weiterhilft."
+    text="Hier findest du unsere Materialien zum Lesen, Weitergeben, Lernen und Handeln - für Bernau, Schulen, Nachbar:innen und alle, die Stadttauben besser verstehen möchten."
+    primaryHref="#downloads"
+    primaryLabel="Materialien ansehen"
+    secondaryHref="/kontakt"
+    secondaryLabel="Bildungsangebot anfragen"
+    visualLabel="Materialien der Stadttaubenhilfe Bernau"
+    imageSrc="/images/projects/startbild-oeffentlichkeitsarbeit.jpg"
+    imageAlt="Ehrenamtliche erklärt Besucher:innen die Arbeit der Stadttaubenhilfe"
+    imagePosition="center 44%"
+  />
+
+  <ContentBand
+    tone="blue"
+    eyebrow="Stadttauben verstehen"
+    title="Aus Wissen wird Verantwortung."
+    text="Unsere Materialien erklären verständlich, warum Stadttauben Hilfe brauchen - und wie eine Lösung für Menschen und Tiere zugleich funktionieren kann."
+    features={[
+      { icon: "book", title: "Einordnen", text: "Fakten statt Vorurteile und Panik." },
+      { icon: "alert", title: "Handeln", text: "Im Notfall ruhig und richtig helfen." },
+      { icon: "hands", title: "Weitergeben", text: "Material für Unterricht und Gespräche vor Ort." }
+    ]}
+  />
+
+  <section id="downloads" class="section materials-section">
+    <div class="container">
+      {downloadGroups.map((group) => (
+        <div class="materials-group">
+          <SectionHeader eyebrow={group.eyebrow} title={group.title} />
+          <div class="materials-grid">
+            {group.items.map((item) => (
+              <article class="material-card">
+                <div>
+                  <span class="material-type">PDF</span>
+                  <h3>{item.title}</h3>
+                  <p>{item.text}</p>
+                </div>
+                <a href={item.href} download>{item.label} <span aria-hidden="true">↓</span></a>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <CtaBand
+    eyebrow="Bildung in Bernau"
+    title="Du möchtest ein Angebot für deine Gruppe?"
+    text="Wir entwickeln gerne ein passendes Format für Kita, Schule, Verein, Verwaltung oder Unternehmen."
+    href="/kontakt"
+    label="Bildungsangebot anfragen"
+  />
+</BaseLayout>
+
+<style>
+  .materials-section { background: #f7fbff; }
+  .materials-group + .materials-group { margin-top: clamp(52px, 8vw, 96px); }
+  .materials-group :global(.section-header) { margin-bottom: 26px; }
+  .materials-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+  .material-card { display: flex; min-height: 230px; flex-direction: column; justify-content: space-between; gap: 30px; border: 1px solid #c9dced; background: #fff; padding: clamp(24px, 3vw, 36px); }
+  .material-type { display: inline-block; color: #32638d; font-size: .74rem; font-weight: 800; letter-spacing: .11em; text-transform: uppercase; }
+  .material-card h3 { margin: 13px 0 12px; color: #123757; font-size: clamp(1.38rem, 2.4vw, 2.1rem); line-height: 1.05; }
+  .material-card p { max-width: 520px; margin: 0; color: #315673; line-height: 1.55; }
+  .material-card a { align-self: flex-start; border-bottom: 2px solid #f2675c; color: #0d2942; font-size: .95rem; font-weight: 800; text-decoration: none; }
+  .material-card a:hover, .material-card a:focus-visible { color: #32638d; }
+
+  @media (max-width: 720px) {
+    .materials-grid { grid-template-columns: 1fr; }
+    .material-card { min-height: 0; }
+  }
+</style>

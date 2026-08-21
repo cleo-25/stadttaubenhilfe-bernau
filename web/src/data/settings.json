@@ -107,6 +107,7 @@
     {
       "links": [
         { "href": "/wissen", "label": "Wissen" },
+        { "href": "/materialien", "label": "Bildung & Downloads" },
         { "href": "/galerie", "label": "Galerie" },
         { "href": "/spenden", "label": "Spenden" },
         { "href": "/kontakt", "label": "Kontakt" }
