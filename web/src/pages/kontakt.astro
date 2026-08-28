@@ -3,22 +3,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import PageHero from "../components/PageHero.astro";
 import SectionHeader from "../components/SectionHeader.astro";
 import Button from "../components/Button.astro";
-import ContentBand from "../components/ContentBand.astro";
 ---
 
-<BaseLayout
-  title="Kontakt"
-  description="Kontakt zu Stadttaubenhilfe Bernau: Fundtier melden, Hilfe anbieten, Fragen stellen oder Unterstützung für das Taubenhaus besprechen."
-  theme="contact"
->
+<BaseLayout title="Kontakt" description="Kontakt zur Stadttaubenhilfe Bernau: Fundtier melden, Mitglied werden, helfen oder eine allgemeine Anfrage senden." theme="contact">
   <PageHero
     eyebrow="Kontakt"
-    title="Schreib uns. Bei Fundtieren bitte sofort."
-    text="Bei einer verletzten oder geschwächten Taube zählt eine kurze, vollständige Meldung mehr als eine lange Nachricht. Nenne Fundort, Uhrzeit, Zustand, Foto und Rückrufnummer. Bei allen anderen Anliegen genügt eine kurze Nachricht."
-    primaryHref="#kontaktformular"
-    primaryLabel="Nachricht schreiben"
-    secondaryHref="/fundtiere"
-    secondaryLabel="Was sofort tun?"
+    title="Worum geht es?"
+    text="Wähle den Kontaktweg, der zu deinem Anliegen passt. Fundtiermeldungen, Mitgliedschaft und allgemeine Fragen werden getrennt aufgenommen und erreichen uns zuverlässig."
+    primaryHref="#fundtier-melden"
+    primaryLabel="Fundtier melden"
+    secondaryHref="#mitglied-werden"
+    secondaryLabel="Mitglied werden"
     visualLabel="Fundtier nach einem Fund"
     imageSrc="/images/fundtier-hell.jpg"
     imageAlt="Helle Taube nach einem Fund auf einer Hand"
@@ -27,179 +22,112 @@ import ContentBand from "../components/ContentBand.astro";
     mobileFrameRatio="4 / 3"
   />
 
-  <ContentBand
-    tone="blue"
-    eyebrow="Gute Informationen helfen sofort"
-    title="Eine klare Meldung spart wertvolle Zeit."
-    text="Bei Fundtieren helfen uns Fundort, Foto, Zustand und eine Telefonnummer. Damit können wir ruhiger einschätzen und den nächsten sinnvollen Schritt sagen."
-    imageSrc="/images/gallery/pflegestelle-sicherung-01.jpg"
-    imageAlt="Eine Stadttaube wird für die sichere Unterbringung vorbereitet"
-    imagePosition="center 44%"
-    features={[
-      { icon: "location", title: "Fundort", text: "Bitte so genau wie möglich: Straße, Gebäude oder markanter Punkt." },
-      { icon: "camera", title: "Foto", text: "Ein Bild zeigt oft schneller, ob es ein akuter Notfall ist." },
-      { icon: "phone", title: "Erreichbar", text: "Eine Telefonnummer ermöglicht schnelle Rückfragen." }
-    ]}
-  />
+  <section class="contact-route-section" aria-labelledby="kontaktwege-title">
+    <div class="container">
+      <div class="contact-route-intro">
+        <div>
+          <span class="eyebrow">Direkt zum richtigen Formular</span>
+          <h2 id="kontaktwege-title">Ein Anliegen. Ein klarer Weg.</h2>
+        </div>
+        <p>So bekommen wir die Angaben, die wir jeweils wirklich brauchen – und können schneller antworten.</p>
+      </div>
+      <nav class="contact-route-picker" aria-label="Kontaktwege">
+        <a class="contact-route-link contact-route-link--fund" href="#fundtier-melden">Fundtier melden</a>
+        <a class="contact-route-link contact-route-link--member" href="#mitglied-werden">Mitglied werden oder mitmachen</a>
+        <a class="contact-route-link contact-route-link--general" href="#allgemeine-anfrage">Allgemeine Nachricht</a>
+      </nav>
+    </div>
+  </section>
 
   <section class="section section-tight" id="kontaktformular">
     <div class="container contact-grid">
       <div>
         <SectionHeader
-          eyebrow="Nachricht"
-          title="Kontaktformular"
-          text="Wenn es um ein Fundtier geht, schreib bitte direkt dazu, wo die Taube ist, ob sie schon im Karton sitzt und wie wir dich erreichen."
+          eyebrow="Kontakt aufnehmen"
+          title="Sag uns, wobei wir helfen können."
+          text="Jedes Formular hat seine eigenen Fragen. Die Nachricht wird anschließend über unser Kontaktpostfach an den passenden Bereich im Verein weitergegeben."
         />
 
-        <div class="soft-panel contact-help-panel">
-          <h2>Bei Fundtier bitte angeben:</h2>
-          <ul class="check-list">
-            <li>genaue Fundstelle</li>
-            <li>Uhrzeit des Funds</li>
-            <li>sitzt die Taube noch draußen oder ist sie im Karton?</li>
-            <li>sichtbare Verletzungen, Schnüre, Blut, hängender Flügel, aufgeplustertes Sitzen</li>
-            <li>Kontakt mit Katze oder Hund</li>
-            <li>Foto, falls vorhanden</li>
-            <li>Telefonnummer für Rückfragen</li>
-          </ul>
-          <p class="panel-note">
-            Fotos helfen sehr. Schick sie direkt per E-Mail oder über unsere Facebook- bzw. Instagram-Nachrichten mit Fundort und Rückrufnummer.
-          </p>
+        <div class="contact-form-stack">
+          <form class="contact-form-shell contact-form-fund" id="fundtier-melden" name="fundtiermeldung" method="POST" action="/danke" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="fundtiermeldung" />
+            <p class="form-honeypot"><label>Bitte dieses Feld leer lassen <input name="bot-field" /></label></p>
+            <div class="contact-form-heading">
+              <div>
+                <span class="contact-form-label">Fundtier · dringlich</span>
+                <h2>Fundtaube melden</h2>
+              </div>
+              <p>Bei Blut, einem hängenden Flügel, starker Schwäche oder wenn die Taube nicht wegfliegt: bitte direkt sichern und melden.</p>
+            </div>
+            <div class="contact-form-note"><strong>Bitte vor dem Absenden:</strong> Taube – wenn möglich – in einen Karton mit Luftlöchern setzen. Kein Wasser in den Schnabel geben.</div>
+            <div class="form-grid">
+              <div class="form-field"><label for="fund-name">Dein Name</label><input id="fund-name" name="name" autocomplete="name" required /></div>
+              <div class="form-field"><label for="fund-telefon">Rückrufnummer</label><input id="fund-telefon" name="telefon" type="tel" autocomplete="tel" required /></div>
+              <div class="form-field"><label for="fund-email">E-Mail-Adresse <span aria-hidden="true">(optional)</span></label><input id="fund-email" name="email" type="email" autocomplete="email" /></div>
+              <div class="form-field"><label for="fund-zustand">Wie geht es der Taube?</label><select id="fund-zustand" name="zustand" required><option value="">Bitte wählen</option><option>Akuter Notfall: Blut, Schnur, hängender Flügel oder Kontakt mit Katze/Hund</option><option>Schwach, aufgeplustert oder nicht flugfähig</option><option>Jungtier am Boden</option><option>Ich bin unsicher</option></select></div>
+              <div class="form-field"><label for="fund-fundort">Genauer Fundort</label><input id="fund-fundort" name="fundort" autocomplete="street-address" required /></div>
+              <div class="form-field"><label for="fund-uhrzeit">Wann gefunden?</label><input id="fund-uhrzeit" name="uhrzeit" placeholder="z. B. heute, 14:30 Uhr" required /></div>
+              <div class="form-field"><label for="fund-foto">Gibt es ein Foto?</label><select id="fund-foto" name="foto_vorhanden"><option>Ja, ich kann es nachreichen</option><option>Noch nicht</option></select></div>
+              <div class="form-field"><label for="fund-karton">Ist die Taube schon gesichert?</label><select id="fund-karton" name="gesichert"><option value="">Bitte wählen</option><option>Ja, sie sitzt in einem Karton</option><option>Nein, sie ist noch am Fundort</option><option>Ich brauche dabei Hilfe</option></select></div>
+              <div class="form-field form-field-full"><label for="fund-nachricht">Was siehst du genau?</label><textarea id="fund-nachricht" name="nachricht" required></textarea><p class="field-help">Beschreibe Verletzungen, Verhalten und ob Katze oder Hund Kontakt hatten.</p></div>
+            </div>
+            <div class="button-row"><button class="button button-primary" type="submit">Fundtiermeldung senden</button><a class="button button-secondary" href="/fundtiere">Erste Hilfe ansehen</a></div>
+            <p class="form-privacy">Mit dem Absenden verarbeiten wir deine Angaben zur Bearbeitung deiner Anfrage. Mehr dazu in unserer <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+          </form>
+
+          <form class="contact-form-shell contact-form-member" id="mitglied-werden" name="mitgliedschaft" method="POST" action="/danke" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="mitgliedschaft" />
+            <p class="form-honeypot"><label>Bitte dieses Feld leer lassen <input name="bot-field" /></label></p>
+            <div class="contact-form-heading">
+              <div><span class="contact-form-label">Verein stärken</span><h2>Mitglied werden oder mitmachen</h2></div>
+              <p>Eine Mitgliedschaft, eine regelmäßige Stunde, eine Fahrt oder Hilfe am Stand: Wir finden gemeinsam heraus, was gut passt.</p>
+            </div>
+            <div class="form-grid">
+              <div class="form-field"><label for="mitglied-name">Dein Name</label><input id="mitglied-name" name="name" autocomplete="name" required /></div>
+              <div class="form-field"><label for="mitglied-email">E-Mail-Adresse</label><input id="mitglied-email" name="email" type="email" autocomplete="email" required /></div>
+              <div class="form-field"><label for="mitglied-telefon">Telefon <span aria-hidden="true">(optional)</span></label><input id="mitglied-telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+              <div class="form-field"><label for="mitglied-anliegen">Ich interessiere mich für</label><select id="mitglied-anliegen" name="anliegen" required><option value="">Bitte wählen</option><option>Mitgliedschaft im Verein</option><option>Ehrenamtliche Mitarbeit</option><option>Mitgliedschaft und Ehrenamt</option><option>Eine andere Form der Unterstützung</option></select></div>
+              <div class="form-field"><label for="mitglied-zeit">Wie viel Zeit ist realistisch?</label><select id="mitglied-zeit" name="zeit"><option>Ich möchte mich erst informieren</option><option>Gelegentlich, wenn Hilfe gebraucht wird</option><option>Etwa eine feste Stunde im Monat</option><option>Regelmäßig im Team</option></select></div>
+              <div class="form-field"><label for="mitglied-bereich">Was passt zu dir?</label><select id="mitglied-bereich" name="bereich"><option>Ich bin noch offen</option><option>Taubenhaus und Versorgung</option><option>Fundtiere begleiten oder Fahrten</option><option>Öffentlichkeitsarbeit und Infostände</option><option>Organisation, Material oder Social Media</option></select></div>
+              <div class="form-field form-field-full"><label for="mitglied-nachricht">Deine Nachricht</label><textarea id="mitglied-nachricht" name="nachricht" required></textarea></div>
+            </div>
+            <div class="button-row"><button class="button button-primary" type="submit">Interesse senden</button></div>
+            <p class="form-privacy">Mit dem Absenden verarbeiten wir deine Angaben zur Bearbeitung deiner Anfrage. Mehr dazu in unserer <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+          </form>
+
+          <form class="contact-form-shell contact-form-general" id="allgemeine-anfrage" name="allgemeine-anfrage" method="POST" action="/danke" data-netlify="true" netlify-honeypot="bot-field">
+            <input type="hidden" name="form-name" value="allgemeine-anfrage" />
+            <p class="form-honeypot"><label>Bitte dieses Feld leer lassen <input name="bot-field" /></label></p>
+            <div class="contact-form-heading">
+              <div><span class="contact-form-label">Allgemeine Nachricht</span><h2>Schreib uns</h2></div>
+              <p>Für Spenden, Sachspenden, Bildungsanfragen, Kooperationen oder alle anderen Fragen.</p>
+            </div>
+            <div class="form-grid">
+              <div class="form-field"><label for="allgemein-name">Dein Name</label><input id="allgemein-name" name="name" autocomplete="name" required /></div>
+              <div class="form-field"><label for="allgemein-email">E-Mail-Adresse</label><input id="allgemein-email" name="email" type="email" autocomplete="email" required /></div>
+              <div class="form-field"><label for="allgemein-telefon">Telefon <span aria-hidden="true">(optional)</span></label><input id="allgemein-telefon" name="telefon" type="tel" autocomplete="tel" /></div>
+              <div class="form-field"><label for="allgemein-thema">Thema</label><select id="allgemein-thema" name="thema" required><option value="">Bitte wählen</option><option>Spende oder Sachspende</option><option>Bildung, Vortrag oder Infostand</option><option>Taubenhaus oder Beratung an Gebäuden</option><option>Presse oder Kooperation</option><option>Allgemeine Frage</option></select></div>
+              <div class="form-field form-field-full"><label for="allgemein-nachricht">Worum geht es?</label><textarea id="allgemein-nachricht" name="nachricht" required></textarea></div>
+            </div>
+            <div class="button-row"><button class="button button-primary" type="submit">Nachricht senden</button></div>
+            <p class="form-privacy">Mit dem Absenden verarbeiten wir deine Angaben zur Bearbeitung deiner Anfrage. Mehr dazu in unserer <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+          </form>
         </div>
-
-        <form
-          class="soft-panel"
-          name="kontakt"
-          method="POST"
-          action="mailto:kontakt@stadttaubenhilfe-bernau.de"
-          enctype="text/plain"
-          data-email-form
-          data-email-to="kontakt@stadttaubenhilfe-bernau.de"
-        >
-          <div class="form-grid">
-            <div class="form-field">
-              <label for="name">Dein Name</label>
-              <input id="name" name="name" autocomplete="name" required />
-            </div>
-            <div class="form-field">
-              <label for="email">Deine E-Mail-Adresse</label>
-              <input id="email" name="email" type="email" autocomplete="email" required />
-            </div>
-            <div class="form-field">
-              <label for="telefon">Telefon</label>
-              <input id="telefon" name="telefon" type="tel" autocomplete="tel" />
-            </div>
-            <div class="form-field">
-              <label for="thema">Thema</label>
-              <select id="thema" name="thema" required>
-                <option value="">Bitte wählen</option>
-                <option>Fundtier</option>
-                <option>Mitmachen</option>
-                <option>Spenden</option>
-                <option>Taubenhaus</option>
-                <option>Allgemeine Frage</option>
-              </select>
-            </div>
-            <div class="form-field">
-              <label for="fundort">Fundort</label>
-              <input id="fundort" name="fundort" autocomplete="street-address" />
-            </div>
-            <div class="form-field">
-              <label for="uhrzeit">Uhrzeit</label>
-              <input id="uhrzeit" name="uhrzeit" placeholder="z. B. heute 14:30 Uhr" />
-            </div>
-            <div class="form-field form-field-full">
-              <label for="nachricht">Worum geht es?</label>
-              <textarea id="nachricht" name="nachricht" required></textarea>
-              <p class="field-help">
-                Bei Fundtieren bitte Zustand, Verhalten, genaue Stelle und Telefonnummer angeben.
-              </p>
-            </div>
-          </div>
-
-          <div class="button-row">
-            <button class="button button-primary" type="submit">Nachricht senden</button>
-          </div>
-        </form>
       </div>
 
-      <aside class="soft-panel">
-        <span class="eyebrow">Schnellkontakt</span>
-        <h2>Direkte Wege</h2>
-        <p class="contact-note">
-          Wenn eine Taube akut verletzt ist oder nicht wegfliegt, bitte nicht erst lange abwarten: in einen Karton setzen, Foto machen, melden.
-        </p>
+      <aside class="soft-panel contact-direct-panel">
+        <span class="eyebrow">Direkte Wege</span>
+        <h2>Wenn es schnell gehen muss</h2>
+        <p class="contact-note">Bei einer akut verletzten Taube bitte nicht lange abwarten: in einen Karton setzen, Foto machen, dann direkt melden.</p>
         <ul class="contact-list">
-          <li>
-            <strong>Telefon</strong>
-            <a href="tel:+491626435114">+49 162 6435114</a>
-          </li>
-          <li>
-            <strong>E-Mail</strong>
-            <a href="mailto:kontakt@stadttaubenhilfe-bernau.de">kontakt@stadttaubenhilfe-bernau.de</a>
-          </li>
-          <li>
-            <strong>Facebook</strong>
-            <a
-              href="https://www.facebook.com/people/Stadttaubenhilfe-Bernau-b-Berlin/100064906808060/?locale=de_DE"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Stadttaubenhilfe Bernau b. Berlin
-            </a>
-          </li>
-          <li>
-            <strong>Instagram</strong>
-            <a
-              href="https://www.instagram.com/stadttaubenhilfe.bernau/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              @stadttaubenhilfe.bernau
-            </a>
-          </li>
+          <li><strong>Telefon</strong><a href="tel:+491626435114">+49 162 6435114</a></li>
+          <li><strong>E-Mail</strong><a href="mailto:kontakt@stadttaubenhilfe-bernau.de">kontakt@stadttaubenhilfe-bernau.de</a></li>
+          <li><strong>Facebook</strong><a href="https://www.facebook.com/people/Stadttaubenhilfe-Bernau-b-Berlin/100064906808060/?locale=de_DE" target="_blank" rel="noopener noreferrer">Stadttaubenhilfe Bernau b. Berlin</a></li>
+          <li><strong>Instagram</strong><a href="https://www.instagram.com/stadttaubenhilfe.bernau/" target="_blank" rel="noopener noreferrer">@stadttaubenhilfe.bernau</a></li>
         </ul>
-        <div class="button-row">
-          <Button href="/fundtiere" variant="secondary">Was sofort tun?</Button>
-        </div>
-      <figure class="contact-aside-image">
-        <img
-          src="/images/gallery/pflegestelle-jungtier-haende-02.jpg"
-          alt="Zwei junge Stadttauben werden behutsam in den Händen gehalten"
-          loading="eager"
-          decoding="async"
-        />
-      </figure>
+        <div class="button-row"><Button href="/fundtiere" variant="secondary">Was sofort tun?</Button></div>
+        <figure class="contact-aside-image"><img src="/images/gallery/pflegestelle-jungtier-haende-02.jpg" alt="Zwei junge Stadttauben werden behutsam in den Händen gehalten" loading="eager" decoding="async" /></figure>
       </aside>
     </div>
   </section>
-
-  <script>
-    const emailForm = document.querySelector("[data-email-form]");
-
-    emailForm?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      const form = event.currentTarget;
-      if (!(form instanceof HTMLFormElement)) return;
-
-      const data = new FormData(form);
-      const topic = String(data.get("thema") || "Kontakt");
-      const lines = [
-        `Name: ${data.get("name") || ""}`,
-        `E-Mail: ${data.get("email") || ""}`,
-        `Telefon: ${data.get("telefon") || ""}`,
-        `Thema: ${topic}`,
-        `Fundort: ${data.get("fundort") || ""}`,
-        `Uhrzeit: ${data.get("uhrzeit") || ""}`,
-        "",
-        "Nachricht:",
-        String(data.get("nachricht") || ""),
-      ];
-
-      const to = form.dataset.emailTo || "kontakt@stadttaubenhilfe-bernau.de";
-      const subject = encodeURIComponent(`Stadttaubenhilfe Bernau: ${topic}`);
-      const body = encodeURIComponent(lines.join("\n"));
-      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
-    });
-  </script>
 </BaseLayout>

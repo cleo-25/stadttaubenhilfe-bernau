@@ -1,0 +1,17 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/Button.astro";
+---
+
+<BaseLayout title="Vielen Dank" description="Deine Nachricht ist bei der Stadttaubenhilfe Bernau eingegangen.">
+  <section class="section">
+    <div class="container">
+      <div class="soft-panel thank-you-panel">
+        <span class="eyebrow">Nachricht gesendet</span>
+        <h1>Danke für deine Nachricht.</h1>
+        <p class="lead">Wir haben deine Anfrage erhalten und melden uns so bald wie möglich. Bei einem akuten Fundtier: bitte zusätzlich direkt anrufen oder eine Nachricht über unsere Social-Media-Kanäle senden.</p>
+        <div class="button-row"><Button href="/fundtiere">Erste Hilfe für Fundtiere</Button><Button href="/" variant="secondary">Zur Startseite</Button></div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

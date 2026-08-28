@@ -7,25 +7,44 @@ import ContentBand from "../components/ContentBand.astro";
 import CtaBand from "../components/CtaBand.astro";
 ---
 
-<BaseLayout
-  title="Spenden"
-  description="Stadttaubenhilfe Bernau braucht Unterstützung für Futter, tierärztliche Kosten, Reinigung, Ausstattung und das Taubenhaus im Fahrradparkhaus."
-  theme="donate"
->
+<BaseLayout title="Spenden" description="Direkt an die Stadttaubenhilfe Bernau spenden: für Futter, Pflege, tierärztliche Hilfe und das Taubenhaus." theme="donate">
   <PageHero
     eyebrow="Unterstützen"
     title="Deine Spende wird zu konkreter Hilfe in Bernau."
-    text="Futter, Einstreu, Handschuhe, Transportboxen, Medikamente, Fahrten und tierärztliche Behandlungen fallen nicht irgendwann an – sondern jede Woche. Deine Unterstützung hilft genau dort, wo sie gebraucht wird: im Taubenhaus, in der Pflege und bei akuten Fundtieren."
-    primaryHref="/kontakt"
-    primaryLabel="Spendenmöglichkeit anfragen"
-    secondaryHref="/mitmachen"
-    secondaryLabel="Ehrenamtlich helfen"
+    text="Futter, Einstreu, Handschuhe, Transportboxen, Medikamente, Fahrten und tierärztliche Behandlungen fallen jede Woche an. Deine Unterstützung hilft genau dort, wo sie gebraucht wird."
+    primaryHref="#direkt-spenden"
+    primaryLabel="Jetzt per Überweisung spenden"
+    secondaryHref="#spendenbescheinigung"
+    secondaryLabel="Bescheinigung anfragen"
     visualLabel="Zwei betreute Stadttauben"
     imageSrc="/images/gallery/pflegestelle-paar-02.jpg"
     imageAlt="Zwei betreute Stadttauben aus einer Pflegestelle"
     imagePosition="center 38%"
     mobileImagePosition="center 28%"
   />
+
+  <section class="section donation-bank-section" id="direkt-spenden">
+    <div class="container donation-bank-layout">
+      <div class="donation-bank-copy">
+        <span class="eyebrow">Direkt an den Verein</span>
+        <h2>Einfach überweisen. Direkt helfen.</h2>
+        <p class="lead">Eine Banküberweisung ist für uns der schnellste und gebührenfreie Weg. Jeder Betrag hilft bei Versorgung, Pflege und akuten Notfällen in Bernau.</p>
+        <div class="donation-quick-list" aria-label="Beispiele für die Wirkung deiner Spende"><span>10 € für Futter</span><span>25 € für Verbrauchsmaterial</span><span>50 € für akute Hilfe</span></div>
+        <p class="donation-bank-hint">Als Verwendungszweck genügt <strong>Spende</strong>. Wenn du eine Zuwendungsbestätigung möchtest, kannst du sie direkt unten anfragen.</p>
+      </div>
+      <div class="donation-bank-panel" aria-label="Bankverbindung für Spenden">
+        <div class="donation-bank-panel-head"><span>Bankverbindung</span><strong>Stadttaubenhilfe Bernau</strong></div>
+        <dl class="bank-details">
+          <div><dt>Empfänger</dt><dd>Stadttaubenhilfe Bernau b. Berlin e.V.</dd></div>
+          <div><dt>IBAN</dt><dd class="bank-iban">DE92 8306 5408 0007 0263 31</dd></div>
+          <div><dt>Bank</dt><dd>Skatbank</dd></div>
+          <div><dt>Verwendungszweck</dt><dd>Spende</dd></div>
+        </dl>
+        <button class="button button-primary copy-iban-button" type="button" data-copy-iban="DE92830654080007026331">IBAN kopieren</button>
+        <p class="copy-feedback" aria-live="polite" data-copy-feedback></p>
+      </div>
+    </div>
+  </section>
 
   <ContentBand
     tone="coral"
@@ -44,40 +63,69 @@ import CtaBand from "../components/CtaBand.astro";
 
   <section class="section section-tight">
     <div class="container">
-      <SectionHeader
-        eyebrow="Wofür"
-        title="Wofür werden Spenden gebraucht?"
-      />
+      <SectionHeader eyebrow="Wofür" title="Wofür werden Spenden gebraucht?" />
       <div class="grid grid-3 topic-grid">
-        <Card title="10 € · Versorgung" tone="blue" icon="euro">
-          <p>Unterstützen Futter, Wasser, Einstreu und Verbrauchsmaterial am betreuten Standort.</p>
-        </Card>
-        <Card title="25 € · Pflege & Reinigung" tone="green" icon="care">
-          <p>Helfen bei Handschuhen, Küchenrolle, Desinfektion, Schutzmaterial und Transportboxen.</p>
-        </Card>
-        <Card title="50 € · Akute Hilfe" tone="violet" icon="home">
-          <p>Beteiligen sich an Medikamenten, Fahrten oder tierärztlicher Versorgung eines Fundtiers.</p>
-        </Card>
+        <Card title="10 € · Versorgung" tone="blue" icon="euro"><p>Unterstützen Futter, Wasser, Einstreu und Verbrauchsmaterial am betreuten Standort.</p></Card>
+        <Card title="25 € · Pflege & Reinigung" tone="green" icon="care"><p>Helfen bei Handschuhen, Küchenrolle, Desinfektion, Schutzmaterial und Transportboxen.</p></Card>
+        <Card title="50 € · Akute Hilfe" tone="violet" icon="home"><p>Beteiligen sich an Medikamenten, Fahrten oder tierärztlicher Versorgung eines Fundtiers.</p></Card>
       </div>
+    </div>
+  </section>
+
+  <section class="section section-tight" id="spendenbescheinigung">
+    <div class="container receipt-layout">
+      <div class="receipt-copy">
+        <span class="eyebrow">Zuwendungsbestätigung</span>
+        <h2>Bescheinigung direkt anfragen</h2>
+        <p>Nach deiner Überweisung kannst du hier die Daten für eine Spendenbescheinigung hinterlegen. Wir gleichen die Spende ab und melden uns per E-Mail.</p>
+        <div class="receipt-info"><strong>Gut zu wissen</strong><p>Bei Spenden bis 300 € genügt für steuerbegünstigte Organisationen in der Regel der Kontoauszug oder die Buchungsbestätigung. Für höhere Beträge oder wenn du eine Bescheinigung brauchst, prüft der Verein die Voraussetzungen anhand der geltenden Gemeinnützigkeitsunterlagen.</p></div>
+      </div>
+
+      <form class="contact-form-shell receipt-form" name="spendenbescheinigung" method="POST" action="/danke" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="spendenbescheinigung" />
+        <p class="form-honeypot"><label>Bitte dieses Feld leer lassen <input name="bot-field" /></label></p>
+        <div class="contact-form-heading"><div><span class="contact-form-label">Spendenbescheinigung</span><h2>Deine Angaben</h2></div><p>Bitte nur anfragen, nachdem die Überweisung erfolgt ist.</p></div>
+        <div class="form-grid">
+          <div class="form-field"><label for="receipt-name">Vor- und Nachname</label><input id="receipt-name" name="name" autocomplete="name" required /></div>
+          <div class="form-field"><label for="receipt-email">E-Mail-Adresse</label><input id="receipt-email" name="email" type="email" autocomplete="email" required /></div>
+          <div class="form-field"><label for="receipt-organisation">Organisation <span aria-hidden="true">(optional)</span></label><input id="receipt-organisation" name="organisation" autocomplete="organization" /></div>
+          <div class="form-field"><label for="receipt-betrag">Gespendeter Betrag</label><input id="receipt-betrag" name="betrag" inputmode="decimal" placeholder="z. B. 50 €" required /></div>
+          <div class="form-field"><label for="receipt-datum">Datum der Überweisung</label><input id="receipt-datum" name="spendendatum" type="date" required /></div>
+          <div class="form-field"><label for="receipt-verwendungszweck">Verwendungszweck</label><input id="receipt-verwendungszweck" name="verwendungszweck" value="Spende" /></div>
+          <div class="form-field form-field-full"><label for="receipt-strasse">Straße und Hausnummer</label><input id="receipt-strasse" name="strasse" autocomplete="street-address" required /></div>
+          <div class="form-field"><label for="receipt-plz">PLZ</label><input id="receipt-plz" name="plz" autocomplete="postal-code" required /></div>
+          <div class="form-field"><label for="receipt-ort">Ort</label><input id="receipt-ort" name="ort" autocomplete="address-level2" required /></div>
+          <div class="form-field form-field-full"><label for="receipt-hinweis">Hinweis <span aria-hidden="true">(optional)</span></label><textarea id="receipt-hinweis" name="hinweis"></textarea></div>
+        </div>
+        <label class="form-consent" for="receipt-bestaetigung"><input id="receipt-bestaetigung" name="bestaetigung" type="checkbox" required /><span>Ich bestätige, dass die Überweisung erfolgt ist und meine Angaben für die Bearbeitung der Anfrage verwendet werden dürfen.</span></label>
+        <div class="button-row"><button class="button button-primary" type="submit">Bescheinigung anfragen</button></div>
+        <p class="form-privacy">Mit dem Absenden verarbeiten wir deine Angaben zur Bearbeitung deiner Anfrage. Mehr dazu in unserer <a href="/datenschutz">Datenschutzerklärung</a>.</p>
+      </form>
     </div>
   </section>
 
   <section class="section section-tight" id="sachspenden">
     <div class="container donation-note">
-      <div>
-        <span class="eyebrow">Geld, Material oder regelmäßige Hilfe</span>
-        <h2>Spendenmöglichkeit anfragen.</h2>
-      </div>
-      <p>Auch saubere Handtücher, Küchenrolle, Einmalhandschuhe, geeignete Kartons oder Transportboxen, Taubenfutter und Reinigungsmaterial können helfen. Bitte frag kurz an, damit Material wirklich passt und gelagert werden kann.</p>
-      <a class="button button-primary" href="/kontakt">Spendenmöglichkeit anfragen</a>
+      <div><span class="eyebrow">Geld, Material oder regelmäßige Hilfe</span><h2>Auch Sachspenden helfen.</h2></div>
+      <p>Saubere Handtücher, Küchenrolle, Einmalhandschuhe, geeignete Kartons oder Transportboxen, Taubenfutter und Reinigungsmaterial können sehr wertvoll sein. Bitte frag kurz an, damit Material wirklich passt und gelagert werden kann.</p>
+      <a class="button button-secondary" href="/kontakt#allgemeine-anfrage">Sachspende anfragen</a>
     </div>
   </section>
 
-  <CtaBand
-    eyebrow="Regelmäßig unterstützen"
-    title="Wir arbeiten ehrenamtlich. Hilfe wirkt direkt vor Ort."
-    text="Spenden fließen in Versorgung, Pflege und Organisation der Stadttaubenhilfe in Bernau. Wenn du regelmäßig unterstützen möchtest, freuen wir uns über deine Nachricht."
-    href="/kontakt"
-    label="Spendenmöglichkeit anfragen"
-  />
+  <CtaBand eyebrow="Regelmäßig unterstützen" title="Wir arbeiten ehrenamtlich. Hilfe wirkt direkt vor Ort." text="Spenden fließen in Versorgung, Pflege und Organisation der Stadttaubenhilfe in Bernau. Wenn du regelmäßig unterstützen möchtest, freuen wir uns über deine Nachricht." href="/kontakt#allgemeine-anfrage" label="Regelmäßige Spende anfragen" />
+
+  <script>
+    const copyButton = document.querySelector("[data-copy-iban]");
+    const copyFeedback = document.querySelector("[data-copy-feedback]");
+    copyButton?.addEventListener("click", async () => {
+      const iban = copyButton.dataset.copyIban;
+      if (!iban) return;
+      try {
+        await navigator.clipboard.writeText(iban);
+        if (copyFeedback) copyFeedback.textContent = "IBAN kopiert.";
+      } catch {
+        window.prompt("IBAN kopieren:", iban);
+      }
+    });
+  </script>
 </BaseLayout>
