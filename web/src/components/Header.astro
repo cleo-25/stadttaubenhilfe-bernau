@@ -108,7 +108,7 @@ const isGroupActive = (links: NavLink[] = []) => links.some((link) => isActive(l
       ) : (
         <a href={group.href} aria-current={isActive(group.href) ? "page" : undefined}>{group.label}</a>
       ))}
-      <a class="site-nav-donate" href="/spenden" aria-current={isActive("/spenden") ? "page" : undefined}>Spendenmöglichkeit anfragen <span aria-hidden="true">♥</span></a>
+      <a class="site-nav-donate" href="/spenden#direkt-spenden" aria-current={isActive("/spenden") ? "page" : undefined}>Jetzt spenden <span aria-hidden="true">♥</span></a>
     </nav>
   </div>
 </header>
