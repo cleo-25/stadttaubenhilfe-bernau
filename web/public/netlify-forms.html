@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="de">
+  <head><meta charset="utf-8"><title>Netlify form registry</title></head>
+  <body>
+    <!-- Statische Registrierung: Astro entfernt data-netlify in gerenderten Seiten. -->
+    <form name="fundtiermeldung" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="fundtiermeldung">
+      <p hidden><label>Bitte leer lassen <input name="bot-field"></label></p>
+      <input name="name"><input name="telefon"><input name="email"><input name="zustand"><input name="fundort"><input name="uhrzeit"><textarea name="nachricht"></textarea>
+    </form>
+    <form name="mitgliedschaft" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="mitgliedschaft">
+      <p hidden><label>Bitte leer lassen <input name="bot-field"></label></p>
+      <input name="name"><input name="email"><input name="telefon"><input name="anliegen"><input name="zeit"><input name="bereich"><textarea name="nachricht"></textarea>
+    </form>
+    <form name="allgemeine-anfrage" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="allgemeine-anfrage">
+      <p hidden><label>Bitte leer lassen <input name="bot-field"></label></p>
+      <input name="name"><input name="email"><input name="telefon"><input name="thema"><textarea name="nachricht"></textarea>
+    </form>
+    <form name="spendenbescheinigung" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="spendenbescheinigung">
+      <p hidden><label>Bitte leer lassen <input name="bot-field"></label></p>
+      <input name="name"><input name="email"><input name="organisation"><input name="spendenbetrag"><input name="spendendatum"><input name="verwendungszweck"><input name="strasse"><input name="plz"><input name="ort"><textarea name="nachricht"></textarea>
+    </form>
+  </body>
+</html>
