@@ -179,8 +179,13 @@ import BetterplaceWidget from "../components/BetterplaceWidget.astro";
     const mobileCta = document.querySelector("[data-donation-mobile-cta]");
     const protectedAreas = document.querySelectorAll("[data-betterplace-widget], #spendenbescheinigung, #seitenende");
     if (mobileCta instanceof HTMLElement && "IntersectionObserver" in window) {
+      const visibleProtectedAreas = new Set<Element>();
       const observer = new IntersectionObserver((entries) => {
-        mobileCta.classList.toggle("is-hidden", entries.some((entry) => entry.isIntersecting));
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) visibleProtectedAreas.add(entry.target);
+          else visibleProtectedAreas.delete(entry.target);
+        });
+        mobileCta.classList.toggle("is-hidden", visibleProtectedAreas.size > 0);
       }, { threshold: 0.15 });
       protectedAreas.forEach((area) => observer.observe(area));
     }
