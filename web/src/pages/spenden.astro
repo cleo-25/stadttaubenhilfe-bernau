@@ -5,17 +5,18 @@ import SectionHeader from "../components/SectionHeader.astro";
 import Card from "../components/Card.astro";
 import ContentBand from "../components/ContentBand.astro";
 import CtaBand from "../components/CtaBand.astro";
+import BetterplaceWidget from "../components/BetterplaceWidget.astro";
 ---
 
-<BaseLayout title="Spenden" description="Direkt an die Stadttaubenhilfe Bernau spenden: für Futter, Pflege, tierärztliche Hilfe und das Taubenhaus." theme="donate">
+<BaseLayout title="Spenden" description="Sicher über Betterplace oder direkt per Überweisung für Futter, Pflege, tierärztliche Hilfe und das Taubenhaus in Bernau spenden." theme="donate">
   <PageHero
     eyebrow="Unterstützen"
     title="Deine Spende wird zu konkreter Hilfe in Bernau."
     text="Futter, Einstreu, Handschuhe, Transportboxen, Medikamente, Fahrten und tierärztliche Behandlungen fallen jede Woche an. Deine Unterstützung hilft genau dort, wo sie gebraucht wird."
     primaryHref="#direkt-spenden"
-    primaryLabel="Jetzt per Überweisung spenden"
-    secondaryHref="#spendenbescheinigung"
-    secondaryLabel="Bescheinigung anfragen"
+    primaryLabel="Jetzt über Betterplace spenden"
+    secondaryHref="#direkt-ueberweisen"
+    secondaryLabel="Direkt überweisen"
     visualLabel="Zwei betreute Stadttauben"
     imageSrc="/images/gallery/pflegestelle-paar-02.jpg"
     imageAlt="Zwei betreute Stadttauben aus einer Pflegestelle"
@@ -23,11 +24,28 @@ import CtaBand from "../components/CtaBand.astro";
     mobileImagePosition="center 28%"
   />
 
-  <section class="section donation-bank-section" id="direkt-spenden">
+  <section class="section betterplace-donation-section" id="direkt-spenden">
+    <div class="container betterplace-donation-layout">
+      <div class="betterplace-donation-copy">
+        <span class="eyebrow">Direkt spenden</span>
+        <h2>Sicher und unkompliziert über Betterplace spenden</h2>
+        <p class="lead">Mit deiner Spende finanzieren wir Futter, Pflegematerial, Ei-Attrappen, Rettungsausrüstung sowie die Versorgung verletzter und junger Stadttauben in Bernau. Du kannst einmalig oder regelmäßig spenden.</p>
+        <ul class="betterplace-benefits" aria-label="Vorteile einer Spende über Betterplace">
+          <li>Einmalig oder regelmäßig spenden</li>
+          <li>Verschiedene Zahlungsmöglichkeiten</li>
+          <li>Automatische Spendenbescheinigung</li>
+          <li>Sichere Abwicklung über Betterplace</li>
+        </ul>
+      </div>
+      <BetterplaceWidget />
+    </div>
+  </section>
+
+  <section class="section donation-bank-section" id="direkt-ueberweisen">
     <div class="container donation-bank-layout">
       <div class="donation-bank-copy">
-        <span class="eyebrow">Direkt an den Verein</span>
-        <h2>Einfach überweisen. Direkt helfen.</h2>
+        <span class="eyebrow">Banküberweisung</span>
+        <h2>Alternativ direkt an den Verein überweisen</h2>
         <p class="lead">Eine Banküberweisung ist für uns der schnellste und gebührenfreie Weg. Jeder Betrag hilft bei Versorgung, Pflege und akuten Notfällen in Bernau.</p>
         <div class="donation-quick-list" aria-label="Beispiele für die Wirkung deiner Spende"><span>10 € für Futter</span><span>25 € für Verbrauchsmaterial</span><span>50 € für akute Hilfe</span></div>
         <p class="donation-bank-hint">Als Verwendungszweck genügt <strong>Spende</strong>. Wenn du eine Zuwendungsbestätigung möchtest, kannst du sie direkt unten anfragen.</p>
@@ -72,11 +90,24 @@ import CtaBand from "../components/CtaBand.astro";
     </div>
   </section>
 
+  <section class="section section-tight donation-faq-section" aria-labelledby="spenden-faq-title">
+    <div class="container donation-faq-layout">
+      <div><span class="eyebrow">Fragen & Antworten</span><h2 id="spenden-faq-title">Gut zu wissen, bevor du spendest.</h2></div>
+      <div class="donation-faq-list">
+        <details><summary>Kann ich regelmäßig spenden?</summary><p>Ja. Über Betterplace kannst du eine regelmäßige Unterstützung auswählen. Sie hilft uns besonders dabei, Futter, Pflege und Notfälle besser zu planen.</p></details>
+        <details><summary>Bekomme ich eine Spendenbescheinigung?</summary><p>Bei Spenden über Betterplace wird die Spendenbescheinigung automatisch versendet. Für direkte Banküberweisungen kannst du unten eine Zuwendungsbestätigung anfragen.</p></details>
+        <details><summary>Welche Zahlungsmöglichkeiten gibt es?</summary><p>Betterplace zeigt dir die aktuell verfügbaren Zahlungsmöglichkeiten direkt im Spendenformular an. Alternativ kannst du jederzeit per Banküberweisung spenden.</p></details>
+        <details><summary>Wie werden die Spenden verwendet?</summary><p>Die Spenden finanzieren Futter, Pflegematerial, Ei-Attrappen, Rettungsausrüstung sowie die Versorgung verletzter und junger Stadttauben in Bernau.</p></details>
+      </div>
+    </div>
+  </section>
+
   <section class="section section-tight" id="spendenbescheinigung">
     <div class="container receipt-layout">
       <div class="receipt-copy">
         <span class="eyebrow">Zuwendungsbestätigung</span>
-        <h2>Bescheinigung direkt anfragen</h2>
+        <h2>Bescheinigung für eine Banküberweisung anfragen</h2>
+        <p class="receipt-direct-notice">Dieses Formular wird nur für direkte Banküberweisungen benötigt. Bei Spenden über Betterplace wird die Spendenbescheinigung automatisch versendet.</p>
         <p>Nach deiner Überweisung kannst du hier die Daten für eine Spendenbescheinigung hinterlegen. Wir gleichen die Spende ab und melden uns per E-Mail.</p>
         <div class="receipt-info"><strong>Gut zu wissen</strong><p>Bei Spenden bis 300 € genügt für steuerbegünstigte Organisationen in der Regel der Kontoauszug oder die Buchungsbestätigung. Für höhere Beträge oder wenn du eine Bescheinigung brauchst, prüft der Verein die Voraussetzungen anhand der geltenden Gemeinnützigkeitsunterlagen.</p></div>
       </div>
@@ -84,7 +115,7 @@ import CtaBand from "../components/CtaBand.astro";
       <form class="contact-form-shell receipt-form" name="spendenbescheinigung" method="POST" action="/danke" data-netlify="true" netlify-honeypot="bot-field">
         <input type="hidden" name="form-name" value="spendenbescheinigung" />
         <p class="form-honeypot"><label>Bitte dieses Feld leer lassen <input name="bot-field" /></label></p>
-        <div class="contact-form-heading"><div><span class="contact-form-label">Spendenbescheinigung</span><h2>Deine Angaben</h2></div><p>Bitte nur anfragen, nachdem die Überweisung erfolgt ist.</p></div>
+        <div class="contact-form-heading"><div><span class="contact-form-label">Direkte Banküberweisung</span><h2>Deine Angaben</h2></div><p>Bitte nur anfragen, nachdem die Überweisung erfolgt ist.</p></div>
         <div class="form-grid">
           <div class="form-field"><label for="receipt-name">Vor- und Nachname</label><input id="receipt-name" name="name" autocomplete="name" required /></div>
           <div class="form-field"><label for="receipt-email">E-Mail-Adresse</label><input id="receipt-email" name="email" type="email" autocomplete="email" required /></div>
@@ -112,20 +143,99 @@ import CtaBand from "../components/CtaBand.astro";
     </div>
   </section>
 
-  <CtaBand eyebrow="Regelmäßig unterstützen" title="Wir arbeiten ehrenamtlich. Hilfe wirkt direkt vor Ort." text="Spenden fließen in Versorgung, Pflege und Organisation der Stadttaubenhilfe in Bernau. Wenn du regelmäßig unterstützen möchtest, freuen wir uns über deine Nachricht." href="#direkt-spenden" label="Dauerauftrag einrichten" />
+  <CtaBand eyebrow="Regelmäßig unterstützen" title="Wir arbeiten ehrenamtlich. Hilfe wirkt direkt vor Ort." text="Spenden fließen in Versorgung, Pflege und Organisation der Stadttaubenhilfe in Bernau. Wenn du regelmäßig unterstützen möchtest, kannst du Betterplace nutzen." href="#direkt-spenden" label="Regelmäßig über Betterplace spenden" />
+
+  <a class="button button-primary donation-mobile-cta" href="#direkt-spenden" data-donation-mobile-cta>Jetzt spenden</a>
 
   <script>
+    const donationEvents = new Set(["betterplace_open", "betterplace_form_view", "iban_copy", "paypal_open"]);
+    const emitDonationEvent = (eventName: string) => {
+      if (!donationEvents.has(eventName)) return;
+      document.dispatchEvent(new CustomEvent("stadttauben:donation-event", { detail: { event: eventName } }));
+    };
+    document.addEventListener("stadttauben:donation-event", (event) => {
+      // Brücke für die vorhandene Consent-/Analytics-Schicht: ohne Einwilligung wird nichts an Dritte gesendet.
+      const detail = (event as CustomEvent).detail;
+      if (!detail || !donationEvents.has(detail.event)) return;
+    });
+    document.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+      const trigger = target.closest("[data-donation-event]");
+      if (!(trigger instanceof HTMLElement)) return;
+      emitDonationEvent(trigger.dataset.donationEvent || "");
+    });
     const copyButton = document.querySelector("[data-copy-iban]");
     const copyFeedback = document.querySelector("[data-copy-feedback]");
-    copyButton?.addEventListener("click", async () => {
-      const iban = copyButton.dataset.copyIban;
-      if (!iban) return;
-      try {
-        await navigator.clipboard.writeText(iban);
-        if (copyFeedback) copyFeedback.textContent = "IBAN kopiert.";
-      } catch {
-        window.prompt("IBAN kopieren:", iban);
-      }
-    });
+    if (copyButton instanceof HTMLButtonElement) {
+      copyButton.addEventListener("click", async () => {
+        const iban = copyButton.dataset.copyIban;
+        if (!iban) return;
+        try { await navigator.clipboard.writeText(iban); if (copyFeedback) copyFeedback.textContent = "IBAN kopiert."; }
+        catch { window.prompt("IBAN kopieren:", iban); }
+        emitDonationEvent("iban_copy");
+      });
+    }
+    const mobileCta = document.querySelector("[data-donation-mobile-cta]");
+    const protectedAreas = document.querySelectorAll("[data-betterplace-widget], #spendenbescheinigung, #seitenende");
+    if (mobileCta instanceof HTMLElement && "IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        mobileCta.classList.toggle("is-hidden", entries.some((entry) => entry.isIntersecting));
+      }, { threshold: 0.15 });
+      protectedAreas.forEach((area) => observer.observe(area));
+    }
   </script>
 </BaseLayout>
+
+<style>
+  #direkt-spenden, #direkt-ueberweisen, #spendenbescheinigung { scroll-margin-top: calc(var(--header-height) + 1.5rem); }
+  .betterplace-donation-section { background: linear-gradient(125deg, var(--blue-pale), #fff 68%); }
+  .betterplace-donation-layout, .donation-bank-layout, .receipt-layout, .donation-faq-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .86fr); gap: clamp(2rem, 5vw, 5.5rem); align-items: start; }
+  .betterplace-donation-copy h2, .donation-bank-copy h2, .receipt-copy h2, .donation-faq-layout h2 { max-width: 15ch; }
+  .betterplace-benefits { display: grid; gap: .8rem; margin: 2rem 0 0; padding: 0; list-style: none; }
+  .betterplace-benefits li { position: relative; padding-left: 1.8rem; color: var(--ink); font-weight: 700; }
+  .betterplace-benefits li::before { content: ""; position: absolute; left: 0; top: .5em; width: .75rem; height: .75rem; border: 2px solid var(--blue); border-radius: 50%; }
+  :global(.betterplace-widget) { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: var(--radius-panel); background: #fff; box-shadow: var(--shadow-soft); }
+  :global(.betterplace-widget__consent h3) { margin: .5rem 0 .75rem; font-size: clamp(1.35rem, 2vw, 1.85rem); }
+  :global(.betterplace-widget__consent p) { color: var(--ink-soft); }
+  :global(.betterplace-widget__content) { display: grid; justify-items: center; }
+  :global(.betterplace-widget__frame) { display: block; width: 100%; max-width: 320px; height: auto; aspect-ratio: 1; margin-inline: auto; }
+  :global(.betterplace-widget__fallback) { display: inline-flex; align-items: center; min-height: 44px; margin-top: 1rem; color: var(--blue-dark); font-weight: 800; text-decoration-thickness: 2px; text-underline-offset: .2em; }
+  .donation-bank-section { background: var(--blue-pale); }
+  .donation-quick-list { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1.6rem 0; }
+  .donation-quick-list span { padding: .55rem .8rem; border: 1px solid var(--line); border-radius: 999px; background: #fff; color: var(--blue-dark); font-weight: 800; }
+  .donation-bank-hint, .receipt-direct-notice { padding: 1rem 1.1rem; border-left: 4px solid var(--coral); background: #fff; color: var(--ink); }
+  .donation-bank-panel { padding: clamp(1.5rem, 3vw, 2.25rem); border-radius: var(--radius-panel); background: var(--blue-dark); color: #fff; box-shadow: var(--shadow-soft); }
+  .donation-bank-panel-head { display: grid; gap: .25rem; padding-bottom: 1.25rem; border-bottom: 1px solid rgba(255,255,255,.32); }
+  .donation-bank-panel-head span, .bank-details dt { color: var(--blue-light); font-weight: 700; }
+  .bank-details { display: grid; gap: 1.15rem; margin: 1.5rem 0; }
+  .bank-details div { display: grid; gap: .25rem; }
+  .bank-details dd { margin: 0; font-size: 1.1rem; font-weight: 800; }
+  .bank-iban { font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+  .copy-iban-button { width: 100%; }
+  .copy-feedback { min-height: 1.5em; margin: .75rem 0 0; color: #fff; font-weight: 700; }
+  .donation-faq-section { background: #fff; }
+  .donation-faq-list { display: grid; gap: .75rem; }
+  .donation-faq-list details { border: 1px solid var(--line); border-radius: var(--radius-small); background: var(--blue-pale); }
+  .donation-faq-list summary { min-height: 52px; padding: 1rem 3rem 1rem 1.1rem; color: var(--ink); font-weight: 800; cursor: pointer; }
+  .donation-faq-list details p { margin: 0; padding: 0 1.1rem 1.1rem; color: var(--ink-soft); }
+  .donation-faq-list summary:focus-visible { outline: 3px solid rgba(140,178,225,.85); outline-offset: 3px; }
+  .receipt-direct-notice { margin-block: 1.25rem; font-weight: 800; }
+  .donation-note { display: grid; grid-template-columns: 1fr minmax(260px, .7fr) auto; gap: 2rem; align-items: center; padding: clamp(1.5rem, 4vw, 3rem); border: 1px solid var(--line); background: var(--blue-pale); }
+  .donation-note h2 { margin: .35rem 0 0; }
+  .donation-note p { margin: 0; color: var(--ink-soft); }
+  .donation-mobile-cta { display: none; }
+  @media (max-width: 980px) {
+    .betterplace-donation-layout, .donation-bank-layout, .receipt-layout, .donation-faq-layout, .donation-note { grid-template-columns: 1fr; }
+    .betterplace-donation-copy h2, .donation-bank-copy h2, .receipt-copy h2, .donation-faq-layout h2 { max-width: none; }
+    .donation-note .button { justify-self: start; }
+  }
+  @media (max-width: 680px) {
+    :global(.betterplace-widget) { padding: 1.15rem; }
+    .donation-quick-list { gap: .5rem; }
+    .donation-quick-list span { font-size: .9rem; }
+    .donation-mobile-cta { position: fixed; z-index: 30; right: 1rem; bottom: max(1rem, env(safe-area-inset-bottom)); display: inline-flex; min-height: 48px; padding-inline: 1.15rem; box-shadow: 0 8px 26px rgba(9, 47, 78, .24); transition: opacity .18s ease, transform .18s ease; }
+    .donation-mobile-cta.is-hidden { opacity: 0; pointer-events: none; transform: translateY(1rem); }
+    :global(body[data-page-theme="donate"]) { padding-bottom: calc(4.75rem + env(safe-area-inset-bottom)); }
+  }
+</style>
