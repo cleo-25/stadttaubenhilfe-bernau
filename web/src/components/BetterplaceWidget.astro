@@ -4,35 +4,31 @@ const projectUrl = "https://www.betterplace.org/de/projects/185538-hilfe-fuer-be
 ---
 
 <section class="betterplace-widget" data-betterplace-widget aria-labelledby="betterplace-widget-title">
-  <div class="betterplace-widget__consent" data-betterplace-loader>
+  <div class="betterplace-widget__intro">
     <p class="eyebrow">Externer Spendenservice</p>
     <h3 id="betterplace-widget-title">Betterplace-Spendenformular</h3>
-    <p>
-      Mit einem Klick wird das Formular von Betterplace geladen. Dabei werden Daten wie deine IP-Adresse
-      an Betterplace übertragen. Dort gelten die <a href="https://www.betterplace.org/c/regeln/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen von Betterplace</a>.
-    </p>
-    <button class="button button-primary" type="button" data-betterplace-load>
-      Formular laden
-    </button>
   </div>
 
-  <div class="betterplace-widget__content" data-betterplace-content hidden aria-live="polite"></div>
+  <iframe
+    class="betterplace-widget__frame"
+    title="Betterplace-Spendenformular für die Stadttaubenhilfe Bernau"
+    frameborder="0"
+    marginheight="0"
+    marginwidth="0"
+    src={widgetSrc}
+    width="320"
+    height="320"
+    loading="eager"
+    style="border: 0; padding:0; margin:0;"
+  >
+    Informieren und spenden: <a href={projectUrl} target="_blank" rel="noopener noreferrer">„Hilfe für Bernauer Stadttauben – retten, versorge“</a> auf betterplace.org öffnen.
+  </iframe>
 
-  <template data-betterplace-template>
-    <iframe
-      class="betterplace-widget__frame"
-      title="Betterplace-Spendenformular für die Stadttaubenhilfe Bernau"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      src={widgetSrc}
-      width="320"
-      height="320"
-      style="border: 0; padding:0; margin:0;"
-    >
-      Informieren und spenden: <a href={projectUrl} target="_blank" rel="noopener noreferrer">„Hilfe für Bernauer Stadttauben – retten, versorge“</a> auf betterplace.org öffnen.
-    </iframe>
-  </template>
+  <p class="betterplace-widget__privacy">
+    Das Formular wird direkt von Betterplace bereitgestellt. Dabei werden technische Daten wie deine
+    IP-Adresse an Betterplace übertragen. Es gelten die
+    <a href="https://www.betterplace.org/c/regeln/datenschutz" target="_blank" rel="noopener noreferrer">Datenschutzbestimmungen von Betterplace</a>.
+  </p>
 
   <a
     class="betterplace-widget__fallback"
@@ -49,31 +45,13 @@ const projectUrl = "https://www.betterplace.org/de/projects/185538-hilfe-fuer-be
   const widget = document.querySelector("[data-betterplace-widget]");
 
   if (widget instanceof HTMLElement) {
-    const loadButton = widget.querySelector("[data-betterplace-load]");
-    const loader = widget.querySelector("[data-betterplace-loader]");
-    const content = widget.querySelector("[data-betterplace-content]");
-    const template = widget.querySelector("[data-betterplace-template]");
-
-    if (
-      loadButton instanceof HTMLButtonElement &&
-      loader instanceof HTMLElement &&
-      content instanceof HTMLElement &&
-      template instanceof HTMLTemplateElement
-    ) {
-      loadButton.addEventListener("click", () => {
-        content.append(template.content.cloneNode(true));
-        content.hidden = false;
-        loader.hidden = true;
-
-        const frame = content.querySelector("iframe");
-        frame?.addEventListener("load", () => {
-          document.dispatchEvent(
-            new CustomEvent("stadttauben:donation-event", {
-              detail: { event: "betterplace_form_view" },
-            }),
-          );
-        }, { once: true });
-      }, { once: true });
-    }
+    const frame = widget.querySelector("iframe");
+    frame?.addEventListener("load", () => {
+      document.dispatchEvent(
+        new CustomEvent("stadttauben:donation-event", {
+          detail: { event: "betterplace_form_view" },
+        }),
+      );
+    }, { once: true });
   }
 </script>

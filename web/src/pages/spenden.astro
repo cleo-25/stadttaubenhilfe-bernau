@@ -201,10 +201,10 @@ import BetterplaceWidget from "../components/BetterplaceWidget.astro";
   .betterplace-benefits li { position: relative; padding-left: 1.8rem; color: var(--ink); font-weight: 700; }
   .betterplace-benefits li::before { content: ""; position: absolute; left: 0; top: .5em; width: .75rem; height: .75rem; border: 2px solid var(--blue); border-radius: 50%; }
   :global(.betterplace-widget) { padding: clamp(1.25rem, 3vw, 2rem); border: 1px solid var(--line); border-radius: var(--radius-panel); background: #fff; box-shadow: var(--shadow-soft); }
-  :global(.betterplace-widget__consent h3) { margin: .5rem 0 .75rem; font-size: clamp(1.35rem, 2vw, 1.85rem); }
-  :global(.betterplace-widget__consent p) { color: var(--ink-soft); }
-  :global(.betterplace-widget__content) { display: grid; justify-items: center; }
+  :global(.betterplace-widget__intro h3) { margin: .5rem 0 1rem; font-size: clamp(1.35rem, 2vw, 1.85rem); }
   :global(.betterplace-widget__frame) { display: block; width: 100%; max-width: 320px; height: auto; aspect-ratio: 1; margin-inline: auto; }
+  :global(.betterplace-widget__privacy) { margin: 1rem 0 0; color: var(--ink-soft); font-size: .88rem; line-height: 1.55; }
+  :global(.betterplace-widget__privacy a) { color: var(--blue-dark); font-weight: 750; text-decoration: underline; text-underline-offset: .16em; }
   :global(.betterplace-widget__fallback) { display: inline-flex; align-items: center; min-height: 44px; margin-top: 1rem; color: var(--blue-dark); font-weight: 800; text-decoration-thickness: 2px; text-underline-offset: .2em; }
   .donation-bank-section { background: var(--blue-pale); }
   .donation-quick-list { display: flex; flex-wrap: wrap; gap: .65rem; margin: 1.6rem 0; }
