@@ -36,6 +36,30 @@ import BetterplaceWidget from "../components/BetterplaceWidget.astro";
           <li>Automatische Spendenbescheinigung</li>
           <li>Sichere Abwicklung über Betterplace</li>
         </ul>
+        <div class="paypal-donation-callout">
+          <div>
+            <span class="eyebrow">Direkt mit PayPal</span>
+            <h3>Lieber direkt spenden?</h3>
+            <p>Mit einem Klick kannst du uns sicher über PayPal unterstützen.</p>
+          </div>
+          <form
+            class="paypal-donation-form"
+            action="https://www.paypal.com/donate"
+            method="post"
+            target="_top"
+            aria-label="Spenden mit PayPal"
+          >
+            <input type="hidden" name="hosted_button_id" value="J9QKJBG829MFC" />
+            <input
+              type="image"
+              src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_donateCC_LG.gif"
+              name="submit"
+              title="Mit PayPal spenden"
+              alt="Spenden mit PayPal"
+            />
+            <img class="paypal-donation-pixel" alt="" src="https://www.paypal.com/de_DE/i/scr/pixel.gif" width="1" height="1" />
+          </form>
+        </div>
       </div>
       <BetterplaceWidget />
     </div>
@@ -197,6 +221,12 @@ import BetterplaceWidget from "../components/BetterplaceWidget.astro";
   .betterplace-donation-section { background: linear-gradient(125deg, var(--blue-pale), #fff 68%); }
   .betterplace-donation-layout, .donation-bank-layout, .receipt-layout, .donation-faq-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(320px, .86fr); gap: clamp(2rem, 5vw, 5.5rem); align-items: start; }
   .betterplace-donation-copy h2, .donation-bank-copy h2, .receipt-copy h2, .donation-faq-layout h2 { max-width: 15ch; }
+  .paypal-donation-callout { display: grid; gap: 1rem; margin-top: 1.75rem; padding: clamp(1.15rem, 2.5vw, 1.6rem); border: 1px solid rgba(47, 111, 149, .24); border-radius: var(--radius-panel); background: linear-gradient(135deg, #fff 0%, var(--blue-pale) 100%); box-shadow: var(--shadow-soft); }
+  .paypal-donation-callout h3 { margin: .6rem 0 .4rem; font-size: clamp(1.35rem, 2vw, 1.7rem); }
+  .paypal-donation-callout p { margin: 0; color: var(--ink-soft); }
+  .paypal-donation-form { margin: 0; }
+  .paypal-donation-form input[type="image"] { display: block; width: 100%; max-width: 195px; height: auto; }
+  .paypal-donation-pixel { position: absolute; width: 1px; height: 1px; overflow: hidden; }
   .betterplace-benefits { display: grid; gap: .8rem; margin: 2rem 0 0; padding: 0; list-style: none; }
   .betterplace-benefits li { position: relative; padding-left: 1.8rem; color: var(--ink); font-weight: 700; }
   .betterplace-benefits li::before { content: ""; position: absolute; left: 0; top: .5em; width: .75rem; height: .75rem; border: 2px solid var(--blue); border-radius: 50%; }
