@@ -3,15 +3,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Button from "../components/Button.astro";
 ---
 
-<BaseLayout title="Vielen Dank" description="Deine Nachricht ist bei der Stadttaubenhilfe Bernau eingegangen.">
+<BaseLayout title="Danke von Herzen" description="Danke, dass du die Stadttaubenhilfe Bernau unterstützt. Deine Nachricht oder Spende hilft direkt vor Ort.">
   <section class="section">
     <div class="container">
       <div class="soft-panel thank-you-panel">
-        <span class="eyebrow">Nachricht gesendet</span>
-        <h1>Danke für deine Nachricht.</h1>
-        <p class="lead">Wir haben deine Anfrage erhalten und melden uns so bald wie möglich. Bei einem akuten Fundtier: bitte zusätzlich direkt anrufen oder eine Nachricht über unsere Social-Media-Kanäle senden.</p>
-        <div class="button-row"><Button href="/fundtiere">Erste Hilfe für Fundtiere</Button><Button href="/" variant="secondary">Zur Startseite</Button></div>
+        <span class="eyebrow">Danke für deine Unterstützung</span>
+        <h1>Gemeinsam machen wir Bernau taubenfreundlicher.</h1>
+        <p class="lead">Wenn du gerade über PayPal gespendet hast: Danke von Herzen! Deine Unterstützung hilft bei Futter, Pflege, Rettung und tierärztlicher Versorgung. Wenn du uns über ein Formular geschrieben hast, ist deine Nachricht ebenfalls angekommen – wir melden uns so bald wie möglich.</p>
+        <div class="button-row"><Button href="/projekte">Unsere Arbeit ansehen</Button><Button href="/" variant="secondary">Zur Startseite</Button></div>
+        <p class="lead thank-you-emergency">Bei einem akuten Fundtier findest du unter <a href="/fundtiere">Erste Hilfe für Stadttauben</a> die nächsten Schritte.</p>
       </div>
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  .thank-you-emergency { margin-top: 1.5rem; font-size: 1rem; }
+  .thank-you-emergency a { color: var(--blue-dark); font-weight: 800; text-decoration: underline; text-underline-offset: .18em; }
+</style>
